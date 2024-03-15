@@ -2,7 +2,7 @@
 title: Deep Learning The Stock Market
 date: '2016-12-03'
 tags: ['finance', 'trading', 'deep learning', 'rnn']
-draft: true
+draft: false
 
 ---
 

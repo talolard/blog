@@ -1,7 +1,7 @@
 +++
 title = 'Tal Perry'
 date = 2024-03-15T09:41:38+01:00
-draft = true
+draft = false
 +++
 
 Sometimes I want to say things but can't find an open ear. That's when I write
