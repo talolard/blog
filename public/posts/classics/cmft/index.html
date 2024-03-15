@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liste - http://localhost:1313/">
+    <title>Convolutional Methods for Text | Tal Perry</title>
+    <meta name="description" content="">
+    <meta property="og:title" content="Convolutional Methods for Text" />
+<meta property="og:description" content="tl;dr RNNS work great for text but convolutions can do it faster Any part of a sentence can influence the semantics of a word. For that reason we want our network to see the entire input at once Getting that big a receptive can make gradients vanish and our networks fail We can solve the vanishing gradient problem with DenseNets or Dilated Convolutions Sometimes we need to generate text. We can use “deconvolutions” to generate arbitrarily long outputs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/classics/cmft/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-05-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-05-22T00:00:00+00:00" />
+
+
+    <meta itemprop="name" content="Convolutional Methods for Text">
+<meta itemprop="description" content="tl;dr RNNS work great for text but convolutions can do it faster Any part of a sentence can influence the semantics of a word. For that reason we want our network to see the entire input at once Getting that big a receptive can make gradients vanish and our networks fail We can solve the vanishing gradient problem with DenseNets or Dilated Convolutions Sometimes we need to generate text. We can use “deconvolutions” to generate arbitrarily long outputs."><meta itemprop="datePublished" content="2017-05-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-05-22T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3995">
+<meta itemprop="keywords" content="NLP,convolutions,deep learning,rnn," />
+    
+    <link rel="canonical" href="http://localhost:1313/posts/classics/cmft/">
+    <link rel="icon" href="http://localhost:1313//assets/favicon.ico">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <link rel="alternate" type="application/atom+xml" title="Tal Perry" href="http://localhost:1313//atom.xml" />
+    <link rel="alternate" type="application/json" title="Tal Perry" href="http://localhost:1313//feed.json" />
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+    
+    
+    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 '-apple-system',BlinkMacSystemFont,avenir next,avenir,helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#f5f5f5;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}h1,h2,h3,h4,h5,strong,b{font-size:inherit;font-weight:600}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%} </style>
+  
+    
+  
+  
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "articleSection": "posts",
+      "name": "Convolutional Methods for Text",
+      "headline": "Convolutional Methods for Text",
+      "alternativeHeadline": "",
+      "description": "tl;dr RNNS work great for text but convolutions can do it faster Any part of a sentence can influence the semantics of a word. For that reason we want our network to see the entire input at once Getting that big a receptive can make gradients vanish and our networks fail We can solve the vanishing gradient problem with DenseNets or Dilated Convolutions Sometimes we need to generate text. We can use “deconvolutions” to generate arbitrarily long outputs.",
+      "inLanguage": "en-us",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "http:\/\/localhost:1313\/posts\/classics\/cmft\/"
+      },
+      "author" : {
+          "@type": "Person",
+          "name": ""
+      },
+      "creator" : {
+          "@type": "Person",
+          "name": ""
+      },
+      "accountablePerson" : {
+          "@type": "Person",
+          "name": ""
+      },
+      "copyrightHolder" : "Tal Perry",
+      "copyrightYear" : "2017",
+      "dateCreated": "2017-05-22T00:00:00.00Z",
+      "datePublished": "2017-05-22T00:00:00.00Z",
+      "dateModified": "2017-05-22T00:00:00.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "Tal Perry",
+          "url": "http://localhost:1313/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "http:\/\/localhost:1313\/",
+              "width":"32",
+              "height":"32"
+          }
+      },
+      "image": "http://localhost:1313/",
+      "url" : "http:\/\/localhost:1313\/posts\/classics\/cmft\/",
+      "wordCount" : "3995",
+      "genre" : [ "NLP" , "convolutions" , "deep learning" , "rnn" ],
+      "keywords" : [ "NLP" , "convolutions" , "deep learning" , "rnn" ]
+  }
+  </script>
+  
+  
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    <header>
+<p style="padding: 0;margin: 0;">
+  <a href="/">
+    <b>Tal Perry</b>
+    <span class="text-stone-500 animate-blink">▮</span>
+  </a>
+</p>
+<ul style="padding: 0;margin: 0;">
+  
+  
+  </li>
+</ul>
+</header>
+<hr class="hr-list" style="padding: 0;margin: 0;">
+    <section>
+      <h2 class="post">Convolutional Methods for Text</h2>
+      <h3 id="tldr">tl;dr</h3>
+<ul>
+<li>RNNS work great for text but convolutions can do it faster</li>
+<li>Any part of a sentence can influence the semantics of a word. For that reason we want our network to see the entire input at once</li>
+<li>Getting that big a receptive can make gradients vanish and our networks fail</li>
+<li>We can solve the vanishing gradient problem with DenseNets or Dilated Convolutions</li>
+<li>Sometimes we need to generate text. We can use “deconvolutions” to generate arbitrarily long outputs.</li>
+</ul>
+<h3 id="intro">Intro</h3>
+<p>Over the last three years, the field of NLP has gone through a huge revolution thanks to deep learning. The leader of this revolution has been the recurrent neural network and particularly its manifestation as an LSTM. Concurrently the field of computer vision has been reshaped by convolutional neural networks. This post explores what we “text people” can learn from our friends who are doing vision.</p>
+<h3 id="common-nlp-tasks">Common NLP Tasks</h3>
+<p>To set the stage and agree on a vocabulary, I’d like to introduce a few of the more common tasks in NLP. For the sake of consistency, I’ll assume that all of our model’s inputs are characters and that our “unit of observation” is a sentence. Both of these assumptions are just for the sake of convenience and you can replace characters with words and sentences with documents if you so wish.</p>
+<h4 id="classification">Classification</h4>
+<p>Perhaps the oldest trick in the book, we often want to classify a sentence. For example, we might want to classify an email subject as indicative of spam, guess the sentiment of a product review or assign a topic to a document.</p>
+<p>The straightforward way to handle this kind of task with an RNN is to feed entire sentence into it, character by character, and then observe the RNNs final hidden state.</p>
+<h4 id="sequence-labeling">Sequence Labeling</h4>
+<p>Sequence labeling tasks are tasks that return an output for each input. Examples include part of speech labeling or entity recognition tasks. While the bare bones LSTM model is far from the state of the art, it is easy to implement and offers compelling results. See <a href="https://arxiv.org/pdf/1508.01991.pdf">this paper</a> for a more fleshed out architecture</p>
+<p><img
+  src="./1__dG7zvFdVcxVOgxuoAiPzKg.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<h4 id="sequence-generation">Sequence Generation</h4>
+<p>Arguably the most impressive results in recent NLP have been in translation. Translation is a mapping of one sequence to another, with no guarantees on the length of the output sentence. For example, translating the first words of the Bible from Hebrew to English is בראשית = “In the Beginning”.</p>
+<p>At the core of this success is the Sequence to Sequence (AKA encoder decoder) framework, a methodology to “compress” a sequence into a code and then decode it to another sequence. Notable examples include translation (Encode Hebrew and decode to English), image captioning (Encode an Image and decode a textual description of its contents)</p>
+<p><img
+  src="./0__1Iqz__fVS9wl78Mc6.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>The basic Encoder step is similar to the scheme we described for classification. What’s amazing is that we can build a decoder that learns to generate arbitrary length outputs.</p>
+<p>The two examples above are really both translation, but sequence generation is a bit broader than that. OpenAI recently <a href="https://blog.openai.com/unsupervised-sentiment-neuron/">published a paper</a> where they learn to generate “Amazon Reviews” while controlling the sentiment of the output</p>
+<p><img
+  src="./1__VciPYrmdgi46MTsEjqReHA.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>Another personal favorite is the paper <a href="https://arxiv.org/pdf/1511.06349.pdf">Generating Sentences from a Continuous Space</a>. In that paper, they trained a variational autoencoder on text, which led to the ability to interpolate between two sentences and get coherent results.</p>
+<p><img
+  src="./1__RldUDo1bMEaf__zrl__QuK1w.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<h3 id="requirements-from-an-nlp-architecture">Requirements from an NLP architecture</h3>
+<p>What all of the implementations we looked at have in common is that they use a recurrent architecture, usually an LSTM (If your not sure what that is, <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">here</a> is a great intro) . It is worth noting that none of the tasks had recurrent in their name, and none mentioned LSTMs. With that in mind, lets take a moment to think what RNNs and particularly LSTMs provide that make them so ubiquitous in NLP.</p>
+<h4 id="arbitrary-input-size">Arbitrary Input Size</h4>
+<p>A standard feed forward neural network has a parameter for every input. This becomes problematic when dealing with text or images for a few reasons.</p>
+<ol>
+<li>It restricts the input size we can handle. Our network will have a finite number of input nodes and won’t be able to grow to more.</li>
+<li>We lose a lot of common information. Consider the sentences “I like to drink beer a lot” and “I like to drink a lot of beer”. A feed forward network would have to learn about the concept of “a lot” twice as it appears in different input nodes each time.</li>
+</ol>
+<p>Recurrent neural networks solve this problem. Instead of having a node for each input, we have a big “box” of nodes that we apply to the input again and again. The “box” learns a sort of transition function, which means that the outputs follow some recurrence relation, hence the name.</p>
+<p>Remember that the <em>vision people</em> got a lot of the same effect for images using convolutions. That is, instead of having an input node for each pixel, convolutions allowed the reuse of the same, small set of parameters across the entire image.</p>
+<h4 id="long-term-dependencies">Long Term Dependencies</h4>
+<p>The promise of RNNs is their ability to implicitly model long term dependencies. The picture below is taken from OpenAI. They trained a model that ended up recognizing sentiment and colored the text, character by character, with the model’s output. Notice how the model sees the word “best” and triggers a positive sentiment which it carries on for over 100 characters. That’s capturing a long range dependency.</p>
+<p><img
+  src="./1__JkjF4jAZTpnbHHJJLkfNRQ.gif"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>The theory of RNNs promises us long range dependencies out of the box. The practice is a little more difficult. When we learn via backpropagation, we need to propagate the signal through the entire recurrence relation. The thing is, at every step we end up multiplying by a number. If those numbers are generally smaller than 1, our signal will quickly go to 0. If they are larger than 1, then our signal will explode.</p>
+<p>These issues are called the vanishing and exploding gradient and are generally resolved by LSTMs and a few clever tricks. I mention them know because we’ll encounter these problems again with convolutions and will need another way to address them.</p>
+<h3 id="advantages-of-convolutions">Advantages of convolutions</h3>
+<p>So far we’ve seen how great LSTMs are, but this post is about convolutions. In the spirit of <em>don’t fix what ain’t broken</em>, we have to ask ourselves why we’d want to use convolutions at all.</p>
+<p>One answer is “ Because we can”.</p>
+<p>But there are two other compelling reasons to use convolutions, speed, and context.</p>
+<h4 id="parrelalisation">Parrelalisation</h4>
+<p>RNNs operate sequentially, the output for the second input depends on the first one and so we can’t parallelise an RNN. Convolutions have no such problem, each “patch” a convolutional kernel operates on is independent of the other meaning that we can go over the entire input layer concurrently.</p>
+<p>There is a price to pay for this, as we’ll see we have to stack convolutions into deep layers in order to view the entire input and each of those layers is calculated sequentially. But the calculations at each layer happen concurrently and each individual computation is small (compared to an LSTM) such that in practice we get a big speed up.</p>
+<p>When I set out to write this I only had my own experience and Google’s ByteNet to back this claim up. Just this week, Facebook published their fully convolutional translation model and reported a 9X speed up over LSTM based models.</p>
+<h4 id="view-the-whole-input-at-once">View the whole input at once</h4>
+<p>LSTMs read their input from left to right (or right to left) but sometimes we’d like to have the context of the end of the sentence influence the networks thoughts about its begining. For example, we might have a sentence like “I’d love to buy your product. Not!” and we’d like that negation at the end to influence the entire sentence.</p>
+<p>With LSTMs we achieve this by running two LSTMs, one left to right and the other right to left and concatenating their outputs. This works well in practice but doubles our computational load.</p>
+<p>Convolutions, on the other hand, grow a larger “receptive field” as we stack more and more layers. That means that by default, each “step” in the convolution’s representation views all of the input in its receptive field, from before and after it. I’m not aware of any definitive argument that this is inherently better than an LSTM, but it does give us the desired effect in a controllable fashion and with a low computational cost.</p>
+<p>So far we’ve set up our problem domain and talked a bit about the conceptual advantages of convolutions for NLP. From here out, I’d like to translate those concepts into practical methods that we can use to analyze and construct our networks.</p>
+<h3 id="practical-convolutions-for-text">Practical convolutions for text</h3>
+<p><img
+  src="./1__1RpnAf____FGLDIVCBvHnDWA.gif"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>You’ve probably seen an animation like the one above illustrating what a convolution does. The bottom is an input image, the top is the result and the gray shadow is the convolutional kernel which is repeatedly applied.</p>
+<p>This all makes perfect sense except that the input described in the picture is an image, with two spatial dimensions (height and width). We’re talking about text, which has only one dimension, and it’s temporal not spatial.</p>
+<p>For all practical purposes, that doesn’t matter. We just need to think of our text as an image of width <em>n</em> and height 1. Tensorflow provides a conv1d function that does that for us, but it does not expose other convolutional operations in their 1d version.</p>
+<p>To make the “Text = an image of height 1” idea concrete, let’s see how we’d use the 2d convolutional op in Tensorflow on a sequence of embedded tokens.</p>
+<p>So what we’re doing here is changing the shape of input with tf.expand_dims so that it becomes an “Image of height 1”. After running the 2d convolution operator we squeeze away the extra dimension.</p>
+<h3 id="hierarchy-and-receptive-fields">Hierarchy and Receptive Fields</h3>
+<p><img
+  src="./0__6D1POMKVqeCk6VgP.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>Many of us have seen pictures like the one above. It roughly shows the hierarchy of abstractions a CNN learns on images. In the first layer, the network learns basic edges. In the next layer, it combines those edges to learn more abstract concepts like eyes and noses. Finally, it combines those to recognize individual faces.</p>
+<p>With that in mind, we need to remember that each layer doesn’t just learn more abstract combinations of the previous layer. Successive layers, implicitly or explicitly, see more of the input</p>
+<p><img
+  src="./0__sPEItE5rSfKSUBbP.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<h4 id="increasing-receptive-field">Increasing Receptive Field</h4>
+<p>With vision often we’ll want the network to identify one or more objects in the picture while ignoring others. That is, we’ll be interested in some local phenomenon but not in a relationship that spans the entire input.</p>
+<p><img
+  src="./1__F8xWuumU27H9PDlYMEtE5Q.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>Text is more subtle as often we’ll want intermediate representations of our data to carry as much context about their surroundings as they possibly can. In other words, we want to have as large a receptive field as possible. Their are a few ways to go about this.</p>
+<h4 id="larger-filters">Larger Filters</h4>
+<p>The first, most obvious, way is to increase the filter size, that is doing a [1x5] convolution instead of a [1x3]. In my work with text, I’ve not had great results with this and I’ll offer my speculations as to why.</p>
+<p>In my domain, I mostly deal with character level inputs and with texts that are morphologicaly very rich. I think of (at least the first) layers of convolution as learning n-grams so that the width of the filter corresponds to bigrams, trigrams etc. Having the network learn larger n-grams early exposes it to fewer examples, as there are more occurrences of “ab” in a text than “abb”.</p>
+<p>I’ve never proved this interpretation but have gotten consistently poorer results with filter widths larger than 3.</p>
+<h4 id="adding-layers">Adding Layers</h4>
+<p>As we saw in the picture above, adding more layers will increase the receptive field. <a href="https://medium.com/u/b04dc6044cc">Dang Ha The Hien</a> wrote a <a href="https://medium.com/@nikasa1889/a-guide-to-receptive-field-arithmetic-for-convolutional-neural-networks-e0f514068807">great guide</a> to calculating the receptive field at each layer which I encourage you to read.</p>
+<p>Adding layers has two distinct but related effects. The one that gets thrown around a lot is that the model will learn to make higher level abstractions over the inputs that it gets (Pixels =&gt;Edges =&gt; Eyes =&gt; Face). The other is that the receptive field grows at each step .</p>
+<p>This means that given enough depth, our network could look at the entire input layer though perhaps through a haze of abstractions. Unfortunately this is where the vanishing gradient problem may rear its ugly head.</p>
+<h4 id="the-gradient--receptive-field-trade-off">The Gradient / Receptive field trade off</h4>
+<p>Neural networks are networks that information flows through. In the forward pass our input flows and transforms, hopefully becoming a representation that is more amenable to our task. During the back phase we propagate a signal, the gradient, back through the network. Just like in vanilla RNNs, that signal gets multiplied frequently and if it goes through a series of numbers that are smaller than 1 then it will fade to 0. That means that our network will end up with very little signal to learn from.</p>
+<p>This leaves us with something of a tradeoff. On the one hand, we’d like to be able to take in as much context as possible. On the other hand, if we try to increase our receptive fields by stacking layers we risk vanishing gradients and a failure to learn anything.</p>
+<h3 id="two-solutions-to-the-vanishing-gradient-problem">Two Solutions to the Vanishing Gradient Problem</h3>
+<p>Luckily, many smart people have been thinking about these problems. Luckier still, these aren’t problems that are unique to text, the <em>vision people</em> also want larger receptive fields and information rich gradients. Let’s take a look at some of their crazy ideas and use them to further our own textual glory.</p>
+<h4 id="residual-connections">Residual Connections</h4>
+<p>2016 was another great year for the <em>vision people</em> with at least two very popular architectures emerging, <a href="https://arxiv.org/abs/1512.03385">ResNets</a> and <a href="https://arxiv.org/abs/1608.06993">DenseNets</a> (The DenseNet paper, in particular, is exceptionally well written and well worth the read) . Both of them address the same problem “How do I make my network very deep without losing the gradient signal?”</p>
+<p><a href="https://medium.com/u/18dfe63fa7f0">Arthur Juliani</a> wrote a fantastic overview of <a href="https://chatbotslife.com/resnets-highwaynets-and-densenets-oh-my-9bb15918ee32">Resnet, DenseNets and Highway networks</a> for those of you looking for the details and comparison. I’ll briefly touch on DenseNets which take the core concept to its extreme.</p>
+<p><img
+  src="./1__KOjUX1ST5RnDOZWWLWRGkw.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>The general idea is to reduce the distance between the signal coming from the networks loss and each individual layer. The way this is done is by adding a residual/direct connection between every layer and its predecessors. That way, the gradient can flow from each layer to its predecessors directly.</p>
+<p>DenseNets do this in a particularly interesting way. They concatenate the output of each layer to its input such that:</p>
+<ol>
+<li>We start with an embedding of our inputs, say of dimension 10.</li>
+<li>Our first layer calculates 10 feature maps. It outputs the 10 feature maps concatenated to the original embedding.</li>
+<li>The second layer gets as input 20 dimensional vectors (10 from the input and 10 from the previous layer) and calculates another 10 feature maps. Thus it outputs 30 dimensional vectors.</li>
+</ol>
+<p>And so on and so on for as many layers as you’d like. The paper describes a boat load of tricks to make things manageable and efficient but that’s the basic premise and the vanishing gradient problem is solved.</p>
+<p>There are two other things I’d like to point out.</p>
+<ol>
+<li>I previously mentioned that upper layers have a view of the original input that may be hazed by layers of abstraction. One of the highlights of concatenating the outputs of each layer is that the original signal reaches the following layers intact, so that all layers have a direct view of lower level features, essentially removing some of the haze.</li>
+<li>The Residual connection trick requires that all of our layers have the same shape. That means that we need to pad each layer so that its input and output have the same spatial dimensions [1Xwidth]. That means that, on its own, this kind of architecture will work for sequence labeling tasks (Where the input and the output have the same spatial dimensions) but will need more work for encoding and classification tasks (Where we need to reduce the input to a fixed size vector or set of vectors). The DenseNet paper actually handles this as their goal is to do classification and we’ll expand on this point later.</li>
+</ol>
+<h4 id="dilated-convolutions">Dilated Convolutions</h4>
+<p>Dilated convolutions AKA <em>atrous</em> convolutions AKA convolutions with holes are another method of increasing the receptive field without angering the gradient gods. When we looked at stacking layers so far, we saw that the receptive field grows linearly with depth. Dilated convolutions let us grow the receptive field exponentially with depth.</p>
+<p>You can find an almost accessible explanation of dilated convolutions in the paper <a href="https://arxiv.org/pdf/1511.07122.pdf">Multi scale context aggregation by dilated convolutions</a> which uses them for vision. While conceptually simple, it took me a while to understand exactly what they do, and I may still have it not quite right.</p>
+<p>The basic idea is to introduce “holes” into each filter, so that it doesn’t operate on adjacent parts of the input but rather skips over them to parts further away. Note that this is different from applying a convolution with stride &gt;1. When we stride a filter, we skip over parts of the input between applications of the convolution. With dilated convolutions, we skip over parts of the input within a single application of the convolution. By cleverly arranging growing dilations we can achieve the promised exponential growth in receptive fields.</p>
+<p><img
+  src="/tmp/med/posts/md_1655784454356/img/0__3TaOHT7v18NQewlM."
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>We’ve talked a lot of theory so far, but we’re finally at a point where we can see this stuff in action!</p>
+<p>A personal favorite paper is <a href="https://arxiv.org/pdf/1610.10099.pdf">Neural Machine Translation in Linear Time</a>. It follows the encoder decoder structure we talked about in the beginning. We still don’t have all the tools to talk about the decoder, but we can see the encoder in action.</p>
+<p><img
+  src="./1__iBnuidVcY5gPbWCKgmquzA.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>And here’s an English input</p>
+<blockquote>
+<p>Director Jon Favreau, who is currently working on Disney’s forthcoming Jungle Book film, told the website Hollywood Reporter: “I think times are changing.”</p>
+</blockquote>
+<p>And its translation, brought to you by dilated convolutions</p>
+<blockquote>
+<p>Regisseur Jon Favreau, der zur Zeit an Disneys kommendem Jungle Book Film arbeitet, hat der Website Hollywood Reporter gesagt: “Ich denke, die Zeiten andern sich”.</p>
+</blockquote>
+<p>And as a bonus, remember that sound is just like text, in the sense that it has just one spatial/temporal dimension. Check out DeepMind’s <a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/">Wavenet</a> which uses dilated convolutions (and a lot of other magic) to generate <a href="https://storage.googleapis.com/deepmind-media/pixie/knowing-what-to-say/second-list/speaker-1.wav">human sounding speech</a> and <a href="https://storage.googleapis.com/deepmind-media/pixie/making-music/sample_4.wav">piano music</a>.</p>
+<h3 id="getting-stuff-out-of-your-network">Getting Stuff Out of your network</h3>
+<p>When we discussed DenseNets I mentioned that the use of residual connections forces us to keep the input and output length of our sequence the same, which is done via padding. This is great for tasks where we need to label each item in our sequence for example:</p>
+<ul>
+<li>In parts of speech tagging where each word is a part of speech.</li>
+<li>In entity recognition where we might label Person, Company, and Other for everything else</li>
+</ul>
+<p>Other times we’ll want to reduce our input sequence down to a vector representation and use that to predict something about the entire sentence</p>
+<ul>
+<li>We might want to label an email as spam based on its content and or subject</li>
+<li>Predict if a certain sentence is sarcastic or not</li>
+</ul>
+<p>In these cases, we can follow the traditional approaches of the <em>vision people</em> and top off our network with convolutional layers that don’t have padding and/or use pooling operations.</p>
+<p>But sometimes we’ll want to follow the Seq2Seq paradigm, what <a href="https://medium.com/u/42936aed59d2">Matthew Honnibal</a> succinctly called <a href="https://explosion.ai/blog/deep-learning-formula-nlp"><em>Embed, encode, attend, predict</em></a><em>.</em> In this case, we reduce our input down to some vector representation but then need to somehow up sample that vector back to a sequence of the proper length.</p>
+<p>This task entails two problems</p>
+<ul>
+<li>How do we do upsampling with convolutions ?</li>
+<li>How do we do exactly the right amount of up sampling?</li>
+</ul>
+<p>I still haven’t found the answer to the second question or at least have not yet understood it. In practice, it’s been enough for me to assume some upper bound on the maximum length of the output and then upsample to that point. I suspect Facebooks new <a href="https://s3.amazonaws.com/fairseq/papers/convolutional-sequence-to-sequence-learning.pdf">translation paper</a> may address this but have not yet read it deeply enough to comment.</p>
+<h4 id="upsampling-with-deconvolutions">Upsampling with deconvolutions</h4>
+<p>Deconvolutions are our tool for upsampling. It’s easiest (for me) to understand what they do through visualizations. Luckily, a few smart folks published a <a href="http://distill.pub/2016/deconv-checkerboard/">great post on deconvolutions</a> over at Distill and included some fun visualizers. Lets start with those.</p>
+<p><img
+  src="./1__TbzTaipbTKQYo0MKHCf__ZA.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>Consider the image on top. If we take the bottom layer as the input we have a standard convolution of stride 1 and width 3. <em>But,</em> we can also go from top down, that is treat the top layer as the input and get the slightly larger bottom layer.</p>
+<p>If you stop to think about that for a second, this “top down” operation is already happening in your convolutional networks when you do back propagation, as the gradient signals need to propagate in exactly the way shown in the picture. Even better, it turns out that this operation is simply the transpose of the convolution operation, hence the other common (and technically correct) name for this operation, transposed convolution.</p>
+<p>Here’s where it gets fun. We can stride our convolutions to shrink our input. Thus we can stride our deconvolutions to grow our input. I think the easiest way to understand how strides work with deconvolutions is to look at the following pictures.</p>
+<p><img
+  src="./1__TbzTaipbTKQYo0MKHCf__ZA.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+
+<img
+  src="./1__ZyZpAur5DugJNcdt1__bNaw.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>We’ve already seen the top one. Notice that each input (the top layer) feeds three of the outputs and that each of the outputs is fed by three inputs (except the edges).</p>
+<p><img
+  src="./1__xDtirriDTQHaXlqVl0s__GA.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>In the second picture we place imaginary holes in our inputs. Notice that now each of the outputs is fed by at most two inputs.</p>
+<p><img
+  src="./1__K6iQnpVMn3pDqOdFZfZsLg.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>In the third picture we’ve added two imaginary holes into out input layer and so each output is fed by exactly one input. This ends up tripling the sequence length of our output with respect to the sequence length of our input.</p>
+<p>Finally, we can stack multiple deconvolutional layers to gradually grow our output layer to the desired size.</p>
+<p>A few things worth thinking about</p>
+<ol>
+<li>If you look at these drawings from bottom up, they end up being standard strided convolutions where we just added imaginary holes at the output layers (The white blocks)</li>
+<li>In practice, each “input” isn’t a single number but a vector. In the image world, it might be a 3 dimensional RGB value. In text it might be a 300 dimensional word embedding. If you’re (de)convolving in the middle of your network each point would be a vector of whatever size came out of the last layer.</li>
+<li>I point that out to convince you that their is enough information in the input layer of a deconvolution to spread across a few points in the output.</li>
+<li>In practice, I’ve had success running a few convolutions with length preserving padding after a deconvolution. I imagine, though haven’t proven, that this acts like a redistribution of information. I think of it like letting a steak rest after grilling to let the juices redistribute.</li>
+</ol>
+<p><img
+  src="./0__fqVi____8myNwH2cDH.png"
+  alt=""
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<h3 id="summary">Summary</h3>
+<p>The main reason you might want to consider convolutions in your work is because they are fast. I think that’s important to make research and exploration faster and more efficient. Faster networks shorten our feedback cycles.</p>
+<p>Most of the tasks I’ve encountered with text end up having the same requirement of the architecture: Maximize the receptive field while maintaining an adequate flow of gradients. We’ve seen the use of both DenseNets and dilated convolutions to achieve that.</p>
+<p>Finally, sometimes we want to expand a sequence or a vector into a larger sequence. We looked at deconvolutions as a way to do “upsampling” on text and as a bonus compared adding a convolution afterwards the letting a steak rest and redistribute its juices.</p>
+<p>I’d love to learn more about your thoughts and experiences with these kinds of models. Share in the comments or ping me on twitter <a href="https://twitter.com/thetalperry">@thetalperry</a></p>
+
+      
+      <div class="post-date">
+        <span class="g time">May 22, 2017 </span> &#8729;
+         
+         <a href="http://localhost:1313/tags/nlp/">nlp</a> <a href="http://localhost:1313/tags/convolutions/">convolutions</a> <a href="http://localhost:1313/tags/deep-learning/">deep-learning</a> <a href="http://localhost:1313/tags/rnn/">rnn</a>
+      </div>
+      
+    </section>
+    
+    <div id="comments">
+      <script src="https://utteranc.es/client.js"
+    repo=ZgotmplZ
+    issue-term="pathname"
+    theme=ZgotmplZ
+    crossorigin="anonymous"
+    async>
+</script>
+
+    </div>
+    
+  </div>
+</main>
+</body>
+</html>

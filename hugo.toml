@@ -1,0 +1,4 @@
+baseURL = 'https://talperry.com/'
+languageCode = 'en-us'
+title = 'Tal Perry'
+theme = 'maverick'

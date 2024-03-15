@@ -1,0 +1,570 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>Tal Perry</title>
+    <description></description>
+    <link>http://localhost:1313/</link>
+    
+    <language>en</language>
+    <copyright>Copyright 2024, Calvin Tran</copyright>
+    <lastBuildDate>Fri, 15 Mar 2024 09:41:38 +0100</lastBuildDate>
+    <generator>Hugo - gohugo.io</generator>
+    <docs>http://cyber.harvard.edu/rss/rss.html</docs>
+    <atom:link href="http://localhost:1313//atom.xml" rel="self" type="application/atom+xml"/>
+    
+    
+    <item>
+      <title>Lighttag</title>
+      <link>http://localhost:1313/posts/portfolio/lighttag/</link>
+      <description>&lt;p&gt;This is a write up&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fib&lt;/span&gt;(n :int): &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; int
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; n&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;fib(n&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <author></author>
+      <guid>http://localhost:1313/posts/portfolio/lighttag/</guid>
+      <pubDate>Fri, 15 Mar 2024 09:41:38 +0100</pubDate>
+    </item>
+    
+    <item>
+      <title>Convolutional Methods for Text</title>
+      <link>http://localhost:1313/posts/classics/cmft/</link>
+      <description>&lt;h3 id=&#34;tldr&#34;&gt;tl;dr&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;RNNS work great for text but convolutions can do it faster&lt;/li&gt;
+&lt;li&gt;Any part of a sentence can influence the semantics of a word. For that reason we want our network to see the entire input at once&lt;/li&gt;
+&lt;li&gt;Getting that big a receptive can make gradients vanish and our networks fail&lt;/li&gt;
+&lt;li&gt;We can solve the vanishing gradient problem with DenseNets or Dilated Convolutions&lt;/li&gt;
+&lt;li&gt;Sometimes we need to generate text. We can use “deconvolutions” to generate arbitrarily long outputs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
+&lt;p&gt;Over the last three years, the field of NLP has gone through a huge revolution thanks to deep learning. The leader of this revolution has been the recurrent neural network and particularly its manifestation as an LSTM. Concurrently the field of computer vision has been reshaped by convolutional neural networks. This post explores what we “text people” can learn from our friends who are doing vision.&lt;/p&gt;
+&lt;h3 id=&#34;common-nlp-tasks&#34;&gt;Common NLP Tasks&lt;/h3&gt;
+&lt;p&gt;To set the stage and agree on a vocabulary, I’d like to introduce a few of the more common tasks in NLP. For the sake of consistency, I’ll assume that all of our model’s inputs are characters and that our “unit of observation” is a sentence. Both of these assumptions are just for the sake of convenience and you can replace characters with words and sentences with documents if you so wish.&lt;/p&gt;
+&lt;h4 id=&#34;classification&#34;&gt;Classification&lt;/h4&gt;
+&lt;p&gt;Perhaps the oldest trick in the book, we often want to classify a sentence. For example, we might want to classify an email subject as indicative of spam, guess the sentiment of a product review or assign a topic to a document.&lt;/p&gt;
+&lt;p&gt;The straightforward way to handle this kind of task with an RNN is to feed entire sentence into it, character by character, and then observe the RNNs final hidden state.&lt;/p&gt;
+&lt;h4 id=&#34;sequence-labeling&#34;&gt;Sequence Labeling&lt;/h4&gt;
+&lt;p&gt;Sequence labeling tasks are tasks that return an output for each input. Examples include part of speech labeling or entity recognition tasks. While the bare bones LSTM model is far from the state of the art, it is easy to implement and offers compelling results. See &lt;a href=&#34;https://arxiv.org/pdf/1508.01991.pdf&#34;&gt;this paper&lt;/a&gt; for a more fleshed out architecture&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__dG7zvFdVcxVOgxuoAiPzKg.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;h4 id=&#34;sequence-generation&#34;&gt;Sequence Generation&lt;/h4&gt;
+&lt;p&gt;Arguably the most impressive results in recent NLP have been in translation. Translation is a mapping of one sequence to another, with no guarantees on the length of the output sentence. For example, translating the first words of the Bible from Hebrew to English is בראשית = “In the Beginning”.&lt;/p&gt;
+&lt;p&gt;At the core of this success is the Sequence to Sequence (AKA encoder decoder) framework, a methodology to “compress” a sequence into a code and then decode it to another sequence. Notable examples include translation (Encode Hebrew and decode to English), image captioning (Encode an Image and decode a textual description of its contents)&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./0__1Iqz__fVS9wl78Mc6.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;The basic Encoder step is similar to the scheme we described for classification. What’s amazing is that we can build a decoder that learns to generate arbitrary length outputs.&lt;/p&gt;
+&lt;p&gt;The two examples above are really both translation, but sequence generation is a bit broader than that. OpenAI recently &lt;a href=&#34;https://blog.openai.com/unsupervised-sentiment-neuron/&#34;&gt;published a paper&lt;/a&gt; where they learn to generate “Amazon Reviews” while controlling the sentiment of the output&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__VciPYrmdgi46MTsEjqReHA.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Another personal favorite is the paper &lt;a href=&#34;https://arxiv.org/pdf/1511.06349.pdf&#34;&gt;Generating Sentences from a Continuous Space&lt;/a&gt;. In that paper, they trained a variational autoencoder on text, which led to the ability to interpolate between two sentences and get coherent results.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__RldUDo1bMEaf__zrl__QuK1w.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;h3 id=&#34;requirements-from-an-nlp-architecture&#34;&gt;Requirements from an NLP architecture&lt;/h3&gt;
+&lt;p&gt;What all of the implementations we looked at have in common is that they use a recurrent architecture, usually an LSTM (If your not sure what that is, &lt;a href=&#34;http://karpathy.github.io/2015/05/21/rnn-effectiveness/&#34;&gt;here&lt;/a&gt; is a great intro) . It is worth noting that none of the tasks had recurrent in their name, and none mentioned LSTMs. With that in mind, lets take a moment to think what RNNs and particularly LSTMs provide that make them so ubiquitous in NLP.&lt;/p&gt;
+&lt;h4 id=&#34;arbitrary-input-size&#34;&gt;Arbitrary Input Size&lt;/h4&gt;
+&lt;p&gt;A standard feed forward neural network has a parameter for every input. This becomes problematic when dealing with text or images for a few reasons.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It restricts the input size we can handle. Our network will have a finite number of input nodes and won’t be able to grow to more.&lt;/li&gt;
+&lt;li&gt;We lose a lot of common information. Consider the sentences “I like to drink beer a lot” and “I like to drink a lot of beer”. A feed forward network would have to learn about the concept of “a lot” twice as it appears in different input nodes each time.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Recurrent neural networks solve this problem. Instead of having a node for each input, we have a big “box” of nodes that we apply to the input again and again. The “box” learns a sort of transition function, which means that the outputs follow some recurrence relation, hence the name.&lt;/p&gt;
+&lt;p&gt;Remember that the &lt;em&gt;vision people&lt;/em&gt; got a lot of the same effect for images using convolutions. That is, instead of having an input node for each pixel, convolutions allowed the reuse of the same, small set of parameters across the entire image.&lt;/p&gt;
+&lt;h4 id=&#34;long-term-dependencies&#34;&gt;Long Term Dependencies&lt;/h4&gt;
+&lt;p&gt;The promise of RNNs is their ability to implicitly model long term dependencies. The picture below is taken from OpenAI. They trained a model that ended up recognizing sentiment and colored the text, character by character, with the model’s output. Notice how the model sees the word “best” and triggers a positive sentiment which it carries on for over 100 characters. That’s capturing a long range dependency.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__JkjF4jAZTpnbHHJJLkfNRQ.gif&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;The theory of RNNs promises us long range dependencies out of the box. The practice is a little more difficult. When we learn via backpropagation, we need to propagate the signal through the entire recurrence relation. The thing is, at every step we end up multiplying by a number. If those numbers are generally smaller than 1, our signal will quickly go to 0. If they are larger than 1, then our signal will explode.&lt;/p&gt;
+&lt;p&gt;These issues are called the vanishing and exploding gradient and are generally resolved by LSTMs and a few clever tricks. I mention them know because we’ll encounter these problems again with convolutions and will need another way to address them.&lt;/p&gt;
+&lt;h3 id=&#34;advantages-of-convolutions&#34;&gt;Advantages of convolutions&lt;/h3&gt;
+&lt;p&gt;So far we’ve seen how great LSTMs are, but this post is about convolutions. In the spirit of &lt;em&gt;don’t fix what ain’t broken&lt;/em&gt;, we have to ask ourselves why we’d want to use convolutions at all.&lt;/p&gt;
+&lt;p&gt;One answer is “ Because we can”.&lt;/p&gt;
+&lt;p&gt;But there are two other compelling reasons to use convolutions, speed, and context.&lt;/p&gt;
+&lt;h4 id=&#34;parrelalisation&#34;&gt;Parrelalisation&lt;/h4&gt;
+&lt;p&gt;RNNs operate sequentially, the output for the second input depends on the first one and so we can’t parallelise an RNN. Convolutions have no such problem, each “patch” a convolutional kernel operates on is independent of the other meaning that we can go over the entire input layer concurrently.&lt;/p&gt;
+&lt;p&gt;There is a price to pay for this, as we’ll see we have to stack convolutions into deep layers in order to view the entire input and each of those layers is calculated sequentially. But the calculations at each layer happen concurrently and each individual computation is small (compared to an LSTM) such that in practice we get a big speed up.&lt;/p&gt;
+&lt;p&gt;When I set out to write this I only had my own experience and Google’s ByteNet to back this claim up. Just this week, Facebook published their fully convolutional translation model and reported a 9X speed up over LSTM based models.&lt;/p&gt;
+&lt;h4 id=&#34;view-the-whole-input-at-once&#34;&gt;View the whole input at once&lt;/h4&gt;
+&lt;p&gt;LSTMs read their input from left to right (or right to left) but sometimes we’d like to have the context of the end of the sentence influence the networks thoughts about its begining. For example, we might have a sentence like “I’d love to buy your product. Not!” and we’d like that negation at the end to influence the entire sentence.&lt;/p&gt;
+&lt;p&gt;With LSTMs we achieve this by running two LSTMs, one left to right and the other right to left and concatenating their outputs. This works well in practice but doubles our computational load.&lt;/p&gt;
+&lt;p&gt;Convolutions, on the other hand, grow a larger “receptive field” as we stack more and more layers. That means that by default, each “step” in the convolution’s representation views all of the input in its receptive field, from before and after it. I’m not aware of any definitive argument that this is inherently better than an LSTM, but it does give us the desired effect in a controllable fashion and with a low computational cost.&lt;/p&gt;
+&lt;p&gt;So far we’ve set up our problem domain and talked a bit about the conceptual advantages of convolutions for NLP. From here out, I’d like to translate those concepts into practical methods that we can use to analyze and construct our networks.&lt;/p&gt;
+&lt;h3 id=&#34;practical-convolutions-for-text&#34;&gt;Practical convolutions for text&lt;/h3&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__1RpnAf____FGLDIVCBvHnDWA.gif&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;You’ve probably seen an animation like the one above illustrating what a convolution does. The bottom is an input image, the top is the result and the gray shadow is the convolutional kernel which is repeatedly applied.&lt;/p&gt;
+&lt;p&gt;This all makes perfect sense except that the input described in the picture is an image, with two spatial dimensions (height and width). We’re talking about text, which has only one dimension, and it’s temporal not spatial.&lt;/p&gt;
+&lt;p&gt;For all practical purposes, that doesn’t matter. We just need to think of our text as an image of width &lt;em&gt;n&lt;/em&gt; and height 1. Tensorflow provides a conv1d function that does that for us, but it does not expose other convolutional operations in their 1d version.&lt;/p&gt;
+&lt;p&gt;To make the “Text = an image of height 1” idea concrete, let’s see how we’d use the 2d convolutional op in Tensorflow on a sequence of embedded tokens.&lt;/p&gt;
+&lt;p&gt;So what we’re doing here is changing the shape of input with tf.expand_dims so that it becomes an “Image of height 1”. After running the 2d convolution operator we squeeze away the extra dimension.&lt;/p&gt;
+&lt;h3 id=&#34;hierarchy-and-receptive-fields&#34;&gt;Hierarchy and Receptive Fields&lt;/h3&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./0__6D1POMKVqeCk6VgP.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Many of us have seen pictures like the one above. It roughly shows the hierarchy of abstractions a CNN learns on images. In the first layer, the network learns basic edges. In the next layer, it combines those edges to learn more abstract concepts like eyes and noses. Finally, it combines those to recognize individual faces.&lt;/p&gt;
+&lt;p&gt;With that in mind, we need to remember that each layer doesn’t just learn more abstract combinations of the previous layer. Successive layers, implicitly or explicitly, see more of the input&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./0__sPEItE5rSfKSUBbP.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;h4 id=&#34;increasing-receptive-field&#34;&gt;Increasing Receptive Field&lt;/h4&gt;
+&lt;p&gt;With vision often we’ll want the network to identify one or more objects in the picture while ignoring others. That is, we’ll be interested in some local phenomenon but not in a relationship that spans the entire input.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__F8xWuumU27H9PDlYMEtE5Q.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Text is more subtle as often we’ll want intermediate representations of our data to carry as much context about their surroundings as they possibly can. In other words, we want to have as large a receptive field as possible. Their are a few ways to go about this.&lt;/p&gt;
+&lt;h4 id=&#34;larger-filters&#34;&gt;Larger Filters&lt;/h4&gt;
+&lt;p&gt;The first, most obvious, way is to increase the filter size, that is doing a [1x5] convolution instead of a [1x3]. In my work with text, I’ve not had great results with this and I’ll offer my speculations as to why.&lt;/p&gt;
+&lt;p&gt;In my domain, I mostly deal with character level inputs and with texts that are morphologicaly very rich. I think of (at least the first) layers of convolution as learning n-grams so that the width of the filter corresponds to bigrams, trigrams etc. Having the network learn larger n-grams early exposes it to fewer examples, as there are more occurrences of “ab” in a text than “abb”.&lt;/p&gt;
+&lt;p&gt;I’ve never proved this interpretation but have gotten consistently poorer results with filter widths larger than 3.&lt;/p&gt;
+&lt;h4 id=&#34;adding-layers&#34;&gt;Adding Layers&lt;/h4&gt;
+&lt;p&gt;As we saw in the picture above, adding more layers will increase the receptive field. &lt;a href=&#34;https://medium.com/u/b04dc6044cc&#34;&gt;Dang Ha The Hien&lt;/a&gt; wrote a &lt;a href=&#34;https://medium.com/@nikasa1889/a-guide-to-receptive-field-arithmetic-for-convolutional-neural-networks-e0f514068807&#34;&gt;great guide&lt;/a&gt; to calculating the receptive field at each layer which I encourage you to read.&lt;/p&gt;
+&lt;p&gt;Adding layers has two distinct but related effects. The one that gets thrown around a lot is that the model will learn to make higher level abstractions over the inputs that it gets (Pixels =&amp;gt;Edges =&amp;gt; Eyes =&amp;gt; Face). The other is that the receptive field grows at each step .&lt;/p&gt;
+&lt;p&gt;This means that given enough depth, our network could look at the entire input layer though perhaps through a haze of abstractions. Unfortunately this is where the vanishing gradient problem may rear its ugly head.&lt;/p&gt;
+&lt;h4 id=&#34;the-gradient--receptive-field-trade-off&#34;&gt;The Gradient / Receptive field trade off&lt;/h4&gt;
+&lt;p&gt;Neural networks are networks that information flows through. In the forward pass our input flows and transforms, hopefully becoming a representation that is more amenable to our task. During the back phase we propagate a signal, the gradient, back through the network. Just like in vanilla RNNs, that signal gets multiplied frequently and if it goes through a series of numbers that are smaller than 1 then it will fade to 0. That means that our network will end up with very little signal to learn from.&lt;/p&gt;
+&lt;p&gt;This leaves us with something of a tradeoff. On the one hand, we’d like to be able to take in as much context as possible. On the other hand, if we try to increase our receptive fields by stacking layers we risk vanishing gradients and a failure to learn anything.&lt;/p&gt;
+&lt;h3 id=&#34;two-solutions-to-the-vanishing-gradient-problem&#34;&gt;Two Solutions to the Vanishing Gradient Problem&lt;/h3&gt;
+&lt;p&gt;Luckily, many smart people have been thinking about these problems. Luckier still, these aren’t problems that are unique to text, the &lt;em&gt;vision people&lt;/em&gt; also want larger receptive fields and information rich gradients. Let’s take a look at some of their crazy ideas and use them to further our own textual glory.&lt;/p&gt;
+&lt;h4 id=&#34;residual-connections&#34;&gt;Residual Connections&lt;/h4&gt;
+&lt;p&gt;2016 was another great year for the &lt;em&gt;vision people&lt;/em&gt; with at least two very popular architectures emerging, &lt;a href=&#34;https://arxiv.org/abs/1512.03385&#34;&gt;ResNets&lt;/a&gt; and &lt;a href=&#34;https://arxiv.org/abs/1608.06993&#34;&gt;DenseNets&lt;/a&gt; (The DenseNet paper, in particular, is exceptionally well written and well worth the read) . Both of them address the same problem “How do I make my network very deep without losing the gradient signal?”&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://medium.com/u/18dfe63fa7f0&#34;&gt;Arthur Juliani&lt;/a&gt; wrote a fantastic overview of &lt;a href=&#34;https://chatbotslife.com/resnets-highwaynets-and-densenets-oh-my-9bb15918ee32&#34;&gt;Resnet, DenseNets and Highway networks&lt;/a&gt; for those of you looking for the details and comparison. I’ll briefly touch on DenseNets which take the core concept to its extreme.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__KOjUX1ST5RnDOZWWLWRGkw.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;The general idea is to reduce the distance between the signal coming from the networks loss and each individual layer. The way this is done is by adding a residual/direct connection between every layer and its predecessors. That way, the gradient can flow from each layer to its predecessors directly.&lt;/p&gt;
+&lt;p&gt;DenseNets do this in a particularly interesting way. They concatenate the output of each layer to its input such that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We start with an embedding of our inputs, say of dimension 10.&lt;/li&gt;
+&lt;li&gt;Our first layer calculates 10 feature maps. It outputs the 10 feature maps concatenated to the original embedding.&lt;/li&gt;
+&lt;li&gt;The second layer gets as input 20 dimensional vectors (10 from the input and 10 from the previous layer) and calculates another 10 feature maps. Thus it outputs 30 dimensional vectors.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And so on and so on for as many layers as you’d like. The paper describes a boat load of tricks to make things manageable and efficient but that’s the basic premise and the vanishing gradient problem is solved.&lt;/p&gt;
+&lt;p&gt;There are two other things I’d like to point out.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I previously mentioned that upper layers have a view of the original input that may be hazed by layers of abstraction. One of the highlights of concatenating the outputs of each layer is that the original signal reaches the following layers intact, so that all layers have a direct view of lower level features, essentially removing some of the haze.&lt;/li&gt;
+&lt;li&gt;The Residual connection trick requires that all of our layers have the same shape. That means that we need to pad each layer so that its input and output have the same spatial dimensions [1Xwidth]. That means that, on its own, this kind of architecture will work for sequence labeling tasks (Where the input and the output have the same spatial dimensions) but will need more work for encoding and classification tasks (Where we need to reduce the input to a fixed size vector or set of vectors). The DenseNet paper actually handles this as their goal is to do classification and we’ll expand on this point later.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;dilated-convolutions&#34;&gt;Dilated Convolutions&lt;/h4&gt;
+&lt;p&gt;Dilated convolutions AKA &lt;em&gt;atrous&lt;/em&gt; convolutions AKA convolutions with holes are another method of increasing the receptive field without angering the gradient gods. When we looked at stacking layers so far, we saw that the receptive field grows linearly with depth. Dilated convolutions let us grow the receptive field exponentially with depth.&lt;/p&gt;
+&lt;p&gt;You can find an almost accessible explanation of dilated convolutions in the paper &lt;a href=&#34;https://arxiv.org/pdf/1511.07122.pdf&#34;&gt;Multi scale context aggregation by dilated convolutions&lt;/a&gt; which uses them for vision. While conceptually simple, it took me a while to understand exactly what they do, and I may still have it not quite right.&lt;/p&gt;
+&lt;p&gt;The basic idea is to introduce “holes” into each filter, so that it doesn’t operate on adjacent parts of the input but rather skips over them to parts further away. Note that this is different from applying a convolution with stride &amp;gt;1. When we stride a filter, we skip over parts of the input between applications of the convolution. With dilated convolutions, we skip over parts of the input within a single application of the convolution. By cleverly arranging growing dilations we can achieve the promised exponential growth in receptive fields.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;http://localhost:1313/tmp/med/posts/md_1655784454356/img/0__3TaOHT7v18NQewlM.&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;We’ve talked a lot of theory so far, but we’re finally at a point where we can see this stuff in action!&lt;/p&gt;
+&lt;p&gt;A personal favorite paper is &lt;a href=&#34;https://arxiv.org/pdf/1610.10099.pdf&#34;&gt;Neural Machine Translation in Linear Time&lt;/a&gt;. It follows the encoder decoder structure we talked about in the beginning. We still don’t have all the tools to talk about the decoder, but we can see the encoder in action.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__iBnuidVcY5gPbWCKgmquzA.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;And here’s an English input&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Director Jon Favreau, who is currently working on Disney’s forthcoming Jungle Book film, told the website Hollywood Reporter: “I think times are changing.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And its translation, brought to you by dilated convolutions&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Regisseur Jon Favreau, der zur Zeit an Disneys kommendem Jungle Book Film arbeitet, hat der Website Hollywood Reporter gesagt: “Ich denke, die Zeiten andern sich”.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And as a bonus, remember that sound is just like text, in the sense that it has just one spatial/temporal dimension. Check out DeepMind’s &lt;a href=&#34;https://deepmind.com/blog/wavenet-generative-model-raw-audio/&#34;&gt;Wavenet&lt;/a&gt; which uses dilated convolutions (and a lot of other magic) to generate &lt;a href=&#34;https://storage.googleapis.com/deepmind-media/pixie/knowing-what-to-say/second-list/speaker-1.wav&#34;&gt;human sounding speech&lt;/a&gt; and &lt;a href=&#34;https://storage.googleapis.com/deepmind-media/pixie/making-music/sample_4.wav&#34;&gt;piano music&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;getting-stuff-out-of-your-network&#34;&gt;Getting Stuff Out of your network&lt;/h3&gt;
+&lt;p&gt;When we discussed DenseNets I mentioned that the use of residual connections forces us to keep the input and output length of our sequence the same, which is done via padding. This is great for tasks where we need to label each item in our sequence for example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In parts of speech tagging where each word is a part of speech.&lt;/li&gt;
+&lt;li&gt;In entity recognition where we might label Person, Company, and Other for everything else&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other times we’ll want to reduce our input sequence down to a vector representation and use that to predict something about the entire sentence&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We might want to label an email as spam based on its content and or subject&lt;/li&gt;
+&lt;li&gt;Predict if a certain sentence is sarcastic or not&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In these cases, we can follow the traditional approaches of the &lt;em&gt;vision people&lt;/em&gt; and top off our network with convolutional layers that don’t have padding and/or use pooling operations.&lt;/p&gt;
+&lt;p&gt;But sometimes we’ll want to follow the Seq2Seq paradigm, what &lt;a href=&#34;https://medium.com/u/42936aed59d2&#34;&gt;Matthew Honnibal&lt;/a&gt; succinctly called &lt;a href=&#34;https://explosion.ai/blog/deep-learning-formula-nlp&#34;&gt;&lt;em&gt;Embed, encode, attend, predict&lt;/em&gt;&lt;/a&gt;&lt;em&gt;.&lt;/em&gt; In this case, we reduce our input down to some vector representation but then need to somehow up sample that vector back to a sequence of the proper length.&lt;/p&gt;
+&lt;p&gt;This task entails two problems&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How do we do upsampling with convolutions ?&lt;/li&gt;
+&lt;li&gt;How do we do exactly the right amount of up sampling?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I still haven’t found the answer to the second question or at least have not yet understood it. In practice, it’s been enough for me to assume some upper bound on the maximum length of the output and then upsample to that point. I suspect Facebooks new &lt;a href=&#34;https://s3.amazonaws.com/fairseq/papers/convolutional-sequence-to-sequence-learning.pdf&#34;&gt;translation paper&lt;/a&gt; may address this but have not yet read it deeply enough to comment.&lt;/p&gt;
+&lt;h4 id=&#34;upsampling-with-deconvolutions&#34;&gt;Upsampling with deconvolutions&lt;/h4&gt;
+&lt;p&gt;Deconvolutions are our tool for upsampling. It’s easiest (for me) to understand what they do through visualizations. Luckily, a few smart folks published a &lt;a href=&#34;http://distill.pub/2016/deconv-checkerboard/&#34;&gt;great post on deconvolutions&lt;/a&gt; over at Distill and included some fun visualizers. Lets start with those.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__TbzTaipbTKQYo0MKHCf__ZA.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Consider the image on top. If we take the bottom layer as the input we have a standard convolution of stride 1 and width 3. &lt;em&gt;But,&lt;/em&gt; we can also go from top down, that is treat the top layer as the input and get the slightly larger bottom layer.&lt;/p&gt;
+&lt;p&gt;If you stop to think about that for a second, this “top down” operation is already happening in your convolutional networks when you do back propagation, as the gradient signals need to propagate in exactly the way shown in the picture. Even better, it turns out that this operation is simply the transpose of the convolution operation, hence the other common (and technically correct) name for this operation, transposed convolution.&lt;/p&gt;
+&lt;p&gt;Here’s where it gets fun. We can stride our convolutions to shrink our input. Thus we can stride our deconvolutions to grow our input. I think the easiest way to understand how strides work with deconvolutions is to look at the following pictures.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__TbzTaipbTKQYo0MKHCf__ZA.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+
+&lt;img
+  src=&#34;./1__ZyZpAur5DugJNcdt1__bNaw.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;We’ve already seen the top one. Notice that each input (the top layer) feeds three of the outputs and that each of the outputs is fed by three inputs (except the edges).&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__xDtirriDTQHaXlqVl0s__GA.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;In the second picture we place imaginary holes in our inputs. Notice that now each of the outputs is fed by at most two inputs.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__K6iQnpVMn3pDqOdFZfZsLg.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;In the third picture we’ve added two imaginary holes into out input layer and so each output is fed by exactly one input. This ends up tripling the sequence length of our output with respect to the sequence length of our input.&lt;/p&gt;
+&lt;p&gt;Finally, we can stack multiple deconvolutional layers to gradually grow our output layer to the desired size.&lt;/p&gt;
+&lt;p&gt;A few things worth thinking about&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If you look at these drawings from bottom up, they end up being standard strided convolutions where we just added imaginary holes at the output layers (The white blocks)&lt;/li&gt;
+&lt;li&gt;In practice, each “input” isn’t a single number but a vector. In the image world, it might be a 3 dimensional RGB value. In text it might be a 300 dimensional word embedding. If you’re (de)convolving in the middle of your network each point would be a vector of whatever size came out of the last layer.&lt;/li&gt;
+&lt;li&gt;I point that out to convince you that their is enough information in the input layer of a deconvolution to spread across a few points in the output.&lt;/li&gt;
+&lt;li&gt;In practice, I’ve had success running a few convolutions with length preserving padding after a deconvolution. I imagine, though haven’t proven, that this acts like a redistribution of information. I think of it like letting a steak rest after grilling to let the juices redistribute.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./0__fqVi____8myNwH2cDH.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+&lt;p&gt;The main reason you might want to consider convolutions in your work is because they are fast. I think that’s important to make research and exploration faster and more efficient. Faster networks shorten our feedback cycles.&lt;/p&gt;
+&lt;p&gt;Most of the tasks I’ve encountered with text end up having the same requirement of the architecture: Maximize the receptive field while maintaining an adequate flow of gradients. We’ve seen the use of both DenseNets and dilated convolutions to achieve that.&lt;/p&gt;
+&lt;p&gt;Finally, sometimes we want to expand a sequence or a vector into a larger sequence. We looked at deconvolutions as a way to do “upsampling” on text and as a bonus compared adding a convolution afterwards the letting a steak rest and redistribute its juices.&lt;/p&gt;
+&lt;p&gt;I’d love to learn more about your thoughts and experiences with these kinds of models. Share in the comments or ping me on twitter &lt;a href=&#34;https://twitter.com/thetalperry&#34;&gt;@thetalperry&lt;/a&gt;&lt;/p&gt;
+</description>
+      <author></author>
+      <guid>http://localhost:1313/posts/classics/cmft/</guid>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+    </item>
+    
+    <item>
+      <title>Deep Learning The Stock Market</title>
+      <link>http://localhost:1313/posts/classics/dlsm/</link>
+      <description>&lt;p&gt;_ &lt;strong&gt;Update 15.03.2024&lt;/strong&gt; I wrote this more than seven years ago. My understanding has evolved since then, and the world of deep learning has gone through more than one revolution since. It was popular back in the day and might still be a fun read though you might learn more accurate and upto date information somewhere else_&lt;/p&gt;
+&lt;p&gt;_ &lt;strong&gt;Update 25.1.17&lt;/strong&gt; — Took me a while but_ &lt;a href=&#34;https://github.com/talolard/MarketVectors/blob/master/preparedata.ipynb&#34;&gt;&lt;em&gt;here is an ipython notebook&lt;/em&gt;&lt;/a&gt; &lt;em&gt;with a rough implementation&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__IhzF1r__Nywbw9K__yzgph8A.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;In the past few months I’ve been fascinated with “Deep Learning”, especially its applications to language and text. I’ve spent the bulk of my career in financial technologies, mostly in algorithmic trading and alternative data services. You can see where this is going.&lt;/p&gt;
+&lt;p&gt;I wrote this to get my ideas straight in my head. While I’ve become a “Deep Learning” enthusiast, I don’t have too many opportunities to brain dump an idea in most of its messy glory. I think that a decent indication of a clear thought is the ability to articulate it to people not from the field. I hope that I’ve succeeded in doing that and that my articulation is also a pleasurable read.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why NLP is relevant to Stock prediction&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In many NLP problems we end up taking a sequence and encoding it into a single fixed size representation, then decoding that representation into another sequence. For example, we might tag entities in the text, translate from English to French or convert audio frequencies to text. There is a torrent of work coming out in these areas and a lot of the results are achieving state of the art performance.&lt;/p&gt;
+&lt;p&gt;In my mind the biggest difference between the NLP and financial analysis is that language has some guarantee of structure, it’s just that the rules of the structure are vague. Markets, on the other hand, don’t come with a promise of a learnable structure, that such a structure exists is the assumption that this project would prove or disprove (rather it might prove or disprove if I can find that structure).&lt;/p&gt;
+&lt;p&gt;Assuming the structure is there, the idea of summarizing the current state of the market in the same way we encode the semantics of a paragraph seems plausible to me. If that doesn’t make sense yet, keep reading. It will.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;You shall know a word by the company it keeps (Firth, J. R. 1957:11)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There is tons of literature on word embeddings. &lt;a href=&#34;https://www.youtube.com/watch?v=xhHOL3TNyJs&amp;amp;index=2&amp;amp;list=PLmImxx8Char9Ig0ZHSyTqGsdhb9weEGam&#34;&gt;Richard Socher’s lecture&lt;/a&gt; is a great place to start. In short, we can make a geometry of all the words in our language, and that geometry captures the meaning of words and relationships between them. You may have seen the example of “King-man +woman=Queen” or something of the sort.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__t__1EPA3cIT7lAgLbr__3YEQ.jpeg&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Embeddings are cool because they let us represent information in a condensed way. The old way of representing words was holding a vector (a big list of numbers) that was as long as the number of words we know, and setting a 1 in a particular place if that was the current word we are looking at. That is not an efficient approach, nor does it capture any meaning. With embeddings, we can represent all of the words in a fixed number of dimensions (300 seems to be plenty, 50 works great) and then leverage their higher dimensional geometry to understand them.&lt;/p&gt;
+&lt;p&gt;The picture below shows an example. An embedding was trained on more or less the entire internet. After a few days of intensive calculations, each word was embedded in some high dimensional space. This “space” has a geometry, concepts like distance, and so we can ask which words are close together. The authors/inventors of that method made an example. Here are the words that are closest to Frog.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__sa6eSTuP7wjIBPuabNvUSg.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;But we can embed more than just words. We can do, say , stock market embeddings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Market2Vec&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The first word embedding algorithm I heard about was word2vec. I want to get the same effect for the market, though I’ll be using a different algorithm. My input data is a csv, the first column is the date, and there are 4*1000 columns corresponding to the High Low Open Closing price of 1000 stocks. That is my input vector is 4000 dimensional, which is too big. So the first thing I’m going to do is stuff it into a lower dimensional space, say 300 because I liked the movie.
+&lt;img
+  src=&#34;./1__AYP49wmgNrbkCL__aCgxK2w.jpeg&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Taking something in 4000 dimensions and stuffing it into a 300-dimensional space my sound hard but its actually easy. We just need to multiply matrices. A matrix is a big excel spreadsheet that has numbers in every cell and no formatting problems. Imagine an excel table with 4000 columns and 300 rows, and when we basically bang it against the vector a new vector comes out that is only of size 300. I wish that’s how they would have explained it in college.&lt;/p&gt;
+&lt;p&gt;The fanciness starts here as we’re going to set the numbers in our matrix at random, and part of the “deep learning” is to update those numbers so that our excel spreadsheet changes. Eventually this matrix spreadsheet (I’ll stick with matrix from now on) will have numbers in it that bang our original 4000 dimensional vector into a concise 300 dimensional summary of itself.&lt;/p&gt;
+&lt;p&gt;We’re going to get a little fancier here and apply what they call an activation function. We’re going to take a function, and apply it to each number in the vector individually so that they all end up between 0 and 1 (or 0 and infinity, it depends). Why ? It makes our vector more special, and makes our learning process able to understand more complicated things. &lt;a href=&#34;https://lmgtfy.com/?q=why+does+deep+learning+use+non+linearities&#34;&gt;How&lt;/a&gt;?&lt;/p&gt;
+&lt;p&gt;So what? What I’m expecting to find is that that new embedding of the market prices (the vector) into a smaller space captures all the essential information for the task at hand, without wasting time on the other stuff. So I’d expect they’d capture correlations between other stocks, perhaps notice when a certain sector is declining or when the market is very hot. I don’t know what traits it will find, but I assume they’ll be useful.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now What&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Lets put aside our market vectors for a moment and talk about language models. &lt;a href=&#34;https://medium.com/u/ac9d9a35533e&#34;&gt;Andrej Karpathy&lt;/a&gt; wrote the epic post “&lt;a href=&#34;http://karpathy.github.io/2015/05/21/rnn-effectiveness/&#34;&gt;The Unreasonable effectiveness of Recurrent Neural Networks&lt;/a&gt;”. If I’d summarize in the most liberal fashion the post boils down to&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If we look at the works of Shakespeare and go over them character by character, we can use “deep learning” to learn a language model.&lt;/li&gt;
+&lt;li&gt;A language model (in this case) &lt;strong&gt;is a magic box&lt;/strong&gt;. You put in the first few characters and it tells you what the next one will be.&lt;/li&gt;
+&lt;li&gt;If we take the character that the language model predicted and feed it back in we can keep going forever.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And then as a punchline, he generated a bunch of text that looks like Shakespeare. And then he did it again with the Linux source code. And then again with a textbook on Algebraic geometry.&lt;/p&gt;
+&lt;p&gt;So I’ll get back to the mechanics of that magic box in a second, but let me remind you that we want to predict the future market based on the past just like he predicted the next word based on the previous one. Where Karpathy used characters, we’re going to use our market vectors and feed them into the magic black box. We haven’t decided what we want it to predict yet, but that is okay, we won’t be feeding its output back into it either.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Going deeper&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I want to point out that this is where we start to get into the deep part of deep learning. So far we just have a single layer of learning, that excel spreadsheet that condenses the market. Now we’re going to add a few more layers and stack them, to make a “deep” something. That’s the deep in deep learning.&lt;/p&gt;
+&lt;p&gt;So Karpathy shows us some sample output from the Linux source code, this is stuff his black box wrote.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;action_new_function&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s_stat_info&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;wb)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;unsigned&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; flags;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; lel_idx_bit &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; e&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;edd, &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;sys &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt;((&lt;span style=&#34;color:#66d9ef&#34;&gt;unsigned&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;FIRST_COMPAT);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  buf[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xFFFFFFFF&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; (bit &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  min(inc, slist&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;bytes);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  printk(KERN_WARNING &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Memory allocated %02x/%02x, &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;original MLL instead&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    min(min(multi_run &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; s&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;len, max) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; num_data_in),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    frame_pos, sz &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; first_seg);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  div_u64_w(val, inb_p);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  spin_unlock(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;disk&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;queue_lock);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  mutex_unlock(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;s&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;sock&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;mutex);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  mutex_unlock(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;func&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;mutex);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; disassemble(info&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;pending_bh);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Notice that it knows how to open and close parentheses, and respects indentation conventions; The contents of the function are properly indented and the multi-line &lt;em&gt;printk&lt;/em&gt; statement has an inner indentation. That means that this magic box understands long range dependencies. When it’s indenting within the print statement it knows it’s in a print statement and also remembers that it’s in a function( Or at least another indented scope). &lt;strong&gt;That’s nuts.&lt;/strong&gt; It’s easy to gloss over that but an algorithm that has the ability to capture and remember long term dependencies is super useful because… We want to find long term dependencies in the market.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Inside the magical black box&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;What’s inside this magical black box? It is a type of Recurrent Neural Network (RNN) called an LSTM. An RNN is a deep learning algorithm that operates on sequences (like sequences of characters). At every step, it takes a representation of the next character (Like the embeddings we talked about before) and operates on the representation with a matrix, like we saw before. The thing is, the RNN has some form of internal memory, so it remembers what it saw previously. It uses that memory to decide how exactly it should operate on the next input. Using that memory, the RNN can “remember” that it is inside of an intended scope and that is how we get properly nested output text.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__NKhwsOYNUT5xU7Pyf6Znhg.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;A fancy version of an RNN is called a Long Short Term Memory (LSTM). LSTM has cleverly designed memory that allows it to&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Selectively choose what it remembers&lt;/li&gt;
+&lt;li&gt;Decide to forget&lt;/li&gt;
+&lt;li&gt;Select how much of it’s memory it should output.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__J5W8FrASMi93Z81NlAui4w.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;So an LSTM can see a “{“ and say to itself “Oh yeah, that’s important I should remember that” and when it does, it essentially remembers an indication that it is in a nested scope. Once it sees the corresponding “}” it can decide to forget the original opening brace and thus forget that it is in a nested scope.&lt;/p&gt;
+&lt;p&gt;We can have the LSTM learn more abstract concepts by stacking a few of them on top of each other, that would make us “Deep” again. Now each output of the previous LSTM becomes the inputs of the next LSTM, and each one goes on to learn higher abstractions of the data coming in. In the example above (and this is just illustrative speculation), the first layer of LSTMs might learn that characters separated by a space are “words”. The next layer might learn word types like (&lt;code&gt;**static** **void** **action_new_function).**&lt;/code&gt;The next layer might learn the concept of a function and its arguments and so on. It’s hard to tell exactly what each layer is doing, though Karpathy’s blog has a really nice example of how he did visualize exactly that.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Connecting Market2Vec and LSTMs&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The studious reader will notice that Karpathy used characters as his inputs, not embeddings (Technically a one-hot encoding of characters). But, Lars Eidnes actually used word embeddings when he wrote &lt;a href=&#34;https://larseidnes.com/2015/10/13/auto-generating-clickbait-with-recurrent-neural-networks/&#34;&gt;Auto-Generating Clickbait With Recurrent Neural Network&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__ce8gO1KPq8o__xUQZuRFi5A.png&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;The figure above shows the network he used. Ignore the SoftMax part (we’ll get to it later). For the moment, check out how on the bottom he puts in a sequence of words vectors at the bottom and each one. (Remember, a “word vector” is a representation of a word in the form of a bunch of numbers, like we saw in the beginning of this post). Lars inputs a sequence of Word Vectors and each one of them:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Influences the first LSTM&lt;/li&gt;
+&lt;li&gt;Makes it’s LSTM output something to the LSTM above it&lt;/li&gt;
+&lt;li&gt;Makes it’s LSTM output something to the LSTM for the next word&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We’re going to do the same thing with one difference, instead of word vectors we’ll input “MarketVectors”, those market vectors we described before. To recap, the MarketVectors should contain a summary of what’s happening in the market at a given point in time. By putting a sequence of them through LSTMs I hope to capture the long term dynamics that have been happening in the market. By stacking together a few layers of LSTMs I hope to capture higher level abstractions of the market’s behavior.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What Comes out&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Thus far we haven’t talked at all about how the algorithm actually learns anything, we just talked about all the clever transformations we’ll do on the data. We’ll defer that conversation to a few paragraphs down, but please keep this part in mind as it is the se up for the punch line that makes everything else worthwhile.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In Karpathy’s example, the output of the LSTMs is a vector that represents the next character in some abstract representation. In Eidnes’ example, the output of the LSTMs is a vector that represents what the next word will be in some abstract space. The next step in both cases is to change that abstract representation into a probability vector, that is a list that says how likely each character or word respectively is likely to appear next. That’s the job of the SoftMax function. Once we have a list of likelihoods we select the character or word that is the most likely to appear next.&lt;/p&gt;
+&lt;p&gt;In our case of “predicting the market”, we need to ask ourselves what exactly we want to market to predict? Some of the options that I thought about were:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Predict the next price for each of the 1000 stocks&lt;/li&gt;
+&lt;li&gt;Predict the value of some index (S&amp;amp;P, VIX etc) in the next &lt;em&gt;n&lt;/em&gt; minutes.&lt;/li&gt;
+&lt;li&gt;Predict which of the stocks will move up by more than &lt;em&gt;x%&lt;/em&gt; in the next &lt;em&gt;n&lt;/em&gt; minutes&lt;/li&gt;
+&lt;li&gt;(My personal favorite) Predict which stocks will go up/down by &lt;em&gt;2x%&lt;/em&gt; in the next &lt;em&gt;n&lt;/em&gt; minutes while not going &lt;em&gt;down/up&lt;/em&gt; by more than &lt;em&gt;x%&lt;/em&gt; in that time.&lt;/li&gt;
+&lt;li&gt;(The one we’ll follow for the remainder of this article). Predict when the VIX will go up/down by &lt;em&gt;2x%&lt;/em&gt; in the next &lt;em&gt;n&lt;/em&gt; minutes while not going &lt;em&gt;down/up&lt;/em&gt; by more than &lt;em&gt;x%&lt;/em&gt; in that time.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;1 and 2 are regression problems, where we have to predict an actual number instead of the likelihood of a specific event (like the letter n appearing or the market going up). Those are fine but not what I want to do.&lt;/p&gt;
+&lt;p&gt;3 and 4 are fairly similar, they both ask to predict an event (In technical jargon — a class label). An event could be the letter &lt;em&gt;n&lt;/em&gt; appearing next or it could be &lt;em&gt;Moved up 5% while not going down more than 3% in the last 10 minutes.&lt;/em&gt; The trade-off between 3 and 4 is that 3 is much more common and thus easier to learn about while 4 is more valuable as not only is it an indicator of profit but also has some constraint on risk.&lt;/p&gt;
+&lt;p&gt;5 is the one we’ll continue with for this article because it’s similar to 3 and 4 but has mechanics that are easier to follow. The &lt;a href=&#34;https://en.wikipedia.org/wiki/VIX&#34;&gt;VIX&lt;/a&gt; is sometimes called the Fear Index and it represents how volatile the stocks in the S&amp;amp;P500 are. It is derived by observing the &lt;a href=&#34;https://en.wikipedia.org/wiki/Implied_volatility&#34;&gt;implied volatility&lt;/a&gt; for specific options on each of the stocks in the index.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Sidenote — Why predict the VIX&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;What makes the VIX an interesting target is that&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It is only one number as opposed to 1000s of stocks. This makes it conceptually easier to follow and reduces computational costs.&lt;/li&gt;
+&lt;li&gt;It is the summary of many stocks so most if not all of our inputs are relevant&lt;/li&gt;
+&lt;li&gt;It is not a linear combination of our inputs. Implied volatility is extracted from a complicated, non-linear formula stock by stock. The VIX is derived from a complex formula on top of that. If we can predict that, it’s pretty cool.&lt;/li&gt;
+&lt;li&gt;It’s tradeable so if this actually works we can use it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Back to our LSTM outputs and the SoftMax&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;How do we use the formulations we saw before to predict changes in the VIX a few minutes in the future? For each point in our dataset, we’ll look what happened to the VIX 5 minutes later. If it went up by more than 1% without going down more than 0.5% during that time we’ll output a 1, otherwise a 0. Then we’ll get a sequence that looks like:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;0,0,0,0,0,1,1,0,0,0,1,1,0,0,0,0,1,1,1,0,0,0,0,0 ….&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We want to take the vector that our LSTMs output and squish it so that it gives us the probability of the next item in our sequence being a 1. The squishing happens in the SoftMax part of the diagram above. (Technically, since we only have 1 class now, we use a sigmoid ).&lt;/p&gt;
+&lt;p&gt;So before we get into how this thing learns, let’s recap what we’ve done so far&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We take as input a sequence of price data for 1000 stocks&lt;/li&gt;
+&lt;li&gt;Each timepoint in the sequence is a snapshot of the market. Our input is a list of 4000 numbers. We use an embedding layer to represent the key information in just 300 numbers.&lt;/li&gt;
+&lt;li&gt;Now we have a sequence of embeddings of the market. We put those into a stack of LSTMs, timestep by timestep. The LSTMs remember things from the previous steps and that influences how they process the current one.&lt;/li&gt;
+&lt;li&gt;We pass the output of the first layer of LSTMs into another layer. These guys also remember and they learn higher level abstractions of the information we put in.&lt;/li&gt;
+&lt;li&gt;Finally, we take the output from all of the LSTMs and “squish them” so that our sequence of market information turns into a sequence of probabilities. The probability in question is “How likely is the VIX to go up 1% in the next 5 minutes without going down 0.5%”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;How does this thing learn?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now the fun part. Everything we did until now was called the forward pass, we’d do all of those steps while we train the algorithm and also when we use it in production. Here we’ll talk about the backward pass, the part we do only while in training that makes our algorithm learn.&lt;/p&gt;
+&lt;p&gt;So during training, not only did we prepare years worth of historical data, we also prepared a sequence of prediction targets, that list of 0 and 1 that showed if the VIX moved the way we want it to or not after each observation in our data.&lt;/p&gt;
+&lt;p&gt;To learn, we’ll feed the market data to our network and compare its output to what we calculated. Comparing in our case will be simple subtraction, that is we’ll say that our model’s error is&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ERROR = (((precomputed)— (predicted probability))² )^(1/2)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Or in English, the square root of the square of the difference between what actually happened and what we predicted.&lt;/p&gt;
+&lt;p&gt;Here’s the beauty. That’s a differential function, that is, we can tell by how much the error would have changed if our prediction would have changed a little. Our prediction is the outcome of a differentiable function, the SoftMax The inputs to the softmax, the LSTMs are all mathematical functions that are differentiable. Now all of these functions are full of parameters, those big excel spreadsheets I talked about ages ago. So at this stage what we do is take the derivative of the error with respect to every one of the millions of parameters in all of those excel spreadsheets we have in our model. When we do that we can see how the error will change when we change each parameter, so we’ll change each parameter in a way that will reduce the error.&lt;/p&gt;
+&lt;p&gt;This procedure propagates all the way to the beginning of the model. It tweaks the way we embed the inputs into MarketVectors so that our MarketVectors represent the most significant information for our task.&lt;/p&gt;
+&lt;p&gt;It tweaks when and what each LSTM chooses to remember so that their outputs are the most relevant to our task.&lt;/p&gt;
+&lt;p&gt;It tweaks the abstractions our LSTMs learn so that they learn the most important abstractions for our task.&lt;/p&gt;
+&lt;p&gt;Which in my opinion is amazing because we have all of this complexity and abstraction that we never had to specify anywhere. It’s all inferred MathaMagically from the specification of what we consider to be an error.&lt;/p&gt;
+&lt;p&gt;&lt;img
+  src=&#34;./1__z4EH4w8cXKVSoQcHcck0Aw.jpeg&#34;
+  alt=&#34;&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
+/&gt;
+
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What’s next&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now that I’ve laid this out in writing and it still makes sense to me I want&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;To see if anyone bothers reading this.&lt;/li&gt;
+&lt;li&gt;To fix all of the mistakes my dear readers point out&lt;/li&gt;
+&lt;li&gt;Consider if this is still feasible&lt;/li&gt;
+&lt;li&gt;And build it&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So, if you’ve come this far please point out my errors and share your inputs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Other thoughts&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Here are some mostly more advanced thoughts about this project, what other things I might try and why it makes sense to me that this may actually work.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Liquidity and efficient use of capital&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Generally the more liquid a particular market is the more efficient that is. I think this is due to a chicken and egg cycle, whereas a market becomes more liquid it is able to absorb more capital moving in and out without that capital hurting itself. As a market becomes more liquid and more capital can be used in it, you’ll find more sophisticated players moving in. This is because it is expensive to be sophisticated, so you need to make returns on a large chunk of capital in order to justify your operational costs.&lt;/p&gt;
+&lt;p&gt;A quick corollary is that in less liquid markets the competition isn’t quite as sophisticated and so the opportunities a system like this can bring may not have been traded away. The point being were I to try and trade this I would try and trade it on less liquid segments of the market, that is maybe the TASE 100 instead of the S&amp;amp;P 500.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This stuff is new&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The knowledge of these algorithms, the frameworks to execute them and the computing power to train them are all new at least in the sense that they are available to the average Joe such as myself. I’d assume that top players have figured this stuff out years ago and have had the capacity to execute for as long but, as I mention in the above paragraph, they are likely executing in liquid markets that can support their size. The next tier of market participants, I assume, have a slower velocity of technological assimilation and in that sense, there is or soon will be a race to execute on this in as yet untapped markets.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Multiple Time Frames&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;While I mentioned a single stream of inputs in the above, I imagine that a more efficient way to train would be to train market vectors (at least) on multiple time frames and feed them in at the inference stage. That is, my lowest time frame would be sampled every 30 seconds and I’d expect the network to learn dependencies that stretch hours at most.&lt;/p&gt;
+&lt;p&gt;I don’t know if they are relevant or not but I think there are patterns on multiple time frames and if the cost of computation can be brought low enough then it is worthwhile to incorporate them into the model. I’m still wrestling with how best to represent these on the computational graph and perhaps it is not mandatory to start with.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MarketVectors&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When using word vectors in NLP we usually start with a pretrained model and continue adjusting the embeddings during training of our model. In my case, there are no pretrained market vector available nor is tehre a clear algorithm for training them.&lt;/p&gt;
+&lt;p&gt;My original consideration was to use an auto-encoder like in &lt;a href=&#34;http://cs229.stanford.edu/proj2013/TakeuchiLee-ApplyingDeepLearningToEnhanceMomentumTradingStrategiesInStocks.pdf&#34;&gt;this paper&lt;/a&gt; but end to end training is cooler.&lt;/p&gt;
+&lt;p&gt;A more serious consideration is the success of sequence to sequence models in translation and speech recognition, where a sequence is eventually encoded as a single vector and then decoded into a different representation (Like from speech to text or from English to French). In that view, the entire architecture I described is essentially the encoder and I haven’t really laid out a decoder.&lt;/p&gt;
+&lt;p&gt;But, I want to achieve something specific with the first layer, the one that takes as input the 4000 dimensional vector and outputs a 300 dimensional one. I want it to find correlations or relations between various stocks and compose features about them.&lt;/p&gt;
+&lt;p&gt;The alternative is to run each input through an LSTM, perhaps concatenate all of the output vectors and consider that output of the encoder stage. I think this will be inefficient as the interactions and correlations between instruments and their features will be lost, and thre will be 10x more computation required. On the other hand, such an architecture could naively be paralleled across multiple GPUs and hosts which is an advantage.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CNNs&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Recently there has been a spur of papers on character level machine translation. This &lt;a href=&#34;https://arxiv.org/pdf/1610.03017v2.pdf&#34;&gt;paper&lt;/a&gt; caught my eye as they manage to capture long range dependencies with a convolutional layer rather than an RNN. I haven’t given it more than a brief read but I think that a modification where I’d treat each stock as a channel and convolve over channels first (like in RGB images) would be another way to capture the market dynamics, in the same way that they essentially encode semantic meaning from characters.&lt;/p&gt;
+</description>
+      <author></author>
+      <guid>http://localhost:1313/posts/classics/dlsm/</guid>
+      <pubDate>Sat, 03 Dec 2016 00:00:00 +0000</pubDate>
+    </item>
+    
+  </channel>
+</rss>
