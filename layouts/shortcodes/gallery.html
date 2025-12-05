@@ -1,0 +1,24 @@
+{{ $srcs := split (.Get "srcs") "," }}
+{{ $altsRaw := .Get "alts" | default "" }}
+{{ $alts := cond (gt (len $altsRaw) 0) (split $altsRaw "|") (slice) }}
+{{ $resize := .Get "resize" | default "900x" }}
+
+<div class="img-row">
+  {{ range $i, $src := $srcs }}
+    {{ $cleanSrc := trim $src " " }}
+    {{ $alt := index $alts $i | default "" }}
+    {{ $base := replaceRE "\\.[^.]+$" "" $cleanSrc }}
+    {{ $srcWebp := cond (hasSuffix $cleanSrc ".webp") $cleanSrc (printf "%s.webp" $base) }}
+    {{ $pageImg := or ($.Page.Resources.GetMatch $cleanSrc) ($.Page.Resources.GetMatch $srcWebp) }}
+    {{ $globalImg := cond (not $pageImg) (or (resources.GetMatch (printf "letters/%s" $cleanSrc)) (resources.GetMatch (printf "letters/%s" $srcWebp))) nil }}
+    {{ with or $pageImg $globalImg }}
+      {{ $resized := .Resize $resize }}
+      {{ $webp := .Resize (printf "%s webp" $resize) }}
+      <picture>
+        <source srcset="{{ $webp.RelPermalink }}" type="{{ $webp.MediaType }}">
+        <source srcset="{{ $resized.RelPermalink }}" type="{{ $resized.MediaType }}">
+        <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}" loading="lazy">
+      </picture>
+    {{ end }}
+  {{ end }}
+</div>

@@ -1,0 +1,61 @@
+{{ define "main" }}
+  {{ $cover := partial "cover.html" . }}
+  {{ $toc := .TableOfContents }}
+  {{ $hasTOC := gt (len (findRE "<li" $toc)) 0 }}
+  <article class="page-content">
+    <header class="article-header">
+      <p class="eyebrow">{{ .Section | humanize }}</p>
+      <h1>{{ .Title }}</h1>
+      <div class="meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <span class="dot"></span>
+        <span>{{ .ReadingTime }} min read</span>
+        {{ with .Params.tags }}
+        <span class="dot"></span>
+        <div class="tag-row">
+          {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </header>
+
+    {{ if $cover }}
+    <figure class="article-hero">
+      <img src="{{ $cover }}" alt="Featured image for {{ .Title }}">
+    </figure>
+    {{ end }}
+
+    <div class="article-layout">
+      {{ if $hasTOC }}
+      <aside class="toc" aria-label="Table of contents">
+        <strong>On this page</strong>
+        {{ $toc | safeHTML }}
+      </aside>
+      {{ end }}
+      <div class="article-body">
+        {{ .Content }}
+      </div>
+    </div>
+
+    <div class="article-footer">
+      <div class="meta">
+        <span>Thanks for reading. Have thoughts?</span>
+        <a href="mailto:tal@talperry.com?subject={{ urlquery .Title }}">Email me</a>
+      </div>
+      <nav class="article-nav" aria-label="Next and previous articles">
+        {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}">
+          <span class="label">Previous</span>
+          <strong>{{ .Title }}</strong>
+        </a>
+        {{ end }}
+        {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}">
+          <span class="label">Next</span>
+          <strong>{{ .Title }}</strong>
+        </a>
+        {{ end }}
+      </nav>
+    </div>
+  </article>
+{{ end }}

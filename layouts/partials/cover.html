@@ -1,0 +1,6 @@
+{{- $cover := "" -}}
+{{- with .Params.featured }}{{ $cover = . }}{{ end -}}
+{{- if eq $cover "" }}{{ with .Params.image }}{{ $cover = . }}{{ end }}{{ end -}}
+{{- if eq $cover "" }}{{ with .Params.images }}{{ if gt (len .) 0 }}{{ $cover = index . 0 }}{{ end }}{{ end }}{{ end -}}
+{{- if eq $cover "" }}{{ with .Resources.ByType "image" }}{{ with index . 0 }}{{ $cover = .RelPermalink }}{{ end }}{{ end }}{{ end -}}
+{{- if $cover }}{{ $cover }}{{ end -}}

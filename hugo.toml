@@ -2,3 +2,24 @@ baseURL = 'https://talperry.com/'
 languageCode = 'en-us'
 title = 'Tal Perry'
 theme = 'maverick'
+
+[params]
+description = 'Notes on building products, applied machine learning, and life in Berlin.'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Archive'
+    url = '/posts/'
+    weight = 2
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 3
+  [[menu.main]]
+    name = 'Contact'
+    url = 'mailto:tal@talperry.com'
+    weight = 4

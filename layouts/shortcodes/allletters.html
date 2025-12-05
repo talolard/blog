@@ -1,0 +1,13 @@
+{{ $imgs := resources.Match "letters/*.webp" }}
+{{ $sorted := sort $imgs "Name" }}
+<div class="img-row">
+  {{ range $sorted }}
+    {{ $resized := .Resize "420x" }}
+    {{ $webp := .Resize "420x webp" }}
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="{{ $webp.MediaType }}">
+      <source srcset="{{ $resized.RelPermalink }}" type="{{ $resized.MediaType }}">
+      <img src="{{ $resized.RelPermalink }}" alt="{{ .Name }}" loading="lazy">
+    </picture>
+  {{ end }}
+</div>

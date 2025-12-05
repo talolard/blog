@@ -1,0 +1,14 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "" }}
+{{ $class := .Get "class" | default "" }}
+{{ $resize := .Get "resize" | default "900x" }}
+
+{{ $img := .Page.Resources.GetMatch $src }}
+{{ $resized := $img.Resize $resize }}
+{{ $webp := $img.Resize (printf "%s webp" $resize) }}
+
+<picture>
+    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+    <source srcset="{{ $resized.RelPermalink }}" type="{{ $resized.MediaType }}">
+    <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
+</picture>
