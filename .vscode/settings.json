@@ -32,7 +32,9 @@
     "editor.suggest.showSnippets": true,
     "editor.wordWrap": "on",
     "editor.wordWrapColumn": 80,
-    "editor.rulers": [80],
+    "editor.rulers": [
+      80
+    ],
     "editor.renderWhitespace": "selection",
     "editor.minimap.enabled": false,
     "editor.stickyScroll.enabled": true,

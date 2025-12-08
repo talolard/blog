@@ -50,7 +50,14 @@ My enthusiasm waned, and a realization during a conversation with my wife sealed
 
 ## The Marketing Challenge
 
-While discussing the idea with my wife in traffic, Maria was singing along to [Carrie Underwood’s “Before He Cheats”][6]. The line, “Right now, he's probably buying her some fruity little drink 'Cause she can't shoot a whiskey,” struck me. It highlighted the songwriter’s deep understanding of their audience. Shooting whiskey is an evocative phrase for their audience, but relatively meaningless to me (An Israeli in Berlin where whiskey isn’t a cultural staple). The songwriters knew their audience so well they could intuit evocative phrases like that.
+While discussing the idea with my wife in traffic, Maria was singing along to [Carrie Underwood’s “Before He Cheats”][6], where she captures a whole universe with:
+
+> “Right now, he's probably buying her some fruity little drink 'Cause she can't shoot a whiskey,”
+
+{{< img src="before-he-cheats.webp" alt="Carrie Underwood — Before He Cheats" class="article-image" resize="900x" >}}
+
+
+It highlighted the songwriter’s deep understanding of their audience. Shooting whiskey is an evocative phrase for their audience, but relatively meaningless to me (An Israeli in Berlin where whiskey isn’t a cultural staple). The songwriters knew their audience so well they could intuit evocative phrases like that.
 
 If I were to sell scripture memorization software to American Christians, what could I intuit about them? What relevance or advantage do I have in creating a product that touches on an identity I don’t share?
 
