@@ -33,7 +33,7 @@ The straightforward way to handle this kind of task with an RNN is to feed entir
 
 Sequence labeling tasks are tasks that return an output for each input. Examples include part of speech labeling or entity recognition tasks. While the bare bones LSTM model is far from the state of the art, it is easy to implement and offers compelling results. See [this paper](https://arxiv.org/pdf/1508.01991.pdf) for a more fleshed out architecture
 
-![Figure](./1__dG7zvFdVcxVOgxuoAiPzKg.png)
+![Bidirectional LSTM sequence labeling architecture](./bilstm-ner-sequence-labeling.webp)
 
 #### Sequence Generation
 
@@ -41,17 +41,17 @@ Arguably the most impressive results in recent NLP have been in translation. Tra
 
 At the core of this success is the Sequence to Sequence (AKA encoder decoder) framework, a methodology to “compress” a sequence into a code and then decode it to another sequence. Notable examples include translation (Encode Hebrew and decode to English), image captioning (Encode an Image and decode a textual description of its contents)
 
-![Figure](./0__1Iqz__fVS9wl78Mc6.png)
+![Image captioning pipeline with CNN features feeding an attention LSTM decoder](./cnn-attention-image-captioning.webp)
 
 The basic Encoder step is similar to the scheme we described for classification. What’s amazing is that we can build a decoder that learns to generate arbitrary length outputs.
 
 The two examples above are really both translation, but sequence generation is a bit broader than that. OpenAI recently [published a paper](https://blog.openai.com/unsupervised-sentiment-neuron/) where they learn to generate “Amazon Reviews” while controlling the sentiment of the output
 
-![Figure](./1__VciPYrmdgi46MTsEjqReHA.png)
+![Generated Amazon reviews with sentiment constrained to positive or negative](./sentiment-controlled-examples.webp)
 
 Another personal favorite is the paper [Generating Sentences from a Continuous Space](https://arxiv.org/pdf/1511.06349.pdf). In that paper, they trained a variational autoencoder on text, which led to the ability to interpolate between two sentences and get coherent results.
 
-![Figure](./1__RldUDo1bMEaf__zrl__QuK1w.png)
+![Sentence interpolation samples from a variational autoencoder](./sentence-interpolation-samples.webp)
 
 ### Requirements from an NLP architecture
 
@@ -72,7 +72,7 @@ Remember that the _vision people_ got a lot of the same effect for images using 
 
 The promise of RNNs is their ability to implicitly model long term dependencies. The picture below is taken from OpenAI. They trained a model that ended up recognizing sentiment and colored the text, character by character, with the model’s output. Notice how the model sees the word “best” and triggers a positive sentiment which it carries on for over 100 characters. That’s capturing a long range dependency.
 
-![Figure](./1__JkjF4jAZTpnbHHJJLkfNRQ.gif)
+![Sentiment neuron activation heatmap over review text](./sentiment-heatmap.gif)
 
 The theory of RNNs promises us long range dependencies out of the box. The practice is a little more difficult. When we learn via backpropagation, we need to propagate the signal through the entire recurrence relation. The thing is, at every step we end up multiplying by a number. If those numbers are generally smaller than 1, our signal will quickly go to 0. If they are larger than 1, then our signal will explode.
 
@@ -106,7 +106,7 @@ So far we’ve set up our problem domain and talked a bit about the conceptual a
 
 ### Practical convolutions for text
 
-![Figure](./1__1RpnAf____FGLDIVCBvHnDWA.gif)
+![Animated visualization of a convolutional kernel sliding over an image](./convolution-animation.gif)
 
 You’ve probably seen an animation like the one above illustrating what a convolution does. The bottom is an input image, the top is the result and the gray shadow is the convolutional kernel which is repeatedly applied.
 
@@ -120,19 +120,19 @@ So what we’re doing here is changing the shape of input with tf.expand\_dims s
 
 ### Hierarchy and Receptive Fields
 
-![Figure](./0__6D1POMKVqeCk6VgP.png)
+![Hierarchy of CNN filters progressing from edges to faces](./cnn-receptive-hierarchy.webp)
 
 Many of us have seen pictures like the one above. It roughly shows the hierarchy of abstractions a CNN learns on images. In the first layer, the network learns basic edges. In the next layer, it combines those edges to learn more abstract concepts like eyes and noses. Finally, it combines those to recognize individual faces.
 
 With that in mind, we need to remember that each layer doesn’t just learn more abstract combinations of the previous layer. Successive layers, implicitly or explicitly, see more of the input
 
-![Figure](./0__sPEItE5rSfKSUBbP.png)
+![Receptive field tree showing layered aggregation across inputs](./hierarchical-receptive-field-tree.webp)
 
 #### Increasing Receptive Field
 
 With vision often we’ll want the network to identify one or more objects in the picture while ignoring others. That is, we’ll be interested in some local phenomenon but not in a relationship that spans the entire input.
 
-![Figure](./1__F8xWuumU27H9PDlYMEtE5Q.png)
+![Hotdog classifier app comparing hotdog and shoe photos](./hotdog-classifier-example.webp)
 
 Text is more subtle as often we’ll want intermediate representations of our data to carry as much context about their surroundings as they possibly can. In other words, we want to have as large a receptive field as possible. Their are a few ways to go about this.
 
@@ -168,7 +168,7 @@ Luckily, many smart people have been thinking about these problems. Luckier stil
 
 [Arthur Juliani](https://medium.com/u/18dfe63fa7f0) wrote a fantastic overview of [Resnet, DenseNets and Highway networks](https://chatbotslife.com/resnets-highwaynets-and-densenets-oh-my-9bb15918ee32) for those of you looking for the details and comparison. I’ll briefly touch on DenseNets which take the core concept to its extreme.
 
-![Figure](./1__KOjUX1ST5RnDOZWWLWRGkw.png)
+![DenseNet block with densely connected convolutional layers](./densenet-connections.webp)
 
 The general idea is to reduce the distance between the signal coming from the networks loss and each individual layer. The way this is done is by adding a residual/direct connection between every layer and its predecessors. That way, the gradient can flow from each layer to its predecessors directly.
 
@@ -193,13 +193,11 @@ You can find an almost accessible explanation of dilated convolutions in the pap
 
 The basic idea is to introduce “holes” into each filter, so that it doesn’t operate on adjacent parts of the input but rather skips over them to parts further away. Note that this is different from applying a convolution with stride >1. When we stride a filter, we skip over parts of the input between applications of the convolution. With dilated convolutions, we skip over parts of the input within a single application of the convolution. By cleverly arranging growing dilations we can achieve the promised exponential growth in receptive fields.
 
-![Figure](/tmp/med/posts/md_1655784454356/img/0__3TaOHT7v18NQewlM.)
-
 We’ve talked a lot of theory so far, but we’re finally at a point where we can see this stuff in action!
 
 A personal favorite paper is [Neural Machine Translation in Linear Time](https://arxiv.org/pdf/1610.10099.pdf). It follows the encoder decoder structure we talked about in the beginning. We still don’t have all the tools to talk about the decoder, but we can see the encoder in action.
 
-![Figure](./1__iBnuidVcY5gPbWCKgmquzA.png)
+![Dilated convolution encoder with expanding receptive fields over a sequence](./dilated-convolution-receptive-field.webp)
 
 And here’s an English input
 
@@ -238,7 +236,7 @@ I still haven’t found the answer to the second question or at least have not y
 
 Deconvolutions are our tool for upsampling. It’s easiest (for me) to understand what they do through visualizations. Luckily, a few smart folks published a [great post on deconvolutions](http://distill.pub/2016/deconv-checkerboard/) over at Distill and included some fun visualizers. Lets start with those.
 
-![Figure](./1__TbzTaipbTKQYo0MKHCf__ZA.png)
+![Strided convolution diagram showing kernel covering inputs](./strided-convolution-diagram.webp)
 
 Consider the image on top. If we take the bottom layer as the input we have a standard convolution of stride 1 and width 3. _But,_ we can also go from top down, that is treat the top layer as the input and get the slightly larger bottom layer.
 
@@ -246,16 +244,16 @@ If you stop to think about that for a second, this “top down” operation is a
 
 Here’s where it gets fun. We can stride our convolutions to shrink our input. Thus we can stride our deconvolutions to grow our input. I think the easiest way to understand how strides work with deconvolutions is to look at the following pictures.
 
-![Figure](./1__TbzTaipbTKQYo0MKHCf__ZA.png)
-![Figure](./1__ZyZpAur5DugJNcdt1__bNaw.png)
+![Strided convolution diagram showing kernel covering inputs](./strided-convolution-diagram.webp)
+![Transposed convolution with overlapping coverage of outputs](./transposed-convolution-overlap.webp)
 
 We’ve already seen the top one. Notice that each input (the top layer) feeds three of the outputs and that each of the outputs is fed by three inputs (except the edges).
 
-![Figure](./1__xDtirriDTQHaXlqVl0s__GA.png)
+![Dilated convolution spacing with gaps widening receptive field](./dilated-convolution-spacing.webp)
 
 In the second picture we place imaginary holes in our inputs. Notice that now each of the outputs is fed by at most two inputs.
 
-![Figure](./1__K6iQnpVMn3pDqOdFZfZsLg.png)
+![Transposed convolution upscaling a sequence length](./transposed-convolution-upscaling.webp)
 
 In the third picture we’ve added two imaginary holes into out input layer and so each output is fed by exactly one input. This ends up tripling the sequence length of our output with respect to the sequence length of our input.
 
@@ -268,7 +266,7 @@ A few things worth thinking about
 3. I point that out to convince you that their is enough information in the input layer of a deconvolution to spread across a few points in the output.
 4. In practice, I’ve had success running a few convolutions with length preserving padding after a deconvolution. I imagine, though haven’t proven, that this acts like a redistribution of information. I think of it like letting a steak rest after grilling to let the juices redistribute.
 
-![Figure](./0__fqVi____8myNwH2cDH.png)
+![Comparison of steak not rested versus rested to illustrate information redistribution](./steak-resting-comparison.webp)
 
 ### Summary
 
