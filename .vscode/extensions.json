@@ -1,0 +1,15 @@
+{
+  // Workspace recommended extensions. VS Code will prompt to install these.
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "DavidAnson.vscode-markdownlint",
+    "stylelint.vscode-stylelint",
+    "idleberg.hgpt",
+    "mrmlnc.vscode-scss",
+    "esbenp.prettier-vscode"
+  ],
+  // Extensions explicitly not recommended for this workspace.
+  "unwantedRecommendations": [
+    "dbaeumer.vscode-eslint"
+  ]
+}

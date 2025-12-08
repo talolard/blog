@@ -1,0 +1,54 @@
+// Responsive adjustments.
+@media (max-width: 900px) {
+  .site-shell {
+    padding-top: 1.5rem;
+  }
+
+  .site-header {
+    position: static;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .toc {
+    position: relative;
+    top: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .nav-list {
+    gap: 0.4rem;
+  }
+
+  .nav-list a {
+    padding: 0.35rem 0.55rem;
+  }
+
+  .post-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .img-row picture {
+    max-width: 100%;
+  }
+
+  .brand-letters img {
+    height: 40px;
+  }
+}

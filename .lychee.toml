@@ -1,0 +1,3 @@
+exclude = ["127.0.0.1", "localhost"]
+max_cache_age = "1d"
+user_agent = "lychee/0.17 (talperry.com)"

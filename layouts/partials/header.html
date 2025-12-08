@@ -1,0 +1,39 @@
+<header class="site-header">
+  <div class="brand-stack">
+    <div class="brand brand-letters">
+      <a href="/" aria-label="Tal Perry home">
+        <span class="sr-only">{{ .Site.Title }}</span>
+        {{ $letters := slice
+          (dict "file" "T_Tiger_Tiger.webp" "alt" "T is for Tiger")
+          (dict "file" "A_Ameise_Ant.webp" "alt" "A is for Ant")
+          (dict "file" "L_Laterne_Lantern.webp" "alt" "L is for Lantern")
+          (dict "file" "P_Pinguin_Penguin.webp" "alt" "P is for Penguin")
+          (dict "file" "E_Eule_Owl.webp" "alt" "E is for Owl")
+          (dict "file" "R_Ritter_Knight.webp" "alt" "R is for Knight")
+          (dict "file" "R_Regenbogen_Rainbow.webp" "alt" "R is for Rainbow")
+          (dict "file" "Y_Yacht_Yacht.webp" "alt" "Y is for Yacht")
+        }}
+        {{ range $letters }}
+          {{ $alt := .alt }}
+          {{ with resources.Get (printf "letters/%s" .file) }}
+            {{ $resized := .Resize "220x" }}
+            <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}">
+          {{ end }}
+        {{ end }}
+      </a>
+    </div>
+    <span class="brand-subtext">Writing on leadership, product, and machine learning</span>
+  </div>
+  {{ with .Site.Menus.main }}
+  <nav aria-label="Primary">
+    <ul class="nav-list">
+      {{ $current := $ }}
+      {{ range . }}
+      <li class="{{ if $current.HasMenuCurrent "main" . }}active{{ end }}">
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+  {{ end }}
+</header>

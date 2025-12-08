@@ -1,0 +1,18 @@
+// SCSS entrypoint: imports modular partials for base, layout, components, and utilities.
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+@import "base/variables";
+@import "base/reset";
+@import "base/typography";
+
+@import "layout/shell";
+@import "layout/header";
+
+@import "components/hero";
+@import "components/cards";
+@import "components/article";
+@import "components/footer";
+
+@import "utilities/a11y";
+@import "utilities/animations";
+@import "utilities/media-queries";

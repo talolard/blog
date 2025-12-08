@@ -1,0 +1,6 @@
+{
+  "profile": "jinja",
+  "indent": 2,
+  "line_length": 120,
+  "ignore": "H006,H016,H030,H031,J018"
+}

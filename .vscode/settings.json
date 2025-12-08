@@ -1,0 +1,64 @@
+{
+  "search.useIgnoreFiles": true,
+  "search.useGlobalIgnoreFiles": true,
+  "search.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "public/**": true,
+    "resources/**": true,
+    "themes/**/exampleSite/**": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "public": true,
+    "resources": true,
+    "themes/**/exampleSite": true
+  },
+  "files.watcherExclude": {
+    "public/**": true,
+    "resources/**": true
+  },
+  "editor.semanticHighlighting.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.linkedEditing": true,
+    "editor.suggest.insertMode": "insert",
+    "editor.suggest.showSnippets": true,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "editor.rulers": [
+      80
+    ],
+    "editor.renderWhitespace": "selection",
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.smoothScrolling": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
+  },
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "markdownlint.configFile": ".markdownlint.yaml",
+  "markdown.preview.breaks": true,
+  "markdown.preview.frontMatter": "hidden",
+  "markdown.preview.scrollEditorWithPreview": true,
+  "markdown.preview.markEditorSelection": true,
+  "markdown.preview.openMarkdownLinks": "inEditor",
+  "markdown.updateLinksOnFileMove.enabled": true,
+  "markdown.extension.toc.updateOnSave": true,
+  "markdown.extension.toc.levels": "2..4",
+  "vale.coreStylesPath": "${workspaceFolder}/.vale/styles",
+  "vale.valeCLI.path": "vale",
+  "yaml.customTags": [
+    "!reference scalar"
+  ],
+  "yaml.format.enable": true
+}

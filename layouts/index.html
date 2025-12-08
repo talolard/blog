@@ -1,0 +1,46 @@
+{{ define "main" }}
+<section class="hero">
+  <div>
+    <p class="eyebrow">Personal blog</p>
+    <h1>{{ .Title }}</h1>
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+  </div>
+  <!--  TODO: Add Something to this part of the grid-->
+</section>
+
+{{ $posts := sort (where .Site.RegularPages "Section" "posts") "Date" "desc" }}
+{{ if gt (len $posts) 0 }}
+<div class="section-head">
+  <h2>Latest writing</h2>
+  <a href="/posts/">Archive →</a>
+</div>
+<div class="card-grid">
+  {{ range $posts }}
+  <article class="post-card">
+    {{ $cover := partial "cover.html" . }}
+    {{ if $cover }}
+    <div class="post-cover">
+      <img src="{{ $cover }}" alt="Cover for {{ .Title }}">
+    </div>
+    {{ end }}
+    <div class="body">
+      <div class="meta">
+        <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <span class="dot"></span>
+        <span>{{ .ReadingTime }} min read</span>
+      </div>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Summary | plainify | truncate 150 }}</p>
+      {{ with .Params.tags }}
+      <div class="tag-row">
+        {{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </article>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}

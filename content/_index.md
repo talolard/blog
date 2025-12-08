@@ -4,6 +4,10 @@ date = 2024-03-15T09:41:38+01:00
 draft = false
 +++
 
-Sometimes I want to say things but can't find an open ear. That's when I write
+Thanks for stopping by. I'm Tal, Israeli, father of 2, beloved and loving partner.  I live in Berlin. I have ADHD and was formally diagnosed a few years ago, it's become a point of introspection.
 
-Currently I think a lot about being a high performing adult with ADHD, what to do with my life after selling a business and how to be a good father to my son and partner to my wife. It turns out these things are interconnected.  
+I've spent my career in ML tooling and it's impact on organizations. I built LightTag, a text annotation tool and company, which I eventually sold to Primer.
+
+At Primer, I drove the adoption of Triton inference server as a model server. The success of a technological solution depends on cultural integration as much as on technical integration.
+
+These days, I am particularly interested in the interplay of combinatorial solvers like MIP and SAT with LLMs.
