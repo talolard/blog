@@ -20,6 +20,7 @@
 - Hugo templating: prefer overrides in `layouts/partials/`, `_default/`, and shortcodes. Keep templates concise and avoid logic-heavy constructs.
 - SCSS: resides in `assets/scss/` partials; use `:root` tokens, clamp-based typography, and minimal comments.
 - Markdown content: TOML-style front matter; co-locate post-specific media. Prefer WebP; templates should provide width/height on `<img>` where practical.
+- Post images: when cleaning imported posts, rename assets to descriptive filenames, convert PNG/JPEG/GIF to WebP (use `cwebp` for stills and `gif2webp` for animations), remove originals, and update markdown links with meaningful alt text. Preserve animation intent when converting GIFs.
 
 ## Testing Guidelines
 

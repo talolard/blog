@@ -72,7 +72,7 @@ Remember that the _vision people_ got a lot of the same effect for images using 
 
 The promise of RNNs is their ability to implicitly model long term dependencies. The picture below is taken from OpenAI. They trained a model that ended up recognizing sentiment and colored the text, character by character, with the model’s output. Notice how the model sees the word “best” and triggers a positive sentiment which it carries on for over 100 characters. That’s capturing a long range dependency.
 
-![Sentiment neuron activation heatmap over review text](./sentiment-heatmap.gif)
+![Sentiment neuron activation heatmap over review text](./sentiment-heatmap.webp)
 
 The theory of RNNs promises us long range dependencies out of the box. The practice is a little more difficult. When we learn via backpropagation, we need to propagate the signal through the entire recurrence relation. The thing is, at every step we end up multiplying by a number. If those numbers are generally smaller than 1, our signal will quickly go to 0. If they are larger than 1, then our signal will explode.
 
@@ -106,7 +106,7 @@ So far we’ve set up our problem domain and talked a bit about the conceptual a
 
 ### Practical convolutions for text
 
-![Animated visualization of a convolutional kernel sliding over an image](./convolution-animation.gif)
+![Animated visualization of a convolutional kernel sliding over an image](./convolution-animation.webp)
 
 You’ve probably seen an animation like the one above illustrating what a convolution does. The bottom is an input image, the top is the result and the gray shadow is the convolutional kernel which is repeatedly applied.
 
