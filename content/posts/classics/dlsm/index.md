@@ -10,7 +10,7 @@ _**Update 15.03.2024** I wrote this more than seven years ago. My understanding 
 
 _**Update 25.1.17** — Took me a while but_ [_here is an ipython notebook_](https://github.com/talolard/MarketVectors/blob/master/preparedata.ipynb) _with a rough implementation_
 
-![Figure](./1__IhzF1r__Nywbw9K__yzgph8A.png)
+![Cumulative return comparison for different trading signals](./performance-plot-market-returns.webp)
 
 ## Why NLP is relevant to Stock prediction
 
@@ -24,20 +24,20 @@ Assuming the structure is there, the idea of summarizing the current state of th
 
 There is tons of literature on word embeddings. [Richard Socher’s lecture](https://www.youtube.com/watch?v=xhHOL3TNyJs&index=2&list=PLmImxx8Char9Ig0ZHSyTqGsdhb9weEGam) is a great place to start. In short, we can make a geometry of all the words in our language, and that geometry captures the meaning of words and relationships between them. You may have seen the example of “King-man +woman=Queen” or something of the sort.
 
-![Figure](./1__t__1EPA3cIT7lAgLbr__3YEQ.jpeg)
+![Embedding geometry example highlighting nearest neighbors for the word frog](./shakespeare-code-sample.webp)
 
 Embeddings are cool because they let us represent information in a condensed way. The old way of representing words was holding a vector (a big list of numbers) that was as long as the number of words we know, and setting a 1 in a particular place if that was the current word we are looking at. That is not an efficient approach, nor does it capture any meaning. With embeddings, we can represent all of the words in a fixed number of dimensions (300 seems to be plenty, 50 works great) and then leverage their higher dimensional geometry to understand them.
 
 The picture below shows an example. An embedding was trained on more or less the entire internet. After a few days of intensive calculations, each word was embedded in some high dimensional space. This “space” has a geometry, concepts like distance, and so we can ask which words are close together. The authors/inventors of that method made an example. Here are the words that are closest to Frog.
 
-![Figure](./1__sa6eSTuP7wjIBPuabNvUSg.png)
+![Nearest neighbors list for the word frog from a word2vec model](./word2vec-neighbors-frog.webp)
 
 But we can embed more than just words. We can do, say , stock market embeddings.
 
 ## Market2Vec
 
 The first word embedding algorithm I heard about was word2vec. I want to get the same effect for the market, though I’ll be using a different algorithm. My input data is a csv, the first column is the date, and there are 4\*1000 columns corresponding to the High Low Open Closing price of 1000 stocks. That is my input vector is 4000 dimensional, which is too big. So the first thing I’m going to do is stuff it into a lower dimensional space, say 300 because I liked the movie.
-![Figure](./1__AYP49wmgNrbkCL__aCgxK2w.jpeg)
+![Market2Vec embedding diagram compressing 4000 dimensional prices to 300](./market-embedding-diagram.webp)
 
 Taking something in 4000 dimensions and stuffing it into a 300-dimensional space my sound hard but its actually easy. We just need to multiply matrices. A matrix is a big excel spreadsheet that has numbers in every cell and no formatting problems. Imagine an excel table with 4000 columns and 300 rows, and when we basically bang it against the vector a new vector comes out that is only of size 300. I wish that’s how they would have explained it in college.
 
@@ -91,7 +91,7 @@ Notice that it knows how to open and close parentheses, and respects indentation
 
 What’s inside this magical black box? It is a type of Recurrent Neural Network (RNN) called an LSTM. An RNN is a deep learning algorithm that operates on sequences (like sequences of characters). At every step, it takes a representation of the next character (Like the embeddings we talked about before) and operates on the representation with a matrix, like we saw before. The thing is, the RNN has some form of internal memory, so it remembers what it saw previously. It uses that memory to decide how exactly it should operate on the next input. Using that memory, the RNN can “remember” that it is inside of an intended scope and that is how we get properly nested output text.
 
-![Figure](./1__NKhwsOYNUT5xU7Pyf6Znhg.png)
+![LSTM unfolded through time showing how hidden state carries indentation context](./nested-scope-code-structure.webp)
 
 A fancy version of an RNN is called a Long Short Term Memory (LSTM). LSTM has cleverly designed memory that allows it to
 
@@ -99,7 +99,7 @@ A fancy version of an RNN is called a Long Short Term Memory (LSTM). LSTM has cl
 2. Decide to forget
 3. Select how much of it’s memory it should output.
 
-![Figure](./1__J5W8FrASMi93Z81NlAui4w.png)
+![Diagram of LSTM gates controlling memory input output and forget operations](./lstm-memory-gates.webp)
 
 So an LSTM can see a “\{“ and say to itself “Oh yeah, that’s important I should remember that” and when it does, it essentially remembers an indication that it is in a nested scope. Once it sees the corresponding “}” it can decide to forget the original opening brace and thus forget that it is in a nested scope.
 
@@ -109,7 +109,7 @@ We can have the LSTM learn more abstract concepts by stacking a few of them on t
 
 The studious reader will notice that Karpathy used characters as his inputs, not embeddings (Technically a one-hot encoding of characters). But, Lars Eidnes actually used word embeddings when he wrote [Auto-Generating Clickbait With Recurrent Neural Network](https://larseidnes.com/2015/10/13/auto-generating-clickbait-with-recurrent-neural-networks/)
 
-![Figure](./1__ce8gO1KPq8o__xUQZuRFi5A.png)
+![Stacked LSTM architecture consuming word vectors and passing outputs upward](./stacked-lstm-architecture.webp)
 
 The figure above shows the network he used. Ignore the SoftMax part (we’ll get to it later). For the moment, check out how on the bottom he puts in a sequence of words vectors at the bottom and each one. (Remember, a “word vector” is a representation of a word in the form of a bunch of numbers, like we saw in the beginning of this post). Lars inputs a sequence of Word Vectors and each one of them:
 
@@ -186,7 +186,7 @@ It tweaks the abstractions our LSTMs learn so that they learn the most important
 
 Which in my opinion is amazing because we have all of this complexity and abstraction that we never had to specify anywhere. It’s all inferred MathaMagically from the specification of what we consider to be an error.
 
-![Figure](./1__z4EH4w8cXKVSoQcHcck0Aw.jpeg)
+![Training loss curve illustrating stochastic gradient descent behavior](./stochastic-gradient-plot.webp)
 
 ## What’s next
 

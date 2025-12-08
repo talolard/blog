@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Convert staged raster images to WebP and stage the result.
 
-- Converts .png/.jpg/.jpeg files to .webp alongside originals.
+- Converts .png/.jpg/.jpeg/.gif files to .webp alongside originals.
 - Removes the source file after conversion.
 - Re-stages the new WebP file so the commit picks it up.
 
@@ -16,13 +16,22 @@ from typing import Iterable
 from PIL import Image
 
 
-ALLOWED_EXTS = {".png", ".jpg", ".jpeg"}
+ALLOWED_EXTS = {".png", ".jpg", ".jpeg", ".gif"}
 
 
 def convert(path: Path) -> None:
     target = path.with_suffix(".webp")
     with Image.open(path) as im:
-        im.save(target, "WEBP", quality=90)
+        save_kwargs = {"quality": 90}
+        if getattr(im, "is_animated", False):
+            save_kwargs.update(
+                {
+                    "save_all": True,
+                    "duration": im.info.get("duration"),
+                    "loop": im.info.get("loop", 0),
+                }
+            )
+        im.save(target, "WEBP", **save_kwargs)
     path.unlink()
     subprocess.run(["git", "add", str(target)], check=False)
 
