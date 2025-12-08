@@ -1,0 +1,16 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "max-nesting-depth": 3,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "value-keyword-case": null,
+    "shorthand-property-no-redundant-values": null,
+    "import-notation": null,
+    "at-rule-empty-line-before": null,
+    "media-feature-range-notation": null,
+    "font-family-name-quotes": null,
+    "no-descending-specificity": null,
+    "rule-empty-line-before": null
+  }
+}

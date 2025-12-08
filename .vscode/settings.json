@@ -20,8 +20,8 @@
     "resources/**": true
   },
   "editor.semanticHighlighting.enabled": true,
-  "editor.bracketPairColorization.enabled": true
-  ,"[markdown]": {
+  "editor.bracketPairColorization.enabled": true,
+  "[markdown]": {
     "editor.quickSuggestions": {
       "other": true,
       "comments": true,
@@ -30,5 +30,16 @@
     "editor.linkedEditing": true,
     "editor.suggest.insertMode": "insert",
     "editor.suggest.showSnippets": true
-  }
+  },
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "markdownlint.config": "${workspaceFolder}/.markdownlint.yaml",
+  "vale.coreStylesPath": "${workspaceFolder}/.vale/styles",
+  "vale.valeCLI.path": "vale",
+  "yaml.customTags": [
+    "!reference scalar"
+  ],
+  "yaml.format.enable": true
 }

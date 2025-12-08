@@ -23,3 +23,10 @@
 ## Commit & Pull Request Guidelines
 - Commit messages: present-tense, concise (e.g., “Add letter gallery shortcode”, “Refine card grid alignment”).
 - PRs: include a brief summary of visual/UX changes and screenshots when altering layout or styles; link related issues if applicable. Ensure Git LFS pointers are committed for `assets/letters/*.webp`.
+
+## Tooling & Pre-commit
+- Install pre-commit: `pip install pre-commit` then `pre-commit install`.
+- Hooks run stylelint (SCSS), markdownlint, vale, djlint, yamllint, lychee, plus custom image handling:
+  - `convert_to_webp.py` converts staged png/jpg/jpeg to WebP and re-stages them.
+  - `enforce_lfs_webp.py` ensures WebP files use Git LFS. LFS rule: `*.webp` in `.gitattributes`.
+- Configs: `.stylelintrc.json`, `.markdownlint.yaml`, `.vale.ini`, `.djlintrc`, `.yamllint.yml`, `.lychee.toml`.

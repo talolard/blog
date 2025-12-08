@@ -9,4 +9,3 @@ This is a write up
 def fib(n :int): -> int
     return n+fib(n-1)
 ```
-
