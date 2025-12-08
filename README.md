@@ -3,6 +3,7 @@
 Personal Hugo site with a refreshed layout focused on readable typography and simple navigation.
 
 ## Features
+
 - Card-based home/archive with featured images, tags, dates, and reading time
 - Sticky header with navigation (Home, Archive, About, Contact) and footer with RSS/email
 - Article view with optional table of contents, hero image, and prev/next links
@@ -11,6 +12,7 @@ Personal Hugo site with a refreshed layout focused on readable typography and si
 - Letter art stored in `assets/letters` as WebP (tracked with Git LFS); shortcodes resize to multiple sizes at build time
 
 ## Mermaid diagrams
+
 Use fenced code blocks with the `mermaid` language. The render hook sets a flag to load Mermaid only on pages that include diagrams.
 
 ```mermaid
@@ -22,6 +24,7 @@ sequenceDiagram
 ```
 
 ## Development
+
 - Build: `make build`
 - Live preview: `make serve` (runs `hugo server -D --disableFastRender --gc`)
 - Clean generated assets: `make clean`

@@ -29,13 +29,30 @@
     },
     "editor.linkedEditing": true,
     "editor.suggest.insertMode": "insert",
-    "editor.suggest.showSnippets": true
+    "editor.suggest.showSnippets": true,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "editor.rulers": [80],
+    "editor.renderWhitespace": "selection",
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.smoothScrolling": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
   },
   "stylelint.validate": [
     "css",
     "scss"
   ],
-  "markdownlint.config": "${workspaceFolder}/.markdownlint.yaml",
+  "markdownlint.configFile": ".markdownlint.yaml",
+  "markdown.preview.breaks": true,
+  "markdown.preview.frontMatter": "hidden",
+  "markdown.preview.scrollEditorWithPreview": true,
+  "markdown.preview.markEditorSelection": true,
+  "markdown.preview.openMarkdownLinks": "inEditor",
+  "markdown.updateLinksOnFileMove.enabled": true,
+  "markdown.extension.toc.updateOnSave": true,
+  "markdown.extension.toc.levels": "2..4",
   "vale.coreStylesPath": "${workspaceFolder}/.vale/styles",
   "vale.valeCLI.path": "vale",
   "yaml.customTags": [

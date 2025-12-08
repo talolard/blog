@@ -8,6 +8,6 @@ Thanks for stopping by. I'm Tal, Israeli, father of 2, beloved and loving partne
 
 I've spent my career in ML tooling and it's impact on organizations. I built LightTag, a text annotation tool and company, which I eventually sold to Primer.
 
-At Primer, I drove the adoption of Triton inference server as a model server. The success of a technological solution depends on cultural integrationa as much as on technical integration.
+At Primer, I drove the adoption of Triton inference server as a model server. The success of a technological solution depends on cultural integration as much as on technical integration.
 
 These days, I am particularly interested in the interplay of combinatorial solvers like MIP and SAT with LLMs.

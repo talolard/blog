@@ -1,4 +1,5 @@
 # SCSS Overview
+
 - `styles.scss`: single entrypoint; imports all partials below.
 - `base/`: tokens, reset, and typography primitives.
 - `layout/`: page-wide framing (shell, header).

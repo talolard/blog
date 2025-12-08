@@ -1,66 +1,66 @@
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.6.0
-  hooks:
-  - id: check-yaml
-  - id: end-of-file-fixer
-  - id: trailing-whitespace
-  - id: check-added-large-files
-- repo: local
-  hooks:
-  - id: convert-to-webp
-    name: Convert raster images to WebP
-    entry: python scripts/convert_to_webp.py
-    language: python
-    types:
-    - png
-    - jpeg
-    additional_dependencies:
-    - Pillow
-  - id: enforce-lfs-webp
-    name: Ensure WebP files use Git LFS
-    entry: python scripts/enforce_lfs_webp.py
-    language: python
-    files: .*\.webp$
-- repo: local
-  hooks:
-  - id: stylelint
-    name: stylelint (scss)
-    entry: npx stylelint
-    language: node
-    types_or:
-    - css
-    - scss
-    files: assets/scss/.*\.(css|scss)$
-    additional_dependencies:
-    - stylelint@16.11.0
-    - stylelint-config-standard-scss@13.0.0
-- repo: https://github.com/igorshubovych/markdownlint-cli
-  rev: v0.42.0
-  hooks:
-  - id: markdownlint
-    args:
-    - --config
-    - .markdownlint.yaml
-- repo: https://github.com/errata-ai/vale
-  rev: v3.7.1
-  hooks:
-  - id: vale
-- repo: https://github.com/Riverside-Healthcare/djlint
-  rev: v1.36.1
-  hooks:
-  - id: djlint
-    args:
-    - --profile
-    - jinja
-    - --indent
-    - '2'
-    files: (layouts|themes/maverick/layouts)/.*\.(html|jinja|j2)$
-- repo: https://github.com/adrienverge/yamllint
-  rev: v1.35.1
-  hooks:
-  - id: yamllint
-    files: .*\.(yml|yaml)$
-- repo: https://github.com/lycheeverse/lychee
-  rev: v0.15.1
-  hooks: []
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-added-large-files
+  - repo: local
+    hooks:
+      - id: convert-to-webp
+        name: Convert raster images to WebP
+        entry: python scripts/convert_to_webp.py
+        language: python
+        types:
+          - png
+          - jpeg
+        additional_dependencies:
+          - Pillow
+      - id: enforce-lfs-webp
+        name: Ensure WebP files use Git LFS
+        entry: python scripts/enforce_lfs_webp.py
+        language: python
+        files: .*\.webp$
+  - repo: local
+    hooks:
+      - id: stylelint
+        name: stylelint (scss)
+        entry: npx stylelint
+        language: node
+        types_or:
+          - css
+          - scss
+        files: assets/scss/.*\.(css|scss)$
+        additional_dependencies:
+          - stylelint@16.11.0
+          - stylelint-config-standard-scss@13.0.0
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.42.0
+    hooks:
+      - id: markdownlint
+        args:
+          - --config
+          - .markdownlint.yaml
+  - repo: https://github.com/errata-ai/vale
+    rev: v3.7.1
+    hooks:
+      - id: vale
+  - repo: https://github.com/Riverside-Healthcare/djlint
+    rev: v1.36.1
+    hooks:
+      - id: djlint
+        args:
+          - --profile
+          - jinja
+          - --indent
+          - '2'
+        files: (layouts|themes/maverick/layouts)/.*\.(html|jinja|j2)$
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        files: .*\.(yml|yaml)$
+  - repo: https://github.com/lycheeverse/lychee
+    rev: v0.15.1
+    hooks: []

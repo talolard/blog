@@ -9,12 +9,11 @@ date: '2017-05-22'
 
 ### tl;dr
 
-
-*   RNNS work great for text but convolutions can do it faster
-*   Any part of a sentence can influence the semantics of a word. For that reason we want our network to see the entire input at once
-*   Getting that big a receptive can make gradients vanish and our networks fail
-*   We can solve the vanishing gradient problem with DenseNets or Dilated Convolutions
-*   Sometimes we need to generate text. We can use “deconvolutions” to generate arbitrarily long outputs.
+* RNNS work great for text but convolutions can do it faster
+* Any part of a sentence can influence the semantics of a word. For that reason we want our network to see the entire input at once
+* Getting that big a receptive can make gradients vanish and our networks fail
+* We can solve the vanishing gradient problem with DenseNets or Dilated Convolutions
+* Sometimes we need to generate text. We can use “deconvolutions” to generate arbitrarily long outputs.
 
 ### Intro
 
@@ -34,7 +33,7 @@ The straightforward way to handle this kind of task with an RNN is to feed entir
 
 Sequence labeling tasks are tasks that return an output for each input. Examples include part of speech labeling or entity recognition tasks. While the bare bones LSTM model is far from the state of the art, it is easy to implement and offers compelling results. See [this paper](https://arxiv.org/pdf/1508.01991.pdf) for a more fleshed out architecture
 
-![](./1__dG7zvFdVcxVOgxuoAiPzKg.png)
+![Figure](./1__dG7zvFdVcxVOgxuoAiPzKg.png)
 
 #### Sequence Generation
 
@@ -42,17 +41,17 @@ Arguably the most impressive results in recent NLP have been in translation. Tra
 
 At the core of this success is the Sequence to Sequence (AKA encoder decoder) framework, a methodology to “compress” a sequence into a code and then decode it to another sequence. Notable examples include translation (Encode Hebrew and decode to English), image captioning (Encode an Image and decode a textual description of its contents)
 
-![](./0__1Iqz__fVS9wl78Mc6.png)
+![Figure](./0__1Iqz__fVS9wl78Mc6.png)
 
 The basic Encoder step is similar to the scheme we described for classification. What’s amazing is that we can build a decoder that learns to generate arbitrary length outputs.
 
 The two examples above are really both translation, but sequence generation is a bit broader than that. OpenAI recently [published a paper](https://blog.openai.com/unsupervised-sentiment-neuron/) where they learn to generate “Amazon Reviews” while controlling the sentiment of the output
 
-![](./1__VciPYrmdgi46MTsEjqReHA.png)
+![Figure](./1__VciPYrmdgi46MTsEjqReHA.png)
 
 Another personal favorite is the paper [Generating Sentences from a Continuous Space](https://arxiv.org/pdf/1511.06349.pdf). In that paper, they trained a variational autoencoder on text, which led to the ability to interpolate between two sentences and get coherent results.
 
-![](./1__RldUDo1bMEaf__zrl__QuK1w.png)
+![Figure](./1__RldUDo1bMEaf__zrl__QuK1w.png)
 
 ### Requirements from an NLP architecture
 
@@ -62,8 +61,8 @@ What all of the implementations we looked at have in common is that they use a r
 
 A standard feed forward neural network has a parameter for every input. This becomes problematic when dealing with text or images for a few reasons.
 
-1.  It restricts the input size we can handle. Our network will have a finite number of input nodes and won’t be able to grow to more.
-2.  We lose a lot of common information. Consider the sentences “I like to drink beer a lot” and “I like to drink a lot of beer”. A feed forward network would have to learn about the concept of “a lot” twice as it appears in different input nodes each time.
+1. It restricts the input size we can handle. Our network will have a finite number of input nodes and won’t be able to grow to more.
+2. We lose a lot of common information. Consider the sentences “I like to drink beer a lot” and “I like to drink a lot of beer”. A feed forward network would have to learn about the concept of “a lot” twice as it appears in different input nodes each time.
 
 Recurrent neural networks solve this problem. Instead of having a node for each input, we have a big “box” of nodes that we apply to the input again and again. The “box” learns a sort of transition function, which means that the outputs follow some recurrence relation, hence the name.
 
@@ -73,7 +72,7 @@ Remember that the _vision people_ got a lot of the same effect for images using 
 
 The promise of RNNs is their ability to implicitly model long term dependencies. The picture below is taken from OpenAI. They trained a model that ended up recognizing sentiment and colored the text, character by character, with the model’s output. Notice how the model sees the word “best” and triggers a positive sentiment which it carries on for over 100 characters. That’s capturing a long range dependency.
 
-![](./1__JkjF4jAZTpnbHHJJLkfNRQ.gif)
+![Figure](./1__JkjF4jAZTpnbHHJJLkfNRQ.gif)
 
 The theory of RNNs promises us long range dependencies out of the box. The practice is a little more difficult. When we learn via backpropagation, we need to propagate the signal through the entire recurrence relation. The thing is, at every step we end up multiplying by a number. If those numbers are generally smaller than 1, our signal will quickly go to 0. If they are larger than 1, then our signal will explode.
 
@@ -107,7 +106,7 @@ So far we’ve set up our problem domain and talked a bit about the conceptual a
 
 ### Practical convolutions for text
 
-![](./1__1RpnAf____FGLDIVCBvHnDWA.gif)
+![Figure](./1__1RpnAf____FGLDIVCBvHnDWA.gif)
 
 You’ve probably seen an animation like the one above illustrating what a convolution does. The bottom is an input image, the top is the result and the gray shadow is the convolutional kernel which is repeatedly applied.
 
@@ -121,19 +120,19 @@ So what we’re doing here is changing the shape of input with tf.expand\_dims s
 
 ### Hierarchy and Receptive Fields
 
-![](./0__6D1POMKVqeCk6VgP.png)
+![Figure](./0__6D1POMKVqeCk6VgP.png)
 
 Many of us have seen pictures like the one above. It roughly shows the hierarchy of abstractions a CNN learns on images. In the first layer, the network learns basic edges. In the next layer, it combines those edges to learn more abstract concepts like eyes and noses. Finally, it combines those to recognize individual faces.
 
 With that in mind, we need to remember that each layer doesn’t just learn more abstract combinations of the previous layer. Successive layers, implicitly or explicitly, see more of the input
 
-![](./0__sPEItE5rSfKSUBbP.png)
+![Figure](./0__sPEItE5rSfKSUBbP.png)
 
 #### Increasing Receptive Field
 
 With vision often we’ll want the network to identify one or more objects in the picture while ignoring others. That is, we’ll be interested in some local phenomenon but not in a relationship that spans the entire input.
 
-![](./1__F8xWuumU27H9PDlYMEtE5Q.png)
+![Figure](./1__F8xWuumU27H9PDlYMEtE5Q.png)
 
 Text is more subtle as often we’ll want intermediate representations of our data to carry as much context about their surroundings as they possibly can. In other words, we want to have as large a receptive field as possible. Their are a few ways to go about this.
 
@@ -169,22 +168,22 @@ Luckily, many smart people have been thinking about these problems. Luckier stil
 
 [Arthur Juliani](https://medium.com/u/18dfe63fa7f0) wrote a fantastic overview of [Resnet, DenseNets and Highway networks](https://chatbotslife.com/resnets-highwaynets-and-densenets-oh-my-9bb15918ee32) for those of you looking for the details and comparison. I’ll briefly touch on DenseNets which take the core concept to its extreme.
 
-![](./1__KOjUX1ST5RnDOZWWLWRGkw.png)
+![Figure](./1__KOjUX1ST5RnDOZWWLWRGkw.png)
 
 The general idea is to reduce the distance between the signal coming from the networks loss and each individual layer. The way this is done is by adding a residual/direct connection between every layer and its predecessors. That way, the gradient can flow from each layer to its predecessors directly.
 
 DenseNets do this in a particularly interesting way. They concatenate the output of each layer to its input such that:
 
-1.  We start with an embedding of our inputs, say of dimension 10.
-2.  Our first layer calculates 10 feature maps. It outputs the 10 feature maps concatenated to the original embedding.
-3.  The second layer gets as input 20 dimensional vectors (10 from the input and 10 from the previous layer) and calculates another 10 feature maps. Thus it outputs 30 dimensional vectors.
+1. We start with an embedding of our inputs, say of dimension 10.
+2. Our first layer calculates 10 feature maps. It outputs the 10 feature maps concatenated to the original embedding.
+3. The second layer gets as input 20 dimensional vectors (10 from the input and 10 from the previous layer) and calculates another 10 feature maps. Thus it outputs 30 dimensional vectors.
 
 And so on and so on for as many layers as you’d like. The paper describes a boat load of tricks to make things manageable and efficient but that’s the basic premise and the vanishing gradient problem is solved.
 
 There are two other things I’d like to point out.
 
-1.  I previously mentioned that upper layers have a view of the original input that may be hazed by layers of abstraction. One of the highlights of concatenating the outputs of each layer is that the original signal reaches the following layers intact, so that all layers have a direct view of lower level features, essentially removing some of the haze.
-2.  The Residual connection trick requires that all of our layers have the same shape. That means that we need to pad each layer so that its input and output have the same spatial dimensions \[1Xwidth\]. That means that, on its own, this kind of architecture will work for sequence labeling tasks (Where the input and the output have the same spatial dimensions) but will need more work for encoding and classification tasks (Where we need to reduce the input to a fixed size vector or set of vectors). The DenseNet paper actually handles this as their goal is to do classification and we’ll expand on this point later.
+1. I previously mentioned that upper layers have a view of the original input that may be hazed by layers of abstraction. One of the highlights of concatenating the outputs of each layer is that the original signal reaches the following layers intact, so that all layers have a direct view of lower level features, essentially removing some of the haze.
+2. The Residual connection trick requires that all of our layers have the same shape. That means that we need to pad each layer so that its input and output have the same spatial dimensions \[1Xwidth\]. That means that, on its own, this kind of architecture will work for sequence labeling tasks (Where the input and the output have the same spatial dimensions) but will need more work for encoding and classification tasks (Where we need to reduce the input to a fixed size vector or set of vectors). The DenseNet paper actually handles this as their goal is to do classification and we’ll expand on this point later.
 
 #### Dilated Convolutions
 
@@ -194,13 +193,13 @@ You can find an almost accessible explanation of dilated convolutions in the pap
 
 The basic idea is to introduce “holes” into each filter, so that it doesn’t operate on adjacent parts of the input but rather skips over them to parts further away. Note that this is different from applying a convolution with stride >1. When we stride a filter, we skip over parts of the input between applications of the convolution. With dilated convolutions, we skip over parts of the input within a single application of the convolution. By cleverly arranging growing dilations we can achieve the promised exponential growth in receptive fields.
 
-![](/tmp/med/posts/md_1655784454356/img/0__3TaOHT7v18NQewlM.)
+![Figure](/tmp/med/posts/md_1655784454356/img/0__3TaOHT7v18NQewlM.)
 
 We’ve talked a lot of theory so far, but we’re finally at a point where we can see this stuff in action!
 
 A personal favorite paper is [Neural Machine Translation in Linear Time](https://arxiv.org/pdf/1610.10099.pdf). It follows the encoder decoder structure we talked about in the beginning. We still don’t have all the tools to talk about the decoder, but we can see the encoder in action.
 
-![](./1__iBnuidVcY5gPbWCKgmquzA.png)
+![Figure](./1__iBnuidVcY5gPbWCKgmquzA.png)
 
 And here’s an English input
 
@@ -216,13 +215,13 @@ And as a bonus, remember that sound is just like text, in the sense that it has 
 
 When we discussed DenseNets I mentioned that the use of residual connections forces us to keep the input and output length of our sequence the same, which is done via padding. This is great for tasks where we need to label each item in our sequence for example:
 
-*   In parts of speech tagging where each word is a part of speech.
-*   In entity recognition where we might label Person, Company, and Other for everything else
+* In parts of speech tagging where each word is a part of speech.
+* In entity recognition where we might label Person, Company, and Other for everything else
 
 Other times we’ll want to reduce our input sequence down to a vector representation and use that to predict something about the entire sentence
 
-*   We might want to label an email as spam based on its content and or subject
-*   Predict if a certain sentence is sarcastic or not
+* We might want to label an email as spam based on its content and or subject
+* Predict if a certain sentence is sarcastic or not
 
 In these cases, we can follow the traditional approaches of the _vision people_ and top off our network with convolutional layers that don’t have padding and/or use pooling operations.
 
@@ -230,8 +229,8 @@ But sometimes we’ll want to follow the Seq2Seq paradigm, what [Matthew Honniba
 
 This task entails two problems
 
-*   How do we do upsampling with convolutions ?
-*   How do we do exactly the right amount of up sampling?
+* How do we do upsampling with convolutions ?
+* How do we do exactly the right amount of up sampling?
 
 I still haven’t found the answer to the second question or at least have not yet understood it. In practice, it’s been enough for me to assume some upper bound on the maximum length of the output and then upsample to that point. I suspect Facebooks new [translation paper](https://s3.amazonaws.com/fairseq/papers/convolutional-sequence-to-sequence-learning.pdf) may address this but have not yet read it deeply enough to comment.
 
@@ -239,7 +238,7 @@ I still haven’t found the answer to the second question or at least have not y
 
 Deconvolutions are our tool for upsampling. It’s easiest (for me) to understand what they do through visualizations. Luckily, a few smart folks published a [great post on deconvolutions](http://distill.pub/2016/deconv-checkerboard/) over at Distill and included some fun visualizers. Lets start with those.
 
-![](./1__TbzTaipbTKQYo0MKHCf__ZA.png)
+![Figure](./1__TbzTaipbTKQYo0MKHCf__ZA.png)
 
 Consider the image on top. If we take the bottom layer as the input we have a standard convolution of stride 1 and width 3. _But,_ we can also go from top down, that is treat the top layer as the input and get the slightly larger bottom layer.
 
@@ -247,16 +246,16 @@ If you stop to think about that for a second, this “top down” operation is a
 
 Here’s where it gets fun. We can stride our convolutions to shrink our input. Thus we can stride our deconvolutions to grow our input. I think the easiest way to understand how strides work with deconvolutions is to look at the following pictures.
 
-![](./1__TbzTaipbTKQYo0MKHCf__ZA.png)
-![](./1__ZyZpAur5DugJNcdt1__bNaw.png)
+![Figure](./1__TbzTaipbTKQYo0MKHCf__ZA.png)
+![Figure](./1__ZyZpAur5DugJNcdt1__bNaw.png)
 
 We’ve already seen the top one. Notice that each input (the top layer) feeds three of the outputs and that each of the outputs is fed by three inputs (except the edges).
 
-![](./1__xDtirriDTQHaXlqVl0s__GA.png)
+![Figure](./1__xDtirriDTQHaXlqVl0s__GA.png)
 
 In the second picture we place imaginary holes in our inputs. Notice that now each of the outputs is fed by at most two inputs.
 
-![](./1__K6iQnpVMn3pDqOdFZfZsLg.png)
+![Figure](./1__K6iQnpVMn3pDqOdFZfZsLg.png)
 
 In the third picture we’ve added two imaginary holes into out input layer and so each output is fed by exactly one input. This ends up tripling the sequence length of our output with respect to the sequence length of our input.
 
@@ -264,12 +263,12 @@ Finally, we can stack multiple deconvolutional layers to gradually grow our outp
 
 A few things worth thinking about
 
-1.  If you look at these drawings from bottom up, they end up being standard strided convolutions where we just added imaginary holes at the output layers (The white blocks)
-2.  In practice, each “input” isn’t a single number but a vector. In the image world, it might be a 3 dimensional RGB value. In text it might be a 300 dimensional word embedding. If you’re (de)convolving in the middle of your network each point would be a vector of whatever size came out of the last layer.
-3.  I point that out to convince you that their is enough information in the input layer of a deconvolution to spread across a few points in the output.
-4.  In practice, I’ve had success running a few convolutions with length preserving padding after a deconvolution. I imagine, though haven’t proven, that this acts like a redistribution of information. I think of it like letting a steak rest after grilling to let the juices redistribute.
+1. If you look at these drawings from bottom up, they end up being standard strided convolutions where we just added imaginary holes at the output layers (The white blocks)
+2. In practice, each “input” isn’t a single number but a vector. In the image world, it might be a 3 dimensional RGB value. In text it might be a 300 dimensional word embedding. If you’re (de)convolving in the middle of your network each point would be a vector of whatever size came out of the last layer.
+3. I point that out to convince you that their is enough information in the input layer of a deconvolution to spread across a few points in the output.
+4. In practice, I’ve had success running a few convolutions with length preserving padding after a deconvolution. I imagine, though haven’t proven, that this acts like a redistribution of information. I think of it like letting a steak rest after grilling to let the juices redistribute.
 
-![](./0__fqVi____8myNwH2cDH.png)
+![Figure](./0__fqVi____8myNwH2cDH.png)
 
 ### Summary
 
