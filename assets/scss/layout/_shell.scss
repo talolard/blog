@@ -1,0 +1,7 @@
+// Outer shell sizing and padding.
+.site-shell {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem clamp(1rem, 4vw, 3rem) 3rem;
+  min-height: 100vh;
+}

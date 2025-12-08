@@ -1,6 +1,15 @@
 {{- $cover := "" -}}
-{{- with .Params.featured }}{{ $cover = . }}{{ end -}}
+{{- /* Prefer explicit hero files in the page bundle */ -}}
+{{- with .Resources.GetMatch "hero.webp" }}{{ $cover = .RelPermalink }}{{ end -}}
+{{- if eq $cover "" }}{{ with .Resources.GetMatch "hero.png" }}{{ $cover = .RelPermalink }}{{ end }}{{ end -}}
+
+{{- /* Fall back to params as before */ -}}
+{{- if eq $cover "" }}{{ with .Params.featured }}{{ $cover = . }}{{ end }}{{ end -}}
 {{- if eq $cover "" }}{{ with .Params.image }}{{ $cover = . }}{{ end }}{{ end -}}
 {{- if eq $cover "" }}{{ with .Params.images }}{{ if gt (len .) 0 }}{{ $cover = index . 0 }}{{ end }}{{ end }}{{ end -}}
-{{- if eq $cover "" }}{{ with .Resources.ByType "image" }}{{ with index . 0 }}{{ $cover = .RelPermalink }}{{ end }}{{ end }}{{ end -}}
+
+{{- /* Final fallback: first image resource in bundle */ -}}
+{{- if eq $cover "" }}{{ with .Resources.ByType "image" }}{{ with index . 0 }}{{ $cover = .RelPermalink }}{{ end }}{{
+end }}{{ end -}}
+
 {{- if $cover }}{{ $cover }}{{ end -}}

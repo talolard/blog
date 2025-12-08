@@ -1,0 +1,17 @@
+// Screen reader utility and anchor highlight target.
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:target {
+  scroll-margin-top: 100px;
+  animation: highlight 1.8s ease;
+}

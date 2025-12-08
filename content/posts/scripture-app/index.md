@@ -1,5 +1,5 @@
 +++
-title = 'Why I Chose Not to Develop a Scripture Memorization App for American Christians'
+title = 'I’m Not the Founder This App Deserves'
 date = 2024-05-14T10:07:22+02:00
 draft = false
 +++
@@ -19,13 +19,15 @@ Discovering Anki's effectiveness, I came across a heartwarming [Reddit story][3]
 ![GenAI makes a fun way to read the word Giraffe ](./giraffe.jpeg "=350x")
 Moreover, I discovered that GenAI allows me to generate large volumes of high-quality content affordably, which would have been prohibitively expensive a few years ago. Using GenAI, I created engaging educational content for my son, like spelling the word “Wurst” (sausage) using images of sausages and producing illustrated and narrated German sentences in YouTube videos.
 
-I was intrigued by the possibility of selling this as a product to other parents. However, I realized that the market for educational apps teaching children to read is unappealing. The price point is low, customer acquisition costs are high, regulations are complex, and subscription revenue is challenging to achieve.
+There is something beautiful about people wanting to internalize the words that shape them. I was intrigued by the possibility of selling this as a product to other parents. However, I realized that the market for educational apps teaching children to read is unappealing. The price point is low, customer acquisition costs are high, regulations are complex, and subscription revenue is challenging to achieve.
 
 Despite these hurdles, I remained interested in the intersection of affordable high-quality content that GenAI enables and memorization algorithms. However, having previously made the mistake of building something and then validating whether someone wanted it, I now sought a problem to solve before developing a solution.
 
 One day, driven by curiosity, I embarked on an endeavor to memorize several chapters of the Old Testament in Hebrew using Anki. Although this could be a product, its Jewish-specific focus limits the potential market due to the smaller global Jewish population.
 
 In contrast, there are many Christians in the U.S. with smartphones and relatively high disposable income. This could be a viable market, so I began exploring scripture memorization for Christians.
+
+I also had to admit that while the market was large and legible, it wasn’t my story to tell, nor an audience I could intuit from lived experience.
 
 ## The Deep Dive
 
@@ -53,6 +55,8 @@ While discussing the idea with my wife in traffic, Maria was singing along to [C
 
 If I were to sell scripture memorization software to American Christians, what could I intuit about them? What relevance or advantage do I have in creating a product that touches on an identity I don’t share?
 
+I realized I wasn’t just missing the marketing language—I was missing the lived context that shapes why scripture memorization matters in the first place.
+
 This issue can be addressed with money. I could hire an agency that specializes in the Christian segment. But without a market-ready product, why invest in marketing? And without a clear marketing strategy, why build the product?
 
 ## Personal Fit and Market Understanding
@@ -63,9 +67,13 @@ Yes, I would like to help people deepen their spirituality. Yes, it would be int
 
 No, it’s not.
 
+The question wasn’t whether I could build it—but why I would. There are many good problems, but not all of them are mine.
+
 ## Conclusion
 
 I was initially excited about this opportunity because it leveraged familiar technology, had a large and well-defined market, and seemed potentially lucrative. However, I realized that without a personal advantage in this space, the cost (in time and money) to develop even an MVP was more than I was willing to invest.
+
+Exploration of a market became exploration of identity.
 
 [1]: https://lighttag.io
 [2]: https://apps.ankiweb.net/

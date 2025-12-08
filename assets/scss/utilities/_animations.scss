@@ -1,0 +1,9 @@
+// Shared animations.
+@keyframes highlight {
+  0% {
+    background: var(--accent-soft);
+  }
+  100% {
+    background: transparent;
+  }
+}
