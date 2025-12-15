@@ -1,7 +1,7 @@
 +++
 title = 'Writing Better Text with Ideogram.ai'
 date = 2024-04-01T07:34:28+02:00
-draft = false
+draft = true
 +++
 
 I've been using Anki, a spaced repetition app to learn German. It worked really well and I wondered if I could use it to teach my five year old son to read.
