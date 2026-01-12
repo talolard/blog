@@ -1,0 +1,34 @@
+// RTL overrides keyed off the document [dir="rtl"] attribute.
+[dir="rtl"] {
+  .nav-list {
+    flex-direction: row-reverse;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+
+  .article-layout:has(.toc) {
+    grid-template-columns: minmax(0, 3fr) 1fr;
+  }
+
+  .article-layout .toc {
+    grid-column: 2;
+  }
+
+  .article-layout .article-body {
+    grid-column: 1;
+  }
+
+  .toc ul {
+    padding-right: 1rem;
+    padding-left: 0;
+  }
+
+  ul,
+  ol {
+    padding-right: 1.4rem;
+    padding-left: 0;
+  }
+}
+
