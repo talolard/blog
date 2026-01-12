@@ -1,0 +1,18 @@
+[menu_home]
+other = "Startseite"
+
+[menu_archive]
+other = "Archiv"
+
+[menu_about]
+other = "Über"
+
+[menu_contact]
+other = "Kontakt"
+
+[brand_tagline]
+other = "Schreiben über Führung, Produkt und maschinelles Lernen"
+
+[read_time]
+other = "{{ .Count }} Min. Lesezeit"
+
