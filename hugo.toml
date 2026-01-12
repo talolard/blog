@@ -1,7 +1,25 @@
 baseURL = 'https://talperry.com/'
 languageCode = 'en-us'
+defaultContentLanguage = 'en'
 title = 'Tal Perry'
 theme = 'maverick'
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    languageCode = 'en-US'
+    weight = 1
+
+  [languages.de]
+    languageName = 'Deutsch'
+    languageCode = 'de-DE'
+    weight = 2
+
+  [languages.he]
+    languageName = 'עברית'
+    languageCode = 'he-IL'
+    languageDirection = 'rtl'
+    weight = 3
 
 [params]
 description = 'Notes on building products, applied machine learning, and life in Berlin.'
