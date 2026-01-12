@@ -1,7 +1,7 @@
 +++
 title = 'Five Practical Lessons for Serving Models with Triton Inference Server'
 date = 2025-12-15T10:00:00+02:00
-draft = true
+draft = false
 tags = ['machine-learning', 'mlops', 'inference', 'triton']
 +++
 
@@ -20,8 +20,12 @@ A few concrete examples make this clear:
 - **Dynamic batching → Continuous batching**
   Triton’s dynamic batcher waits briefly to group whole requests and then executes them together. This works extremely well for fixed-shape inference. LLM serving, on the other hand, benefits from continuous batching, where new requests are inserted into an active batch as others finish generating tokens. While this is technically possible through Triton’s vLLM backend, it is neither simple nor obvious to operate.
 
+{{< img src="dynamic-vs-continuous-batching.png" alt="Dynamic batching vs continuous batching" class="article-image" resize="1200x" >}}
+
 - **Model packing → Model sharding**
   Triton makes it easy to pack multiple models onto a single GPU to improve utilization. LLMs rarely fit this model. Even modest models tend to consume an entire GPU, and larger ones require sharding across GPUs or even nodes. Triton doesn’t prevent this, but it also doesn’t meaningfully help.
+
+{{< img src="model-sharding-vs-packing.png" alt="Model sharding vs model packing" class="article-image" resize="1200x" >}}
 
 - **Request caching → Prefix caching**
   Triton’s built-in cache works by storing request–response pairs, which is very effective for deterministic workloads. Generative models instead benefit from caching intermediate state, such as KV caches keyed by shared prompt prefixes. This is a fundamentally different problem and one that LLM-native serving systems handle far more naturally.
@@ -52,6 +56,8 @@ Triton requires clients to know model names, tensor names, shapes, and data type
 Where things go wrong is when that wrapper grows ambitions.
 
 I’ve seen (and built) client libraries that try to be helpful by adding retries, backoff, or other resilience features. In practice, this often backfires. Retrying requests that failed due to overload or invalid inputs can amplify traffic precisely when the system is already struggling, turning a transient slowdown into a self-inflicted denial-of-service.
+
+Which is not to say don't use retries, but rather don't make them invisible, and allow callers to identify and be identified when retry logic needs to be revistied.
 
 My recommendation is simple: keep client libraries boring. Let them handle request construction and nothing more. Implement retries and error handling at the call site, where the application has the necessary context and observability to do the right thing.
 
