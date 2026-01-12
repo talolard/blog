@@ -37,6 +37,16 @@
         <a href="{{ .URL }}">{{ $label }}</a>
       </li>
       {{ end }}
+      <li class="lang-switcher">
+        {{ $currentLang := $.Site.Language.Lang }}
+        {{ range $.Site.Home.AllTranslations }}
+          <a href="{{ .RelPermalink }}"
+             lang="{{ .Language.Lang }}"
+             {{ if eq .Language.Lang $currentLang }}aria-current="page"{{ end }}>
+            {{ .Language.LanguageName }}
+          </a>
+        {{ end }}
+      </li>
     </ul>
   </nav>
   {{ end }}
