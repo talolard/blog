@@ -1,0 +1,18 @@
+[menu_home]
+other = "בית"
+
+[menu_archive]
+other = "ארכיון"
+
+[menu_about]
+other = "אודות"
+
+[menu_contact]
+other = "צור קשר"
+
+[brand_tagline]
+other = "כתיבה על מנהיגות, מוצר ולמידת מכונה"
+
+[read_time]
+other = "{{ .Count }} דקות קריאה"
+

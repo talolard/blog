@@ -1,0 +1,18 @@
+[menu_home]
+other = "Home"
+
+[menu_archive]
+other = "Archive"
+
+[menu_about]
+other = "About"
+
+[menu_contact]
+other = "Contact"
+
+[brand_tagline]
+other = "Writing on leadership, product, and machine learning"
+
+[read_time]
+other = "{{ .Count }} min read"
+
