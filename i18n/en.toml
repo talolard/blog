@@ -16,3 +16,14 @@ other = "Writing on leadership, product, and machine learning"
 [read_time]
 other = "{{ .Count }} min read"
 
+[footer_tagline]
+other = "personal notes from Berlin."
+
+[footer_built_with_hugo]
+other = "Built with Hugo."
+
+[footer_rss]
+other = "RSS"
+
+[footer_email]
+other = "Email"

@@ -16,3 +16,14 @@ other = "Schreiben über Führung, Produkt und maschinelles Lernen"
 [read_time]
 other = "{{ .Count }} Min. Lesezeit"
 
+[footer_tagline]
+other = "Persönliche Notizen aus Berlin."
+
+[footer_built_with_hugo]
+other = "Erstellt mit Hugo."
+
+[footer_rss]
+other = "RSS"
+
+[footer_email]
+other = "E-Mail"

@@ -26,18 +26,22 @@ description = 'Notes on building products, applied machine learning, and life in
 
 [menu]
   [[menu.main]]
+    identifier = 'home'
     name = 'Home'
     url = '/'
     weight = 1
   [[menu.main]]
+    identifier = 'archive'
     name = 'Archive'
     url = '/posts/'
     weight = 2
   [[menu.main]]
+    identifier = 'about'
     name = 'About'
     url = '/about/'
     weight = 3
   [[menu.main]]
+    identifier = 'contact'
     name = 'Contact'
     url = 'mailto:tal@talperry.com'
     weight = 4
