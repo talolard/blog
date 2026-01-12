@@ -22,7 +22,7 @@
         {{ end }}
       </a>
     </div>
-    <span class="brand-subtext">Writing on leadership, product, and machine learning</span>
+    <span class="brand-subtext">{{ i18n "brand_tagline" }}</span>
   </div>
   {{ with .Site.Menus.main }}
   <nav aria-label="Primary">
@@ -30,7 +30,11 @@
       {{ $current := $ }}
       {{ range . }}
       <li class="{{ if $current.HasMenuCurrent "main" . }}active{{ end }}">
-        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ $label := .Name }}
+        {{ with .Identifier }}
+          {{ $label = i18n (printf "menu_%s" .) }}
+        {{ end }}
+        <a href="{{ .URL }}">{{ $label }}</a>
       </li>
       {{ end }}
     </ul>

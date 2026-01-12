@@ -16,3 +16,14 @@ other = "כתיבה על מנהיגות, מוצר ולמידת מכונה"
 [read_time]
 other = "{{ .Count }} דקות קריאה"
 
+[footer_tagline]
+other = "הערות אישיות מברלין."
+
+[footer_built_with_hugo]
+other = "נבנה עם Hugo."
+
+[footer_rss]
+other = "RSS"
+
+[footer_email]
+other = "אימייל"
