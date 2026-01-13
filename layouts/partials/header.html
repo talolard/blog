@@ -1,7 +1,8 @@
 <header class="site-header">
+  {{ $page := . }}
   <div class="brand-stack">
     <div class="brand brand-letters">
-      <a href="/" aria-label="Tal Perry home">
+      <a href="{{ "/" | relLangURL }}" aria-label="Tal Perry home">
         <span class="sr-only">{{ .Site.Title }}</span>
         {{ $letters := slice
           (dict "file" "T_Tiger_Tiger.webp" "alt" "T is for Tiger")
@@ -13,39 +14,59 @@
           (dict "file" "R_Regenbogen_Rainbow.webp" "alt" "R is for Rainbow")
           (dict "file" "Y_Yacht_Yacht.webp" "alt" "Y is for Yacht")
         }}
-        {{ range $letters }}
-          {{ $alt := .alt }}
-          {{ with resources.Get (printf "letters/%s" .file) }}
+        {{ range $i, $letter := $letters }}
+          {{ if eq $i 3 }}
+            <span class="brand-letter-spacer" aria-hidden="true"></span>
+          {{ end }}
+          {{ $alt := $letter.alt }}
+          {{ with resources.Get (printf "letters/%s" $letter.file) }}
             {{ $resized := .Resize "220x" }}
             <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}">
           {{ end }}
         {{ end }}
       </a>
     </div>
-    <span class="brand-subtext">{{ i18n "brand_tagline" }}</span>
   </div>
-  {{ with .Site.Menus.main }}
+  {{ with $page.Site.Menus.main }}
   <nav aria-label="Primary">
     <ul class="nav-list">
-      {{ $current := $ }}
+      {{ $current := $page }}
       {{ range . }}
       <li class="{{ if $current.HasMenuCurrent "main" . }}active{{ end }}">
         {{ $label := .Name }}
         {{ with .Identifier }}
           {{ $label = i18n (printf "menu_%s" .) }}
         {{ end }}
-        <a href="{{ .URL }}">{{ $label }}</a>
+        {{ $url := .URL }}
+        {{ if or (hasPrefix $url "http://") (hasPrefix $url "https://") (hasPrefix $url "mailto:") }}
+          <a href="{{ $url }}">{{ $label }}</a>
+        {{ else }}
+          <a href="{{ $url | relLangURL }}">{{ $label }}</a>
+        {{ end }}
       </li>
       {{ end }}
       <li class="lang-switcher">
-        {{ $currentLang := $.Site.Language.Lang }}
-        {{ range $.Site.Home.AllTranslations }}
-          <a href="{{ .RelPermalink }}"
-             lang="{{ .Language.Lang }}"
-             {{ if eq .Language.Lang $currentLang }}aria-current="page"{{ end }}>
-            {{ .Language.LanguageName }}
-          </a>
+        {{ $currentLang := $page.Site.Language.Lang }}
+        {{ $translations := $page.AllTranslations }}
+        {{ if not $translations }}
+          {{ $translations = $page.Site.Home.AllTranslations }}
         {{ end }}
+        <details class="lang-switcher__details">
+          <summary class="lang-switcher__button" aria-label="Language">
+            {{ upper $currentLang }}
+          </summary>
+          <ul class="lang-switcher__menu">
+            {{ range $translations }}
+              <li>
+                <a href="{{ .RelPermalink }}"
+                   lang="{{ .Language.Lang }}"
+                   {{ if eq .Language.Lang $currentLang }}aria-current="page"{{ end }}>
+                  {{ upper .Language.Lang }}
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </details>
       </li>
     </ul>
   </nav>

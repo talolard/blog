@@ -1,47 +1,48 @@
 baseURL = 'https://talperry.com/'
 languageCode = 'en-us'
 defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
 title = 'Tal Perry'
 theme = 'maverick'
 
 [languages]
-  [languages.en]
-    languageName = 'English'
-    languageCode = 'en-US'
-    weight = 1
+[languages.en]
+languageName = 'English'
+languageCode = 'en-US'
+weight = 1
 
-  [languages.de]
-    languageName = 'Deutsch'
-    languageCode = 'de-DE'
-    weight = 2
+[languages.de]
+languageName = 'Deutsch'
+languageCode = 'de-DE'
+weight = 2
 
-  [languages.he]
-    languageName = 'עברית'
-    languageCode = 'he-IL'
-    languageDirection = 'rtl'
-    weight = 3
+[languages.he]
+languageName = 'עברית'
+languageCode = 'he-IL'
+languageDirection = 'rtl'
+weight = 3
 
 [params]
-description = 'Notes on building products, applied machine learning, and life in Berlin.'
+description = 'Shouting into the void , now with AI.'
 
 [menu]
-  [[menu.main]]
-    identifier = 'home'
-    name = 'Home'
-    url = '/'
-    weight = 1
-  [[menu.main]]
-    identifier = 'archive'
-    name = 'Archive'
-    url = '/posts/'
-    weight = 2
-  [[menu.main]]
-    identifier = 'about'
-    name = 'About'
-    url = '/about/'
-    weight = 3
-  [[menu.main]]
-    identifier = 'contact'
-    name = 'Contact'
-    url = 'mailto:tal@talperry.com'
-    weight = 4
+[[menu.main]]
+identifier = 'home'
+name = 'Home'
+url = '/'
+weight = 1
+[[menu.main]]
+identifier = 'archive'
+name = 'Archive'
+url = '/posts/'
+weight = 2
+[[menu.main]]
+identifier = 'about'
+name = 'About'
+url = '/about/'
+weight = 3
+[[menu.main]]
+identifier = 'contact'
+name = 'Contact'
+url = '/contact/'
+weight = 4

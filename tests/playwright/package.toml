@@ -1,0 +1,4 @@
+# This repo uses `uv` which reads `pyproject.toml` for project metadata and deps.
+# This file exists to match the original plan in `docs/plans/2_ui_feedback.md`.
+#
+# Source of truth: `tests/playwright/pyproject.toml`

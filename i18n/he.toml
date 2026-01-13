@@ -27,3 +27,6 @@ other = "RSS"
 
 [footer_email]
 other = "אימייל"
+
+[site_description]
+other = "הערות על בניית מוצרים, למידת מכונה יישומית והחיים בברלין."
