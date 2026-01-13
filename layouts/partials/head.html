@@ -1,0 +1,66 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{ $title := "" }}
+  {{ if .IsHome }}
+    {{ $title = .Site.Title }}
+  {{ else }}
+    {{ $title = printf "%s | %s" .Title .Site.Title }}
+  {{ end }}
+  <title>{{ $title }}</title>
+
+  {{ $description := "" }}
+  {{ if .Description }}
+    {{ $description = .Description }}
+  {{ else }}
+    {{ $description = i18n "site_description" | default .Site.Params.description }}
+  {{ end }}
+  <meta name="description" content="{{ $description }}">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{ $translations := .AllTranslations }}
+  {{ range $translations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+  {{ end }}
+  {{ $defaultLang := "en" }}
+  {{ $defaultPage := (index (where $translations "Language.Lang" $defaultLang) 0) | default . }}
+  <link rel="alternate" hreflang="x-default" href="{{ $defaultPage.Permalink }}">
+
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $description }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+
+  {{ $image := "" }}
+  {{ with .Params.images }}
+    {{ $image = index . 0 }}
+  {{ end }}
+  {{ with .Params.image }}
+    {{ $image = . }}
+  {{ end }}
+  {{ if $image }}
+    <meta property="og:image" content="{{ $image | absURL }}">
+  {{ end }}
+
+  {{ $twitterCard := "summary" }}
+  {{ if $image }}
+    {{ $twitterCard = "summary_large_image" }}
+  {{ end }}
+  <meta name="twitter:card" content="{{ $twitterCard }}">
+  <meta name="twitter:title" content="{{ $title }}">
+  <meta name="twitter:description" content="{{ $description }}">
+  {{ if $image }}
+    <meta name="twitter:image" content="{{ $image | absURL }}">
+  {{ end }}
+
+  {{ $themeColor := .Params.theme_color | default "#f7f5f0" }}
+  <meta name="theme-color" content="{{ $themeColor }}">
+
+  {{ $styles := resources.Get "scss/styles.scss" | toCSS (dict "outputStyle" "compressed") | minify }}
+  {{ $styles_extra := resources.Get "scss/_extra.scss" | toCSS (dict "outputStyle" "compressed") | minify }}
+  <style>{{ $styles.Content | safeCSS }} {{ $styles_extra.Content | safeCSS }}</style>
+</head>
+

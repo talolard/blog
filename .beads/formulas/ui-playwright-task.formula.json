@@ -1,0 +1,26 @@
+{
+  "formula": "ui-playwright-task",
+  "title": "UI change + Playwright verification",
+  "description": "Workflow for implementing a UI/i18n/meta change in the Hugo site and verifying it with a Python Playwright + pytest test that hits `hugo server`.",
+  "vars": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "Issue title, written as an imperative task."
+    },
+    "what_to_test": {
+      "type": "string",
+      "required": true,
+      "description": "Concrete assertions the Playwright test must verify (selectors/attributes/content)."
+    }
+  },
+  "steps": [
+    {
+      "id": "task",
+      "title": "{{title}}",
+      "type": "task",
+      "priority": 2,
+      "body": "## Implementation\n- Implement the change in Hugo templates/content/assets.\n\n## Playwright verification\n- Add/extend a pytest test in `tests/playwright/tests/`.\n- Test should start `hugo server` (or reuse fixture) and verify:\n  - {{what_to_test}}\n\n## Validation\n- `make build`\n- `uv run -m pytest` from `tests/playwright/`"
+    }
+  ]
+}

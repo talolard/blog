@@ -1,0 +1,8 @@
+{{ $lang := .Get "lang" }}
+{{ $dir := .Get "dir" | default "" }}
+{{ $attrs := printf "lang=%q" $lang }}
+{{ if $dir }}
+  {{ $attrs = printf "%s dir=%q" $attrs $dir }}
+{{ end }}
+<span {{ $attrs | safeHTMLAttr }}>{{ .Inner }}</span>
+

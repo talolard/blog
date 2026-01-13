@@ -1,7 +1,7 @@
 // RTL overrides keyed off the document [dir="rtl"] attribute.
 [dir="rtl"] {
   .nav-list {
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 
   .footer-links {
@@ -14,10 +14,12 @@
 
   .article-layout .toc {
     grid-column: 2;
+    grid-row: 1;
   }
 
   .article-layout .article-body {
     grid-column: 1;
+    grid-row: 1;
   }
 
   .toc ul {
@@ -31,4 +33,3 @@
     padding-left: 0;
   }
 }
-

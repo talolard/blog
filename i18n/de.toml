@@ -27,3 +27,6 @@ other = "RSS"
 
 [footer_email]
 other = "E-Mail"
+
+[site_description]
+other = "Notizen über Produktentwicklung, angewandtes Machine Learning und das Leben in Berlin."
