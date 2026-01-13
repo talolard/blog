@@ -32,4 +32,13 @@
     padding-right: 1.4rem;
     padding-left: 0;
   }
+
+  pre,
+  code,
+  kbd,
+  samp {
+    direction: ltr;
+    unicode-bidi: isolate;
+    text-align: left;
+  }
 }

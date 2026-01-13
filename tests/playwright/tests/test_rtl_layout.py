@@ -37,3 +37,14 @@ def test_hebrew_post_toc_does_not_push_body_below(page: Page, base_url: str) -> 
     assert toc_box is not None and body_box is not None
     assert abs(toc_box["y"] - body_box["y"]) < 5
 
+
+def test_hebrew_post_code_blocks_render_ltr(page: Page, base_url: str) -> None:
+    """Code blocks should remain LTR even on RTL pages."""
+
+    page.goto(f"{base_url}/he/posts/genai/triton-inference-server/")
+    page.wait_for_selector("pre code")
+
+    direction = page.evaluate(
+        "() => getComputedStyle(document.querySelector('pre')).direction"
+    )
+    assert direction == "ltr"
