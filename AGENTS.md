@@ -27,7 +27,12 @@
 
 ## Testing Guidelines
 
-* Primary check is a clean `hugo --minify` build; run `make build` before committing. No automated test suite beyond build validation.
+* Primary check is a clean `hugo --minify` build; run `make build` before committing.
+* UI regression tests live in `tests/playwright/` (Python + pytest + Playwright, managed with `uv`).
+  * First-time setup: `cd tests/playwright && uv sync && uv run playwright install --with-deps chromium`
+  * Run: `cd tests/playwright && uv run -m pytest`
+  * Tests start a local `hugo server` and assert rendered HTML/CSS behavior (i18n + meta + RTL layout).
+* CI runs the Playwright suite via `.github/workflows/playwright.yaml`.
 
 ## Commit & Pull Request Guidelines
 
