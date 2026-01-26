@@ -2,23 +2,90 @@
 @media (max-width: 900px) {
   .site-shell {
     padding-top: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .site-header {
     position: static;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   .hero {
     grid-template-columns: 1fr;
   }
 
+  .brand {
+    flex-wrap: wrap;
+  }
+
+  .brand-letters a {
+    flex-wrap: nowrap;
+    max-width: 100%;
+    row-gap: 0.35rem;
+  }
+
+  .brand-letters img {
+    height: clamp(28px, 6vw, 40px);
+  }
+
+  .brand-letter-spacer {
+    width: 0.5rem;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
   .article-layout {
     grid-template-columns: 1fr;
+  }
+
+  .article-layout:has(.toc) {
+    grid-template-columns: 1fr;
+  }
+
+  .page-content {
+    padding: 1rem;
+  }
+
+  .article-header h1 {
+    line-height: 1.15;
+  }
+
+  .article-header .meta {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .article-header .meta .tag-row {
+    width: 100%;
+  }
+
+  .article-layout > * {
+    min-width: 0;
   }
 
   .toc {
     position: relative;
     top: 0;
+    width: 100%;
+  }
+
+  .article-body {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  pre {
+    max-width: 100%;
+    white-space: pre-wrap;
+  }
+
+  pre code {
+    word-break: break-word;
   }
 
   .footer-grid {
