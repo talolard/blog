@@ -1,4 +1,69 @@
 // Single-article layout, TOC, media, and nav.
+
+// Drop cap using letter art images
+.dropcap-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.dropcap {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.4rem;
+  margin-bottom: -0.3rem;
+  vertical-align: baseline;
+  border-radius: calc(var(--radius) / 2);
+  cursor: default;
+}
+
+.dropcap-popover {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  z-index: 100;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.dropcap-popover img {
+  display: block;
+  border-radius: calc(var(--radius) / 2);
+  margin-bottom: 0.5rem;
+}
+
+.dropcap-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.dropcap-caption strong {
+  color: var(--text);
+}
+
+// Desktop-only hover
+@media (hover: hover) and (pointer: fine) {
+  .dropcap-wrap:hover .dropcap-popover {
+    display: block;
+  }
+  
+  .dropcap {
+    cursor: pointer;
+  }
+}
+
 .page-content {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -145,17 +210,16 @@ img {
 }
 
 .img-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin: 1.5rem 0;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-items: center;
 }
 
 .img-row picture {
-  flex: 1 1 auto;
-  max-width: calc(33% - 1rem);
   display: block;
+  width: 100%;
 }
 
 .img-row img {
@@ -165,8 +229,16 @@ img {
   border-radius: var(--radius);
 }
 
-.img-row picture:nth-child(2):only-child {
-  max-width: calc(50% - 1rem);
+/* Single image: center and limit width */
+.img-row picture:only-child {
+  grid-column: 1 / -1;
+  max-width: 520px;
+}
+
+/* Two images: center them */
+.img-row picture:first-child:nth-last-child(2),
+.img-row picture:first-child:nth-last-child(2) ~ picture {
+  max-width: 100%;
 }
 
 figure {

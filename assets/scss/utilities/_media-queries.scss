@@ -111,8 +111,8 @@
     font-size: 1.15rem;
   }
 
-  .img-row picture {
-    max-width: 100%;
+  .img-row {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .brand-letters img {

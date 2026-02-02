@@ -1,0 +1,26 @@
+{{- $letter := .Get 0 | upper -}}
+{{- $idx := .Get 1 | default 0 | int -}}
+{{- $pattern := printf "letters/%s_*.webp" $letter -}}
+{{- $imgs := resources.Match $pattern -}}
+{{- if $imgs -}}
+{{- $img := index $imgs (mod $idx (len $imgs)) -}}
+{{- $resized := $img.Resize "80x webp" -}}
+{{- $large := $img.Resize "200x webp" -}}
+{{- /* Extract German and English from filename like A_Affe_Monkey.webp */ -}}
+{{- $basename := path.BaseName $img.Name -}}
+{{- $parts := split (replaceRE "\\.webp$" "" $basename) "_" -}}
+{{- $german := index $parts 1 | default "" -}}
+{{- $english := index $parts 2 | default "" -}}
+<span class="dropcap-wrap">
+    <img src="{{ $resized.RelPermalink }}" alt="Letter {{ $letter }}" class="dropcap" width="80" height="80"
+        loading="lazy">
+    <span class="dropcap-popover">
+        <img src="{{ $large.RelPermalink }}" alt="{{ $german }} ({{ $english }})" width="200" height="200"
+            loading="lazy">
+        <span class="dropcap-caption">
+            <span class="dropcap-de">German: <strong>{{ $german }}</strong></span>
+            <span class="dropcap-en">English: <strong>{{ $english }}</strong></span>
+        </span>
+    </span>
+</span>
+{{- end -}}

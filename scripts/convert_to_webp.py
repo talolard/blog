@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["pillow"]
+# ///
 """Convert staged raster images to WebP and stage the result.
 
 - Converts .png/.jpg/.jpeg/.gif files to .webp alongside originals.
 - Removes the source file after conversion.
 - Re-stages the new WebP file so the commit picks it up.
 
-Intended for use via pre-commit.
+Intended for use via pre-commit or standalone with: uv run scripts/convert_to_webp.py <files>
 """
+
 from __future__ import annotations
 
 import subprocess
@@ -45,4 +50,4 @@ def main(files: Iterable[str]) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main(Path(f) for f in __import__('sys').argv[1:]))
+    raise SystemExit(main(Path(f) for f in __import__("sys").argv[1:]))
