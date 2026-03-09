@@ -3,6 +3,12 @@ title: Convolutional Methods for Text
 tags: ['NLP', 'convolutions', 'deep learning', 'rnn']
 draft: false
 date: '2017-05-22'
+description: Practical notes on when convolutions beat RNNs for NLP and how receptive fields shape model behavior.
+social:
+  image: social.png
+  image_alt: Social cover for a post comparing convolutional and recurrent approaches for text modeling.
+share:
+  disable: false
 
 ---
 

@@ -3,6 +3,12 @@ title: שיטות קונבולוציוניות לטקסט
 tags: ['NLP', 'convolutions', 'deep learning', 'rnn']
 draft: false
 date: '2017-05-22'
+description: תובנות מעשיות על מתי קונבולוציות עדיפות על RNN במשימות NLP וכיצד שדה קליטה משפיע על התנהגות המודל.
+social:
+  image: social.png
+  image_alt: תמונת שיתוף לפוסט שמשווה בין שיטות קונבולוציוניות ורקורסיביות למידול טקסט.
+share:
+  disable: false
 
 ---
 

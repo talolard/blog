@@ -3,6 +3,12 @@ title: Convolutional Methods for Text
 tags: ['NLP', 'convolutions', 'deep learning', 'rnn']
 draft: false
 date: '2017-05-22'
+description: Praxisnahe Notizen dazu, wann Convolutions im NLP besser als RNNs funktionieren und warum rezeptive Felder entscheidend sind.
+social:
+  image: social.png
+  image_alt: Social-Cover für einen Beitrag über konvolutionale und rekurrente Verfahren in der Textmodellierung.
+share:
+  disable: false
 
 ---
 

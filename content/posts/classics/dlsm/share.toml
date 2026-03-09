@@ -1,0 +1,79 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/classics/dlsm/"
+one_liner = "An old deep-learning experiment on whether market structure can be represented and predicted."
+hook = "What if market states behaved more like language than random walks?"
+cta = "I would love critique on what still holds up and what clearly does not."
+
+[languages.de]
+canonical_path = "/de/posts/classics/dlsm/"
+one_liner = "Ein älteres Deep-Learning-Experiment zur Frage, ob sich Marktstruktur lernen und vorhersagen lässt."
+hook = "Was wäre, wenn Marktzustände eher wie Sprache als wie reines Rauschen funktionieren?"
+cta = "Mich interessiert, was heute noch trägt und was klar überholt ist."
+
+[languages.he]
+canonical_path = "/he/posts/classics/dlsm/"
+one_liner = "ניסוי למידה עמוקה ישן שבודק האם אפשר לייצג ולחזות מבנה בשוק ההון."
+hook = "מה אם מצבי שוק מתנהגים יותר כמו שפה ופחות כמו רעש אקראי?"
+cta = "אשמח לביקורת על מה עדיין מחזיק ומה כבר לא."
+
+[twitter.en]
+post_text = "Years ago I tried to model stock markets with sequence models and embeddings. It is old work, but the core question still interests me: can market structure be learned at all? https://talperry.com/en/posts/classics/dlsm/"
+alt_text = "Cover image for a post on deep learning and stock-market modeling."
+hashtags = ["DeepLearning", "Quant", "ML"]
+emoji = false
+
+[twitter.de]
+post_text = "Ich habe vor Jahren versucht, Aktienmärkte mit Sequenzmodellen und Embeddings zu modellieren. Alt, aber die Kernfrage bleibt spannend: Lässt sich Marktstruktur überhaupt lernen? https://talperry.com/de/posts/classics/dlsm/"
+alt_text = "Coverbild für einen Beitrag über Deep Learning und Modellierung von Aktienmärkten."
+hashtags = ["DeepLearning", "Quant", "ML"]
+emoji = false
+
+[twitter.he]
+post_text = "לפני שנים ניסיתי למודל את שוק ההון עם מודלי רצף ו-embeddings. זה פוסט ישן, אבל השאלה עדיין מעניינת: האם אפשר בכלל ללמוד מבנה שוק? https://talperry.com/he/posts/classics/dlsm/"
+alt_text = "תמונת שער לפוסט על למידה עמוקה ומידול שוק ההון."
+hashtags = ["DeepLearning", "Quant", "ML"]
+emoji = false
+
+[linkedin.en]
+post_text = "I revisited an old experiment: using sequence models and embeddings for stock-market prediction.\n\nThe post is dated, but the main question is still relevant:\n- does a learnable market structure exist?\n- if yes, how do we represent it?\n\nWould value pushback from people doing modern quant ML. https://talperry.com/en/posts/classics/dlsm/"
+alt_text = "Cover image for a post on deep learning and stock-market modeling."
+
+[linkedin.de]
+post_text = "Ich habe ein altes Experiment wieder angesehen: Sequenzmodelle und Embeddings für Aktienmarkt-Prognosen.\n\nDer Beitrag ist alt, aber die Kernfrage bleibt:\n- Gibt es eine lernbare Marktstruktur?\n- Wenn ja, wie repräsentieren wir sie?\n\nIch freue mich über fachliche Gegenargumente aus Quant-ML. https://talperry.com/de/posts/classics/dlsm/"
+alt_text = "Coverbild für einen Beitrag über Deep Learning und Modellierung von Aktienmärkten."
+
+[linkedin.he]
+post_text = "חזרתי לניסוי ישן: שימוש במודלי רצף ו-embeddings לחיזוי שוק ההון.\n\nהפוסט ותיק, אבל השאלה המרכזית נשארה:\n- האם קיים מבנה שוק שניתן ללמוד?\n- ואם כן, איך נכון לייצג אותו?\n\nאשמח לביקורת מקצועית ממי שעובד היום ב-Quant ML. https://talperry.com/he/posts/classics/dlsm/"
+alt_text = "תמונת שער לפוסט על למידה עמוקה ומידול שוק ההון."
+
+[reddit.en]
+title = "I revisited my old deep-learning stock market experiment"
+subreddit = "MachineLearning"
+post_text = "I wrote this years ago and my views evolved, but I still find the core question useful: can market structure be learned with sequence models and embeddings, or are we mostly fitting noise? I added context and caveats in the post. https://talperry.com/en/posts/classics/dlsm/"
+
+[reddit.de]
+title = "Rückblick auf mein altes Deep-Learning-Experiment zum Aktienmarkt"
+subreddit = "MachineLearning"
+post_text = "Ich habe den alten Beitrag mit heutiger Einordnung versehen. Kernfrage: Lernen wir echte Marktstruktur oder nur Rauschen? Würde mich über Kritik freuen. https://talperry.com/de/posts/classics/dlsm/"
+
+[reddit.he]
+title = "חזרתי לפוסט ישן שלי על למידה עמוקה ושוק ההון"
+subreddit = "MachineLearning"
+post_text = "זה פוסט ותיק עם עדכון פרספקטיבה. השאלה המרכזית: האם לומדים מבנה אמיתי בשוק או בעיקר מתאימים לרעש? אשמח לפידבק. https://talperry.com/he/posts/classics/dlsm/"
+
+[hn.en]
+title = "Deep Learning the Stock Market"
+submission_text = "A reflective revisit of an older sequence-modeling approach to market prediction."
+first_comment = "I wrote this years ago and added context about what aged poorly vs what still feels like an open question. Interested in feedback from people doing modern quant ML. https://talperry.com/en/posts/classics/dlsm/"
+
+[hn.de]
+title = "Deep Learning für den Aktienmarkt"
+submission_text = "Rückblick auf einen älteren Ansatz mit Sequenzmodellen für Marktprognosen."
+first_comment = "Ich habe den alten Beitrag aktualisiert und eingeordnet, was davon heute noch sinnvoll ist. Fachliches Feedback willkommen. https://talperry.com/de/posts/classics/dlsm/"
+
+[hn.he]
+title = "למידה עמוקה ושוק ההון"
+submission_text = "מבט חוזר על גישה ישנה לחיזוי שוק באמצעות מודלי רצף."
+first_comment = "הוספתי הקשר עדכני למה שעבד ומה שהתיישן. אשמח לפידבק מקצועי. https://talperry.com/he/posts/classics/dlsm/"

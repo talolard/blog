@@ -2,6 +2,14 @@
 title = 'I’m Not the Founder This App Deserves'
 date = 2024-05-14T10:07:22+02:00
 draft = false
+description = 'Why I walked away from a seemingly promising scripture-memorization app despite clear demand signals.'
+
+[social]
+image = 'social.png'
+image_alt = 'Social cover for a founder reflection on market fit, identity, and deciding not to build.'
+
+[share]
+disable = false
 +++
 
 Before diving into the reasons behind my decision, it's essential to know that I am a Jewish Israeli atheist living in Berlin. This background might make you wonder why I would even consider building such an app.

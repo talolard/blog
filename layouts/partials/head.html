@@ -13,11 +13,18 @@
   {{ $description := "" }}
   {{ if .Description }}
     {{ $description = .Description }}
+  {{ else if .IsPage }}
+    {{ $description = .Summary | plainify | htmlUnescape | truncate 200 }}
   {{ else }}
     {{ $description = i18n "site_description" | default .Site.Params.description }}
   {{ end }}
   <meta name="description" content="{{ $description }}">
-  <meta name="robots" content="index, follow">
+  {{ $isIndexable := and (not .Draft) (not (.Params.noindex | default false)) }}
+  {{ if $isIndexable }}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  {{ else }}
+    <meta name="robots" content="noindex, nofollow">
+  {{ end }}
 
   <link rel="canonical" href="{{ .Permalink }}">
 
@@ -29,20 +36,45 @@
   {{ $defaultPage := (index (where $translations "Language.Lang" $defaultLang) 0) | default . }}
   <link rel="alternate" hreflang="x-default" href="{{ $defaultPage.Permalink }}">
 
+  {{ $isArticle := and .IsPage (eq .Section "posts") }}
   <meta property="og:title" content="{{ $title }}">
   <meta property="og:description" content="{{ $description }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:type" content="{{ if $isArticle }}article{{ else }}website{{ end }}">
+  <meta property="og:site_name" content="{{ .Site.Params.site_name | default .Site.Title }}">
 
-  {{ $image := "" }}
-  {{ with .Params.images }}
-    {{ $image = index . 0 }}
+  {{ $currentLocale := replace (.Site.Language.LanguageCode | default "en-US") "-" "_" }}
+  <meta property="og:locale" content="{{ $currentLocale }}">
+  {{ range .AllTranslations }}
+    {{ $altLocale := replace (.Language.LanguageCode | default "en-US") "-" "_" }}
+    {{ if ne $altLocale $currentLocale }}
+      <meta property="og:locale:alternate" content="{{ $altLocale }}">
+    {{ end }}
   {{ end }}
-  {{ with .Params.image }}
-    {{ $image = . }}
-  {{ end }}
+
+  {{ $socialImage := partial "social_image.html" . }}
+  {{ $image := index $socialImage "url" }}
+  {{ $imageAlt := index $socialImage "alt" }}
+  {{ $imageSource := index $socialImage "source" }}
+  {{ $imagePath := index $socialImage "path" }}
+  {{ $imageWidth := index $socialImage "width" }}
+  {{ $imageHeight := index $socialImage "height" }}
   {{ if $image }}
-    <meta property="og:image" content="{{ $image | absURL }}">
+    <meta property="og:image" content="{{ $image }}">
+    <meta property="og:image:alt" content="{{ $imageAlt }}">
+    {{ if gt $imageWidth 0 }}<meta property="og:image:width" content="{{ $imageWidth }}">{{ end }}
+    {{ if gt $imageHeight 0 }}<meta property="og:image:height" content="{{ $imageHeight }}">{{ end }}
+    <meta name="x-social-image-source" content="{{ $imageSource }}">
+    <meta name="x-social-image-path" content="{{ $imagePath }}">
+  {{ end }}
+
+  {{ if $isArticle }}
+    <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}">
+    <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+    <meta property="article:section" content="{{ .Section }}">
+    {{ range .Params.tags }}
+      <meta property="article:tag" content="{{ . }}">
+    {{ end }}
   {{ end }}
 
   {{ $twitterCard := "summary" }}
@@ -52,15 +84,54 @@
   <meta name="twitter:card" content="{{ $twitterCard }}">
   <meta name="twitter:title" content="{{ $title }}">
   <meta name="twitter:description" content="{{ $description }}">
+  {{ with .Site.Params.twitter_site }}<meta name="twitter:site" content="{{ . }}">{{ end }}
+  {{ with .Site.Params.twitter_creator }}<meta name="twitter:creator" content="{{ . }}">{{ end }}
   {{ if $image }}
-    <meta name="twitter:image" content="{{ $image | absURL }}">
+    <meta name="twitter:image" content="{{ $image }}">
+    <meta name="twitter:image:alt" content="{{ $imageAlt }}">
+  {{ end }}
+
+  {{ with .File }}
+    <meta name="x-content-file" content="{{ .Path }}">
   {{ end }}
 
   {{ $themeColor := .Params.theme_color | default "#f7f5f0" }}
   <meta name="theme-color" content="{{ $themeColor }}">
 
+  {{ if .IsHome }}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": {{ printf "%q" (.Site.Params.site_name | default .Site.Title) }},
+        "url": {{ printf "%q" .Site.BaseURL }},
+        "description": {{ printf "%q" $description }}
+      }
+    </script>
+  {{ else if $isArticle }}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": {{ printf "%q" .Title }},
+        "description": {{ printf "%q" $description }},
+        "datePublished": {{ printf "%q" (.PublishDate.Format "2006-01-02T15:04:05Z07:00") }},
+        "dateModified": {{ printf "%q" (.Lastmod.Format "2006-01-02T15:04:05Z07:00") }},
+        "mainEntityOfPage": {{ printf "%q" .Permalink }},
+        "image": [{{ printf "%q" $image }}],
+        "author": {
+          "@type": "Person",
+          "name": {{ printf "%q" (.Site.Author.name | default .Site.Params.author_name | default "Tal Perry") }}
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": {{ printf "%q" (.Site.Params.site_name | default .Site.Title) }}
+        }
+      }
+    </script>
+  {{ end }}
+
   {{ $styles := resources.Get "scss/styles.scss" | toCSS (dict "outputStyle" "compressed") | minify }}
   {{ $styles_extra := resources.Get "scss/_extra.scss" | toCSS (dict "outputStyle" "compressed") | minify }}
   <style>{{ $styles.Content | safeCSS }} {{ $styles_extra.Content | safeCSS }}</style>
 </head>
-

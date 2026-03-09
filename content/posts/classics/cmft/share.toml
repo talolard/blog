@@ -1,0 +1,79 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/classics/cmft/"
+one_liner = "A practical deep dive on convolutional approaches for NLP and the tradeoffs vs RNNs."
+hook = "If text models need global context, receptive field design becomes the whole game."
+cta = "If you are building modern sequence models, I would value where you agree or disagree."
+
+[languages.de]
+canonical_path = "/de/posts/classics/cmft/"
+one_liner = "Ein praxisnaher Deep Dive zu konvolutionalen NLP-Ansätzen und ihren Tradeoffs gegenüber RNNs."
+hook = "Wenn Textmodelle globalen Kontext brauchen, entscheidet das rezeptive Feld über alles."
+cta = "Ich freue mich über Gegenpositionen aus aktueller Sequence-Model-Praxis."
+
+[languages.he]
+canonical_path = "/he/posts/classics/cmft/"
+one_liner = "צלילה מעשית לשיטות קונבולוציה ב-NLP ולפשרות שלהן מול RNNs."
+hook = "כשמודלי טקסט צריכים הקשר גלובלי, תכנון שדה הקליטה הופך לנקודת המפתח."
+cta = "אשמח לשמוע איפה אתם מסכימים ואיפה לא מניסיון עדכני."
+
+[twitter.en]
+post_text = "I wrote a deep dive on convolutional methods for NLP: receptive fields, dilation, DenseNet-style connections, and where RNNs still make more sense. https://talperry.com/en/posts/classics/cmft/"
+alt_text = "Cover image for a post on convolutional methods for NLP."
+hashtags = ["NLP", "DeepLearning", "ML"]
+emoji = false
+
+[twitter.de]
+post_text = "Ein Deep Dive zu konvolutionalen Methoden für NLP: rezeptive Felder, Dilations, DenseNet-Ideen und wo RNNs weiter sinnvoll sind. https://talperry.com/de/posts/classics/cmft/"
+alt_text = "Coverbild für einen Beitrag über konvolutionale Methoden in NLP."
+hashtags = ["NLP", "DeepLearning", "ML"]
+emoji = false
+
+[twitter.he]
+post_text = "כתבתי Deep Dive על שיטות קונבולוציה ל-NLP: שדות קליטה, dilation, חיבורים בסגנון DenseNet, ומתי RNN עדיין עדיף. https://talperry.com/he/posts/classics/cmft/"
+alt_text = "תמונת שער לפוסט על שיטות קונבולוציה ב-NLP."
+hashtags = ["NLP", "DeepLearning", "ML"]
+emoji = false
+
+[linkedin.en]
+post_text = "Convolutions in NLP are old news, but many design lessons are still useful.\n\nThis post breaks down:\n- receptive field scaling\n- dilation and dense connections\n- where convolutional stacks help, and where RNNs still win\n\nCurious how these ideas map to your current architectures. https://talperry.com/en/posts/classics/cmft/"
+alt_text = "Cover image for a post on convolutional methods for NLP."
+
+[linkedin.de]
+post_text = "Convolutions im NLP sind nicht neu, aber viele Design-Lektionen sind weiterhin relevant.\n\nIm Beitrag:\n- Skalierung rezeptiver Felder\n- Dilations und dichte Verbindungen\n- wo Conv-Stacks helfen und wo RNNs gewinnen\n\nWie gut passt das zu euren heutigen Architekturen? https://talperry.com/de/posts/classics/cmft/"
+alt_text = "Coverbild für einen Beitrag über konvolutionale Methoden in NLP."
+
+[linkedin.he]
+post_text = "קונבולוציות ב-NLP הן לא חדשות, אבל הרבה עקרונות תכנון עדיין חשובים.\n\nבפוסט:\n- סקיילינג של שדות קליטה\n- dilation וחיבורים צפופים\n- מתי Conv stacks עוזרים ומתי RNN מנצח\n\nאשמח לשמוע איך זה מתחבר לארכיטקטורות שאתם בונים היום. https://talperry.com/he/posts/classics/cmft/"
+alt_text = "תמונת שער לפוסט על שיטות קונבולוציה ב-NLP."
+
+[reddit.en]
+title = "Convolutional methods for NLP: what still matters"
+subreddit = "MachineLearning"
+post_text = "I revisited my old writeup on convolutional NLP architectures and tried to keep only what still feels practically useful: receptive field thinking, dilation, and where RNNs remain stronger. Curious what aged best in your experience. https://talperry.com/en/posts/classics/cmft/"
+
+[reddit.de]
+title = "Konvolutionale NLP-Methoden: Was davon heute noch relevant ist"
+subreddit = "MachineLearning"
+post_text = "Ich habe meinen älteren Beitrag zu Conv-Architekturen im NLP eingeordnet: Was ist noch praxisrelevant, was nicht mehr? Feedback aus aktueller ML-Praxis willkommen. https://talperry.com/de/posts/classics/cmft/"
+
+[reddit.he]
+title = "שיטות קונבולוציה ל-NLP: מה עדיין חשוב היום"
+subreddit = "MachineLearning"
+post_text = "חזרתי לפוסט ישן על ארכיטקטורות Conv ב-NLP וניסיתי להשאיר רק מה שעדיין פרקטי. אשמח לשמוע מה לדעתכם התיישן ומה לא. https://talperry.com/he/posts/classics/cmft/"
+
+[hn.en]
+title = "Convolutional Methods for Text"
+submission_text = "A practical look at receptive fields and convolutional sequence modeling for NLP."
+first_comment = "This is an older post, but I still find the receptive-field perspective useful. Interested in feedback from people building modern sequence architectures. https://talperry.com/en/posts/classics/cmft/"
+
+[hn.de]
+title = "Konvolutionale Methoden für Text"
+submission_text = "Praxisblick auf rezeptive Felder und Sequenzmodellierung mit Convolutions."
+first_comment = "Älterer Beitrag, aber einige Designgedanken sind noch relevant. Ich freue mich über fachliches Feedback. https://talperry.com/de/posts/classics/cmft/"
+
+[hn.he]
+title = "שיטות קונבולוציה לטקסט"
+submission_text = "מבט מעשי על שדות קליטה ומידול רצפים עם קונבולוציות."
+first_comment = "זה פוסט ישן, אבל זווית ה-receptive field עדיין שימושית לדעתי. אשמח לפידבק מקצועי. https://talperry.com/he/posts/classics/cmft/"

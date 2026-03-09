@@ -2,6 +2,14 @@
 title = 'Engineering Agents is really UX Engineering'
 date = 2026-03-09T02:11:00+01:00
 draft = false
+description = 'Building trustworthy agents is mostly a UX and state-sync problem, not just a framework or prompting problem.'
+
+[social]
+image = 'social.png'
+image_alt = 'Social cover for a post about agent trust, memory design, and why engineering decisions become UX outcomes.'
+
+[share]
+disable = false
 +++
 
 Over the weekend I built an AI agent. I thought this was an engineering problem, but I now think it is a user experience problem.

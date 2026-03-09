@@ -38,6 +38,9 @@ jobs:
       - name: Setup Python
         run: uv python install 3.12
 
+      - name: Validate social metadata and share packs
+        run: make validate
+
       - name: Install Playwright browsers
         working-directory: tests/playwright
         run: |
@@ -47,4 +50,3 @@ jobs:
       - name: Run Playwright tests
         working-directory: tests/playwright
         run: uv run -m pytest
-

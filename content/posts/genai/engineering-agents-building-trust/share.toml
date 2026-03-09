@@ -1,0 +1,27 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/genai/engineering-agents-building-trust/"
+one_liner = "Reliable agents feel smart when memory, context, and UI state stay aligned."
+hook = "Most agent failures users feel are UX failures caused by engineering boundaries."
+cta = "I would value examples where your agent architecture either earned or lost user trust."
+
+[twitter.en]
+post_text = "I thought building agents was mostly a framework problem. I now think it is mostly a UX trust problem: memory, context, and UI state have to stay aligned or users stop trusting the system. https://talperry.com/en/posts/genai/engineering-agents-building-trust/"
+alt_text = "Cover image for a post about user trust in AI agents and why engineering choices become UX behavior."
+hashtags = ["AI", "UX", "ProductEngineering"]
+emoji = false
+
+[linkedin.en]
+post_text = "Building agents changed how I think about engineering quality.\n\nThe core lesson:\n- users do not experience architecture diagrams\n- users experience continuity, memory, and trust\n- misaligned state feels like the agent is \"dumb\"\n\nI wrote up practical lessons from building a real agent workflow. https://talperry.com/en/posts/genai/engineering-agents-building-trust/"
+alt_text = "Cover image for a post about user trust in AI agents and why engineering choices become UX behavior."
+
+[reddit.en]
+title = "Engineering agents is mostly UX engineering"
+subreddit = "LocalLLaMA"
+post_text = "I wrote a practical reflection after building an agent workflow: trust collapses when the app state, chat memory, and what the agent actually sees drift apart. Curious whether this matches what others are seeing in production. https://talperry.com/en/posts/genai/engineering-agents-building-trust/"
+
+[hn.en]
+title = "Engineering Agents Is Really UX Engineering"
+submission_text = "A practical argument that trust is the core systems problem in agent products."
+first_comment = "This post argues that many agent regressions are not model failures but state-and-memory UX failures from architecture decisions. I would value concrete counterexamples. https://talperry.com/en/posts/genai/engineering-agents-building-trust/"

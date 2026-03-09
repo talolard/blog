@@ -93,6 +93,26 @@ def test_base_meta_tags_present(page: Page, base_url: str) -> None:
 
     assert page.locator("head meta[charset='utf-8']").count() == 1
     assert page.locator("head meta[name='viewport'][content*='width=device-width']").count() == 1
-    assert page.locator("head meta[name='robots'][content='index, follow']").count() == 1
+    robots = content_attr(page, "head meta[name='robots']")
+    assert robots is not None
+    assert "index" in robots
+    assert "follow" in robots
+    assert "max-image-preview:large" in robots
+    assert "max-snippet:-1" in robots
+    assert "max-video-preview:-1" in robots
     assert content_attr(page, "head meta[name='theme-color']") not in (None, "")
 
+
+def test_article_social_metadata_tags(page: Page, base_url: str) -> None:
+    """Article pages must expose image-backed social metadata for rich previews."""
+
+    page.goto(f"{base_url}/en/posts/genai/engineering-agents-building-trust/")
+    assert content_attr(page, "head meta[property='og:type']") == "article"
+
+    og_image = content_attr(page, "head meta[property='og:image']")
+    twitter_image = content_attr(page, "head meta[name='twitter:image']")
+    assert og_image not in (None, "")
+    assert twitter_image == og_image
+    assert content_attr(page, "head meta[name='twitter:card']") == "summary_large_image"
+    assert content_attr(page, "head meta[property='og:site_name']") not in (None, "")
+    assert content_attr(page, "head meta[property='og:locale']") not in (None, "")
