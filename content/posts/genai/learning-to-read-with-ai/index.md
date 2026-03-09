@@ -2,6 +2,14 @@
 title = 'The AI-Powered 10-Minute Habit That Taught My Kid to Read (And Made Me a Better Dad)'
 date = 2026-02-02T09:00:00+01:00
 draft = false
+description = 'How a short daily routine with Anki and AI content helped my son learn to read and changed how I think about teaching.'
+
+[social]
+image = 'social.png'
+image_alt = 'Social cover for a post about teaching a child to read with AI-generated content and spaced repetition.'
+
+[share]
+disable = false
 +++
 
 {{< dropcap "I" 0 >}}built a system to teach my kid to read, using a free program called Anki for the "planning" and AI to make content that would lure him in.

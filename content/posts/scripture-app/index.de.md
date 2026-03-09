@@ -2,6 +2,14 @@
 title = 'Ich bin nicht der Gründer, den diese App verdient'
 date = 2024-05-14T10:07:22+02:00
 draft = false
+description = 'Warum ich eine vielversprechende App zum Bibel-Memorieren trotz klarer Marktsignale bewusst nicht weitergebaut habe.'
+
+[social]
+image = 'social.png'
+image_alt = 'Social-Cover für eine Gründerreflexion über Marktfit, Identität und die Entscheidung, etwas nicht zu bauen.'
+
+[share]
+disable = false
 +++
 
 Bevor ich in die Gründe für meine Entscheidung eintauche, ist es wichtig zu wissen, dass ich ein jüdischer israelischer Atheist bin, der in Berlin lebt. Dieser Hintergrund könnte dich fragen lassen, warum ich überhaupt in Betracht ziehen würde, so eine App zu bauen.

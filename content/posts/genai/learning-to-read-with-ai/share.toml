@@ -1,0 +1,27 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/genai/learning-to-read-with-ai/"
+one_liner = "How a 10-minute daily routine with Anki and AI content taught my kid to read."
+hook = "The biggest win was not a model trick. It was turning learning into something he wanted to do."
+cta = "If you teach kids, I would love to hear what habits worked in your home or classroom."
+
+[twitter.en]
+post_text = "I used Anki + AI-generated content to teach my kid to read in short daily sessions. This post covers what worked, what surprised me, and what I learned as a parent. https://talperry.com/en/posts/genai/learning-to-read-with-ai/"
+alt_text = "Cover image for a post about teaching a child to read with AI content and spaced repetition."
+hashtags = ["AI", "Education", "Parenting"]
+emoji = false
+
+[linkedin.en]
+post_text = "I built a 10-minute daily routine to teach my son to read, combining Anki with AI-generated content.\n\nWhat mattered most:\n- consistency over intensity\n- emotionally engaging materials\n- feedback loops small enough to sustain\n\nI wrote up the method and what I got wrong along the way. https://talperry.com/en/posts/genai/learning-to-read-with-ai/"
+alt_text = "Cover image for a post about teaching a child to read with AI content and spaced repetition."
+
+[reddit.en]
+title = "How I used Anki and AI to teach my 5-year-old to read"
+subreddit = "Parenting"
+post_text = "I documented a practical routine that worked for us: short daily sessions, spaced repetition, and AI-generated content tuned to what my kid found fun. Sharing details and tradeoffs in case it helps other parents or teachers. https://talperry.com/en/posts/genai/learning-to-read-with-ai/"
+
+[hn.en]
+title = "The AI-Powered 10-Minute Habit That Taught My Kid to Read"
+submission_text = "A practical note on using Anki and AI content to build a reading habit with a child."
+first_comment = "This is a practical writeup about habit design, feedback loops, and using AI tools as content generators for early reading. Interested in where this aligns or conflicts with teaching practice. https://talperry.com/en/posts/genai/learning-to-read-with-ai/"

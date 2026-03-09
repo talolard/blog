@@ -1,0 +1,79 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/genai/triton-inference-server/"
+one_liner = "Five production lessons for using Triton effectively without forcing it onto the wrong workloads."
+hook = "Triton is powerful, but many LLM teams should deploy vLLM directly instead of wrapping everything in Triton."
+cta = "Would love examples where your production constraints led to different choices."
+
+[languages.de]
+canonical_path = "/de/posts/genai/triton-inference-server/"
+one_liner = "Fünf Production-Lektionen für Triton, ohne es auf ungeeignete Workloads zu erzwingen."
+hook = "Triton ist stark, aber viele LLM-Teams fahren besser mit direktem vLLM-Deployment."
+cta = "Mich interessieren Gegenbeispiele aus euren produktiven Setups."
+
+[languages.he]
+canonical_path = "/he/posts/genai/triton-inference-server/"
+one_liner = "חמש תובנות פרודקשן לשימוש נכון ב-Triton בלי לכפות אותו על עומסים לא מתאימים."
+hook = "Triton חזק, אבל עבור הרבה צוותי LLM פריסה ישירה של vLLM פשוט עדיפה."
+cta = "אשמח לדוגמאות שבהן אילוצים אצלכם הובילו לבחירה אחרת."
+
+[twitter.en]
+post_text = "I wrote five practical lessons from serving models with Triton in production, including when Triton helps and when a direct vLLM deployment is cleaner. https://talperry.com/en/posts/genai/triton-inference-server/"
+alt_text = "Cover image for a post about practical lessons serving ML models with Triton."
+hashtags = ["MLOps", "LLM", "Inference"]
+emoji = false
+
+[twitter.de]
+post_text = "Fünf praktische Production-Lektionen zu Triton: wo es hilft, wo nicht, und wann ein direktes vLLM-Deployment die bessere Wahl ist. https://talperry.com/de/posts/genai/triton-inference-server/"
+alt_text = "Coverbild für einen Beitrag über praktische Lektionen beim Serving mit Triton."
+hashtags = ["MLOps", "LLM", "Inference"]
+emoji = false
+
+[twitter.he]
+post_text = "כתבתי חמש תובנות מעשיות מהגשת מודלים עם Triton בפרודקשן, כולל מתי הוא מצוין ומתי פריסה ישירה של vLLM עדיפה. https://talperry.com/he/posts/genai/triton-inference-server/"
+alt_text = "תמונת שער לפוסט עם תובנות מעשיות להגשת מודלים עם Triton."
+hashtags = ["MLOps", "LLM", "Inference"]
+emoji = false
+
+[linkedin.en]
+post_text = "Triton Inference Server is excellent in many contexts, but not a universal serving layer.\n\nIn this post I share 5 production lessons, including:\n- where Triton is a strong fit\n- where direct vLLM is simpler\n- practical latency and reliability safeguards\n\nWould appreciate concrete counterexamples from your stack. https://talperry.com/en/posts/genai/triton-inference-server/"
+alt_text = "Cover image for a post about practical lessons serving ML models with Triton."
+
+[linkedin.de]
+post_text = "Triton Inference Server ist stark, aber nicht die richtige Universalschicht für jedes Serving-Problem.\n\nIm Beitrag teile ich 5 Production-Lektionen, darunter:\n- wo Triton passt\n- wo direktes vLLM einfacher ist\n- wie man Latenz und Stabilität schützt\n\nIch freue mich auf konkrete Gegenbeispiele aus euren Setups. https://talperry.com/de/posts/genai/triton-inference-server/"
+alt_text = "Coverbild für einen Beitrag über praktische Lektionen beim Serving mit Triton."
+
+[linkedin.he]
+post_text = "Triton Inference Server מצוין בהרבה מקרים, אבל הוא לא שכבת הגשה אוניברסלית לכל מצב.\n\nבפוסט אני משתף 5 תובנות פרודקשן, כולל:\n- איפה Triton מתאים מאוד\n- איפה vLLM ישיר פשוט יותר\n- איך להגן על לטנטיות ואמינות\n\nאשמח לדוגמאות נגדיות מהמערכות שלכם. https://talperry.com/he/posts/genai/triton-inference-server/"
+alt_text = "תמונת שער לפוסט עם תובנות מעשיות להגשת מודלים עם Triton."
+
+[reddit.en]
+title = "Five practical Triton serving lessons from production"
+subreddit = "MLOps"
+post_text = "I summarized five lessons from running Triton in production, especially around LLM workloads where direct vLLM can be simpler. Curious where your experience differs. https://talperry.com/en/posts/genai/triton-inference-server/"
+
+[reddit.de]
+title = "Fünf praktische Triton-Lektionen aus Production"
+subreddit = "MLOps"
+post_text = "Ich habe fünf konkrete Triton-Lektionen aus Production zusammengefasst, besonders für LLM-Workloads. Mich interessieren eure Gegenbeispiele. https://talperry.com/de/posts/genai/triton-inference-server/"
+
+[reddit.he]
+title = "חמש תובנות פרקטיות על Triton מפרודקשן"
+subreddit = "MLOps"
+post_text = "סיכמתי חמש תובנות מהפעלת Triton בפרודקשן, במיוחד סביב עומסי LLM שבהם vLLM ישיר יכול להיות פשוט יותר. אשמח לשמוע חוויות אחרות. https://talperry.com/he/posts/genai/triton-inference-server/"
+
+[hn.en]
+title = "Five Practical Lessons for Serving Models with Triton Inference Server"
+submission_text = "Notes from operating Triton in production across different model workloads."
+first_comment = "I focused this writeup on where Triton is genuinely strong vs where direct vLLM deployment is usually cleaner for LLM workloads. Curious about counterexamples from real systems. https://talperry.com/en/posts/genai/triton-inference-server/"
+
+[hn.de]
+title = "Fünf praktische Lektionen für Serving mit Triton"
+submission_text = "Erfahrungen aus dem produktiven Betrieb von Triton für unterschiedliche Workloads."
+first_comment = "Der Fokus liegt auf der Grenze zwischen Triton-Stärken und Fällen, in denen direktes vLLM bei LLMs klarer ist. Fachliche Gegenbeispiele willkommen. https://talperry.com/de/posts/genai/triton-inference-server/"
+
+[hn.he]
+title = "חמש תובנות מעשיות להגשת מודלים עם Triton"
+submission_text = "לקחים מהפעלה של Triton בפרודקשן עבור עומסי עבודה שונים."
+first_comment = "בפוסט ניסיתי לחדד איפה Triton חזק ואיפה פריסה ישירה של vLLM לרוב טובה יותר ב-LLMs. אשמח לדוגמאות נגדיות אמיתיות. https://talperry.com/he/posts/genai/triton-inference-server/"

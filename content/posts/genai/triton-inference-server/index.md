@@ -3,6 +3,14 @@ title = 'Five Practical Lessons for Serving Models with Triton Inference Server'
 date = 2025-12-15T10:00:00+02:00
 draft = false
 tags = ['machine-learning', 'mlops', 'inference', 'triton']
+description = 'Five production lessons on where Triton helps, where it does not, and how to protect latency and reliability.'
+
+[social]
+image = 'social.png'
+image_alt = 'Social cover for practical lessons on serving ML models with Triton Inference Server.'
+
+[share]
+disable = false
 +++
 
 Triton Inference Server has become a popular choice for production model serving, and for good reason: it is fast, flexible, and powerful. That said, using Triton effectively requires understanding where it shines—and where it very much does not. This post collects five practical lessons from running Triton in production that I wish I had internalized earlier.

@@ -1,0 +1,86 @@
+{{- $page := . -}}
+{{- $alt := printf "Featured image for %s" $page.Title -}}
+{{- with $page.Params.social -}}
+  {{- with .image_alt -}}
+    {{- $alt = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $url := "" -}}
+{{- $path := "" -}}
+{{- $source := "" -}}
+{{- $width := 0 -}}
+{{- $height := 0 -}}
+
+{{- with $page.Params.social -}}
+  {{- with .image -}}
+    {{- $candidate := . -}}
+    {{- if eq $url "" -}}
+      {{- if or (hasPrefix $candidate "http://") (hasPrefix $candidate "https://") -}}
+        {{- $url = $candidate -}}
+        {{- $path = $candidate -}}
+        {{- $source = "front_matter_social" -}}
+      {{- else if hasPrefix $candidate "/" -}}
+        {{- $url = $candidate | absURL -}}
+        {{- $path = $candidate -}}
+        {{- $source = "front_matter_social" -}}
+      {{- else -}}
+        {{- with $page.Resources.GetMatch $candidate -}}
+          {{- $url = .Permalink -}}
+          {{- $path = .RelPermalink -}}
+          {{- $source = "front_matter_social" -}}
+          {{- with .Width }}{{ $width = . }}{{ end -}}
+          {{- with .Height }}{{ $height = . }}{{ end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $url "" -}}
+  {{- with $page.Resources.GetMatch "social.*" -}}
+    {{- $url = .Permalink -}}
+    {{- $path = .RelPermalink -}}
+    {{- $source = "social_file" -}}
+    {{- with .Width }}{{ $width = . }}{{ end -}}
+    {{- with .Height }}{{ $height = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $url "" -}}
+  {{- with $page.Resources.GetMatch "hero.*" -}}
+    {{- $url = .Permalink -}}
+    {{- $path = .RelPermalink -}}
+    {{- $source = "hero_file" -}}
+    {{- with .Width }}{{ $width = . }}{{ end -}}
+    {{- with .Height }}{{ $height = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $url "" -}}
+  {{- with $page.Resources.ByType "image" -}}
+    {{- with index . 0 -}}
+      {{- $url = .Permalink -}}
+      {{- $path = .RelPermalink -}}
+      {{- $source = "first_resource" -}}
+      {{- with .Width }}{{ $width = . }}{{ end -}}
+      {{- with .Height }}{{ $height = . }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $url "" -}}
+  {{- $default := .Site.Params.default_og_image | default "/og/default.png" -}}
+  {{- $url = $default | absURL -}}
+  {{- $path = $default -}}
+  {{- $source = "site_default" -}}
+{{- end -}}
+
+{{- return (dict
+  "url" $url
+  "path" $path
+  "source" $source
+  "alt" $alt
+  "width" $width
+  "height" $height
+) -}}

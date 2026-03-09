@@ -3,6 +3,12 @@ title: Deep Learning The Stock Market
 date: '2016-12-03'
 tags: ['finance', 'trading', 'deep learning', 'rnn']
 draft: false
+description: Ein älterer, aber weiterhin nützlicher Walkthrough zu Sequenzmodellen und Embeddings für Aktienmarkt-Strukturen.
+social:
+  image: social.png
+  image_alt: Social-Cover im Diagrammstil zu Deep-Learning-Methoden für Aktienmarkt-Prognosen.
+share:
+  disable: false
 
 ---
 

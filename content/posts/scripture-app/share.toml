@@ -1,0 +1,79 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/scripture-app/"
+one_liner = "Why I chose not to build a product that looked commercially promising on paper."
+hook = "Market size and distribution are not enough if the story is not yours to tell."
+cta = "I would value discussion on founder-market fit vs pure opportunity sizing."
+
+[languages.de]
+canonical_path = "/de/posts/scripture-app/"
+one_liner = "Warum ich ein auf dem Papier attraktives Produkt bewusst nicht gebaut habe."
+hook = "Marktgröße reicht nicht, wenn die Geschichte nicht deine ist."
+cta = "Ich freue mich über Perspektiven zu Founder-Market-Fit vs Opportunity Sizing."
+
+[languages.he]
+canonical_path = "/he/posts/scripture-app/"
+one_liner = "למה בחרתי לא לבנות מוצר שנראה מבטיח מבחינה עסקית."
+hook = "גודל שוק לא מספיק כשזו לא באמת הסיפור שלך לספר."
+cta = "אשמח לדיון על Founder-Market-Fit מול הזדמנות עסקית."
+
+[twitter.en]
+post_text = "I explored building a scripture memorization app, found a big market, and still walked away. This post is about founder-market fit, identity, and why some opportunities should be left alone. https://talperry.com/en/posts/scripture-app/"
+alt_text = "Cover image for a founder reflection on choosing not to build a scripture app."
+hashtags = ["Startups", "Product", "Founder"]
+emoji = false
+
+[twitter.de]
+post_text = "Ich habe einen großen Markt für eine Scripture-App gesehen und mich trotzdem dagegen entschieden. Dieser Beitrag geht um Founder-Market-Fit, Identität und bewusste Produktentscheidungen. https://talperry.com/de/posts/scripture-app/"
+alt_text = "Coverbild für eine Gründerreflexion über die Entscheidung, eine Scripture-App nicht zu bauen."
+hashtags = ["Startups", "Produkt", "Founder"]
+emoji = false
+
+[twitter.he]
+post_text = "מצאתי שוק גדול לאפליקציית שינון כתבי קודש, ובכל זאת בחרתי לא לבנות אותה. הפוסט הזה על Founder-Market-Fit, זהות, ובחירות מוצר מודעות. https://talperry.com/he/posts/scripture-app/"
+alt_text = "תמונת שער לרפלקציה יזמית על ההחלטה לא לבנות אפליקציית כתבי קודש."
+hashtags = ["Startups", "Product", "Founder"]
+emoji = false
+
+[linkedin.en]
+post_text = "I explored a faith-tech product with clear demand signals and still decided not to build it.\n\nWhy:\n- founder-market fit was wrong\n- identity and audience distance mattered\n- market size alone was not enough\n\nI wrote this for founders deciding whether an opportunity is truly theirs. https://talperry.com/en/posts/scripture-app/"
+alt_text = "Cover image for a founder reflection on choosing not to build a scripture app."
+
+[linkedin.de]
+post_text = "Ich habe ein Faith-Tech-Produkt mit klaren Nachfragesignalen untersucht und mich trotzdem dagegen entschieden.\n\nWarum:\n- Founder-Market-Fit war schwach\n- Distanz zu Zielgruppe und Story war real\n- Marktgröße allein reicht nicht\n\nDer Beitrag richtet sich an Gründer:innen vor einer ähnlichen Entscheidung. https://talperry.com/de/posts/scripture-app/"
+alt_text = "Coverbild für eine Gründerreflexion über die Entscheidung, eine Scripture-App nicht zu bauen."
+
+[linkedin.he]
+post_text = "בדקתי מוצר Faith-tech עם סימני ביקוש ברורים ובכל זאת החלטתי לא לבנות אותו.\n\nלמה:\n- Founder-Market-Fit לא היה נכון\n- המרחק מהקהל והסיפור היה אמיתי\n- גודל שוק לבדו לא מספיק\n\nכתבתי את זה למייסדים שנמצאים בצומת דומה. https://talperry.com/he/posts/scripture-app/"
+alt_text = "תמונת שער לרפלקציה יזמית על ההחלטה לא לבנות אפליקציית כתבי קודש."
+
+[reddit.en]
+title = "I found demand for an app and still chose not to build it"
+subreddit = "startups"
+post_text = "I wrote a candid post about rejecting a market opportunity that looked attractive in spreadsheets but felt wrong on founder-market fit. Curious how you evaluate opportunities that are viable but not personally aligned. https://talperry.com/en/posts/scripture-app/"
+
+[reddit.de]
+title = "Ich habe eine echte Opportunity gesehen und sie trotzdem nicht gebaut"
+subreddit = "startups"
+post_text = "Transparenter Rückblick auf eine Gelegenheit, die wirtschaftlich plausibel war, aber nicht zu mir passte. Wie entscheidet ihr in solchen Fällen? https://talperry.com/de/posts/scripture-app/"
+
+[reddit.he]
+title = "מצאתי הזדמנות עסקית אמיתית ובכל זאת ויתרתי עליה"
+subreddit = "startups"
+post_text = "כתבתי בכנות על החלטה לא לבנות מוצר שנראה מבטיח, בגלל פערי founder-market fit. מסקרן לשמוע איך אתם מקבלים החלטות דומות. https://talperry.com/he/posts/scripture-app/"
+
+[hn.en]
+title = "I Am Not the Founder This App Deserves"
+submission_text = "A founder reflection on walking away from a viable market."
+first_comment = "This is a personal post about rejecting a product opportunity for founder-market-fit reasons, even with clear demand signals. Interested in how others make this call. https://talperry.com/en/posts/scripture-app/"
+
+[hn.de]
+title = "Ich bin nicht der Gründer, den diese App verdient"
+submission_text = "Gründerreflexion über das bewusste Nein zu einem tragfähigen Markt."
+first_comment = "Persönlicher Beitrag über Founder-Market-Fit als Ausschlusskriterium trotz plausibler Opportunity. Ich freue mich über andere Sichtweisen. https://talperry.com/de/posts/scripture-app/"
+
+[hn.he]
+title = "אני לא המייסד שהאפליקציה הזו ראויה לו"
+submission_text = "רפלקציה יזמית על ויתור על שוק שנראה בר-קיימא."
+first_comment = "פוסט אישי על החלטה לוותר על הזדמנות מוצרית בגלל התאמה נמוכה של founder-market fit. אשמח לשמוע איך אחרים חושבים על זה. https://talperry.com/he/posts/scripture-app/"

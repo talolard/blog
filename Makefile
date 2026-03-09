@@ -1,6 +1,6 @@
 HUGO ?= hugo
 
-.PHONY: build serve clean
+.PHONY: build serve clean validate-social validate-share validate
 
 build:
 	$(HUGO)
@@ -10,3 +10,11 @@ serve:
 
 clean:
 	rm -rf public resources
+
+validate-social: build
+	uv run scripts/validate_social_meta.py
+
+validate-share:
+	uv run scripts/validate_share_pack.py
+
+validate: validate-social validate-share

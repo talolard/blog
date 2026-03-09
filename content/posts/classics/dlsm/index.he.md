@@ -3,6 +3,12 @@ title: Deep Learning ושוק ההון
 date: '2016-12-03'
 tags: ['finance', 'trading', 'deep learning', 'rnn']
 draft: false
+description: פוסט ותיק אך עדיין שימושי על שימוש במודלי רצף ו-embeddings כדי לנתח מבנים בשוק ההון.
+social:
+  image: social.png
+  image_alt: תמונת שיתוף בסגנון דיאגרמה לפוסט על למידה עמוקה וחיזוי שוק ההון.
+share:
+  disable: false
 
 ---
 

@@ -45,6 +45,14 @@
 * Hooks: hygiene (YAML/EOF/trailing whitespace/large files), image handling (convert_to_webp.py, enforce_lfs_webp.py), stylelint (SCSS), yamllint. Markdownlint/vale/djlint can be run manually if desired. Lychee is currently disabled.
 * Config files: `.stylelintrc.json`, `.markdownlint.yaml`, `.vale.ini`, `.djlintrc`, `.yamllint.yml`.
 
+## Social previews and share packs
+
+* Follow `docs/social_share_pack.md` for metadata and `share.toml` requirements.
+* For each published post, populate complete front matter social fields and a complete `share.toml` (unless explicitly disabled).
+* When using AI to fill fields, optimize for engagement while staying true to Tal's voice and the post's real content.
+* Do not leave placeholder text or partial platform entries; fill all required fields for each post language.
+* Run `make validate` before finishing metadata/share-pack changes.
+
 <!-- BEGIN BEADS INTEGRATION -->
 ## Issue Tracking with bd (beads)
 
