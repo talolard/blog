@@ -50,6 +50,8 @@ Image source selection order:
 5. global fallback `static/og/default.png`
 
 If any article resolves to a non-compliant image, build validation fails.
+If an article resolves to the global fallback image, build validation fails.
+If multiple different posts reuse the same social image bytes, build validation fails.
 
 ## share.toml Schema (Required)
 

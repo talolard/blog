@@ -116,3 +116,13 @@ def test_article_social_metadata_tags(page: Page, base_url: str) -> None:
     assert content_attr(page, "head meta[name='twitter:card']") == "summary_large_image"
     assert content_attr(page, "head meta[property='og:site_name']") not in (None, "")
     assert content_attr(page, "head meta[property='og:locale']") not in (None, "")
+
+
+@pytest.mark.parametrize("lang", ["en", "de", "he"])
+def test_404_pages_are_noindex(page: Page, base_url: str, lang: str) -> None:
+    """Language-specific 404 pages should not be indexable."""
+
+    page.goto(f"{base_url}/{lang}/404.html")
+    robots = content_attr(page, "head meta[name='robots']")
+    assert robots is not None
+    assert "noindex" in robots

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from html.parser import HTMLParser
+import hashlib
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -180,6 +181,10 @@ def validate_page(page: PageInfo, base_url: str) -> list[str]:
             source = "unknown"
         if not path:
             path = "unknown"
+        if source in {"site_default", "unknown"}:
+            errors.append(
+                f"{page.canonical or page.html_path}: article resolved to fallback image source '{source}' (path={path}); set a per-post social image"
+            )
         if errors:
             print(
                 "\n".join(
@@ -195,6 +200,33 @@ def validate_page(page: PageInfo, base_url: str) -> list[str]:
     return errors
 
 
+def validate_duplicate_article_images(pages: list[PageInfo], base_url: str) -> list[str]:
+    errors: list[str] = []
+    hashes: dict[str, list[tuple[str, str]]] = {}
+    for page in pages:
+        if page.og_type != "article":
+            continue
+        image_url = page.tags.get("og:image", "")
+        local_path = url_to_local_image(image_url, base_url) if image_url else None
+        if local_path is None or not local_path.exists():
+            continue
+        image_hash = hashlib.sha256(local_path.read_bytes()).hexdigest()
+        canonical = page.canonical or str(page.html_path)
+        parsed_path = urlparse(canonical).path.strip("/")
+        parts = parsed_path.split("/")
+        slug_key = "/".join(parts[1:]) if len(parts) > 1 else parsed_path
+        hashes.setdefault(image_hash, []).append((canonical, slug_key))
+
+    for _, entries in hashes.items():
+        unique_slugs = {slug for _, slug in entries}
+        if len(unique_slugs) > 1:
+            joined = ", ".join(url for url, _ in entries)
+            errors.append(
+                f"Multiple different posts share the same social image file bytes: {joined}"
+            )
+    return errors
+
+
 def main() -> int:
     base_url = load_base_url()
     errors: list[str] = []
@@ -204,6 +236,7 @@ def main() -> int:
 
     for page in pages:
         errors.extend(validate_page(page, base_url))
+    errors.extend(validate_duplicate_article_images(pages, base_url))
 
     if errors:
         print("Social metadata validation failed:")

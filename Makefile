@@ -1,6 +1,6 @@
 HUGO ?= hugo
 
-.PHONY: build serve clean validate-social validate-share validate
+.PHONY: build serve clean validate-social validate-share validate-seo validate
 
 build:
 	$(HUGO)
@@ -17,4 +17,7 @@ validate-social: build
 validate-share:
 	uv run scripts/validate_share_pack.py
 
-validate: validate-social validate-share
+validate-seo: build
+	uv run scripts/validate_technical_seo.py
+
+validate: validate-social validate-share validate-seo
