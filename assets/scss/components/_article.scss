@@ -125,8 +125,28 @@
   max-width: 72ch;
 }
 
+.article-body > p:first-of-type {
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--ink);
+}
+
 .article-body p {
   margin: 1.1rem 0;
+}
+
+.article-body ul,
+.article-body ol {
+  margin: 1rem 0 1.25rem;
+  padding-left: 1.4rem;
+}
+
+.article-body li {
+  margin: 0.55rem 0;
+}
+
+.article-body li > p {
+  margin: 0.6rem 0;
 }
 
 .article-body h2,
@@ -140,6 +160,20 @@
 
 .article-body h2 {
   font-size: 1.6rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.article-body h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 55%;
+  max-width: 12rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(45, 108, 223, 0.9), rgba(45, 108, 223, 0));
 }
 
 .article-body h3 {
