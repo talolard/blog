@@ -1,7 +1,7 @@
 # Restore LightTag Redirects in Two Phases
 
-Status: in progress
-Current gate: P2.D (publish key and perform approved submissions)
+Status: complete; scheduled monitoring remains
+Current gate: post-migration monitoring (1 day, 1 week, and 1 month)
 Last updated: 2026-08-30
 
 - [x] P1 — Redirect infrastructure
@@ -10,11 +10,11 @@ Last updated: 2026-08-30
   - [x] P1.C — Operations documentation
   - [x] P1.R — Sol reviews accepted
   - [x] P1.D — Production deployment verified
-- [ ] P2 — Search-engine migration
+- [x] P2 — Search-engine migration
   - [x] P2.A — IndexNow support
   - [x] P2.B — Webmaster runbook and DNS verification
   - [x] P2.R — Sol review accepted
-  - [ ] P2.D — Search submissions completed
+  - [x] P2.D — Search submissions completed
 
 ## Evidence log
 
@@ -37,3 +37,9 @@ Last updated: 2026-08-30
 - 2026-08-30: Controlled live validation against `d3d8e0mrp8eep6.cloudfront.net` passed the complete redirect/410/GET/HEAD/normalization/canonical matrix. This laptop has no IPv6 route, so direct IPv6 sockets returned local `ENETUNREACH`; authoritative AAAA answers and CloudFront IPv6 enablement were verified separately. Representative direct edge probes returned exact canonical `301` responses with dropped queries and exact `410` responses for guide/unknown paths.
 - 2026-08-30: P2.A/P2.B implemented. IndexNow dry-run recursively collected 95 canonical production URLs across all sitemap languages into one batch without contacting the key endpoint or IndexNow. Five offline tests, Ruff, strict mypy, `cfn-lint`, AWS template validation, and the local redirect validator passed. No search-engine submission was made; the public key endpoint remains undeployed (`404`) until the repository changes are published.
 - 2026-08-30: P2.R accepted after remediation. Final implementation has 15 offline tests, exact IndexNow key/status/redirect handling, auditable batch evidence, fail-closed empty sitemap behavior, and safe 429/no-blanket-retry guidance. The unsupported CloudFormation apex-TXT import was removed; the existing verification/SPF TXT RRset remains explicitly unmanaged and protected.
+- 2026-08-30: Published and verified the public IndexNow key endpoint. A deliberate guarded submission sent all 95 canonical production URLs in one batch to the global endpoint at `2026-08-30T06:51:21Z`; IndexNow returned `202 Accepted` with response evidence `sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855;bytes=0`. Do not duplicate this submission.
+- 2026-08-30: Added new Google Search Console DNS verification tokens without replacing existing mail/SPF/verification TXT values. Route 53 changes `/change/C10324793A0FEYCIB90ZX` (`lighttag.io`) and `/change/C04367933VIFI7PVC7DUL` (`talperry.com`) reached `INSYNC`; both domain properties verified successfully.
+- 2026-08-30: Google Search Console verified the `https://lighttag.io/`, `https://www.lighttag.io/`, and `https://talperry.com/` URL-prefix properties under Tal's account. The Tal Perry sitemap index was accepted. Change of Address validation passed and moves from both apex and `www` to `talperry.com` were confirmed with start date August 30, 2026. `guide.lighttag.io` was intentionally excluded.
+- 2026-08-30: Google URL Inspection reported the representative old and restored URLs as not yet known/indexed immediately after migration. This is expected initial state and must be rechecked on the monitoring schedule.
+- 2026-08-30: Bing Webmaster Tools was connected to the same Google account with read-only Search Console access. It imported `www.lighttag.io` and `talperry.com`; Bing reports the apex as already added. The imported `https://talperry.com/sitemap.xml` is `Success` with zero sitemap errors/warnings. Bing URL Inspection currently reports the representative restored page as not discovered; the global IndexNow submission is already pending and must not be duplicated.
+- 2026-08-30: P2.D completed. Recheck CloudFront aggregate requests/errors after one day and one week, and review Google Search Console and Bing migration/index coverage after one week and one month. Keep the redirects for at least one year and preferably indefinitely.
