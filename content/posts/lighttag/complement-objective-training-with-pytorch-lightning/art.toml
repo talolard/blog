@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "recompose-source"
 thread = "ML Systems"
 visual_concept = "A learner improves by studying the negative space around the correct choice: one illuminated form surrounded by carefully weighted alternatives."
-prompt_version = "editorial-v1"
-prompt_hash = "bbff15a4626635cd66c07e81561c2ee94dda6922f1f0702e6ce91c50c9793ed3"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "f97107936caf036043c1cb893749c48d22372c2e75bbf00b08226c8e09a490af"
+scene_hash = "b1c554d541bfae97af572d2bee8e2e742e59cf50cef9eee5dea0dabdd5d7e134"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0f26314fd6e67d2d016a941772eb0887d1bd6745495eb1cc4d"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:40:58.272183Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:47:51.597181Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -17,6 +21,10 @@ selection = "picture source at 760px and below"
 
 [inputs.articles]
 "en" = "8190dfbe1b81e03fbd56780f59da04f6463976483e59505a280b1ea20b49643a"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "hero.webp" = "7bc0450c09509bd77ba1ad65c3e6ccd4e4003eace39985787c3a6734e653ab8a"
@@ -28,27 +36,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "93e350ddf14883751ddafc51f887eade815721b5f17dd1dc05b4e8990d562733"
+sha256 = "a5df9cb2120be3ee39352dcce050bec23ca5594a6a70b57b500f017a29707cbc"
 width = 960
 height = 720
 compression = 85
-request_id = "req_65bca473114f4be4af456f776a6d1fe9"
+request_id = "req_644b229e75e04087bce5e0947b78888f"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "9974a9dc2208d21297fb520db33263ff57026945f31863862afea7876ce2cdc6"
+sha256 = "8ddb739a5af1e35213df65083a615f8a8d92beb3a090fa6757d8969e598ada8d"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_d539da55e199472093cf26f66e65a51e"
+request_id = "req_45164b4b40774a9999f008a58d25ffe9"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "fb74960e9753938abc0185b76f60b1c04061c33488c436655713a678c4d5a4ae"
+sha256 = "63bcf60010ec2d3e622d5b228856f23389e9ee7b216584e8d760ae1fa3ac49d9"
 width = 960
 height = 720
 compression = 85
-request_id = "req_f7e22f741a504da28d4c142248da7a48"
+request_id = "req_a2b345f53a4b47a695e678358ad75778"
 placement = "approximately 362x272"

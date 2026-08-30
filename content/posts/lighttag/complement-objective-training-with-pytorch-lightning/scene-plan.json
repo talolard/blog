@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "19cb46c63cf96c3ed84a603ba48bbbe84287ac5e48286da8a79ef04d6721405b",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:51.535949Z",
+  "response_id": "resp_0f26314fd6e67d2d016a941772eb0887d1bd6745495eb1cc4d",
+  "scene": {
+    "metaphor": "A tiny studio-sized training rig where one bright “correct” token is being deliberately isolated while the surrounding alternatives are gently pushed into the shadows, like a spotlighted choice surrounded by weighted decoys.",
+    "setting": "A cool-gray tabletop miniature lab with a polished seamless backdrop, built like a handcrafted training stage: matte card, milled foam, acrylic rods, and powdery textured ground, photographed as premium editorial studio still life.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal has just flipped a small lever that turns on a narrow mint-cobalt spotlight over one white ceramic tile while three neighboring dark tiles subtly tilt away, as if the scene is catching the instant the “wrong” options lose their pull.",
+    "physical_materials": [
+      "cool-gray felt base",
+      "cobalt acrylic spotlight tube",
+      "mint lacquered lever",
+      "white ceramic hero tile",
+      "three charcoal slate decoy tiles",
+      "thin brass wire supports",
+      "soft graphite powder shadows",
+      "one restrained warm accent in Tal’s coral shirt"
+    ],
+    "semantic_anchors": [
+      "single illuminated correct form",
+      "carefully weighted surrounding alternatives",
+      "negative space as the main compositional idea",
+      "two-step training implied by a lever-and-light mechanism",
+      "Lightning-like speed and practicality suggested by studio cleanliness"
+    ],
+    "avoid": [
+      "text or labels",
+      "infographic diagrams",
+      "generic robot figures",
+      "cute mascot styling",
+      "cream paper",
+      "ornate borders",
+      "children’s palette",
+      "busy background",
+      "injury or humiliation",
+      "gross-out imagery"
+    ],
+    "image_instruction": "Create a polished studio photograph of Tal Perry as a recognizable operator in a miniature ML lab on a cool-gray tabletop. He stands at frame left, half-length, smiling with dry, focused amusement, wearing his coral shirt as the only warm accent. In front of him sits a handcrafted training stage: one bright white ceramic tile is isolated under a narrow cobalt-mint spotlight, while three charcoal slate tiles nearby are intentionally dimmer and slightly angled away, suggesting the model learning from the negative space around the right choice. Freeze the instant Tal has just flipped a tiny brass lever that triggered the light shift. Keep the scene tactile and practical with felt, acrylic, foam, and powdery shadow textures, generous empty space, and high tonal separation. Compose laterally so the same cast, props, and action read clearly as a 3:1 banner, while the hero tile and Tal’s face remain legible at thumbnail size."
+  }
+}
