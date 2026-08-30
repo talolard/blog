@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "18d9ced6aa7a55f5ebe6ae6624357b666c57df261b668e4b51484cd037c521db",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:53:39.511801Z",
+  "response_id": "resp_042ababfe014a526016a9419bee94c87d1964ab0a7ed8c7f34",
+  "scene": {
+    "metaphor": "A miniature deployment line in a studio workbench where nearly identical shipping containers represent software images, and a single routing mistake sends one to the wrong customer door.",
+    "setting": "A polished tabletop miniature set built from cool-gray metal trays, matte plywood, and brushed aluminum rails, photographed like serious product photography with generous negative space and a long lateral horizon for banner crops.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal has just turned a mint-colored selector lever; two almost identical container crates are crossing on the conveyor, and one is being nudged onto the wrong delivery track toward the wrong small door while the correct door waits just beyond it.",
+    "physical_materials": [
+      "matte cool-gray foamboard base",
+      "miniature shipping containers in cobalt and slate",
+      "brushed aluminum conveyor rails",
+      "mint-painted selector lever and guide arm",
+      "one restrained warm accent on Tal's coral sleeveless shirt",
+      "small paper-like parcel doors",
+      "clear acrylic stoppers",
+      "soft studio scrim light"
+    ],
+    "semantic_anchors": [
+      "two nearly identical containers",
+      "wrong route vs correct route",
+      "deployment conveyor",
+      "customer door",
+      "one mint anomaly",
+      "studio tabletop miniature",
+      "Tal as recognizable adult with dark curly hair, beard, and warm smile"
+    ],
+    "avoid": [
+      "flashcard framing",
+      "ornate borders",
+      "cream paper",
+      "children's palette",
+      "generic robots",
+      "text labels or numbers",
+      "UI screenshots",
+      "humiliation",
+      "injury",
+      "gross-out",
+      "busy vertical tower composition"
+    ],
+    "image_instruction": "Create a serious studio photograph of a handmade miniature deployment line on a cool-gray tabletop, with wide negative space and a low lateral composition that still reads at thumbnail size. Tal Perry must appear as a recognizable adult operator: dark curly hair, salt-and-pepper beard, tan skin, and a calm half-smile, wearing a restrained warm coral sleeveless shirt as the only warm accent. He stands to one side of the set, hand on a mint-colored selector lever, looking down with focused concern rather than comedy. In the miniature world, two nearly identical cobalt-and-slate shipping containers ride a brushed-aluminum conveyor toward two small customer doors; at the frozen instant, one container is being diverted onto the wrong track by the mint guide arm while the correct door sits just beyond it. Keep the scene tactile and practical, with foamboard, acrylic, and painted metal textures, crisp tonal separation, and one obvious red-or-mint anomaly that survives at 120x90 and in a 3:1 banner."
+  }
+}

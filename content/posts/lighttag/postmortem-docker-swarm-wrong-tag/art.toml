@@ -1,0 +1,60 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "Building"
+visual_concept = "Two nearly identical shipping containers cross on a deployment conveyor and one reaches the wrong customer door, a precise visual postmortem with one red anomaly."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "d795b962613cc4ca8758704ace445aab1d2b2749a867cb22daada910fd1abea1"
+scene_hash = "be37af321fbd622ad370131661179aa01a6c78f204b01a3808331b2c3793292a"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_042ababfe014a526016a9419bee94c87d1964ab0a7ed8c7f34"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:04:00.458286Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "0d1be5adaccd9c4bec85a6aa4bce1f664a7fb7a11dcfea1070c73a58f871af92"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"social.webp" = "92ddfdcfe8c914d9cd45dba772c3ec1527e8b1e9012c382d8f0171733d2297a3"
+
+[alt]
+"en" = "Editorial illustration for „Bug Postmortem: Wrong Image Deployed on Docker Swarm“: Two nearly identical shipping containers cross on a deployment conveyor and one reaches the wrong customer door, a precise visual postmortem with one red anomaly."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "0ab71c98ea38043779a3d2d3c8499631121cead7fd9d1d471fa03abda1e1e752"
+width = 960
+height = 720
+compression = 85
+request_id = "req_761fc46219294a6bb3c623851963e10c"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "7e7068a34feef7825c84623f32730b3701c2dee40ea9a02f52886a2ecbdf9e30"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_c842906f73bd423dad08da3f9e24e6f4"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "e972c6e37d35fad65edf8f9063b3f1f281f45f190fb22fa383c1d4e4740dc65a"
+width = 960
+height = 720
+compression = 85
+request_id = "req_2dc165fc7aab4c5289a734b0277aed97"
+placement = "approximately 362x272"
