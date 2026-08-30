@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "Building"
 visual_concept = "A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
-prompt_version = "editorial-v1"
-prompt_hash = "6ff4ab2da7d73b750837af072631a955b39f616bf690548b60ccac9ec6d30ed4"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "1f3b0d1e2abe98c4dfe35677e5b272d93d97e496b4e35c139e4ef833ce7463c0"
+scene_hash = "01999b7d9a7bde2adbdc053854020d9df2a90ce546069b0c10ff26b0cc1abdf3"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0ffb2458492f397f016a9410d1dd9087d18df993b178d00268"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
-generated_at = "2026-08-30T08:26:57.227578Z"
+source_git_revision = "95506948bd5b4f406115c1df95e4f34917c64355"
+generated_at = "2026-08-30T11:20:04.727606Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -19,6 +23,10 @@ selection = "picture source at 760px and below"
 "de" = "db635c39fa3822a577a8791bcbb49f4ac8bc31e8a936f9e3bea1478712572ad5"
 "he" = "9a555c08c0b82aaf41370e502d45dbf4201a35c7756234872597fd54fa75792c"
 "en" = "4ff8025a1eaca6b5e861470b72eef890593e65dbe91ea2dbe09319bcefeb97bc"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "hero.webp" = "e0413cd481cc1aa227b0ed34ad384a392abd6f4f909113ee04f1b06979688f60"
@@ -34,27 +42,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "94148cdddd5adffddc65a0f6f888bf571b62e9897a1a9baf676b48be2732feab"
+sha256 = "dcc5c8c396d273f03e318638f907c80bc3ccb530e164e5fb82111ed5ca957306"
 width = 960
 height = 720
 compression = 85
-request_id = "req_df447979b27243b3b74626d43daf18dd"
+request_id = "req_c6b40983e04645789e551980e5cf2175"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "c21ef4dd55c82266c9e61d7cb0d7b26294d898ae367228f0cd06fed75b64f39b"
+sha256 = "39224637dc79db21e6b79710347fb4780d6f501cba7bec0ce572fd8cd1e604d5"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_01ce01769d3444eaa9ad80f34e3fde8d"
+request_id = "req_d3d803e31c30401e932f9e0f8c301063"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "2e7e40315b25e44f07c93fc2ace4a14b3b33b2517fe78e7f2e6f6a06fe63fd4f"
+sha256 = "d75e5919003f688f58690c7f27b3fe864743d86c345dd77e57bcaf84faed3a7a"
 width = 960
 height = 720
 compression = 85
-request_id = "req_826b52f758894387a853fa03a29fb388"
+request_id = "req_aa3afdcfd33743eaaceef8d6b672458c"
 placement = "approximately 362x272"

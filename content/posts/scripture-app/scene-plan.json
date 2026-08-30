@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "120a856632a56679e8b508abb348ebdfc55153b812e02d16ce692f8117377a18",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:15:38.254537Z",
+  "response_id": "resp_0ffb2458492f397f016a9410d1dd9087d18df993b178d00268",
+  "scene": {
+    "metaphor": "A founder standing before a beautiful but mismatched miniature doorway, realizing the key to the market will not turn into a key to his own life.",
+    "setting": "A polished studio photograph of a handmade tabletop set on a cool-gray surface: a tiny doorway built from matte foamcore and translucent acrylic sits to the right, glowing from within like a tempting product entrance; Tal stands beside it in the same frame as the human-scale observer.",
+    "humor_register": "deadpan",
+    "tal_role": "observer",
+    "frozen_incident": "At the exact moment Tal pauses at the threshold, a stack of tiny memory cards has slid out of a miniature slot and stopped dead against the door jamb, making the whole product machine look elegantly built but slightly out of fit.",
+    "physical_materials": [
+      "cool-gray foamcore base",
+      "cobalt acrylic doorway trim",
+      "mint paper accents",
+      "one restrained warm amber light from inside the doorway",
+      "tiny printed note cards made from thick stock",
+      "clear acrylic riser",
+      "brass or wood miniature key",
+      "soft black velvet shadow floor"
+    ],
+    "semantic_anchors": [
+      "fit versus mismatch",
+      "founder identity",
+      "market doorway",
+      "scripture memorization as tangible cards",
+      "product machine",
+      "choosing not to enter"
+    ],
+    "avoid": [
+      "flashcard framing",
+      "kids’ illustration style",
+      "ornate borders",
+      "cream paper",
+      "busy infographic elements",
+      "religious iconography overload",
+      "text on props",
+      "humiliation",
+      "gross-out",
+      "generic robots"
+    ],
+    "image_instruction": "Create a serious editorial studio photograph of Tal as a recognizable founder-observer in a handmade miniature set. He stands on the left in a calm, slightly conflicted pose, shoulders relaxed, mouth in a faint knowing half-smile, looking toward a small beautiful doorway on the right that clearly feels like someone else’s world. Build the metaphor from physical objects: a cool-gray foamcore floor, a cobalt-trimmed doorway with mint accents, and a warm amber glow inside. In the doorway, a tiny mechanism of thick index-card-like memory tiles has jammed and spilled one row onto the threshold, frozen harmlessly mid-failure. Keep the scene tactile and practical, with polished studio lighting, crisp shadows, and lots of negative space. Use a restrained palette of cool grays, cobalt, and mint, with only one warm accent from the interior light. Compose laterally so the image reads as a 3:1 banner, but retain one dominant silhouette and a simple scene that still works at thumbnail size."
+  }
+}
