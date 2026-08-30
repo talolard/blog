@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "492da89cbe197ee1d434b8bdfd93dbe08a3b5477f028b3f899fb92fe0a301be7",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:51.584723Z",
+  "response_id": "resp_06ec9841b3d9ff4f016a941772a79887d19ae76ce9ef6c640c",
+  "scene": {
+    "metaphor": "A sentence is a strip of tactile paper letters passing through stacked translucent viewing windows, where small fragments on the left are progressively gathered into one coherent ribbon on the right.",
+    "setting": "A polished studio tabletop set on a cool-gray seamless background, built as a miniature hand-crafted paper-and-acrylic sequence line stretching horizontally across the frame.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is caught mid-adjustment as one tiny acetate window has just tipped, making a few paper character strips slide forward and merge into a thicker, more complete sentence ribbon at the far right.",
+    "physical_materials": [
+      "matte cool-gray felt base",
+      "clear acrylic or acetate windows with subtle edge reflections",
+      "hand-cut paper letter strips and text fragments",
+      "thin magnetic rails or hidden supports",
+      "cobalt and mint index tabs or clips",
+      "one restrained coral accent on Tal’s clothing or a small tool"
+    ],
+    "semantic_anchors": [
+      "stacked receptive fields",
+      "local fragments joining into global meaning",
+      "progressive context accumulation",
+      "convolutional speed and parallelism",
+      "text as a one-dimensional sequence",
+      "layered abstraction without diagrammatic labeling"
+    ],
+    "avoid": [
+      "flashcard borders",
+      "paper scrapbook style",
+      "children’s toy aesthetics",
+      "generic robot imagery",
+      "literal UI screenshots",
+      "infographic arrows or labels",
+      "injury or slapstick chaos",
+      "crowded props",
+      "vertical tower composition"
+    ],
+    "image_instruction": "Create a serious, polished editorial studio photograph of Tal Perry as a calm operator in a miniature tactile set. He should be recognizable from the reference photos: dark curly hair, short beard, expressive eyes, relaxed smile with focused concentration. Place him low and to the left, leaning in over a cool-gray tabletop with one hand nudging a small translucent window frame and the other steadying a strip of hand-cut paper characters. Across the scene, arrange three to five stacked clear acetate “receptive windows” that step laterally from left to right; as they progress, scattered fragments become a denser, more coherent sentence ribbon at the right edge. Freeze a harmless absurd moment: one window has just slipped, causing the fragments to click into a tighter merge. Use cobalt and mint as the main accents, with only one restrained warm accent in Tal’s shirt or tool. Keep generous negative space, high tonal separation, thick simple silhouettes, and a wide banner-friendly horizontal flow that still reads as one dominant subject at thumbnail size."
+  }
+}

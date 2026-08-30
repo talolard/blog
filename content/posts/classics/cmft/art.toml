@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "ML Systems"
 visual_concept = "A sentence transformed through stacked receptive windows, with local fragments progressively joining into a single coherent signal; editorial, tactile, and non-diagrammatic."
-prompt_version = "editorial-v1"
-prompt_hash = "8242585f56601146de7eccff3297738be1d2c9e1d0f4139ec62e3551a6653658"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "bf8c1e202cb5e929171015710104998f58621492ed01f79876acf79fc7863fb0"
+scene_hash = "141944894cc9a5fd011c10bd01ce6006ff140b6450a59aeaa24ed685b958c599"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_06ec9841b3d9ff4f016a941772a79887d19ae76ce9ef6c640c"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:31:49.544907Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:49:00.719563Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -19,6 +23,10 @@ selection = "picture source at 760px and below"
 "de" = "ee48ab7779c84d4500590214c094cab94ef2fb8fe55c03317c71cf78525d6790"
 "he" = "f13f1b66f648d796474d6043f181f43468f882921d2d4b50911c6cde391117fc"
 "en" = "97aace4f430783ecaff60dc581b2f68fb63b3cf3a9cde3d1bc7129481844f3c4"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "social.png" = "db69200b1375b992ee7a0b0264337912b984acd169bbd774292909bac56c0121"
@@ -32,27 +40,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "38ebd7a4ef19296133faff571b5217d1f1168302ca6e5f82c605a091abeed3c9"
+sha256 = "89151eeea8dde4edd583cf8239c70b0e7827716dd3a686368c6b1551053155ce"
 width = 960
 height = 720
 compression = 85
-request_id = "req_56ca601b96f54de9a6a9106ddea071bd"
+request_id = "req_c95712e2657844418f007237e58f7fa1"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "b4ac7518ee0996c892f0fda8fb57d770f00b878cf32843765cb4e81cad0dee87"
+sha256 = "d5d5408127faf183545a048c529c82e53d93f089167aaee527332abc8e4bd01f"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_20a1e225016b42f9a8e01e62b5e17dea"
+request_id = "req_ffe68268437f46cbae9217fddb35c91a"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "08abd39064cfa73182a09367e055a9d9d2821e15f5e2b6c01628d040de2e7068"
+sha256 = "9cdf6adae6a412c19984ab925e6106201842c7c198beb3d4f75e4c1a5b908d8e"
 width = 960
 height = 720
 compression = 85
-request_id = "req_e930374db0be405f8b7f14d6505f4d1c"
+request_id = "req_551f0b250e4d4fe9872e10410e93e216"
 placement = "approximately 362x272"
