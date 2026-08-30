@@ -1,7 +1,8 @@
 {{- $thread := "ML Systems" -}}
+{{- $posts := .Site.Data.editorial_posts.posts -}}
 {{- with .File -}}
   {{- $key := strings.TrimSuffix "/" (strings.TrimPrefix "posts/" .Dir) -}}
-  {{- with index hugo.Data.editorial_posts.posts $key -}}
+  {{- with index $posts $key -}}
     {{- $thread = .thread -}}
   {{- end -}}
 {{- end -}}
