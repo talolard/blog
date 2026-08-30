@@ -1,0 +1,63 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "preserve-concept"
+thread = "Agents & AI"
+visual_concept = "A human and machine alternate control of one careful production loop, with visible handoff points and uncertainty rather than an autonomous robot fantasy."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "ea20d16228e12f70508cd8019fd40615ed9fe34fa009220146d5b5c646b727d0"
+scene_hash = "ee969847dd1480a42d44092947f1d69534438cc375a202acc445cb5d56b18a76"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0a3bf39e892edaed016a941bcb8b2087d1aadfad61e4025fa1"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:11:58.165172Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "bd2dd8b4a63358982dace412cfb209249a55be26668a1984d7c9bc10c4f6d349"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"hero.webp" = "1b29e60832310faaa3eaa8d096444e5ff856fe9c0beadb9fefd8fdb773e00a97"
+"social.webp" = "44492af2dc3a425f3f3885ad1c39f768235a6256f70ee06001556bea25013fea"
+"bias.webp" = "dd9e979880e16eef779d86e0f4a199e1f21c2ce02ae22a934a54395441ebda43"
+"xkcd-machine-learning.webp" = "da325740b5968a5949c8c04da5ac52b37487e814d39f257af9b8eba816ef6e36"
+
+[alt]
+"en" = "Editorial illustration for „When Should You Use Machine in the Loop?“: A human and machine alternate control of one careful production loop, with visible handoff points and uncertainty rather than an autonomous robot fantasy."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "9819cab3fcaaad42723d90b52eabc98085c3c83d4adb689a4bbea753e1a80645"
+width = 960
+height = 720
+compression = 85
+request_id = "req_d186fc280ff14c5cb51b617fc69cf827"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "6b165c01d5f0ae01f117117f1a21da980756915d2562aa6517cc4637a49d4d85"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_3383075c6c5948f4bad0acf3b6df50a8"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "8b98b0f5c088ca44570e7275782b2d9364d0c588d95328c8cad54c516fcfe862"
+width = 960
+height = 720
+compression = 85
+request_id = "req_0980792158fa4f42a576a971ac2b8243"
+placement = "approximately 362x272"

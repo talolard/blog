@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "cf2b72caab5b809a78823f11234b7f682200dc90a33fbd501ab66a077932bbf3",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T12:02:24.528837Z",
+  "response_id": "resp_0a3bf39e892edaed016a941bcb8b2087d1aadfad61e4025fa1",
+  "scene": {
+    "metaphor": "A miniature annotation factory where a human and a small machine keep handing the same tag around a loop, making the bottleneck and handoff visible.",
+    "setting": "Polished studio photograph of a handcrafted cool-gray tabletop set with a shallow horizon, built like a tiny production line on a matte slate surface with cobalt and mint accents.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is pausing mid-accept/reject while a tiny mechanical arm has just nudged a blank card into the loop and the next card is slightly jammed, creating a harmless, visible bottleneck.",
+    "physical_materials": [
+      "matte gray board",
+      "felt and paperboard loop track",
+      "thin brass wire armature",
+      "clear acrylic guide",
+      "miniature clips",
+      "blank index cards",
+      "small stamp pad",
+      "cobalt thread",
+      "mint paper tabs",
+      "one restrained warm accent in Tal’s shirt or tool handle"
+    ],
+    "semantic_anchors": [
+      "human-in-the-loop handoff",
+      "machine suggestion",
+      "labeled data as the bottleneck",
+      "throughput tradeoff",
+      "bias introduced by automation",
+      "uncertainty rather than autonomy"
+    ],
+    "avoid": [
+      "robot fantasy",
+      "cute mascot machinery",
+      "busy infographic composition",
+      "text or labels",
+      "cream paper",
+      "ornate borders",
+      "children’s palette",
+      "injury",
+      "humiliation",
+      "gross-out"
+    ],
+    "image_instruction": "Create a serious, polished studio photograph of Tal Perry as a recognizable operator in a tiny handcrafted annotation factory on a cool-gray tabletop. Place him left of center in a dark, restrained top with one small warm accent, leaning in with a focused half-smile and raised eyebrow, one hand hovering over a blank card as if choosing accept or reject. A small brass-and-wire machine arm on the right has just pushed a mint paper tab into a circular loop track of blank cards, and one card is slightly jammed at the handoff point. Use no text: the metaphor should read through objects alone. Keep the set low and lateral for a 3:1 banner, with Tal, the loop, and the machine arm forming one continuous horizontal story and generous negative space above. Materials should feel tactile—paperboard, felt, acrylic, clips, and stamped edges—lit with cool studio light, deep tonal separation, cobalt and mint as the main accents, and only a faint warm note on Tal. The scene must stay legible at thumbnail size with one dominant subject, thick silhouettes, and no more than three supporting props."
+  }
+}
