@@ -1,0 +1,61 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "preserve-concept"
+thread = "ML Systems"
+visual_concept = "One vivid Unicode glyph travels as a paired set of mechanical tiles through a JavaScript counting gate, preserving the original playful mismatch metaphor."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "af7f284b562d3066d2e868b9af93a7bdc8b80b61c1ea746d2849928ef526d518"
+scene_hash = "b2a32ffd07b7687fab40c66641482b6bacc190b6ea871f9f872cee804eaa19d4"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_05d8ecce078b1d4e016a941bc16c7c87d187f318490da7f35c"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:11:19.967566Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "b8248d1b815f2948e501a4419632611f0dfd70d596180dc7b78809735d261864"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"hero.webp" = "c8254a021057b0bead40ad4d874e9cb69be4411563f6f0ba7d4d5ce967e787f1"
+"social.webp" = "a66b86501102fe8f64910c8bbf291b3076e74a085aac5d0cd27d4fed2e056287"
+
+[alt]
+"en" = "Editorial illustration for „JavaScript String Offsets and Unicode Surrogate Pairs“: One vivid Unicode glyph travels as a paired set of mechanical tiles through a JavaScript counting gate, preserving the original playful mismatch metaphor."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "3318029bc1fd1515f3aba0944cee11315e3452aa6fa9e34edef1a5ca089f69b1"
+width = 960
+height = 720
+compression = 85
+request_id = "req_e33a11cf2d354f1fa972362477e5cc1d"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "58b0a87b93a297cff3a9b5d38681ff1b8f458333e7ce58a824bb0ead1e5ffae4"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_2f986ef17cca43749ffcbb76eb2cf98e"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "8b5c488f2c0464983382cdb0a17a69b53501137f679dc072106e7d056e32c8d0"
+width = 960
+height = 720
+compression = 85
+request_id = "req_413f53f28b8346acb5e023583ffda8a8"
+placement = "approximately 362x272"

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "0e17134be2aae994a50f14ac5b1e4ee191282ee652b65ad410cbe91833d91894",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T12:02:12.991308Z",
+  "response_id": "resp_05d8ecce078b1d4e016a941bc16c7c87d187f318490da7f35c",
+  "scene": {
+    "metaphor": "A tiny JS counting gate measures a string as two linked carriage tiles, exposing how one glyph can occupy two counted units.",
+    "setting": "A polished studio tabletop diorama on a cool-gray surface, with a shallow miniature corridor built from matte slate, brushed metal, and translucent acrylic, leaving generous negative space around the action.",
+    "humor_register": "playful",
+    "tal_role": "operator",
+    "frozen_incident": "Tal, recognizable as the bearded, curly-haired man in a coral athletic tank, leans in with a focused half-smile and gently slides a paired glyph-tile through the counting gate; the gate’s twin rollers freeze mid-click as it miscounts the single symbol as two units.",
+    "physical_materials": [
+      "cool-gray painted base",
+      "two linked cobalt enamel tiles shaped like one vivid astral glyph",
+      "brushed aluminum counting gate with twin rollers",
+      "mint calibration tabs and tiny spring arms",
+      "one restrained warm accent: Tal’s coral tank top",
+      "matte slate track pieces",
+      "clear acrylic spacer blocks"
+    ],
+    "semantic_anchors": [
+      "paired surrogate tile",
+      "counting gate",
+      "offset adjustment",
+      "single glyph, double count",
+      "cool-gray foundation",
+      "cobalt and mint accents"
+    ],
+    "avoid": [
+      "flashcard borders",
+      "paper collage look",
+      "children’s palette",
+      "generic robot illustration",
+      "text on props",
+      "UI screens",
+      "injury",
+      "humiliation",
+      "gross-out"
+    ],
+    "image_instruction": "Create a serious polished studio photograph of a miniature tabletop set on a cool-gray background. Tal Perry appears as a recognizable adult operator: dark curly hair, short beard, warm tan skin, wearing a coral athletic tank top, leaning in from the left with a focused, slightly amused expression. He uses one hand to nudge a vivid cobalt glyph-tile that is physically split into two linked halves through a tiny brushed-metal counting gate; the gate’s twin rollers freeze at the instant they click on the pair as if it were two units. The set should make the abstract problem literal with slate tracks, mint calibration tabs, and clear acrylic spacers, but keep only three large supporting props. Use soft directional studio light, crisp tonal separation, and a cool-gray, cobalt, and mint hierarchy with coral as the single warm accent. Compose laterally for a 3:1 banner, with one dominant subject, thick readable silhouettes, and enough negative space that the joke still reads at thumbnail size."
+  }
+}
