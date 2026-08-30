@@ -1,0 +1,52 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "Agents & AI"
+visual_concept = "An obscure vision machine lifted out of a tangled workshop and placed onto a clean remote GPU pedestal, turning a burdensome dependency into an invisible service."
+prompt_version = "editorial-v1"
+prompt_hash = "c397cc7e30f6bb54806fa366106f6e02a40a310bebd354ed8efb2d152e3b537a"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
+generated_at = "2026-08-30T08:20:52.296529Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "e779347b9c86276567ae974a2ba0a92960fc400050c496b49175faf3dd2d67cd"
+
+[inputs.references]
+"social.png" = "4cb24852aa9d693a536c7ad953088ba1c4e3f841d0546b75c0ea607a735b118c"
+
+[alt]
+"en" = "Editorial illustration for I Needed One Obscure Vision Model. Modal Made It Everyone Else’s Problem.: An obscure vision machine lifted out of a tangled workshop and placed onto a clean remote GPU pedestal, turning a burdensome dependency into an invisible service."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "4ad8775d2aa8502bb51e98f587af48c2b7f6bf151e823d340dae38e56d107b01"
+width = 960
+height = 720
+compression = 85
+request_id = "req_ab0ce61ca64147d6baf227403bc5088c"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "a4dc2a813b195fba5a9d85d7dba5b7b60a3f438924f289be4256ec4230a237e7"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_a6a8e8871f2346debc46df5660e7c0bd"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "cc78e6fb93e547571df3555e7f084e7939c7d20a44c5ff3466732a3fc5a47671"
+width = 960
+height = 720
+compression = 85
+request_id = "req_a8521a5c9cf2465daffd53cf65c810e1"
+placement = "approximately 362x272"
