@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "3dcc7c2cfe9c598f6b03300e2765eae84a6e1df6ebce107f0142d61c5817a33b",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:53.489716Z",
+  "response_id": "resp_0d8002241fc02ca9016a941772fb2087d1ad68bd6a2b435f0d",
+  "scene": {
+    "metaphor": "A crowded market floor distilled into a small memory capsule that stores the important patterns and carries them forward in time",
+    "setting": "Polished studio tabletop scene on a cool-gray seamless backdrop with a miniature practical set, lit like high-end editorial still life",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is mid-adjustment, gently pressing a dense stream of tiny price tiles through a narrow funnel into a clear, palm-sized memory vessel; one tile has just bounced free and hangs in the air as a harmless absurdity",
+    "physical_materials": [
+      "cool-gray felt base",
+      "matte black miniature box with layered slots",
+      "clear acrylic capsule or vial",
+      "tiny market tiles made from painted wood and acetate",
+      "thin cobalt and mint alignment rails",
+      "subtle brushed-metal funnel",
+      "one restrained warm accent in Tal’s clothing or a single copper clip"
+    ],
+    "semantic_anchors": [
+      "dense market surface",
+      "compressed embedding",
+      "stacked memory layers",
+      "sequence carried through time",
+      "long-range dependencies",
+      "prediction uncertainty"
+    ],
+    "avoid": [
+      "flashcard framing",
+      "ornate borders",
+      "cream paper",
+      "children's palette",
+      "generic robots",
+      "UI charts",
+      "text labels",
+      "logos",
+      "watermarks",
+      "injury",
+      "humiliation",
+      "gross-out",
+      "busy background"
+    ],
+    "image_instruction": "Create a polished studio editorial photograph of Tal Perry as a recognizable adult operator, with his curly dark hair, salt-and-pepper beard, and expressive smile, seated beside a miniature practical set on a cool-gray tabletop. He wears a neutral charcoal top with one restrained warm accent, and he looks focused, slightly amused, as he guides a dense stream of tiny market tiles—small painted wooden and acetate pieces suggesting stock movement—through a narrow brushed-metal funnel into a clear acrylic memory capsule. Inside the capsule, a few stacked translucent layers imply compressed state and learned memory. Freeze a harmless absurd moment: one tiny tile has just popped out of the stream and hovers near the edge, while the rest continue flowing cleanly. Keep the composition lateral for a 3:1 banner, with Tal and the funnel on one side and generous negative space on the other; in thumbnail, the capsule, funnel, and Tal’s face must read as the three main shapes. Use cool grays, cobalt, and mint as the color hierarchy, crisp specular highlights, high tonal separation, and soft studio shadows. Serious photographic treatment, tactile handmade materials, no text."
+  }
+}

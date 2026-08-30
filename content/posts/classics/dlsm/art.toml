@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "ML Systems"
 visual_concept = "A dense market surface compressed into a small memory vessel that carries patterns forward through time, balancing curiosity with the uncertainty of prediction."
-prompt_version = "editorial-v1"
-prompt_hash = "a47230469691e72eefaeb8acfd216c0ff2ffb6e885cd7e41f58bb1963a44a79b"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "e8cee74c7b47255c2a983d4e34cffc73069bea38e90ff46683c947238ed2a22e"
+scene_hash = "43c40ee91b300b71ccd5237920e9ab6ae3282661df26c14741d9f3d8024c3f5b"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0d8002241fc02ca9016a941772fb2087d1ad68bd6a2b435f0d"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:32:27.486642Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:56:33.347065Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -19,6 +23,10 @@ selection = "picture source at 760px and below"
 "de" = "4e04801476546ab958fbb0105b92e93686966d0783c50b30c92adb3a38553075"
 "he" = "2df80136de6cdccbaf041bfa4d549a21cf2c8830578bea1ff866dc5522092d08"
 "en" = "eb7f3a069aae8660409711c403b46c7d271743f4ae8a152f7fced90e61ac37eb"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "social.png" = "e613ac8acb9be39f3d1b947994154052a37cad31047e8f47816fd8a22514cbaa"
@@ -32,27 +40,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "737f23ad87703232fbfc172f17b7bd84d544bd4e37a872c4990c687342c4be75"
+sha256 = "49cea3d60d84315c9bf2483f60dbb04b741f0191db81ab395ebe93b911c59f65"
 width = 960
 height = 720
 compression = 85
-request_id = "req_e13d223f63124393a84eaa7155e0a63f"
+request_id = "req_13f168d2e8674608affb138f3e8f8f03"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "e1bfec1c281e224e970eede7fc3183add4dd55ad711734d03300fca04aef69fc"
+sha256 = "7a20591a45ffc50041955fc55f8b2b6cf99ac49e1377d5a426aa6c9a4623c88f"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_e7aa8c5e19b9460fb0e839262a29886c"
+request_id = "req_17dfa134be064bdda0d0b84ac9777c2f"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "48d9f358cc28c6649070f5ae5b55acaceaab0e5f5da663711a0fee189f1f543e"
+sha256 = "9f7494b55544e645067e9e650a77b1dfad829ade4c48f6f2bd45f0e8a6f585fd"
 width = 960
 height = 720
 compression = 85
-request_id = "req_f40604f4338440f282a0a34d252395c5"
+request_id = "req_1d5839ff8b4c4f30a54ab95fbfef0cd7"
 placement = "approximately 362x272"
