@@ -19,7 +19,8 @@ INDEXNOW_KEY_FILE ?= static/indexnow-key.txt
 INDEXNOW_KEY_LOCATION ?= https://talperry.com/indexnow-key.txt
 INDEXNOW_CONFIRM ?=
 
-.PHONY: build serve clean validate-social validate-share validate-seo indexnow-test validate \
+.PHONY: build serve clean validate-social validate-share validate-seo validate-art indexnow-test validate \
+	art-review art-review-serve \
 	lighttag-redirect-test lighttag-redirect-validate \
 	lighttag-redirect-local-test lighttag-redirect-local-validate \
 	lighttag-redirect-cfn-check lighttag-redirect-cfn-validate \
@@ -45,10 +46,19 @@ validate-share:
 validate-seo: build
 	uv run scripts/validate_technical_seo.py
 
+validate-art:
+	uv run --project tools/editorial-images editorial-images --validate
+
+art-review:
+	uv run --project tools/editorial-images editorial-images --review
+
+art-review-serve: art-review
+	uv run --project tools/editorial-images python -m http.server 4174 --directory artifacts/editorial-image-review
+
 indexnow-test:
 	uv run scripts/test_submit_indexnow.py
 
-validate: validate-social validate-share validate-seo indexnow-test
+validate: validate-social validate-share validate-seo validate-art indexnow-test
 
 # The validator is kept as an overridable path so local development can use a
 # checked-out validator while CI or a future layout can select another one.

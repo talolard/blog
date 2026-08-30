@@ -1,65 +1,57 @@
 {{ define "main" }}
-  {{ $cover := partial "cover.html" . }}
-  {{ $toc := .TableOfContents }}
-  {{ $hasTOC := gt (len (findRE "<li" $toc)) 0 }}
-  <article class="page-content">
-    <header class="article-header">
-      <p class="eyebrow">{{ .Section | humanize }}</p>
-      <h1>{{ .Title }}</h1>
-      <div class="meta">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-        <span class="dot"></span>
-        <span>{{ .ReadingTime }} min read</span>
-        {{ with .Params.tags }}
-        <span class="dot"></span>
-        <div class="tag-row">
-          {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+  {{ if eq .Section "posts" }}
+    {{ $toc := .TableOfContents }}
+    {{ $hasTOC := gt (len (findRE "<li" $toc)) 0 }}
+    {{ $thread := partial "editorial-thread.html" . }}
+    {{ $manifest := partial "editorial-art.html" . }}
+    <article class="page-content">
+      <header class="article-header">
+        <p class="eyebrow">{{ $thread }}</p>
+        <div class="article-title-row">
+          <h1>{{ .Title }}</h1>
+          {{ with .Description }}<p class="article-dek">{{ . }}</p>{{ end }}
         </div>
+        <div class="article-meta meta">
+          <span>Tal Perry</span>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          <span>{{ .ReadingTime }} min read</span>
+        </div>
+      </header>
+
+      {{ with .Params.original_publication }}<aside class="original-publication">Originally published at LightTag.io.</aside>{{ end }}
+
+      {{ $outputs := index $manifest "outputs" }}
+      {{ if $outputs }}
+        {{ $desktopInfo := index $outputs "hero_desktop" }}
+        {{ $mobileInfo := index $outputs "hero_mobile" }}
+        {{ $desktop := .Resources.GetMatch (index $desktopInfo "path") }}
+        {{ $mobile := .Resources.GetMatch (index $mobileInfo "path") }}
+        {{ $alts := index $manifest "alt" }}
+        {{ $alt := index $alts .Language.Lang | default (index $alts "en") }}
+        {{ if and $desktop $mobile }}
+          <figure class="article-hero">
+            <picture>
+              <source media="(max-width: 760px)" srcset="{{ $mobile.RelPermalink }}" width="960" height="720">
+              <img src="{{ $desktop.RelPermalink }}" width="1920" height="640" alt="{{ $alt }}" loading="eager" decoding="async">
+            </picture>
+          </figure>
         {{ end }}
-      </div>
-    </header>
-
-    {{ with .Params.original_publication }}
-    <aside class="original-publication">Originally published at LightTag.io.</aside>
-    {{ end }}
-
-    {{ if $cover }}
-    <figure class="article-hero">
-      <img src="{{ $cover }}" alt="Featured image for {{ .Title }}">
-    </figure>
-    {{ end }}
-
-    <div class="article-layout">
-      {{ if $hasTOC }}
-      <aside class="toc" aria-label="Table of contents">
-        <strong>On this page</strong>
-        {{ $toc | safeHTML }}
-      </aside>
       {{ end }}
-      <div class="article-body">
-        {{ .Content }}
-      </div>
-    </div>
 
-    <div class="article-footer">
-      <div class="meta">
-        <span>Thanks for reading. Have thoughts?</span>
-        <a href="mailto:tal@talperry.com?subject={{ urlquery .Title }}">Email me</a>
+      <div class="article-layout{{ if $hasTOC }} article-layout--with-toc{{ end }}">
+        {{ if $hasTOC }}<aside class="toc" aria-label="Table of contents"><strong>In this note</strong>{{ $toc | safeHTML }}</aside>{{ end }}
+        <div class="article-body">{{ .Content }}</div>
       </div>
-      <nav class="article-nav" aria-label="Next and previous articles">
-        {{ with .PrevInSection }}
-        <a href="{{ .RelPermalink }}">
-          <span class="label">Previous</span>
-          <strong>{{ .Title }}</strong>
-        </a>
-        {{ end }}
-        {{ with .NextInSection }}
-        <a href="{{ .RelPermalink }}">
-          <span class="label">Next</span>
-          <strong>{{ .Title }}</strong>
-        </a>
-        {{ end }}
-      </nav>
-    </div>
-  </article>
+
+      <footer class="article-footer">
+        <span>Thanks for reading. Have thoughts?</span>
+        <a class="section-link" href="mailto:tal@talperry.com?subject={{ urlquery .Title }}">Email me →</a>
+      </footer>
+    </article>
+  {{ else }}
+    <article class="utility-page">
+      <header class="utility-opening"><p class="eyebrow">{{ .Title }}</p><h1>{{ .Title }}</h1>{{ with .Description }}<p>{{ . }}</p>{{ end }}</header>
+      <div class="article-body">{{ .Content }}</div>
+    </article>
+  {{ end }}
 {{ end }}

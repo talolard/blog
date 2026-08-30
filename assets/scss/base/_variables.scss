@@ -1,13 +1,15 @@
-// Global design tokens for colors, radii, and sizing.
 :root {
-  --bg: #f7f5f0;
-  --panel: #fffdf8;
-  --ink: #141218;
-  --muted: #5f5a63;
-  --accent: #2d6cdf;
-  --accent-soft: #e6edfb;
-  --border: #e5dfd5;
-  --shadow: 0 8px 22px rgba(18, 20, 33, 0.06);
-  --radius: 18px;
-  --max-width: 1080px;
+  --canvas: #f5f7f9;
+  --surface: #fff;
+  --ink: #10151b;
+  --muted: #64707d;
+  --line: #cbd3dc;
+  --line-dark: #8e9aa6;
+  --blue: #1647ff;
+  --mint: #00a98f;
+  --pink: #f43f79;
+  --sans: 'Familjen Grotesk', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --radius: 4px;
+  --max-width: 1180px;
 }

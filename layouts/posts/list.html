@@ -1,38 +1,50 @@
 {{ define "main" }}
-<div class="section-head">
-  <div>
-    <p class="eyebrow">Archive</p>
-    <h2>{{ .Title }}</h2>
-  </div>
-  <div class="meta">
-    {{ len (where .Site.RegularPages "Section" "posts") }} entries
-  </div>
-</div>
-<div class="card-grid">
-  {{ $posts := where .Site.RegularPages "Section" "posts" }}
-  {{ range (sort $posts "Date" "desc") }}
-  <article class="post-card">
-    {{ $cover := partial "cover.html" . }}
-    {{ if $cover }}
-    <div class="post-cover">
-      <img src="{{ $cover }}" alt="Cover for {{ .Title }}">
-    </div>
-    {{ end }}
-    <div class="body">
-      <div class="meta">
-        <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-        <span class="dot"></span>
-        <span>{{ .ReadingTime }} min read</span>
-      </div>
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <p>{{ .Summary | plainify | truncate 150 }}</p>
-      {{ with .Params.tags }}
-      <div class="tag-row">
-        {{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}
-      </div>
+  {{ $posts := sort (where .Site.RegularPages "Section" "posts") "Date" "desc" }}
+  <header class="page-opening">
+    <div><p class="eyebrow">Essays & field notes</p><h1>Writing</h1></div>
+    <div><span class="count">{{ len $posts }} entries · 2016—now</span><p>ML systems, products and companies—with detours through language, parenting and whatever I’m trying to understand next.</p></div>
+  </header>
+
+  <section class="archive-controls" aria-label="Writing filters">
+    <div class="thread-filters" role="group" aria-label="Filter by editorial thread">
+      <button type="button" class="filter-button is-active" data-thread="all" aria-pressed="true">Everything</button>
+      {{ range slice "Agents & AI" "ML Systems" "Building" "Life & Learning" }}
+        <button type="button" class="filter-button" data-thread="{{ . }}" aria-pressed="false">{{ . }}</button>
       {{ end }}
     </div>
-  </article>
-  {{ end }}
-</div>
+    <label class="archive-search"><span class="sr-only">Search writing</span><input type="search" placeholder="Search writing" autocomplete="off" data-archive-search></label>
+  </section>
+
+  <p class="archive-result" role="status" aria-live="polite" data-archive-result>{{ len $posts }} entries</p>
+  <section class="archive-list" data-archive-list>
+    {{ range $posts.GroupByDate "2006" }}
+      <section class="archive-year" data-archive-year>
+        <h2>{{ .Key }}</h2>
+        <div>
+          {{ range .Pages }}
+            {{ $thread := partial "editorial-thread.html" . }}
+            {{ $cover := partial "cover.html" . }}
+            <article class="archive-row" data-archive-row data-thread="{{ $thread }}" data-search="{{ lower (printf "%s %s %s" .Title .Description $thread) }}">
+              <a class="archive-row__link" href="{{ .RelPermalink }}">
+                {{ with $cover }}
+                  {{ $image := index . "resource" }}
+                  <img class="archive-thumb" src="{{ $image.RelPermalink }}" width="120" height="90" alt="{{ index . "alt" }}" loading="lazy" decoding="async">
+                {{ else }}
+                  <span class="archive-thumb archive-thumb--empty" aria-hidden="true"></span>
+                {{ end }}
+                <h3>{{ .Title }}</h3>
+                <span class="meta">{{ $thread }} · {{ .Date.Format "Jan 02" }}</span>
+              </a>
+            </article>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  </section>
+  <noscript><p class="noscript-note">Search and thread filters need JavaScript; all writing is shown above.</p></noscript>
+{{ end }}
+
+{{ define "scripts" }}
+  {{ $archive := resources.Get "js/archive.js" | minify | fingerprint }}
+  <script src="{{ $archive.RelPermalink }}" integrity="{{ $archive.Data.Integrity }}" defer></script>
 {{ end }}

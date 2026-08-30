@@ -2,7 +2,7 @@
 <html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.LanguageDirection | default `ltr` }}">
   {{ partial "head.html" . }}
 <body>
-  <a class="skip-link" href="#main">Skip to main</a>
+  <a class="skip-link" href="#main">{{ i18n "skip_to_main" }}</a>
   <div class="site-shell">
     {{ partial "header.html" . }}
     <main id="main">
@@ -16,5 +16,6 @@
     mermaid.initialize({ startOnLoad: true });
   </script>
   {{ end }}
+  {{ block "scripts" . }}{{ end }}
 </body>
 </html>

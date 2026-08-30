@@ -4,6 +4,12 @@ other = "Home"
 [menu_archive]
 other = "Archive"
 
+[menu_writing]
+other = "Writing"
+
+[menu_projects]
+other = "Projects"
+
 [menu_about]
 other = "About"
 

@@ -1,36 +1,23 @@
-// RTL overrides keyed off the document [dir="rtl"] attribute.
-[dir="rtl"] {
-  .nav-list {
-    flex-direction: row;
-  }
-
+[dir='rtl'] {
+  .identity,
+  .nav-list,
+  .identity-tiles,
   .footer-links {
-    justify-content: flex-start;
+    direction: ltr;
   }
 
-  .article-layout:has(.toc) {
-    grid-template-columns: minmax(0, 3fr) 1fr;
+  .article-layout--with-toc {
+    grid-template-columns: minmax(0, 670px) 180px;
   }
 
-  .article-layout .toc {
+  .article-layout--with-toc .toc {
     grid-column: 2;
     grid-row: 1;
   }
 
-  .article-layout .article-body {
+  .article-layout--with-toc .article-body {
     grid-column: 1;
     grid-row: 1;
-  }
-
-  .toc ul {
-    padding-right: 1rem;
-    padding-left: 0;
-  }
-
-  ul,
-  ol {
-    padding-right: 1.4rem;
-    padding-left: 0;
   }
 
   pre,
@@ -38,7 +25,21 @@
   kbd,
   samp {
     direction: ltr;
-    unicode-bidi: isolate;
     text-align: left;
+    unicode-bidi: isolate;
+  }
+}
+
+@media (max-width: 760px) {
+  [dir='rtl'] {
+    .article-layout--with-toc {
+      grid-template-columns: 1fr;
+    }
+
+    .article-layout--with-toc .toc,
+    .article-layout--with-toc .article-body {
+      grid-column: 1;
+      grid-row: auto;
+    }
   }
 }

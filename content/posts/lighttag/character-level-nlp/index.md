@@ -105,7 +105,7 @@ Still, the paper illustrates that character level models can capture the semanti
 ### Character level models can translate
 
 DeepMind's [Neural Machine Translation in Linear Time](https://arxiv.org/abs/1610.10099) and Lee et al. [Fully Character-Level Neural Machine Translation Without Explicit Segmentation](http://aclweb.org/anthology/Q17-1026) both demonstrated translation done at the character level. These are particularly compelling results, as the task of translation strongly captures the semantic understanding of the underlying text.
-![Overcoming common problems with a char model](hero.webp)
+![Overcoming common problems with a char model](character-model-problems.webp)
 
 DeepMind's paper is doubly interesting, as its model uses convolutions instead of the common RNN/LSTM. In practical terms, this makes training much faster, allowing iteration and exploration without a large compute budget or TPU cluster.
 

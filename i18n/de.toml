@@ -4,6 +4,12 @@ other = "Startseite"
 [menu_archive]
 other = "Archiv"
 
+[menu_writing]
+other = "Texte"
+
+[menu_projects]
+other = "Projekte"
+
 [menu_about]
 other = "Über"
 

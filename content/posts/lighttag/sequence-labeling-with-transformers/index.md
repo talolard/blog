@@ -18,7 +18,7 @@ path = "/blog/sequence-labeling-with-transformers/"
 +++
 <!-- markdownlint-disable MD028 -->
 
-![Diagram of text annotations aligned with tokenizer output](hero.webp)
+![Diagram of text annotations aligned with tokenizer output](tokenizer-annotation-alignment.webp)
 
 > Practical NLP operates on long texts, and annotations for sequence-labeling tasks often come in offset format.
 > Pre-trained transformer models assume tokenization that annotations must be aligned with, and long texts must be

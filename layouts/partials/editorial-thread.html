@@ -1,0 +1,8 @@
+{{- $thread := "ML Systems" -}}
+{{- with .File -}}
+  {{- $key := strings.TrimSuffix "/" (strings.TrimPrefix "posts/" .Dir) -}}
+  {{- with index hugo.Data.editorial_posts.posts $key -}}
+    {{- $thread = .thread -}}
+  {{- end -}}
+{{- end -}}
+{{- return $thread -}}

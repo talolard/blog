@@ -21,11 +21,12 @@ def test_header_subtitle_removed(page: Page, base_url: str) -> None:
     assert page.locator(".brand-subtext").count() == 0
 
 
-def test_header_letters_include_spacer_between_tal_and_perry(page: Page, base_url: str) -> None:
-    """The lettermark should visually separate Tal from Perry."""
+def test_header_uses_three_compact_tal_tiles(page: Page, base_url: str) -> None:
+    """The identity link keeps only the compact TAL tile signature."""
 
     page.goto(f"{base_url}/en/")
-    assert page.locator(".brand-letter-spacer").count() == 1
+    assert page.locator(".identity-tiles img").count() == 3
+    assert page.locator(".identity-name").inner_text() == "Tal Perry"
 
 
 def test_lang_shortcode_renders_lang_attribute(page: Page, base_url: str) -> None:
@@ -33,4 +34,3 @@ def test_lang_shortcode_renders_lang_attribute(page: Page, base_url: str) -> Non
 
     page.goto(f"{base_url}/he/contact/")
     assert page.locator("span[lang='en']").filter(has_text="@thetalperry").count() == 1
-

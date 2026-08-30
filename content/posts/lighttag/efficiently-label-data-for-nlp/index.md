@@ -41,7 +41,7 @@ One of the most effective ways to make your labeling team more efficient is by f
 
 One thing you shouldn't be labeling is the same thing twice (unless you're doing it intentionally for quality). And as a corollary of Zipf's law, there will be a few examples in your Dataset that repeat a lot. For example, imagine trying to classify the comments of a subreddit as toxic or non-toxic. A good first step would be to check for duplicates and remove them. The alternative is having your labeling team spend hours labeling the same automated message thousands of times
 
-![Top 20 Reddit comments](hero.webp)
+![Top 20 Reddit comments](top-repeated-reddit-comments.webp)
 
 ### But don't use active learning
 

@@ -1,0 +1,5 @@
+{{- $manifest := dict -}}
+{{- with .Resources.GetMatch "art.toml" -}}
+  {{- $manifest = transform.Unmarshal .Content -}}
+{{- end -}}
+{{- return $manifest -}}

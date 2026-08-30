@@ -4,6 +4,12 @@ other = "בית"
 [menu_archive]
 other = "ארכיון"
 
+[menu_writing]
+other = "כתיבה"
+
+[menu_projects]
+other = "פרויקטים"
+
 [menu_about]
 other = "אודות"
 

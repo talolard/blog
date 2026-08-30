@@ -1,5 +1,6 @@
 +++
 title = 'About'
+description = 'Product building, applied machine learning, and notes from Berlin.'
 date = 2024-06-01T00:00:00+01:00
 slug = 'about'
 draft = false

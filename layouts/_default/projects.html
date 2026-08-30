@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <article class="projects-page">
+    <header class="page-opening">
+      <div><p class="eyebrow">Built, tested, learned</p><h1>{{ .Title }}</h1></div>
+      <div><span class="count">Three projects</span><p>{{ .Description }}</p></div>
+    </header>
+    <div class="project-grid">{{ .Content }}</div>
+  </article>
+{{ end }}

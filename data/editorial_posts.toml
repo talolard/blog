@@ -1,0 +1,181 @@
+schema = 1
+
+[posts."genai/engineering-agents-building-trust"]
+thread = "Agents & AI"
+audit_mode = "preserve-thumbnail"
+concept = "A human operator and two small, visibly different agent machines sharing one evolving memory object; the visual tension is trust created or broken by state synchronization."
+references = ["hero.png", "social.png"]
+
+[posts."genai/learning-to-read-with-ai"]
+thread = "Life & Learning"
+audit_mode = "regenerate"
+concept = "A parent and child building a short daily reading ritual from playful image cards, with steady progression shown through physical rhythm rather than charts or interfaces."
+references = ["hero.webp", "social.png", "session.webp", "learning_progress.webp"]
+
+[posts."genai/triton-inference-server"]
+thread = "ML Systems"
+audit_mode = "preserve-thumbnail"
+concept = "A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
+references = ["hero.png", "social.png", "dynamic-vs-continuous-batching.png", "model-sharding-vs-packing.png"]
+
+[posts."genai/vibe-coding-stablenormal-modal"]
+thread = "Agents & AI"
+audit_mode = "regenerate"
+concept = "An obscure vision machine lifted out of a tangled workshop and placed onto a clean remote GPU pedestal, turning a burdensome dependency into an invisible service."
+references = ["social.png"]
+
+[posts."scripture-app"]
+thread = "Building"
+audit_mode = "regenerate"
+concept = "A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
+references = ["hero.webp", "social.png", "before-he-cheats.webp", "giraffe.jpeg", "kase.jpeg"]
+
+[posts."classics/cmft"]
+thread = "ML Systems"
+audit_mode = "regenerate"
+concept = "A sentence transformed through stacked receptive windows, with local fragments progressively joining into a single coherent signal; editorial, tactile, and non-diagrammatic."
+references = ["social.png", "cnn-receptive-hierarchy.webp", "hierarchical-receptive-field-tree.webp"]
+
+[posts."classics/dlsm"]
+thread = "ML Systems"
+audit_mode = "regenerate"
+concept = "A dense market surface compressed into a small memory vessel that carries patterns forward through time, balancing curiosity with the uncertainty of prediction."
+references = ["social.png", "market-embedding-diagram.webp", "stacked-lstm-architecture.webp"]
+
+[posts."lighttag/active-learning-manager"]
+thread = "ML Systems"
+audit_mode = "preserve-concept"
+concept = "A composed active-learning steward sorting a moving boundary between labeled and unlabeled material, preserving the original manager metaphor with greater editorial clarity."
+references = ["hero.webp", "social.webp"]
+
+[posts."lighttag/active-learning-optimization-is-not-improvement"]
+thread = "ML Systems"
+audit_mode = "regenerate"
+concept = "A papaya taster repeatedly sampling the most ambiguous fruit while the neglected market remains unevenly understood, separating optimization from real improvement."
+references = ["papaya-seller-market.webp", "social.webp", "al70.webp", "discbound.webp"]
+
+[posts."lighttag/character-level-nlp"]
+thread = "ML Systems"
+audit_mode = "regenerate"
+concept = "Individual letterforms moving through a long mechanical loom and emerging as semantic fabric, showing the power and cost of character-level processing without embedded text."
+references = ["character-model-problems.webp", "social.webp", "cnnlstm.webp"]
+
+[posts."lighttag/code-to-align-annotations-with-huggingface-tokenizers"]
+thread = "ML Systems"
+audit_mode = "recompose-source"
+concept = "Two differently spaced physical ribbons—human spans and machine tokens—being precisely pinned to a shared coordinate rail, editorial rather than instructional."
+references = ["hero.webp", "social.webp"]
+
+[posts."lighttag/complement-objective-training-with-pytorch-lightning"]
+thread = "ML Systems"
+audit_mode = "recompose-source"
+concept = "A learner improves by studying the negative space around the correct choice: one illuminated form surrounded by carefully weighted alternatives."
+references = ["hero.webp", "social.webp", "chart.webp"]
+
+[posts."lighttag/context-is-king"]
+thread = "Agents & AI"
+audit_mode = "regenerate"
+concept = "One ambiguous object changes meaning as concentric scenes reveal progressively wider context, with a single strong center and no factual labels."
+references = ["social.webp"]
+
+[posts."lighttag/database-multi-tenancy"]
+thread = "Building"
+audit_mode = "preserve-thumbnail"
+concept = "A shared apartment block whose tenants each have a clearly isolated interior behind one maintained facade, expressing schema isolation with domestic precision."
+references = ["hero.webp", "social.webp", "db-diagram.webp", "schema-diagram.webp"]
+
+[posts."lighttag/efficiently-label-data-for-nlp"]
+thread = "ML Systems"
+audit_mode = "regenerate"
+concept = "A labeling workbench that removes repeated, low-value material before a small set of useful specimens reaches the annotator, emphasizing leverage over volume."
+references = ["top-repeated-reddit-comments.webp", "social.webp"]
+
+[posts."lighttag/embrace-the-noise"]
+thread = "ML Systems"
+audit_mode = "recompose-source"
+concept = "A radiologist-like observer extracting one reliable signal from layered translucent, noisy chest-film textures; expressive editorial art, not a medical infographic."
+references = ["social.webp", "architecture.webp", "covering.webp", "xrays.webp"]
+
+[posts."lighttag/fast-nlp-pretraining-with-vampire"]
+thread = "ML Systems"
+audit_mode = "regenerate"
+concept = "A compact nocturnal learning engine drawing useful domain signal from a modest local corpus while a giant distant machine remains unnecessary."
+references = ["social.webp", "vampirearchitecture.webp", "topicmodeltopics.webp"]
+
+[posts."lighttag/how-to-label-data"]
+thread = "Building"
+audit_mode = "regenerate"
+concept = "A careful workshop assembly line turning raw language into dependable labeled material through seven visible stations, with objects and gestures but no text."
+references = ["hero.webp", "social.webp", "create-annotation-task.webp", "conflicting-annotations.webp"]
+
+[posts."lighttag/indexeddb-for-nlp"]
+thread = "Building"
+audit_mode = "regenerate"
+concept = "A browser-sized cabinet instantly revealing the right document from a dense private archive, celebrating local search with a slightly mischievous physical metaphor."
+references = ["hero.webp", "social.webp", "postingslist.webp"]
+
+[posts."lighttag/krippendorffs-alpha"]
+thread = "ML Systems"
+audit_mode = "recompose-source"
+concept = "Several judges place marks onto a shared translucent grid while one calm measuring instrument evaluates agreement without pretending disagreement disappears."
+references = ["social.webp", "agg-matrix.webp"]
+
+[posts."lighttag/lighttag-acquired-by-primer"]
+thread = "Building"
+audit_mode = "preserve-concept"
+concept = "A small hand-built LightTag vessel docking cleanly with a larger Primer vessel while retaining its distinct silhouette; celebratory but restrained and logo-free."
+references = ["hero.webp", "social.webp"]
+
+[posts."lighttag/postmortem-docker-swarm-wrong-tag"]
+thread = "Building"
+audit_mode = "regenerate"
+concept = "Two nearly identical shipping containers cross on a deployment conveyor and one reaches the wrong customer door, a precise visual postmortem with one red anomaly."
+references = ["social.webp"]
+
+[posts."lighttag/psql-range-aggregation-for-nlp"]
+thread = "ML Systems"
+audit_mode = "regenerate"
+concept = "Overlapping physical strips nest and merge into maximal containing spans on a clean worktable, conveying range aggregation through material form rather than notation."
+references = ["hero.webp", "social.webp", "conflict.webp"]
+
+[posts."lighttag/react-dc-js"]
+thread = "ML Systems"
+audit_mode = "recompose-source"
+concept = "Independent chart mechanisms snap into one React frame around a shared filtering axle, expressive editorial machinery rather than a literal dashboard."
+references = ["hero.webp", "social.webp", "example.webp"]
+
+[posts."lighttag/sequence-labeling-with-transformers"]
+thread = "ML Systems"
+audit_mode = "recompose-source"
+concept = "Long annotated fabric is divided into overlapping transformer-sized frames while every marked span stays aligned to its original coordinates."
+references = ["tokenizer-annotation-alignment.webp", "social.webp", "shrink.webp"]
+
+[posts."lighttag/snorql"]
+thread = "ML Systems"
+audit_mode = "preserve-concept"
+concept = "A SQL workbench conducts many weak labeling signals into one scalable stream, preserving the original SnorQL character and concept without logos or text."
+references = ["hero.webp", "social.webp"]
+
+[posts."lighttag/spacy-vs-stanford"]
+thread = "ML Systems"
+audit_mode = "regenerate"
+concept = "Three distinct field instruments inspect the same messy language specimen and disagree in revealing ways, emphasizing practical comparison over a winner podium."
+references = ["social.webp", "intermodelagreement.webp", "spacy-fp.webp", "gpe-prec-rec.webp"]
+
+[posts."lighttag/tensorflow-estimator-api"]
+thread = "ML Systems"
+audit_mode = "regenerate"
+concept = "A rigid but reusable machine casing accepts interchangeable model parts through a disciplined interface, showing both the structure and friction of the Estimator API."
+references = ["social.webp"]
+
+[posts."lighttag/unicode-surrogate-pairs"]
+thread = "ML Systems"
+audit_mode = "preserve-concept"
+concept = "One vivid Unicode glyph travels as a paired set of mechanical tiles through a JavaScript counting gate, preserving the original playful mismatch metaphor."
+references = ["hero.webp", "social.webp"]
+
+[posts."lighttag/when-to-use-machine-in-the-loop"]
+thread = "Agents & AI"
+audit_mode = "preserve-concept"
+concept = "A human and machine alternate control of one careful production loop, with visible handoff points and uncertainty rather than an autonomous robot fantasy."
+references = ["hero.webp", "social.webp", "bias.webp", "xkcd-machine-learning.webp"]

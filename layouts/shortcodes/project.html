@@ -1,0 +1,5 @@
+<article class="project-card">
+  <h2>{{ .Get "title" }}</h2>
+  <p>{{ .Inner | markdownify }}</p>
+  {{ with .Get "href" }}<a href="{{ . }}">{{ $.Get "link" | default "Read the field note →" }}</a>{{ end }}
+</article>

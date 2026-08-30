@@ -20,9 +20,7 @@ def test_header_nav_and_letters_keep_ltr_order_in_rtl_language(page: Page, base_
     )
     assert nav_direction == "ltr"
 
-    brand_direction = page.evaluate(
-        "() => getComputedStyle(document.querySelector('.brand-letters a')).direction"
-    )
+    brand_direction = page.evaluate("() => getComputedStyle(document.querySelector('.identity')).direction")
     assert brand_direction == "ltr"
 
 

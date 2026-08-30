@@ -27,7 +27,7 @@ The rest of this post illustrates what active learning is and why we keep decidi
 
 As a motivating example, imagine you run a papaya stand at the market. Having heard all the hype about AI, you want to build a classifier that tells you if a given papaya is delicious or yucky based on its color (how red it is)  and its firmness.
 
-![Illustration of a papaya seller at a market](hero.webp)
+![Illustration of a papaya seller at a market](papaya-seller-market.webp)
 
 Building such a classifier is easy, you just google “classifier” follow a blog post and you’re off to the races. Except that you need labeled data to train your classifier. And you read on the internet that you need *a lot* of labeled data.
 

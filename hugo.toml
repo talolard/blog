@@ -32,22 +32,17 @@ default_og_image = '/og/default.png'
 
 [menu]
 [[menu.main]]
-identifier = 'home'
-name = 'Home'
-url = '/'
+identifier = 'writing'
+name = 'Writing'
+url = '/posts/'
 weight = 1
 [[menu.main]]
-identifier = 'archive'
-name = 'Archive'
-url = '/posts/'
+identifier = 'projects'
+name = 'Projects'
+url = '/projects/'
 weight = 2
 [[menu.main]]
 identifier = 'about'
 name = 'About'
 url = '/about/'
 weight = 3
-[[menu.main]]
-identifier = 'contact'
-name = 'Contact'
-url = '/contact/'
-weight = 4

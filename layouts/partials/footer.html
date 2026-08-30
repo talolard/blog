@@ -1,17 +1,9 @@
 <footer class="site-footer" id="contact">
-  <div class="footer-grid">
-    <div>
-      <div><strong>{{ .Site.Title }}</strong> — {{ i18n "footer_tagline" }}</div>
-      <div class="footer-meta">
-        <span>© {{ now.Format "2006" }} {{ .Site.Title }}</span>
-        <span aria-hidden="true">•</span>
-        <span>{{ i18n "footer_built_with_hugo" }}</span>
-      </div>
-    </div>
-    <div class="footer-links" aria-label="Secondary navigation">
-      <a href="{{ "/posts/" | relLangURL }}">{{ i18n "menu_archive" }}</a>
-      <a href="{{ "index.xml" | relLangURL }}">{{ i18n "footer_rss" }}</a>
-      <a href="mailto:tal@talperry.com">{{ i18n "footer_email" }}</a>
-    </div>
-  </div>
+  <span><strong>{{ .Site.Title }}</strong> — {{ i18n "footer_tagline" }}</span>
+  <nav class="footer-links" aria-label="Secondary navigation">
+    <a href="mailto:tal@talperry.com">{{ i18n "footer_email" }}</a>
+    <a href="{{ "index.xml" | relLangURL }}">{{ i18n "footer_rss" }}</a>
+    <a href="https://github.com/talperry">GitHub</a>
+    <a href="https://www.linkedin.com/in/talperry/">LinkedIn</a>
+  </nav>
 </footer>
