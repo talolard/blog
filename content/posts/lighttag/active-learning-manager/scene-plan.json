@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "e05a33eeda7cfaa9af0af05d1cc9ee5d825e364ea0d9b8625ccd73793a50b0a3",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:52.738803Z",
+  "response_id": "resp_08d0317937cfd285016a941772d98087d1b237ca56110e9063",
+  "scene": {
+    "metaphor": "A meticulous data steward managing two physical views of the same dataset as matched rows of miniature sample tiles that slide between labeled and unlabeled trays",
+    "setting": "A polished studio tabletop built as a cool-gray miniature lab with two low trays, a shallow central channel, and lots of open negative space around the action",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is caught mid-transfer with fine tweezers as one mint-marked sample tile has just slipped from the unlabeled tray and is being redirected into the labeled tray, while a tiny offset jig keeps the remaining tiles aligned",
+    "physical_materials": [
+      "matte cool-gray foamcore base",
+      "brushed aluminum trays",
+      "translucent acrylic dividers",
+      "small paper or plastic sample tiles",
+      "magnets or metal pins for alignment",
+      "fine tweezers",
+      "one restrained coral accent on Tal's shirt",
+      "soft mint and cobalt markers on the tiles"
+    ],
+    "semantic_anchors": [
+      "labeled subset",
+      "unlabeled subset",
+      "original dataset",
+      "views instead of in-place mutation",
+      "offset mapping",
+      "mask-like selection",
+      "bookkeeping abstraction"
+    ],
+    "avoid": [
+      "text or UI-like labels",
+      "generic robot imagery",
+      "cute cartoon styling",
+      "cream paper or ornate borders",
+      "busy infographic layouts",
+      "injury or humiliation",
+      "excess warm colors",
+      "tall central stacks that fail in a wide banner"
+    ],
+    "image_instruction": "Create a composed editorial studio photograph of Tal Perry as a calm, recognizable operator in a cool-gray miniature lab on a tabletop. He has dark curly hair, a salt-and-pepper beard, and wears a restrained coral tank top, with a focused, slightly amused deadpan expression. The physical metaphor is literal: two low brushed-metal trays hold rows of identical miniature sample tiles, one tray mostly mint-accented and the other cobalt-accented, separated by a shallow central channel that implies the same dataset viewed in two subsets. Tal uses fine tweezers to move one tile across the boundary while a tiny alignment jig and a few offset pins keep the remaining tiles in order; freeze the instant a single tile nearly slips, making bookkeeping feel physically tedious but controlled. Use polished softbox lighting, crisp tonal separation, matte cool-gray surfaces, and only one restrained warm accent from Tal’s shirt. Keep one dominant subject, no more than three large supporting props, and arrange the action laterally so the scene reads cleanly in 3:1 and still holds at thumbnail size."
+  }
+}

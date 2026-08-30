@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "preserve-concept"
 thread = "ML Systems"
 visual_concept = "A composed active-learning steward sorting a moving boundary between labeled and unlabeled material, preserving the original manager metaphor with greater editorial clarity."
-prompt_version = "editorial-v1"
-prompt_hash = "b16909e22d3c115daae41a0398ea845888a67d592fccb263c9df49258d3e7ff6"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "f3e55e9bd7faa3620547219d26a5d08ef69ec8c11a23afa3ec57cc2207426919"
+scene_hash = "c5be05dd6ceeabb2e60166da633cac0ac39528b6cfc211e30e2a4ca5a8abab16"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_08d0317937cfd285016a941772d98087d1b237ca56110e9063"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:34:53.735285Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:54:36.905104Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -17,6 +21,10 @@ selection = "picture source at 760px and below"
 
 [inputs.articles]
 "en" = "f76a7c86dcfc7a7ccb5054973cdd7d71d9e939466bb7cc68bca87fd31b9911ec"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "hero.webp" = "9c954811902b2bb3131faea277b81baf4121476a031a2f8e30bf70484b0a5826"
@@ -27,27 +35,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "31b052e6e57bb104e5872b19c792f19c3239f7c8ff14f5dcf6b123a4f83ae886"
+sha256 = "6a51b70b101ac34023ed2f493577ac343489593e1116e988d7e8cffb24110bc3"
 width = 960
 height = 720
 compression = 85
-request_id = "req_94ba1ab755244c3cb085829b4279659f"
+request_id = "req_d41db25ac8e94fc78814df1e189cdd45"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "ff97f100bb7ecbfccc50ffc872f87ebd74b160e05361d645e461c28c49b309c5"
+sha256 = "f8c4a903919acfb7a5f8b28fdf3015c07d781954f73bf39fd90bbe91e8aad635"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_f4b06c512ea046278f8eaad6b133c767"
+request_id = "req_d38820cc6e3840319c9ed035c1b52f89"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "793262473d4a4ac191170ef48fc4d8216f11440a2c3308910f3d80a3a4cb77a5"
+sha256 = "27f19b1969300ff6ac308d9062e801e617aea36d407eef99a5984e861337fc46"
 width = 960
 height = 720
 compression = 85
-request_id = "req_94b32625ed094769b3e4eeec02edc02a"
+request_id = "req_1f81a59292164e9bbc05c588d8cc29ac"
 placement = "approximately 362x272"
