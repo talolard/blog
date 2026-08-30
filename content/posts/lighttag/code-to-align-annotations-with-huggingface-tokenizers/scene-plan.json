@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "fa5cd844e1a6af1cf5e339907fd70a91eb7908b8ad4d7b18cf4d49812a143aa2",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:51.532484Z",
+  "response_id": "resp_0fad592ef6c817c3016a941772ddf887d1a9f0dfd7c3d8e847",
+  "scene": {
+    "metaphor": "Two differently spaced ribbons of stitched fabric and punched labels are being aligned to a shared metal coordinate rail, like human spans and machine tokens finally agreeing on the same track.",
+    "setting": "A polished studio tabletop miniature that feels like an editorial model set: cool gray base surface, a short linear rail running horizontally through a wide, airy frame, with soft shadowed negative space around it.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is mid-adjustment, one hand pinning a paper clip onto the rail while the other steadies a slightly overrun ribbon; a second ribbon has just slipped one notch out of alignment, creating a harmless, precise little mess that he is calmly fixing.",
+    "physical_materials": [
+      "cool-gray felt base",
+      "thin brushed aluminum rail",
+      "two stitched textile ribbons with uneven spacing",
+      "small binder clips and map pins",
+      "translucent acetate label tabs in cobalt and mint",
+      "one restrained warm accent thread or clip in muted coral",
+      "matte cardstock windows",
+      "tiny scale markers etched into the rail"
+    ],
+    "semantic_anchors": [
+      "aligned annotations",
+      "tokenization",
+      "windowing",
+      "offset mapping",
+      "BILOU-like sequence",
+      "batching",
+      "shared coordinate system",
+      "window stride"
+    ],
+    "avoid": [
+      "flashcard framing",
+      "cream paper",
+      "ornate borders",
+      "children’s palette",
+      "generic robot imagery",
+      "text-heavy infographic layout",
+      "visible letters or numbers",
+      "humiliation",
+      "injury",
+      "gross-out"
+    ],
+    "image_instruction": "Create a serious, polished studio photograph of a miniature alignment set on a cool-gray tabletop. Tal Perry appears as a recognizable adult operator, matching the supplied photos: dark curly hair, salt-and-pepper beard, friendly focused face, wearing a simple muted tank or tee. He is leaning in from the left side of a wide horizontal frame, carefully pinning two tactile fabric ribbons to one shared brushed-aluminum rail. One ribbon has larger, irregular spacing between stitched tabs; the other is more tightly segmented, and a single tab has just slipped slightly out of place, frozen at the instant he notices and corrects it. Use only three large supporting props: the rail, the two ribbons, and a small stack of acetate label tabs. Keep the background spacious and uncluttered, with strong tonal separation, crisp studio lighting, and cobalt/mint accents against the cool-gray foundation plus one restrained warm coral detail. The composition must read clearly at thumbnail size and stretch naturally into a 3:1 banner with lateral action and no tall central tower."
+  }
+}
