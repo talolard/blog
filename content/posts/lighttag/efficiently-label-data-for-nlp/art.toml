@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "ML Systems"
 visual_concept = "A labeling workbench that removes repeated, low-value material before a small set of useful specimens reaches the annotator, emphasizing leverage over volume."
-prompt_version = "editorial-v1"
-prompt_hash = "df26debf290a89d8316e064381da44225db4e46258b6c4a9e2edb63b5b390aaf"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "a38df5f10744c49183c4bdcfcd67ca514f17e57219a6a7d2295c3bfd530840c0"
+scene_hash = "4150cdd55c3af5474b4da00b6fa5254df47f2e6d50291d6f741b55bb7301f332"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0069b3c44ccb3fea016a941772bb3087d1bb826fc3ca0b0ef4"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:44:27.898312Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:51:42.153593Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -17,6 +21,10 @@ selection = "picture source at 760px and below"
 
 [inputs.articles]
 "en" = "4d9e37cffd6c17ebb9da34671e90ee72d8828f2a0a79ccb197d4b7c47f185d06"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "top-repeated-reddit-comments.webp" = "dd469261062392f68d2fcc0b0f7a53b55a33db379c00a8a2819edf3e849a0e9a"
@@ -27,27 +35,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "43a5d441618378a526000169cccacb4c78ad37168ab5f877b06cc41b37aacddf"
+sha256 = "2cbcda9dda67d54c2da6642923e75ed223446dd9b5b0ea61fa1c7edef3cc4097"
 width = 960
 height = 720
 compression = 85
-request_id = "req_96559b40bdb74af295619f72ace32860"
+request_id = "req_9f93cd2ba72e48b3b793618a84b71217"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "d8951a21b529f6f28aaa91aad80ab633e0908373d6513a013728556277d9afe7"
+sha256 = "3830985315048ee2f97bd7eadb13f476b51b3935a77a95feb4f75ecc3b8ab078"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_150ad7a46b4e4a15bdf6d80a99ae8367"
+request_id = "req_4ec5f602434b45229dfd18186bd33b78"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "8a5fba15ab0b6305c03db37884ac14ddeffdfc2b08f1078083978ab96b3d5c42"
+sha256 = "91457bc05d6d7c259796eb512fdbe10db94054538969c3284c3be974875b8b15"
 width = 960
 height = 720
 compression = 85
-request_id = "req_7ea53da573d94880b34b8304300ad9d7"
+request_id = "req_1587b114a25d47cb93dea6f74410c3ed"
 placement = "approximately 362x272"

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "352d5024cf83b6d794968be6dd6c252f26c73545a4f60e21c7c18cb4619fafd9",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:52.511032Z",
+  "response_id": "resp_0069b3c44ccb3fea016a941772bb3087d1bb826fc3ca0b0ef4",
+  "scene": {
+    "metaphor": "A miniature data-labeling workbench where useless repeats are filtered out before a few high-value specimens reach the annotator.",
+    "setting": "A polished studio tabletop built like a tiny industrial sorting line: cool-gray felt surface, matte metal rails, a shallow mesh sieve, and a clean receiving tray with cobalt and mint accents and one restrained warm coral note on Tal’s clothing.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is mid-sort with tweezers, calmly nudging a clump of identical paper tokens through a mesh filter while one stubborn duplicate is caught halfway and a single unique token has just rolled toward the label tray.",
+    "physical_materials": [
+      "cool-gray felt",
+      "brushed aluminum miniature rails",
+      "fine mesh sieve",
+      "paper tokens cut into simple rounded rectangles and speech-bubble shapes",
+      "frosted acrylic tray",
+      "cobalt and mint paint accents",
+      "one small coral fabric accent on Tal's top",
+      "soft studio haze"
+    ],
+    "semantic_anchors": [
+      "duplicate tokens massed together",
+      "one clean unique token",
+      "filtering before labeling",
+      "small annotator tray",
+      "workbench leverage over volume",
+      "Tal as a recognizable smiling operator"
+    ],
+    "avoid": [
+      "text of any kind",
+      "screenshots or UI layout",
+      "busy infographic composition",
+      "cute robot tropes",
+      "injury or humiliation",
+      "gross-out imagery",
+      "ornate borders",
+      "cream paper",
+      "childish rainbow palette",
+      "tall central tower"
+    ],
+    "image_instruction": "Create a serious studio photograph of Tal as a recognizable operator on a miniature labeling workbench. Use his dark curly hair, salt-and-pepper beard, and warm focused smile; place him left-of-center, leaning into the set with tweezers in hand, wearing a simple top with one restrained coral accent against an otherwise cool-gray scene. In front of him, a tiny practical conveyor line on brushed metal rails feeds a dense pile of identical gray paper tokens into a mesh sieve, where repeated pieces are being removed before only a few cobalt and mint tokens reach a clean tray. Freeze a harmless absurd moment: one duplicate is stuck half-through the sieve while a single useful token has just slid free. Keep the composition lateral and low for a 3:1 banner, with generous negative space on the right, one dominant subject, and no more than three large supporting props. Polished lighting, crisp tonal separation, tactile handmade materials, and a miniature-world realism should make the joke readable even at thumbnail size."
+  }
+}
