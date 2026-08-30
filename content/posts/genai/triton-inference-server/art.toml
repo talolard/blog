@@ -1,0 +1,59 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "preserve-thumbnail"
+thread = "ML Systems"
+visual_concept = "A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
+prompt_version = "editorial-v1"
+prompt_hash = "f1292ae7ade059c242bc59839f6d7a5349042dc72154982d634a5a4c3bc84fbe"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
+generated_at = "2026-08-30T08:24:30.327524Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"de" = "9032ef259fd55d9c7b0a8e53bcf120ef7de0138b7f8edf564b7e4e56b709c681"
+"he" = "b034ff0af372ae111fe4652ac073de168b6b6bc12ac780ab761443b27cdaa7a4"
+"en" = "5809d69b0d1e39b5c89e4f2687345c75c636d3e3a53ac9b18d860592269c8c79"
+
+[inputs.references]
+"hero.png" = "53d95abfaaedf565c259dbfcdeac61d0c705cdb040ca7b81614abcb11478d1b5"
+"social.png" = "0dd16e1b328c8646e91c64844c72d91467dddc817f05c310584c3601bf6b390b"
+"dynamic-vs-continuous-batching.png" = "d0c25c3d258bbd9c0e3ce166b87ada3af7a65663188470a7556fdbce1e4dce42"
+"model-sharding-vs-packing.png" = "6cca097f0fd58aba1b4b5c4f15576bb8c300ea08fc24c015dbeb999d427b0b7d"
+
+[alt]
+"de" = "Editorial illustration for Fünf praktische Lektionen für das Serving von Modellen mit Triton Inference Server: A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
+"he" = "Editorial illustration for חמש תובנות מעשיות להגשת מודלים עם Triton Inference Server: A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
+"en" = "Editorial illustration for Five Practical Lessons for Serving Models with Triton Inference Server: A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "8342b6dd5617436d2a4cc88451cc3b248ac0c575746660710393974b93f1d293"
+width = 960
+height = 720
+compression = 85
+request_id = "req_21966a08b54c4f90935feebbfcde740c"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "15866f1ac4c9e56e50f53542385f1fbfdbff46e3a7a08719008ed67e45968970"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_801768bfc84640f4ab27fdf921407143"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "042ac70063d3ca99d39e938a30cd82e3bea2abbb7924faccb9e43309c20f315f"
+width = 960
+height = 720
+compression = 85
+request_id = "req_a9ce48bca9fe4b42955bd015ba442bc7"
+placement = "approximately 362x272"
