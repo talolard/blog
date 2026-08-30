@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "preserve-thumbnail"
 thread = "Building"
 visual_concept = "A shared apartment block whose tenants each have a clearly isolated interior behind one maintained facade, expressing schema isolation with domestic precision."
-prompt_version = "editorial-v1"
-prompt_hash = "3d86f32acd259192b2e52500588e805292410639b1a7e1813f43ec3fe6c9d778"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "26b0669f2854dac9a375b7e36dc1c06e4a7a6a9536df03c3886aa91151a214f6"
+scene_hash = "bb30e90fed53dc6c96d671bafa75be43fdd5b34be538bb4eab5a3b6333f4acbe"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_05a6336fc8718ba9016a941771e1ec87d18c7c6c9a1e063ded"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:43:58.566001Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:49:40.373870Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -17,6 +21,10 @@ selection = "picture source at 760px and below"
 
 [inputs.articles]
 "en" = "23e9379981eb5c558f1c44c1d10330d6f4464bec4415e752e6af0f996d397c0f"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "hero.webp" = "10dd952b3c0129387c4723ee4b1615e65861b13a58224d338d1056694dcbd72a"
@@ -29,27 +37,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "a9d3febc0ea9c5a62e52b0cff21669fcf9209706505ebfd9910d06867ac872b3"
+sha256 = "1f91d29b989e774c4f6d35984e84b6a9bd2faf718632319f7e0f059fc1da2633"
 width = 960
 height = 720
 compression = 85
-request_id = "req_b78243e868584ad8a421af7e9c9d9b84"
+request_id = "req_69a9a6c2bb1146ebb480107e23c13021"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "fdffb7ac99ffa5aaf4f97e08773745f2fd251db34138c3c29d1cda25af210286"
+sha256 = "0a74a1163480eaf540fbf4db15098dc85b9f24b275445e8785556e54e8c59faa"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_d5cb27e3966b465f8a5d080b26f9502d"
+request_id = "req_3148fa09263f40c4adbd83abfea433da"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "4f768a050145fdbf719fa9d87cfa7706e99f822e6fec2614d745d5d2f11c6fd1"
+sha256 = "b25b26bc355bcc6d200d8ec20d8c279b1d207924a9bb91e6f6c0ba733b9faafe"
 width = 960
 height = 720
 compression = 85
-request_id = "req_6788fb05923d4104b346c635aff1a0d8"
+request_id = "req_35e61a1b3bd542c7af812ac6e5710337"
 placement = "approximately 362x272"

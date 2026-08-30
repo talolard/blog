@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "40e151c5327db94b50dc6646ec71385286bacaef9a079c6fa6e632cce03caa99",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:51.537794Z",
+  "response_id": "resp_05a6336fc8718ba9016a941771e1ec87d18c7c6c9a1e063ded",
+  "scene": {
+    "metaphor": "A neat miniature apartment block where each tenant lives in a separate sealed flat behind one maintained shared facade, like databases isolated inside one operational building.",
+    "setting": "Polished studio tabletop on a cool-gray seamless surface, with a handcrafted model building stretching laterally across the frame and plenty of negative space around it.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is mid-adjustment, carefully sliding a tiny brass key into the building’s central maintenance hatch while one miniature elevator cart has just stopped between floors, implying he is routing each tenant to the right locked unit without disturbing the others.",
+    "physical_materials": [
+      "matte cool-gray foamboard base",
+      "handmade apartment block from layered chipboard and acrylic panes",
+      "tiny post-it-sized mint and cobalt door markers with no text",
+      "brushed aluminum key, rails, and latch",
+      "one restrained warm accent: a small amber maintenance light",
+      "miniature furniture silhouettes visible only through the windows"
+    ],
+    "semantic_anchors": [
+      "single shared facade",
+      "clearly isolated interiors",
+      "ops-layer control",
+      "tenant separation",
+      "maintenance precision",
+      "Postgres-like operational sturdiness"
+    ],
+    "avoid": [
+      "cream paper",
+      "ornate borders",
+      "children's palette",
+      "cartoon styling",
+      "robots",
+      "text or labels",
+      "diagram layout",
+      "injury",
+      "humiliation",
+      "gross-out"
+    ],
+    "image_instruction": "Create a polished studio photograph of Tal Perry as the operator of a miniature apartment block metaphor for database isolation. Tal should be instantly recognizable from his curly dark hair, salt-and-pepper beard, and broad easy smile, wearing a simple dark work shirt and leaning in from the left edge with focused, calm concentration. The set is a handcrafted cool-gray apartment building stretched horizontally across a tabletop: one maintained facade, several separate windowed flats, each interior lit and furnished differently in cobalt and mint, with no visible connection between units. Freeze a harmless absurd incident: Tal’s hand is mid-turn on a small brushed-metal master key at the building’s maintenance hatch while a tiny elevator cart has just halted between floors, suggesting careful routing and control. Use one restrained amber practical light as the only warm accent. Keep the silhouette thick and readable, with no more than three large supporting props, strong tonal separation, and generous negative space so the joke survives as a thumbnail and reads cleanly as a 3:1 banner."
+  }
+}
