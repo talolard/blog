@@ -68,7 +68,8 @@ def test_lighttag_article_renders_with_provenance(
 
     timestamp = page.locator(".article-header time")
     assert timestamp.get_attribute("datetime") == published
-    assert timestamp.inner_text() == date.fromisoformat(published).strftime("%b %-d, %Y")
+    expected_date = date.fromisoformat(published).strftime("%b %-d, %Y").upper()
+    assert timestamp.inner_text() == expected_date
 
     notice = page.locator("aside.original-publication")
     assert notice.count() == 1
