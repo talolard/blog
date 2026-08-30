@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "ML Systems"
 visual_concept = "A compact nocturnal learning engine drawing useful domain signal from a modest local corpus while a giant distant machine remains unnecessary."
-prompt_version = "editorial-v1"
-prompt_hash = "e9137058c834eb041bc8b3dde6830e4f16a6b817cc466fe6ed394fb3ac11b7e2"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "331cfe24f03e73f8864d14ac80c7d3ffd858529b972039bfdda5fc9e1e99630e"
+scene_hash = "1ea6cdee7894e7e5dbe67fee0c034ce9f6cfda7925445f7ea52983836971ac42"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0ddba795deab954e016a9418b9690c87d1814a1a4a75c704da"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:47:35.230231Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:00:38.554780Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -17,6 +21,10 @@ selection = "picture source at 760px and below"
 
 [inputs.articles]
 "en" = "23fc22b5c062ef4379bfe759c31803d4311bd9cc507621c4e495cbb8a01501da"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "social.webp" = "847003e08ae8f7a6b127a7ee1cb294f2a84a65d8f007f35e9fb3d3a4b43145c3"
@@ -28,27 +36,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "e25cf1e5d96bd1ec91a5eeac6981a690b4518731474a6b3d97f9c091b4f62719"
+sha256 = "c3603527964cf9c6a7671ad031920e9f24c8261f79cbb055bcab64a269633107"
 width = 960
 height = 720
 compression = 85
-request_id = "req_00c8120a2c684345a97dbf8a1fa14d8b"
+request_id = "req_8e4af0faad4b4845b9ea77cc289f1ed3"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "ae3544248096dff688d8d54737512fdbf8259c3f272b851aa5284e7173ea73eb"
+sha256 = "6ed75b1a21681c2e1e46c7b080a6780cdbbce8bdfcca7b7d79da1bc4e144e75d"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_8bba468410a5478a9544d2fdab7a9edb"
+request_id = "req_2e784837acfa4d41a23113e1e2b992bf"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "6a7e31e28553d526fcdc94491f73f7aa3fd0a8e529212df09520ed5bf6b35737"
+sha256 = "bd4ee246721874dd7797fe169966eb1e08c3ae360b29c607360a0cfadde78a76"
 width = 960
 height = 720
 compression = 85
-request_id = "req_f686fc8a402a40a784209b3bb063452a"
+request_id = "req_aaa7586ce2244545871843754411f986"
 placement = "approximately 362x272"

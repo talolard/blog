@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "4ac369d9e5f8bb4b6217e938caeccd1bdf0a3513d3658a296d43e369eca45368",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:49:18.135326Z",
+  "response_id": "resp_0ddba795deab954e016a9418b9690c87d1814a1a4a75c704da",
+  "scene": {
+    "metaphor": "A tiny nocturnal alchemy bench where local word-count beads are distilled into a compact learning engine while an oversized distant server monolith stays unplugged in the background.",
+    "setting": "A polished studio tabletop set built like a miniature data cellar: cool-gray felt floor, matte slate walls fading into generous negative space, one lateral workbench stretching across a wide frame, with a faint cobalt horizon and mint instrument glow.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is calmly turning a small hand crank as a paper hopper spills tidy token beads into a glass chamber; the chamber is just beginning to pulse, and a few beads are hopping sideways into a second tube that clearly shows the ‘concat and fine-tune’ handoff. Behind him, a giant but idle server block is draped in shadow, making the tiny machine feel deliberately sufficient.",
+    "physical_materials": [
+      "cool-gray felt",
+      "matte slate board",
+      "hand-cut paper cards",
+      "tiny ivory token beads",
+      "clear glass tubes",
+      "brass hand crank",
+      "cobalt wire",
+      "mint indicator light",
+      "one restrained warm accent in Tal's coral tank top",
+      "waxed thread",
+      "miniature wooden blocks"
+    ],
+    "semantic_anchors": [
+      "small local corpus",
+      "fast lightweight pretraining",
+      "word counts over sequences",
+      "latent topics",
+      "concatenation",
+      "fine tuning",
+      "CPU-fast",
+      "domain adaptation",
+      "giant model unnecessary"
+    ],
+    "avoid": [
+      "flashcard or infographic layouts",
+      "text, letters, numbers, logos, watermarks",
+      "cute robot characters",
+      "gothic horror",
+      "blood, gore, injury, humiliation",
+      "busy clutter",
+      "tall central tower composition",
+      "cream paper or ornate borders",
+      "bright children's palette"
+    ],
+    "image_instruction": "Create a serious polished studio photograph of Tal Perry as a recognizable operator in a miniature ML lab set. Use his curly dark hair, salt-and-pepper beard, and easy smile, dressed in a coral sleeveless top as the only warm accent. He stands left of center at a low brass hand crank, calmly feeding a shallow tray of hand-cut paper token cards into a clear glass chamber; the chamber glows mint and sends a few ivory beads through a second tube toward a small slate vector block, making the pretrain-to-concat-to-finetune idea physically literal. Keep the set tactile and handmade: cool-gray felt ground, slate backdrop, cobalt wire, waxed thread, and three large supporting props maximum. In the far right background, show a much larger server monolith in shadow, unplugged and ignored. Lighting should be crisp studio key with soft rim light, high tonal separation, and lots of negative space. Compose laterally for a 3:1 banner, with one dominant silhouette that still reads at 120x90."
+  }
+}
