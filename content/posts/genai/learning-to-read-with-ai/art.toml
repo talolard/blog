@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "Life & Learning"
 visual_concept = "A parent and child building a short daily reading ritual from playful image cards, with steady progression shown through physical rhythm rather than charts or interfaces."
-prompt_version = "editorial-v1"
-prompt_hash = "c40f1cef7641f260d6419b912ac7c1c60cf9838febb764048fc16887db1b3ca7"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "b36a36945491090af480d38959f16dc19778a698ad525667fd9efacfe56410dd"
+scene_hash = "3664a00a2a9b1cd49d39598c016df7a52316acb1662a9cb1e4a75c2890d232c0"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0b762f761c9b4066016a9410d1e32087d19e1a08c475d20a8f"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
-generated_at = "2026-08-30T08:24:00.920781Z"
+source_git_revision = "95506948bd5b4f406115c1df95e4f34917c64355"
+generated_at = "2026-08-30T11:21:39.125647Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -18,6 +22,10 @@ selection = "picture source at 760px and below"
 [inputs.articles]
 "en" = "12ab296e200bf6190665dbd110515add70c63f886efe7daa85f88032bf0fa062"
 
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
 [inputs.references]
 "hero.webp" = "e6815233bcd1e1b3fc0e7aeb31952713577a2ed6c75651133a6252f6b7111838"
 "social.png" = "35135ab672f12727c316cb6c474963cd5778d5c3ec2f862b0af6a33a1410005c"
@@ -25,31 +33,31 @@ selection = "picture source at 760px and below"
 "learning_progress.webp" = "52d5cf2f721d670dfd9036f56aab38b4fc455ffae4519ef2908e12d804df8fa2"
 
 [alt]
-"en" = "Editorial illustration for The AI-Powered 10-Minute Habit That Taught My Kid to Read (And Made Me a Better Dad): A parent and child building a short daily reading ritual from playful image cards, with steady progression shown through physical rhythm rather than charts or interfaces."
+"en" = "Editorial illustration for „The AI-Powered 10-Minute Habit That Taught My Kid to Read (And Made Me a Better Dad)“: A parent and child building a short daily reading ritual from playful image cards, with steady progression shown through physical rhythm rather than charts or interfaces."
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "8482f5e7fa1b05ef87333cd33bae109e155982c6a765b6cc8e27fecc7ca8849d"
+sha256 = "216d903138397b63304c6b38c1a8245d6408fe054147f6f629b24d25258030bb"
 width = 960
 height = 720
 compression = 85
-request_id = "req_fcb1c9468bf8421da6dd43bdd12a74e8"
+request_id = "req_a4f510b64dbd42e38ba65cf86339945f"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "58f9980bbd2cc976135fda763c36ec26ac0e03cb0d6c557546f0160883c497ec"
+sha256 = "da0811c98157f282b029c1c02c40c6323383cc6e55827755fc743f9df3309856"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_377787ef46d3471e9b5fcf346f5a2be8"
+request_id = "req_e1046e7a71704140aceba4123684db5b"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "65906ac2194707d6a550c27229c779d06305c901af26e586eb8214fe661cc673"
+sha256 = "bfe564226e81d75a2a96e1dba5117403f5ffb3f9237b803d57ce0eae1e8ea1fd"
 width = 960
 height = 720
 compression = 85
-request_id = "req_bcd9d5c0771c463da0ee6c81c2e39793"
+request_id = "req_d2c66cd8ccc64823a82a527ae210235a"
 placement = "approximately 362x272"

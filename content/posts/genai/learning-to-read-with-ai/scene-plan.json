@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "6528cbc45c19a18f9e649d06a9bd4295ed4ffe2320f4398564c174ea19710518",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:15:38.255982Z",
+  "response_id": "resp_0b762f761c9b4066016a9410d1e32087d19e1a08c475d20a8f",
+  "scene": {
+    "metaphor": "A miniature reading loop built like a tiny mechanical garden of flashcards: remembered cards keep returning on a calm rhythm, turning learning into a short daily ritual.",
+    "setting": "A polished studio tabletop set on a cool-gray surface, with a wide low horizon of soft gradient background and plenty of negative space for banner crops.",
+    "humor_register": "playful",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is mid-motion, gently tapping a tiny card back into the loop just as one oversized picture card pops up from a shallow tray, suggesting the next review arriving right on time.",
+    "physical_materials": [
+      "matte cool-gray tabletop",
+      "hand-cut cardstock picture cards",
+      "thin bent wire track",
+      "small wooden card tray",
+      "miniature hourglass or 10-minute kitchen timer",
+      "soft foam blocks disguised as book stacks",
+      "fine pencil marks on blank card backs only"
+    ],
+    "semantic_anchors": [
+      "parent-child reading ritual",
+      "spaced repetition as a physical return path",
+      "AI-made picture cards as delightful prompts",
+      "10-minute daily habit",
+      "steady progression through repetition",
+      "patience and encouragement"
+    ],
+    "avoid": [
+      "flashcard app UI",
+      "screenshots",
+      "charts",
+      "literal letters or text in-frame",
+      "ornate borders",
+      "children's palette",
+      "humiliation",
+      "messy clutter",
+      "generic robot imagery",
+      "tall central tower composition"
+    ],
+    "image_instruction": "Create a polished studio photograph of Tal Perry as a calm, recognizable operator in a miniature tabletop reading ritual. He should have his dark curly hair, salt-and-pepper beard, and warm, focused smile, wearing a simple cool-gray shirt so the scene stays grounded and editorial. On a matte gray surface, build a tiny practical set with hand-cut cardstock picture cards on a low wire track, a small wooden tray, and a discreet 10-minute timer; the cards should show simple painted picture prompts native to the story—an apple, an igloo, a dog, a worm—without any text. Freeze the instant one card springs upward from the track while Tal gently guides it back in, conveying spaced repetition as a harmless absurd loop. Use cobalt and mint as the main accents, with only one restrained warm accent on a card edge or prop. Keep the lighting soft, high-end, and directional, with crisp tonal separation, one dominant subject, and no more than three supporting props so the idea reads instantly in desktop, mobile, and thumbnail crops. Arrange the action laterally across a 3:1 banner frame with generous negative space and a thick, simple silhouette."
+  }
+}
