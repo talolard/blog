@@ -1,0 +1,61 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "preserve-concept"
+thread = "Building"
+visual_concept = "A small hand-built LightTag vessel docking cleanly with a larger Primer vessel while retaining its distinct silhouette; celebratory but restrained and logo-free."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "fc70460444d2d3ea0a77be9e27b78d32eb77876abfc389b62376ea848da77bf7"
+scene_hash = "a2099f84a9fbd28f792a1284a27d4c3d7bbd197a92cf5a78c1a440313b783193"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0964a6200df9870f016a9419a6f43487d19446ec5452d52861"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:03:44.867866Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "e8dce5808a617fe761d83f1b42757852a413c233413670310e5533800617047c"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"hero.webp" = "b2424572a47ff552a390b13a62d7cc53dcb5a279b48217935c73712f072861bc"
+"social.webp" = "17b1aeee48d877dfe2be40abf6ef4bf8e89bdf10c2dbfbf2adc33fc495dfb779"
+
+[alt]
+"en" = "Editorial illustration for „LightTag Has Been Acquired by Primer.ai“: A small hand-built LightTag vessel docking cleanly with a larger Primer vessel while retaining its distinct silhouette; celebratory but restrained and logo-free."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "df5121d5eca73a1d3f51b0060135338d6ce15c8fcea18b6516858ef6b47f1106"
+width = 960
+height = 720
+compression = 85
+request_id = "req_a28a51cf96d34b75bc76cee787aa0d99"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "923585587da0b70bae01bd7a0b6727cf8f35b1cd90ab78285e9bcc7e27e410d9"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_7f9a43f22ae64abdb6c665a73f35dcb8"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "222a553c02572f49589ca2ddcc819809f87975cdb2daf0fc47c66c6852abd9be"
+width = 960
+height = 720
+compression = 85
+request_id = "req_361e2f519e284811931da0909a0bf2de"
+placement = "approximately 362x272"

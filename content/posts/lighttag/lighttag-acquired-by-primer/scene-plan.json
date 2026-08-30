@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "6541c17aeeb89ac029e008c1b020228fb44546770cee99cedac41439c3139c71",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:53:16.749344Z",
+  "response_id": "resp_0964a6200df9870f016a9419a6f43487d19446ec5452d52861",
+  "scene": {
+    "metaphor": "A small handmade research vessel representing LightTag is docking beside a larger, smoother partner vessel representing Primer, showing acquisition as a clean merger without losing the smaller boat’s distinct shape.",
+    "setting": "A polished studio tabletop seascape built from cool-gray acrylic water, matte slate surface, and a softly blurred horizon of layered gray backdrop; the whole scene feels like a miniature harbor staged for an editorial portrait.",
+    "humor_register": "warm",
+    "tal_role": "operator",
+    "frozen_incident": "Tal, recognizable by his dark curly hair and salt-and-pepper beard, leans in from the left with a calm, satisfied half-smile as he guides the small vessel into a perfect side-by-side dock; the moment freezes just as a tiny magnetic fender clicks the two hulls together with a harmless splash.",
+    "physical_materials": [
+      "hand-cut chipboard hulls",
+      "balsa wood railings",
+      "thin acetate water surface",
+      "cotton batting mist",
+      "tiny magnetic bumpers",
+      "matte gaffer-tape seams",
+      "brushed aluminum dock edge",
+      "cool-gray painted foamcore backdrop",
+      "cobalt and mint painted accents",
+      "one restrained warm coral accent on Tal's shirt"
+    ],
+    "semantic_anchors": [
+      "small vessel retains distinct silhouette",
+      "larger partner vessel nearby and clearly more substantial",
+      "clean docking rather than collision",
+      "Tal as a recognizable human operator",
+      "restrained celebratory mood",
+      "studio-made miniature harbor",
+      "cool-gray foundation with cobalt and mint accents"
+    ],
+    "avoid": [
+      "text or letters on hulls or dock",
+      "logos, trademarks, or brand marks",
+      "paper-flashcard look",
+      "children's palette",
+      "ornate borders",
+      "generic robot imagery",
+      "injury, humiliation, chaos, or gross-out",
+      "infographic composition",
+      "tall central tower-like arrangement"
+    ],
+    "image_instruction": "Create a polished editorial studio photograph of a miniature harbor on a cool-gray tabletop. Tal Perry appears as a recognizable operator on the left: dark curly hair, salt-and-pepper beard, warm eyes, relaxed half-smile, wearing a single restrained coral tank top accent. He gently guides a small handmade LightTag vessel made of chipboard and balsa toward a larger, sleeker Primer vessel, both in a lateral 3:1 composition. The LightTag boat must keep its distinct silhouette while docking cleanly alongside the larger craft; freeze the instant a tiny magnetic bumper clicks and a faint ripple spreads across acetate water. Use cobalt and mint accents on ropes, trim, and dock posts, with the rest in cool grays and slate tones. Lighting should be crisp studio key light with soft shadow separation, high tonal contrast, and generous negative space. Keep only three large supporting props: the dock, the larger vessel, and a subtle crane or bollard. The scene must remain readable as one dominant subject at thumbnail size and feel calm, celebratory, and precise."
+  }
+}
