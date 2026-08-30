@@ -1,0 +1,27 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/genai/vibe-coding-stablenormal-modal/"
+one_liner = "How I vibe-coded an obscure StableNormal Turbo model into a serverless GPU service on Modal, then optimized it until it stopped dictating my UX."
+hook = "Scale-to-zero is a cold-start tax you choose. I paid less by fixing the API shape, caching weights, bucketing resolutions, and measuring cold vs warm separately."
+cta = "If you’ve deployed a weird model from GitHub, I’d love to hear what surprised you most: packaging, security, or latency."
+
+[twitter.en]
+post_text = "I needed surface normals for a room-measuring agent. Deployed StableNormal Turbo on serverless GPUs with Modal (scale-to-zero, pay-per-second) and wrote up what sped it up (volumes, buckets, GPU, cold vs warm). https://talperry.com/en/posts/genai/vibe-coding-stablenormal-modal/"
+alt_text = "Cover image for a post about deploying an obscure vision model on Modal and optimizing cold starts and inference latency."
+hashtags = ["MLOps", "PyTorch", "Diffusers"]
+emoji = false
+
+[linkedin.en]
+post_text = "I’m building an agent that measures rooms from photos, and I needed per-pixel surface normals.\n\nThe model I wanted was obscure, Diffusers-adjacent, and shipped via torch.hub.\n\nI wrapped it in a serverless GPU service on Modal (pay-per-second, scale-to-zero), then optimized it because latency defines dev pace and UX constraints.\n\nThis post is the full experiment log: what worked, what didn’t, and why cold vs warm latency matters. https://talperry.com/en/posts/genai/vibe-coding-stablenormal-modal/"
+alt_text = "Cover image for a post about deploying an obscure vision model on Modal and optimizing cold starts and inference latency."
+
+[reddit.en]
+title = "Vibe-coding an obscure Diffusers-adjacent vision model into a serverless GPU endpoint (Modal) + latency notes"
+subreddit = "MLOps"
+post_text = "I needed surface normals for a room-measuring agent, but didn’t want to host GPUs or pay for idle time. I deployed StableNormal Turbo on Modal (scale-to-zero, pay-per-second), then ran a series of latency experiments (API shape, volumes, resolution buckets, GPU choice, torch.compile). Full writeup here: https://talperry.com/en/posts/genai/vibe-coding-stablenormal-modal/"
+
+[hn.en]
+title = "I Needed One Obscure Vision Model. Modal Made It Everyone Else’s Problem."
+submission_text = "A practical writeup: deploy a GitHub-hosted Diffusers-adjacent vision model on serverless GPUs, then optimize cold vs warm latency so it stops dictating product pace."
+first_comment = "This writeup is intentionally practical: I wanted surface normals for an agent, didn’t want to host GPUs, and didn’t want to pay for idle. Modal gave me pay-per-second + scale-to-zero; the rest was a tight optimize-measure loop (including a few failed torch.compile attempts). https://talperry.com/en/posts/genai/vibe-coding-stablenormal-modal/"

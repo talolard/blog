@@ -112,6 +112,7 @@
       {{ $webSiteSchema | jsonify | safeJS }}
     </script>
   {{ else if $isArticle }}
+    {{ $authorName := (.Site.Params.author_name | default "Tal Perry") }}
     {{ $blogPostingSchema := dict
       "@context" "https://schema.org"
       "@type" "BlogPosting"
@@ -123,7 +124,7 @@
       "image" (slice $image)
       "author" (dict
         "@type" "Person"
-        "name" (.Site.Author.name | default .Site.Params.author_name | default "Tal Perry")
+        "name" $authorName
       )
       "publisher" (dict
         "@type" "Organization"

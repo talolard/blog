@@ -25,6 +25,7 @@ weight = 3
 [params]
 description = 'Shouting into the void , now with AI.'
 site_name = 'Tal Perry'
+author_name = 'Tal Perry'
 twitter_site = '@thetalperry'
 twitter_creator = '@thetalperry'
 default_og_image = '/og/default.png'

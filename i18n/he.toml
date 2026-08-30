@@ -30,3 +30,12 @@ other = "אימייל"
 
 [site_description]
 other = "הערות על בניית מוצרים, למידת מכונה יישומית והחיים בברלין."
+
+[skip_to_main]
+other = "דילוג לתוכן הראשי"
+
+[page_not_found]
+other = "העמוד הזה לא קיים."
+
+[go_home]
+other = "חזרה לדף הבית"

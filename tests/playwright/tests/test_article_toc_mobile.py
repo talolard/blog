@@ -17,6 +17,11 @@ VIEWPORTS: Iterable[tuple[int, int]] = (
     (414, 896),
 )
 POST_PATH = "/en/posts/genai/triton-inference-server/"
+SCOREBOARD_POST_PATH = "/en/posts/genai/vibe-coding-stablenormal-modal/"
+SCOREBOARD_VIEWPORTS: Iterable[tuple[int, int]] = (
+    (320, 740),
+    (390, 844),
+)
 
 
 def _assert_toc_stacked(page: Page) -> None:
@@ -93,5 +98,38 @@ def test_article_layout_avoids_horizontal_overflow_on_mobile(
         assert metrics["bodyWidth"] <= metrics["layoutWidth"] + 1, (
             "Article body should fit within the layout column on mobile."
         )
+    finally:
+        context.close()
+
+
+@pytest.mark.parametrize("viewport", SCOREBOARD_VIEWPORTS)
+def test_article_table_does_not_overflow_mobile_viewport(
+    browser: Browser, base_url: str, viewport: tuple[int, int]
+) -> None:
+    """Wide article tables should scroll internally without widening the page."""
+
+    context = browser.new_context(viewport={"width": viewport[0], "height": viewport[1]})
+    try:
+        page = context.new_page()
+        page.goto(f"{base_url}{SCOREBOARD_POST_PATH}")
+        page.wait_for_selector(".article-body table")
+
+        metrics = page.evaluate(
+            """
+            () => {
+              const table = document.querySelector('.article-body table');
+              const articleBody = document.querySelector('.article-body');
+              return {
+                documentWidth: document.documentElement.scrollWidth,
+                viewportWidth: document.documentElement.clientWidth,
+                tableWidth: table?.clientWidth ?? 0,
+                articleBodyWidth: articleBody?.clientWidth ?? 0,
+              };
+            }
+            """
+        )
+
+        assert metrics["documentWidth"] <= metrics["viewportWidth"] + 1
+        assert metrics["tableWidth"] <= metrics["articleBodyWidth"] + 1
     finally:
         context.close()

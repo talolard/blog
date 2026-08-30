@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.LanguageDirection | default `ltr` }}">
+  {{ partial "head.html" . }}
+<body>
+  <a class="skip-link" href="#main">{{ i18n "skip_to_main" }}</a>
+  <div class="site-shell">
+    {{ partial "header.html" . }}
+    <main id="main">
+      <article class="article">
+        <h1>404</h1>
+        <p>{{ i18n "page_not_found" }}</p>
+        <p><a href="{{ "/" | relLangURL }}">{{ i18n "go_home" }}</a></p>
+      </article>
+    </main>
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+</html>

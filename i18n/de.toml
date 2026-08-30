@@ -30,3 +30,12 @@ other = "E-Mail"
 
 [site_description]
 other = "Notizen über Produktentwicklung, angewandtes Machine Learning und das Leben in Berlin."
+
+[skip_to_main]
+other = "Zum Hauptinhalt springen"
+
+[page_not_found]
+other = "Diese Seite existiert nicht."
+
+[go_home]
+other = "Zur Startseite"

@@ -30,3 +30,12 @@ other = "Email"
 
 [site_description]
 other = "Notes on building products, applied machine learning, and life in Berlin."
+
+[skip_to_main]
+other = "Skip to main content"
+
+[page_not_found]
+other = "This page does not exist."
+
+[go_home]
+other = "Go home"
