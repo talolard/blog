@@ -1,0 +1,61 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "preserve-concept"
+thread = "ML Systems"
+visual_concept = "A SQL workbench conducts many weak labeling signals into one scalable stream, preserving the original SnorQL character and concept without logos or text."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "0d4e6f5fbb26b7cff705d6ed8f97bcd8b747f129f694b18f73882a15937d10a3"
+scene_hash = "668610b370427eb44a0c838782f9de1c9395f11c8fdf5f984838e5513e8c52f3"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0dd4a59577297586016a941a723f5087d18241830fe1a24f05"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:08:05.659033Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "de97c1c8913d22b0a676462a7b4d4336eb6686f788e3cc6165ea67eb2c7b031a"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"hero.webp" = "5b5f97142477013581c724dfa2f87fd6b2b9b4f20cfa22c46d90f9f21670726a"
+"social.webp" = "aea50273f4ea064feefd76f1a5d617544b14e2e448f961098a534ff613313c21"
+
+[alt]
+"en" = "Editorial illustration for „SnorQL: Scaling Weak Supervision With SQL“: A SQL workbench conducts many weak labeling signals into one scalable stream, preserving the original SnorQL character and concept without logos or text."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "7d9a1b1a969f1f59c9d097c089f12d10f460364e59db7adc35c99858c4fd5694"
+width = 960
+height = 720
+compression = 85
+request_id = "req_a465934528654d29b6d77ffab2067875"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "a92946beb6e0ace000d3476ddef6db7571f6e781b45b6ca84003765462f34cb4"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_7e1c06a58f3f45f089b09876f166ced9"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "ea08c03ec38e9d8347f45c29279cb26ba6d925f0ec01860f4f6e833bcc136ac9"
+width = 960
+height = 720
+compression = 85
+request_id = "req_72c211ddfd9043ea8921942901a52fc0"
+placement = "approximately 362x272"

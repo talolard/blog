@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "75a00ae9efa4ff1325688d92be521ffd88cd1591e177348d3020e05f92f86685",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:56:47.319173Z",
+  "response_id": "resp_0dd4a59577297586016a941a723f5087d18241830fe1a24f05",
+  "scene": {
+    "metaphor": "A tiny SQL workbench acts like a routing manifold, collecting many weak signals from scattered labeling tiles and compressing them into one clean probabilistic stream.",
+    "setting": "Polished studio tabletop in cool gray, built as a miniature practical data-lab set with a shallow horizon and wide negative space for banner crops.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal has just pulled a slim brass lever, and a burst of small mint and cobalt token tiles is snapping through a transparent channel into one central collection tray; one stray tile has skidded harmlessly off course, freezing the absurdity at the instant of controlled spillover.",
+    "physical_materials": [
+      "cool-gray painted wood",
+      "matte cobalt acrylic",
+      "mint enamel",
+      "clear acrylic tubing",
+      "brushed aluminum",
+      "frosted glass",
+      "felt",
+      "small magnetic tiles",
+      "thin brass rod",
+      "paper grain textures"
+    ],
+    "semantic_anchors": [
+      "many weak signals",
+      "SQL workbench",
+      "aggregation",
+      "sparse rows",
+      "event co-occurrence",
+      "scaling",
+      "join into one stream"
+    ],
+    "avoid": [
+      "text in the scene",
+      "logos",
+      "screenshots",
+      "UI chrome",
+      "generic cute robots",
+      "ornate borders",
+      "cream paper",
+      "children’s palette",
+      "injury",
+      "humiliation",
+      "gross-out"
+    ],
+    "image_instruction": "Create a polished studio photograph of Tal Perry as a recognizable adult operator in a miniature SQL workbench set on a cool-gray tabletop. He is seated/leaning at the left side of a wide, low scene, smiling with calm concentration as his hand finishes pulling a small brass lever. In front of him, dozens of tiny matte cobalt and mint label tiles flow from several narrow input channels and merge into one clear acrylic tube leading to a single collection tray, making the abstract idea of weak supervision physically literal. Freeze a harmless absurd incident: one tile has popped free and skidded toward the edge, while the main stream stays neatly organized. Use at most three large supporting props, strong tonal separation, and generous negative space so the composition reads at thumbnail size. Keep the set tactile and handmade—felt, brushed metal, frosted glass, painted wood—yet lit like high-end editorial photography with soft directional studio light and crisp shadows. The action should run laterally for a 3:1 banner, with Tal and the flowing channels forming one canonical cast, prop system, and incident."
+  }
+}
