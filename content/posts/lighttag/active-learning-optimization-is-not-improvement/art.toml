@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "ML Systems"
 visual_concept = "A papaya taster repeatedly sampling the most ambiguous fruit while the neglected market remains unevenly understood, separating optimization from real improvement."
-prompt_version = "editorial-v1"
-prompt_hash = "46923fc98047c8c7d582828bb0850d5f0b25583a86056fd756d344dc84459148"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "1f89954d97085c54b58daf0da1f5eacfee5dacf6ebde8af550c0083a59152ad1"
+scene_hash = "0e054508dde292cac58efc28dd24552581e271f835e483ac0051328b7b301ef1"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0058a0cc85c62e3b016a941772eb9c87d185b2203059fa4fc9"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:35:28.456029Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:53:02.402724Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -17,6 +21,10 @@ selection = "picture source at 760px and below"
 
 [inputs.articles]
 "en" = "a0aea520e4fb99920874bb85f7719b966a4dda6591b000492c7520bdd9a41cb1"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "papaya-seller-market.webp" = "75ad93d701f733cfba128419e6622be7c4290a8ac87fb9d0ced19be0c2bd4fe4"
@@ -29,27 +37,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "75eb9c65915ea98a4a883e7162de7582c7cd7f6d08728bebc4cd0e26fd37ee6a"
+sha256 = "9c1f1eeca40be5589cb566cef840366541e21d78af5d87962c685f52242bdde6"
 width = 960
 height = 720
 compression = 85
-request_id = "req_1d24f4b4124b44e68fbffc4d7328d2de"
+request_id = "req_e8ca481de81b497389aee46c54fb6c4d"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "933609fb9c59e0bafde8511f87955881d9294d4e7143acb675ff43b9b0c9eb6c"
+sha256 = "f6c35db0a0f5964872832ad65fdac1dbe84b7d85b8ffecf4ce86d09b6b6385c4"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_dd52d73c1eb54f56854f02c04e0cc509"
+request_id = "req_1995858c5c434dcc8aac2887007eefd5"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "c5819782918585931d958eea709f28abbeb172f8d743b22f39b3070ee571a10a"
+sha256 = "80ae2af912a670681a6ca05c3a61babe45078620b412f7342b7fa559e96b8b0a"
 width = 960
 height = 720
 compression = 85
-request_id = "req_a4b59199995d42d7bdcdd20aaf9b7f97"
+request_id = "req_3747f66262d3403882b2de55e115175d"
 placement = "approximately 362x272"

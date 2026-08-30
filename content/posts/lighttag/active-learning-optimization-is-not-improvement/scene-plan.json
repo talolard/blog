@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "3606375189ff9f110b994de635fe4362393f380bcc86123cd56a89aaefd733d0",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:52.051375Z",
+  "response_id": "resp_0058a0cc85c62e3b016a941772eb9c87d185b2203059fa4fc9",
+  "scene": {
+    "metaphor": "A market selection loop turned into a miniature tasting counter where the chooser keeps returning to the same ambiguous papaya while the rest of the stand stays only vaguely known.",
+    "setting": "A polished studio tabletop set styled like a tiny papaya market, built on a cool-gray surface with a single lateral stall, ample empty space, and a soft backdrop that fades to gray-blue.",
+    "humor_register": "deadpan",
+    "tal_role": "protagonist",
+    "frozen_incident": "Tal is frozen mid-sample with a small tasting knife over one papaya at the border of two color zones, while a few untouched papayas sit far away and a small pile of discarded peels quietly accumulates beside the stand.",
+    "physical_materials": [
+      "matte clay papayas with hand-painted red-to-green gradients",
+      "thin wax-paper price awning without any writing",
+      "mini wooden market crate",
+      "cool-gray felt tabletop",
+      "one mint-green sampling spoon",
+      "one restrained cobalt measuring tray",
+      "tiny paper peel scraps",
+      "soft haze backdrop",
+      "studio rim light"
+    ],
+    "semantic_anchors": [
+      "papaya market",
+      "repeated tasting",
+      "uncertain boundary",
+      "optimization without improvement",
+      "biased sampling",
+      "model limitation as a visible selection bias"
+    ],
+    "avoid": [
+      "flashcard composition",
+      "children's illustration tone",
+      "cream paper",
+      "ornate borders",
+      "bright primary kids palette",
+      "generic robot imagery",
+      "text labels",
+      "charts or infographics",
+      "injury or humiliation",
+      "gross-out tasting reaction",
+      "busy vertical tower composition"
+    ],
+    "image_instruction": "Create a polished studio photograph of a miniature papaya market on a cool-gray tabletop, with Tal Perry as the recognizable protagonist behind the stall. He should look focused and mildly amused, holding a tiny tasting knife and leaning toward one papaya that sits exactly on the edge of a red-to-green color boundary, as if he keeps choosing the same ambiguous fruit again and again. Build the scene from tactile handmade materials: matte clay papayas, a small wooden crate, a thin wax-paper awning, paper peel scraps, and one mint-green sampling spoon. Let a few untouched papayas remain farther down the counter so the viewer feels the neglected, uneven market. Keep the photograph serious and elegant, with soft studio rim light, crisp shadows, and generous negative space. Use a cool-gray base, cobalt and mint accents, and only a whisper of warm papaya orange. The composition must read instantly at thumbnail size: one dominant subject, thick simple silhouettes, high tonal separation, and a lateral 3:1 banner arrangement that does not rely on a tall central stack."
+  }
+}
