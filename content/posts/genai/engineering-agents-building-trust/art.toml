@@ -1,0 +1,53 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "preserve-thumbnail"
+thread = "Agents & AI"
+visual_concept = "A human operator and two small, visibly different agent machines sharing one evolving memory object; the visual tension is trust created or broken by state synchronization."
+prompt_version = "editorial-v1"
+prompt_hash = "ed91af2e6c9fbbc29b07d58a79524008dd4a47981eb424090a3e1c195bcac3b4"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
+generated_at = "2026-08-30T08:21:19.571067Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "becb0537809c25d6b97225f514394719455163323d63d3ca0abda7bbfa98e7b0"
+
+[inputs.references]
+"hero.png" = "5e021d3b4dbb840d8f68a2274336da1b1564f7cd77edfa057dd94bc3069e7924"
+"social.png" = "97fb7da1d3542f493919bbb52904ec6b773e27e2a761f8b2f25c3657d5039a97"
+
+[alt]
+"en" = "Editorial illustration for Engineering Agents is really UX Engineering: A human operator and two small, visibly different agent machines sharing one evolving memory object; the visual tension is trust created or broken by state synchronization."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "eb2a817e578caba92a1598b77c1343f26ca45c944830a10572648f7e2894d1fe"
+width = 960
+height = 720
+compression = 85
+request_id = "req_d5b78f46cbb24f64be6210a766db5da3"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "271652a9bbb348f7dd538752be4f7e993317412b8722ac70962a62c1f47c5e60"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_582b0c494dd94391baa4f6afaf2c19e2"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "49d52256d8a7d8659f266237ba43260d93aec8408313b34de50a4789f7cfd14e"
+width = 960
+height = 720
+compression = 85
+request_id = "req_be6dc06ac4b34f07a2763b8cb52959c5"
+placement = "approximately 362x272"
