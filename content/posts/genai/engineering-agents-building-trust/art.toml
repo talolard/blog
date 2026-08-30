@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "preserve-thumbnail"
 thread = "Agents & AI"
 visual_concept = "A human operator and two small, visibly different agent machines sharing one evolving memory object; the visual tension is trust created or broken by state synchronization."
-prompt_version = "editorial-v1"
-prompt_hash = "ed91af2e6c9fbbc29b07d58a79524008dd4a47981eb424090a3e1c195bcac3b4"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "bd2754dd3fcc2e357097983f018efaa4f6c365ff4203822f40d5db479f9b9490"
+scene_hash = "11f82e9cdaac2a1b258842d044b1bd2c3924490ff2b459760df17f379845c8de"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_07c880896ad30c69016a9410d1f08887d1a501021e21cdee3e"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
-generated_at = "2026-08-30T08:21:19.571067Z"
+source_git_revision = "95506948bd5b4f406115c1df95e4f34917c64355"
+generated_at = "2026-08-30T11:18:32.838160Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -18,36 +22,40 @@ selection = "picture source at 760px and below"
 [inputs.articles]
 "en" = "becb0537809c25d6b97225f514394719455163323d63d3ca0abda7bbfa98e7b0"
 
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
 [inputs.references]
 "hero.png" = "5e021d3b4dbb840d8f68a2274336da1b1564f7cd77edfa057dd94bc3069e7924"
 "social.png" = "97fb7da1d3542f493919bbb52904ec6b773e27e2a761f8b2f25c3657d5039a97"
 
 [alt]
-"en" = "Editorial illustration for Engineering Agents is really UX Engineering: A human operator and two small, visibly different agent machines sharing one evolving memory object; the visual tension is trust created or broken by state synchronization."
+"en" = "Editorial illustration for „Engineering Agents is really UX Engineering“: A human operator and two small, visibly different agent machines sharing one evolving memory object; the visual tension is trust created or broken by state synchronization."
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "eb2a817e578caba92a1598b77c1343f26ca45c944830a10572648f7e2894d1fe"
+sha256 = "318297246e2c11fcc150718649bc44e1029b977cef829f1fda0ae6e856274423"
 width = 960
 height = 720
 compression = 85
-request_id = "req_d5b78f46cbb24f64be6210a766db5da3"
+request_id = "req_b62ef58934b345e6a990746e1054e98a"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "271652a9bbb348f7dd538752be4f7e993317412b8722ac70962a62c1f47c5e60"
+sha256 = "62e35cff09741008676ca61ac1fe7131c18ee352f0679704efa83d9c168f69b5"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_582b0c494dd94391baa4f6afaf2c19e2"
+request_id = "req_bd097cac20df4f45851cc0f87997cef2"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "49d52256d8a7d8659f266237ba43260d93aec8408313b34de50a4789f7cfd14e"
+sha256 = "d151ed1abd5e4689ec8164f1d7c8212b4710b4011ccc77a88bfc9534b763235d"
 width = 960
 height = 720
 compression = 85
-request_id = "req_be6dc06ac4b34f07a2763b8cb52959c5"
+request_id = "req_08cd07856c50461da1c74ff841f6fee8"
 placement = "approximately 362x272"
