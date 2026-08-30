@@ -1,0 +1,60 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "ML Systems"
+visual_concept = "A rigid but reusable machine casing accepts interchangeable model parts through a disciplined interface, showing both the structure and friction of the Estimator API."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "818dbdf9e358bb76d07e99875e7ee2affd0e49a0e6dc7b9e51daf0164a3cb94a"
+scene_hash = "61381ca9365b906c8fd095311ad6831da9a2375e1b35f93f14aae5df3c18648e"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0a3564067810c6f6016a941b752d3c87d1812cdc331f5721e5"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:10:08.304231Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "de9a7a1c9d9e3302f0bb521e5dee58e8bc462a14d1b20632201ff91fea4b0aab"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"social.webp" = "ad1e741bb9f9d324d642e3a476770d66eff8def9bfa008b51c2993ccc95ea594"
+
+[alt]
+"en" = "Editorial illustration for „Understanding the TensorFlow Estimator API“: A rigid but reusable machine casing accepts interchangeable model parts through a disciplined interface, showing both the structure and friction of the Estimator API."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "4c7ef629a6e136f10f3baf40cf6e6022576fa7abfa112c661009a3d8fcf006aa"
+width = 960
+height = 720
+compression = 85
+request_id = "req_b5b480e37d97498d92b6756c05bc7168"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "458837e148a3ca2c024ba93f97bc2aa98d1e7aa68188aba4c767f53fc4baf140"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_3ca8f8037465413b92b5abc855f58d12"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "c3839a1209e14053500e8651a1333c25459c7a14b69a398d11e44450a0ae5d30"
+width = 960
+height = 720
+compression = 85
+request_id = "req_532f9c1ea2494f2cbc7bf1ff036efd13"
+placement = "approximately 362x272"

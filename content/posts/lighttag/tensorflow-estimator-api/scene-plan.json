@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "d6ef44f60e2199ea60dc7dd538fd9ba02b3538450ebb8aa3f4b575420282348c",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T12:00:57.465288Z",
+  "response_id": "resp_0a3564067810c6f6016a941b752d3c87d1812cdc331f5721e5",
+  "scene": {
+    "metaphor": "A disciplined machine casing that accepts swappable model modules through one standardized bay, showing how the API separates train, evaluate, and predict into different insertable parts.",
+    "setting": "A polished miniature studio lab built on a cool-gray workbench, with a low modular casing stretching laterally across the frame and lots of empty gray space around it.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is calmly sliding a labeled module into the bay while a second module has just popped halfway out with a tiny mint-colored latch caught, implying harmless friction in the interface.",
+    "physical_materials": [
+      "matte cool-gray foamcore base",
+      "machined-looking charcoal resin casing with cobalt trim",
+      "one mint spring latch and one restrained warm coral module",
+      "brushed aluminum rails",
+      "felt and paper-texture inserts",
+      "soft acrylic indicator lights"
+    ],
+    "semantic_anchors": [
+      "reusable machine casing",
+      "interchangeable model parts",
+      "train/evaluate/predict as distinct modules",
+      "stable interface",
+      "separation of concerns",
+      "engineering friction made literal"
+    ],
+    "avoid": [
+      "flashcard borders",
+      "cream paper",
+      "children's palette",
+      "generic robot mascot",
+      "text, labels, UI, logos, watermarks",
+      "injury, humiliation, gross-out",
+      "tall central tower composition"
+    ],
+    "image_instruction": "Create a polished editorial studio photograph of Tal Perry as the operator in a miniature machine-lab scene, recognizable with his curly dark hair, beard, and warm coral tank top translated into a tiny practical figurine. He stands left of a low charcoal casing, focused and faintly amused, one hand guiding a mint-accented module into a rigid bay while a second module has just nudged back out, caught on a small latch in a harmless, deadpan moment of friction. The metaphor should feel physical and exact: a reusable machine shell with three interchangeable blocks for train, evaluate, and predict, each rendered as a distinct chunky insert with subtle shape differences, no text. Keep the set tactile—foamcore base, resin body, brushed metal rails, felt inserts—and light it like premium product photography with cool-gray key light, cobalt highlights, and one restrained warm coral accent on Tal and a module. Compose laterally for a 3:1 banner, with one dominant subject, thick simple silhouettes, high tonal separation, and generous negative space so the idea still reads at thumbnail size."
+  }
+}
