@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "7c81c211636224caa6dafc52d3a31904dc7036868258aeeb5027c4e722f3d655",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:53.380799Z",
+  "response_id": "resp_0a7b0cedffc6dbb2016a941772da9087d19184dafe93f8fc70",
+  "scene": {
+    "metaphor": "A character-level model as a hand-built loom: individual tiny unit-slats enter one end, pass through a narrow comb, and emerge as a continuous woven ribbon, showing both the extra work and the flexibility of processing at the smallest scale.",
+    "setting": "A polished studio tabletop mini-set on a cool-gray surface, with a long lateral miniature loom stretching across the frame and plenty of empty negative space above it for a banner crop.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is mid-adjustment with tweezers as a small overflow of unit-slats jams at the shuttle gate, while the woven ribbon still continues cleanly out the far side—an absurd but harmless near-miss frozen at the exact instant of control.",
+    "physical_materials": [
+      "matte cool-gray felt and painted plywood base",
+      "brushed metal miniature loom frame",
+      "tiny ceramic and paper composite unit-slats in graphite, cobalt, and mint",
+      "one restrained warm accent thread spool in muted rust",
+      "thin translucent woven ribbon",
+      "fine tweezers and a small hand crank",
+      "soft dusting of textile fibers for tactile realism"
+    ],
+    "semantic_anchors": [
+      "small unit processing",
+      "open vocabulary resilience",
+      "output bottleneck reduced by compact tokens",
+      "long sequence cost",
+      "input disorder becoming usable structure"
+    ],
+    "avoid": [
+      "visible text of any kind",
+      "letters, numbers, logos, or UI screens",
+      "cute robot imagery",
+      "generic word clouds or infographic layouts",
+      "humiliation, injury, or gross-out",
+      "ornate borders or cream paper aesthetics"
+    ],
+    "image_instruction": "Create a polished studio photograph of Tal Perry as a recognizable operator in a miniature mechanical loom set. Use his real dark curls, salt-and-pepper beard, and friendly face, but give him a focused, mildly amused deadpan expression as he leans in with tweezers over a long, low loom. The concept is character-level NLP made literal: many tiny neutral unit-slats—small square and rectangular chips with no visible letters—feed through the machine one-by-one, then emerge on the far side as a smooth woven ribbon. Freeze a harmless jam where a few slats have backed up at the shuttle gate, while the ribbon continues cleanly beyond it. Keep the composition lateral and banner-friendly, with Tal on one side, the loom spanning horizontally, and generous negative space above. Materials should feel handmade and tactile: brushed metal, felt, paper fiber, ceramic chips, and one muted rust accent thread. Lighting is crisp, cool studio light with high tonal separation; cobalt and mint dominate, with cool grays throughout."
+  }
+}

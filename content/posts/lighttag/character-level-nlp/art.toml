@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "ML Systems"
 visual_concept = "Individual letterforms moving through a long mechanical loom and emerging as semantic fabric, showing the power and cost of character-level processing without embedded text."
-prompt_version = "editorial-v1"
-prompt_hash = "512ee59a969789040666f06549981dc90e8785871b421bbf82164141e113944c"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "d49210170d4d0710000f78ea37f3770d59481dd7bd6585b2f3d68a847803782f"
+scene_hash = "39597da7165bfd90525869c0a2c215845f6ca8365f476b683c6be0ddfc1eeccc"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0a7b0cedffc6dbb2016a941772da9087d19184dafe93f8fc70"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:38:11.275926Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:55:17.655841Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -17,6 +21,10 @@ selection = "picture source at 760px and below"
 
 [inputs.articles]
 "en" = "2c1f1599615b88c2cf9c3199943ae630732c3523ec50fe085c894a8d2397113b"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "character-model-problems.webp" = "59131c5f0b6dd6c89122b1c773ec2c37f71d9459c5410241efcaaa204e271f20"
@@ -28,27 +36,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "9f20e8e98a2dcf91f0d2f5f126c650031b23b4a7dd086cb662c767669534d90d"
+sha256 = "f75d7a4aaac2d1572dc46d3a794a39c3d45c8cd4f148cde775ca555356eaeee6"
 width = 960
 height = 720
 compression = 85
-request_id = "req_436ad83ba5ea4eb7a4a6f639fc28b6b2"
+request_id = "req_32ac9c56604c463493350f6a754ff663"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "30046878c7b7bc6703af5f352a0ae3af3ecdc8b0924f6938a6d216c653d7a250"
+sha256 = "e397b1b8059eb9b871a474431a2d4aa32149eefd92a336067bb896dc763a0420"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_06b90fc7e4ee4f008591c3a4bebfba6e"
+request_id = "req_7b03b65b27814dbaa1ee05f2e3436653"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "de376cb4963bced25ecf0f48634a92186bcb0df13b642c6b6cd6b2669476125c"
+sha256 = "f6cd4f25f138bf601d7af7a506d297d9116c3a413bb99fc6ee589030d6ae96ef"
 width = 960
 height = 720
 compression = 85
-request_id = "req_05ba9928faa04475afccaf160f6e8a44"
+request_id = "req_d9bab621d6ab4e5191ceb07e3a605b73"
 placement = "approximately 362x272"
