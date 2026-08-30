@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/lighttag-acquired-by-primer/"
+one_liner = "Tal reflects on bootstrapping LightTag and announces its acquisition by Primer.ai."
+hook = "After five years of bootstrapping LightTag, I found I had built both a product and a business."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "After five years of bootstrapping LightTag, I found I had built both a product and a business. https://talperry.com/en/posts/lighttag/lighttag-acquired-by-primer/"
+alt_text = "Archive cover for LightTag Has Been Acquired by Primer.ai."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "After five years of bootstrapping LightTag, I found I had built both a product and a business.\n\nTal reflects on bootstrapping LightTag and announces its acquisition by Primer.ai.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/lighttag-acquired-by-primer/"
+alt_text = "Archive cover for LightTag Has Been Acquired by Primer.ai."
+
+[reddit.en]
+title = "LightTag Has Been Acquired by Primer.ai"
+post_text = "I wrote this while building LightTag. Tal reflects on bootstrapping LightTag and announces its acquisition by Primer.ai. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/lighttag-acquired-by-primer/"
+
+[hn.en]
+title = "LightTag Has Been Acquired by Primer.ai"
+submission_text = "Tal reflects on bootstrapping LightTag and announces its acquisition by Primer.ai."
+first_comment = "This is an article from the restored LightTag archive. Tal reflects on bootstrapping LightTag and announces its acquisition by Primer.ai. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/lighttag-acquired-by-primer/"

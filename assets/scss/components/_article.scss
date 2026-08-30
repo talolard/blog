@@ -65,6 +65,16 @@
   margin-bottom: 1rem;
 }
 
+.original-publication {
+  margin: 0.75rem 0 1.25rem;
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+}
+
 .article-hero {
   margin: 1.25rem 0 1.75rem;
   border-radius: var(--radius);

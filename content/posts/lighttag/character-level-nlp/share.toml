@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/character-level-nlp/"
+one_liner = "Character-level models expand usable vocabularies and remove training bottlenecks, with important tradeoffs in sequence length and semantics."
+hook = "Character-level NLP trades built-in word meaning for open vocabularies and cheaper outputs."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Character-level NLP trades built-in word meaning for open vocabularies and cheaper outputs. https://talperry.com/en/posts/lighttag/character-level-nlp/"
+alt_text = "Archive cover for Character-Level NLP."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "Character-level NLP trades built-in word meaning for open vocabularies and cheaper outputs.\n\nCharacter-level models expand usable vocabularies and remove training bottlenecks, with important tradeoffs in sequence length and semantics.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/character-level-nlp/"
+alt_text = "Archive cover for Character-Level NLP."
+
+[reddit.en]
+title = "Character-Level NLP"
+post_text = "I wrote this while building LightTag. Character-level models expand usable vocabularies and remove training bottlenecks, with important tradeoffs in sequence length and semantics. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/character-level-nlp/"
+
+[hn.en]
+title = "Character-Level NLP"
+submission_text = "Character-level models expand usable vocabularies and remove training bottlenecks, with important tradeoffs in sequence length and semantics."
+first_comment = "This is an article from the restored LightTag archive. Character-level models expand usable vocabularies and remove training bottlenecks, with important tradeoffs in sequence length and semantics. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/character-level-nlp/"

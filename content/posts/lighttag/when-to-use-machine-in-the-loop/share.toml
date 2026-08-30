@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/when-to-use-machine-in-the-loop/"
+one_liner = "Machine-in-the-loop labeling can reduce annotation cost while introducing bias; here is how to reason about the tradeoff."
+hook = "Automation can make labeling faster while quietly narrowing the data your model ever gets to see."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Automation can make labeling faster while quietly narrowing the data your model ever gets to see. https://talperry.com/en/posts/lighttag/when-to-use-machine-in-the-loop/"
+alt_text = "Archive cover for When Should You Use Machine in the Loop?."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "Automation can make labeling faster while quietly narrowing the data your model ever gets to see.\n\nMachine-in-the-loop labeling can reduce annotation cost while introducing bias; here is how to reason about the tradeoff.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/when-to-use-machine-in-the-loop/"
+alt_text = "Archive cover for When Should You Use Machine in the Loop?."
+
+[reddit.en]
+title = "When Should You Use Machine in the Loop?"
+post_text = "I wrote this while building LightTag. Machine-in-the-loop labeling can reduce annotation cost while introducing bias; here is how to reason about the tradeoff. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/when-to-use-machine-in-the-loop/"
+
+[hn.en]
+title = "When Should You Use Machine in the Loop?"
+submission_text = "Machine-in-the-loop labeling can reduce annotation cost while introducing bias; here is how to reason about the tradeoff."
+first_comment = "This is an article from the restored LightTag archive. Machine-in-the-loop labeling can reduce annotation cost while introducing bias; here is how to reason about the tradeoff. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/when-to-use-machine-in-the-loop/"

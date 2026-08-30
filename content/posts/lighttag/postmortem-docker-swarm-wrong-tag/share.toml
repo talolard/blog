@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/postmortem-docker-swarm-wrong-tag/"
+one_liner = "A production postmortem about a Docker Swarm deployment that served one customer the wrong frontend version."
+hook = "A mutable Docker tag and an incomplete deploy turned into a subtle customer-facing incident."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "A mutable Docker tag and an incomplete deploy turned into a subtle customer-facing incident. https://talperry.com/en/posts/lighttag/postmortem-docker-swarm-wrong-tag/"
+alt_text = "Archive cover for Bug Postmortem: Wrong Image Deployed on Docker Swarm."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "A mutable Docker tag and an incomplete deploy turned into a subtle customer-facing incident.\n\nA production postmortem about a Docker Swarm deployment that served one customer the wrong frontend version.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/postmortem-docker-swarm-wrong-tag/"
+alt_text = "Archive cover for Bug Postmortem: Wrong Image Deployed on Docker Swarm."
+
+[reddit.en]
+title = "Bug Postmortem: Wrong Image Deployed on Docker Swarm"
+post_text = "I wrote this while building LightTag. A production postmortem about a Docker Swarm deployment that served one customer the wrong frontend version. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/postmortem-docker-swarm-wrong-tag/"
+
+[hn.en]
+title = "Bug Postmortem: Wrong Image Deployed on Docker Swarm"
+submission_text = "A production postmortem about a Docker Swarm deployment that served one customer the wrong frontend version."
+first_comment = "This is an article from the restored LightTag archive. A production postmortem about a Docker Swarm deployment that served one customer the wrong frontend version. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/postmortem-docker-swarm-wrong-tag/"

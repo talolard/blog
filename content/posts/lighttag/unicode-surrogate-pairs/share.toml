@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/unicode-surrogate-pairs/"
+one_liner = "Why JavaScript string offsets can disagree with other systems when text contains Unicode surrogate pairs—and how to handle it."
+hook = "A single emoji can shift every annotation offset if two systems count Unicode differently."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "A single emoji can shift every annotation offset if two systems count Unicode differently. https://talperry.com/en/posts/lighttag/unicode-surrogate-pairs/"
+alt_text = "Archive cover for JavaScript String Offsets and Unicode Surrogate Pairs."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "A single emoji can shift every annotation offset if two systems count Unicode differently.\n\nWhy JavaScript string offsets can disagree with other systems when text contains Unicode surrogate pairs—and how to handle it.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/unicode-surrogate-pairs/"
+alt_text = "Archive cover for JavaScript String Offsets and Unicode Surrogate Pairs."
+
+[reddit.en]
+title = "JavaScript String Offsets and Unicode Surrogate Pairs"
+post_text = "I wrote this while building LightTag. Why JavaScript string offsets can disagree with other systems when text contains Unicode surrogate pairs—and how to handle it. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/unicode-surrogate-pairs/"
+
+[hn.en]
+title = "JavaScript String Offsets and Unicode Surrogate Pairs"
+submission_text = "Why JavaScript string offsets can disagree with other systems when text contains Unicode surrogate pairs—and how to handle it."
+first_comment = "This is an article from the restored LightTag archive. Why JavaScript string offsets can disagree with other systems when text contains Unicode surrogate pairs—and how to handle it. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/unicode-surrogate-pairs/"

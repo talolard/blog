@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/complement-objective-training-with-pytorch-lightning/"
+one_liner = "Complement Objective Training is a simple way to use incorrect-class probabilities and get more from labeled data in PyTorch Lightning."
+hook = "Cross-entropy rewards the right answer; complement objective training also teaches from the wrong ones."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Cross-entropy rewards the right answer; complement objective training also teaches from the wrong ones. https://talperry.com/en/posts/lighttag/complement-objective-training-with-pytorch-lightning/"
+alt_text = "Archive cover for Complement Objective Training With PyTorch Lightning."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "Cross-entropy rewards the right answer; complement objective training also teaches from the wrong ones.\n\nComplement Objective Training is a simple way to use incorrect-class probabilities and get more from labeled data in PyTorch Lightning.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/complement-objective-training-with-pytorch-lightning/"
+alt_text = "Archive cover for Complement Objective Training With PyTorch Lightning."
+
+[reddit.en]
+title = "Complement Objective Training With PyTorch Lightning"
+post_text = "I wrote this while building LightTag. Complement Objective Training is a simple way to use incorrect-class probabilities and get more from labeled data in PyTorch Lightning. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/complement-objective-training-with-pytorch-lightning/"
+
+[hn.en]
+title = "Complement Objective Training With PyTorch Lightning"
+submission_text = "Complement Objective Training is a simple way to use incorrect-class probabilities and get more from labeled data in PyTorch Lightning."
+first_comment = "This is an article from the restored LightTag archive. Complement Objective Training is a simple way to use incorrect-class probabilities and get more from labeled data in PyTorch Lightning. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/complement-objective-training-with-pytorch-lightning/"

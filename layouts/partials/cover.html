@@ -8,8 +8,9 @@
 {{- if eq $cover "" }}{{ with .Params.image }}{{ $cover = . }}{{ end }}{{ end -}}
 {{- if eq $cover "" }}{{ with .Params.images }}{{ if gt (len .) 0 }}{{ $cover = index . 0 }}{{ end }}{{ end }}{{ end -}}
 
-{{- /* Final fallback: first image resource in bundle */ -}}
-{{- if eq $cover "" }}{{ with .Resources.ByType "image" }}{{ with index . 0 }}{{ $cover = .RelPermalink }}{{ end }}{{
+{{- /* Final fallback: first image resource in bundle. Imported archives without
+      an original hero keep their generated social card out of the article body. */ -}}
+{{- if and (eq $cover "") (not .Params.original_publication) }}{{ with .Resources.ByType "image" }}{{ with index . 0 }}{{ $cover = .RelPermalink }}{{ end }}{{
 end }}{{ end -}}
 
 {{- if $cover }}{{ $cover }}{{ end -}}

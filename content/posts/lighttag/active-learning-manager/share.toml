@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/active-learning-manager/"
+one_liner = "ALMa makes active learning easier by abstracting away the bookkeeping of labeled and unlabeled data."
+hook = "Active learning should improve models, not create bookkeeping bugs."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Active learning should improve models, not create bookkeeping bugs. https://talperry.com/en/posts/lighttag/active-learning-manager/"
+alt_text = "Archive cover for ALMa: Active Learning (Data) Manager."
+hashtags = ["NLP", "MachineLearning"]
+emoji = false
+
+[linkedin.en]
+post_text = "Active learning should improve models, not create bookkeeping bugs.\n\nALMa makes active learning easier by abstracting away the bookkeeping of labeled and unlabeled data.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/active-learning-manager/"
+alt_text = "Archive cover for ALMa: Active Learning (Data) Manager."
+
+[reddit.en]
+title = "ALMa: Active Learning (Data) Manager"
+post_text = "I wrote this while building LightTag. ALMa makes active learning easier by abstracting away the bookkeeping of labeled and unlabeled data. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/active-learning-manager/"
+
+[hn.en]
+title = "ALMa: Active Learning (Data) Manager"
+submission_text = "ALMa makes active learning easier by abstracting away the bookkeeping of labeled and unlabeled data."
+first_comment = "This is an article from the restored LightTag archive. ALMa makes active learning easier by abstracting away the bookkeeping of labeled and unlabeled data. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/active-learning-manager/"

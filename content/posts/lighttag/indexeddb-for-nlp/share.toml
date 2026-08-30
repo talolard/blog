@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/indexeddb-for-nlp/"
+one_liner = "How browser-native full-text search can give domain experts fast access to text without a search cluster or operational burden."
+hook = "A browser can be a capable search engine—and remove an entire layer of operational work."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "A browser can be a capable search engine—and remove an entire layer of operational work. https://talperry.com/en/posts/lighttag/indexeddb-for-nlp/"
+alt_text = "Archive cover for The Joy of IndexedDB for NLP."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "A browser can be a capable search engine—and remove an entire layer of operational work.\n\nHow browser-native full-text search can give domain experts fast access to text without a search cluster or operational burden.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/indexeddb-for-nlp/"
+alt_text = "Archive cover for The Joy of IndexedDB for NLP."
+
+[reddit.en]
+title = "The Joy of IndexedDB for NLP"
+post_text = "I wrote this while building LightTag. How browser-native full-text search can give domain experts fast access to text without a search cluster or operational burden. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/indexeddb-for-nlp/"
+
+[hn.en]
+title = "The Joy of IndexedDB for NLP"
+submission_text = "How browser-native full-text search can give domain experts fast access to text without a search cluster or operational burden."
+first_comment = "This is an article from the restored LightTag archive. How browser-native full-text search can give domain experts fast access to text without a search cluster or operational burden. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/indexeddb-for-nlp/"

@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/embrace-the-noise/"
+one_liner = "What an NLP pipeline for chest X-rays teaches about weak labels, selective annotation, and practical training-data design."
+hook = "A noisy radiology report can still be a powerful source of labels when the task is framed carefully."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "A noisy radiology report can still be a powerful source of labels when the task is framed carefully. https://talperry.com/en/posts/lighttag/embrace-the-noise/"
+alt_text = "Archive cover for Embrace the Noise: A Case Study of Text Annotation for Medical Imaging."
+hashtags = ["NLP", "MachineLearning"]
+emoji = false
+
+[linkedin.en]
+post_text = "A noisy radiology report can still be a powerful source of labels when the task is framed carefully.\n\nWhat an NLP pipeline for chest X-rays teaches about weak labels, selective annotation, and practical training-data design.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/embrace-the-noise/"
+alt_text = "Archive cover for Embrace the Noise: A Case Study of Text Annotation for Medical Imaging."
+
+[reddit.en]
+title = "Embrace the Noise: A Case Study of Text Annotation for Medical Imaging"
+post_text = "I wrote this while building LightTag. What an NLP pipeline for chest X-rays teaches about weak labels, selective annotation, and practical training-data design. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/embrace-the-noise/"
+
+[hn.en]
+title = "Embrace the Noise: A Case Study of Text Annotation for Medical Imaging"
+submission_text = "What an NLP pipeline for chest X-rays teaches about weak labels, selective annotation, and practical training-data design."
+first_comment = "This is an article from the restored LightTag archive. What an NLP pipeline for chest X-rays teaches about weak labels, selective annotation, and practical training-data design. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/embrace-the-noise/"

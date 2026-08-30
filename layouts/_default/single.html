@@ -19,6 +19,10 @@
       </div>
     </header>
 
+    {{ with .Params.original_publication }}
+    <aside class="original-publication">Originally published at LightTag.io.</aside>
+    {{ end }}
+
     {{ if $cover }}
     <figure class="article-hero">
       <img src="{{ $cover }}" alt="Featured image for {{ .Title }}">

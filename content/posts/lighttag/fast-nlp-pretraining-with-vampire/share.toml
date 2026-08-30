@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/fast-nlp-pretraining-with-vampire/"
+one_liner = "VAMPIRE offers fast, domain-specific NLP pretraining when large language models are too expensive or mismatched to the data."
+hook = "Useful domain pretraining does not always require a giant transformer or a giant GPU bill."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Useful domain pretraining does not always require a giant transformer or a giant GPU bill. https://talperry.com/en/posts/lighttag/fast-nlp-pretraining-with-vampire/"
+alt_text = "Archive cover for Fast NLP Model Pretraining With VAMPIRE."
+hashtags = ["NLP", "MachineLearning"]
+emoji = false
+
+[linkedin.en]
+post_text = "Useful domain pretraining does not always require a giant transformer or a giant GPU bill.\n\nVAMPIRE offers fast, domain-specific NLP pretraining when large language models are too expensive or mismatched to the data.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/fast-nlp-pretraining-with-vampire/"
+alt_text = "Archive cover for Fast NLP Model Pretraining With VAMPIRE."
+
+[reddit.en]
+title = "Fast NLP Model Pretraining With VAMPIRE"
+post_text = "I wrote this while building LightTag. VAMPIRE offers fast, domain-specific NLP pretraining when large language models are too expensive or mismatched to the data. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/fast-nlp-pretraining-with-vampire/"
+
+[hn.en]
+title = "Fast NLP Model Pretraining With VAMPIRE"
+submission_text = "VAMPIRE offers fast, domain-specific NLP pretraining when large language models are too expensive or mismatched to the data."
+first_comment = "This is an article from the restored LightTag archive. VAMPIRE offers fast, domain-specific NLP pretraining when large language models are too expensive or mismatched to the data. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/fast-nlp-pretraining-with-vampire/"

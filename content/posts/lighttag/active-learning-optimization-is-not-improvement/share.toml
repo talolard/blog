@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/active-learning-optimization-is-not-improvement/"
+one_liner = "Active learning promises cheaper labels, but optimizing model uncertainty does not necessarily improve the dataset or the business outcome."
+hook = "Optimizing an active-learning metric is not the same as improving the outcome you care about."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Optimizing an active-learning metric is not the same as improving the outcome you care about. https://talperry.com/en/posts/lighttag/active-learning-optimization-is-not-improvement/"
+alt_text = "Archive cover for Active Learning: Optimization Is Not Improvement."
+hashtags = ["NLP", "MachineLearning"]
+emoji = false
+
+[linkedin.en]
+post_text = "Optimizing an active-learning metric is not the same as improving the outcome you care about.\n\nActive learning promises cheaper labels, but optimizing model uncertainty does not necessarily improve the dataset or the business outcome.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/active-learning-optimization-is-not-improvement/"
+alt_text = "Archive cover for Active Learning: Optimization Is Not Improvement."
+
+[reddit.en]
+title = "Active Learning: Optimization Is Not Improvement"
+post_text = "I wrote this while building LightTag. Active learning promises cheaper labels, but optimizing model uncertainty does not necessarily improve the dataset or the business outcome. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/active-learning-optimization-is-not-improvement/"
+
+[hn.en]
+title = "Active Learning: Optimization Is Not Improvement"
+submission_text = "Active learning promises cheaper labels, but optimizing model uncertainty does not necessarily improve the dataset or the business outcome."
+first_comment = "This is an article from the restored LightTag archive. Active learning promises cheaper labels, but optimizing model uncertainty does not necessarily improve the dataset or the business outcome. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/active-learning-optimization-is-not-improvement/"

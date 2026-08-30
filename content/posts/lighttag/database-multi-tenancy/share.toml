@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/database-multi-tenancy/"
+one_liner = "A practical account of isolating tenant data in a SaaS application with separate PostgreSQL schemas."
+hook = "Schema-per-tenant multitenancy offers strong isolation without running a database per customer."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Schema-per-tenant multitenancy offers strong isolation without running a database per customer. https://talperry.com/en/posts/lighttag/database-multi-tenancy/"
+alt_text = "Archive cover for Database Multi-Tenancy for SaaS."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "Schema-per-tenant multitenancy offers strong isolation without running a database per customer.\n\nA practical account of isolating tenant data in a SaaS application with separate PostgreSQL schemas.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/database-multi-tenancy/"
+alt_text = "Archive cover for Database Multi-Tenancy for SaaS."
+
+[reddit.en]
+title = "Database Multi-Tenancy for SaaS"
+post_text = "I wrote this while building LightTag. A practical account of isolating tenant data in a SaaS application with separate PostgreSQL schemas. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/database-multi-tenancy/"
+
+[hn.en]
+title = "Database Multi-Tenancy for SaaS"
+submission_text = "A practical account of isolating tenant data in a SaaS application with separate PostgreSQL schemas."
+first_comment = "This is an article from the restored LightTag archive. A practical account of isolating tenant data in a SaaS application with separate PostgreSQL schemas. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/database-multi-tenancy/"

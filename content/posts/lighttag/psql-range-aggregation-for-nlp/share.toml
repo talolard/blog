@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/psql-range-aggregation-for-nlp/"
+one_liner = "A practical PostgreSQL pattern for finding maximal containing spans across overlapping ranges."
+hook = "PostgreSQL range types can solve annotation-overlap problems directly in the database."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "PostgreSQL range types can solve annotation-overlap problems directly in the database. https://talperry.com/en/posts/lighttag/psql-range-aggregation-for-nlp/"
+alt_text = "Archive cover for Postgres Range Aggregation for NLP and Everything Else."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "PostgreSQL range types can solve annotation-overlap problems directly in the database.\n\nA practical PostgreSQL pattern for finding maximal containing spans across overlapping ranges.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/psql-range-aggregation-for-nlp/"
+alt_text = "Archive cover for Postgres Range Aggregation for NLP and Everything Else."
+
+[reddit.en]
+title = "Postgres Range Aggregation for NLP and Everything Else"
+post_text = "I wrote this while building LightTag. A practical PostgreSQL pattern for finding maximal containing spans across overlapping ranges. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/psql-range-aggregation-for-nlp/"
+
+[hn.en]
+title = "Postgres Range Aggregation for NLP and Everything Else"
+submission_text = "A practical PostgreSQL pattern for finding maximal containing spans across overlapping ranges."
+first_comment = "This is an article from the restored LightTag archive. A practical PostgreSQL pattern for finding maximal containing spans across overlapping ranges. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/psql-range-aggregation-for-nlp/"

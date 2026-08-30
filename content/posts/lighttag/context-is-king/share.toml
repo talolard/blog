@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/context-is-king/"
+one_liner = "Language is ambiguous at every scale; this essay explains why context is the central problem that deep NLP models address."
+hook = "The meaning of a word depends on context—and sometimes that context is surprisingly far away."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "The meaning of a word depends on context—and sometimes that context is surprisingly far away. https://talperry.com/en/posts/lighttag/context-is-king/"
+alt_text = "Archive cover for Context Is King! Why Deep Learning Matters for NLP."
+hashtags = ["NLP", "MachineLearning"]
+emoji = false
+
+[linkedin.en]
+post_text = "The meaning of a word depends on context—and sometimes that context is surprisingly far away.\n\nLanguage is ambiguous at every scale; this essay explains why context is the central problem that deep NLP models address.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/context-is-king/"
+alt_text = "Archive cover for Context Is King! Why Deep Learning Matters for NLP."
+
+[reddit.en]
+title = "Context Is King! Why Deep Learning Matters for NLP"
+post_text = "I wrote this while building LightTag. Language is ambiguous at every scale; this essay explains why context is the central problem that deep NLP models address. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/context-is-king/"
+
+[hn.en]
+title = "Context Is King! Why Deep Learning Matters for NLP"
+submission_text = "Language is ambiguous at every scale; this essay explains why context is the central problem that deep NLP models address."
+first_comment = "This is an article from the restored LightTag archive. Language is ambiguous at every scale; this essay explains why context is the central problem that deep NLP models address. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/context-is-king/"

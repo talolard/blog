@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/react-dc-js/"
+one_liner = "A clean React pattern for integrating dc.js and Crossfilter to build interactive, high-dimensional charts."
+hook = "Imperative chart libraries and React can coexist cleanly when ownership is explicit."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Imperative chart libraries and React can coexist cleanly when ownership is explicit. https://talperry.com/en/posts/lighttag/react-dc-js/"
+alt_text = "Archive cover for Using dc.js and Crossfilter With React."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "Imperative chart libraries and React can coexist cleanly when ownership is explicit.\n\nA clean React pattern for integrating dc.js and Crossfilter to build interactive, high-dimensional charts.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/react-dc-js/"
+alt_text = "Archive cover for Using dc.js and Crossfilter With React."
+
+[reddit.en]
+title = "Using dc.js and Crossfilter With React"
+post_text = "I wrote this while building LightTag. A clean React pattern for integrating dc.js and Crossfilter to build interactive, high-dimensional charts. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/react-dc-js/"
+
+[hn.en]
+title = "Using dc.js and Crossfilter With React"
+submission_text = "A clean React pattern for integrating dc.js and Crossfilter to build interactive, high-dimensional charts."
+first_comment = "This is an article from the restored LightTag archive. A clean React pattern for integrating dc.js and Crossfilter to build interactive, high-dimensional charts. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/react-dc-js/"

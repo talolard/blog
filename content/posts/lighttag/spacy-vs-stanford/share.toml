@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/spacy-vs-stanford/"
+one_liner = "A hands-on comparison of CoreNLP, spaCy, and Flair for named-entity recognition across real datasets."
+hook = "The best off-the-shelf NER model depends on the errors your actual use case can tolerate."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "The best off-the-shelf NER model depends on the errors your actual use case can tolerate. https://talperry.com/en/posts/lighttag/spacy-vs-stanford/"
+alt_text = "Archive cover for Which Open-Source NER Model Is Best? Comparing CoreNLP, spaCy, and Flair."
+hashtags = ["NLP", "MachineLearning"]
+emoji = false
+
+[linkedin.en]
+post_text = "The best off-the-shelf NER model depends on the errors your actual use case can tolerate.\n\nA hands-on comparison of CoreNLP, spaCy, and Flair for named-entity recognition across real datasets.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/spacy-vs-stanford/"
+alt_text = "Archive cover for Which Open-Source NER Model Is Best? Comparing CoreNLP, spaCy, and Flair."
+
+[reddit.en]
+title = "Which Open-Source NER Model Is Best? Comparing CoreNLP, spaCy, and Flair"
+post_text = "I wrote this while building LightTag. A hands-on comparison of CoreNLP, spaCy, and Flair for named-entity recognition across real datasets. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/spacy-vs-stanford/"
+
+[hn.en]
+title = "Which Open-Source NER Model Is Best? Comparing CoreNLP, spaCy, and Flair"
+submission_text = "A hands-on comparison of CoreNLP, spaCy, and Flair for named-entity recognition across real datasets."
+first_comment = "This is an article from the restored LightTag archive. A hands-on comparison of CoreNLP, spaCy, and Flair for named-entity recognition across real datasets. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/spacy-vs-stanford/"

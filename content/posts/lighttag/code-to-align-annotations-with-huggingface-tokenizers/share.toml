@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/code-to-align-annotations-with-huggingface-tokenizers/"
+one_liner = "An end-to-end implementation for aligning span annotations with Hugging Face tokenizers, windowing them, and batching them in PyTorch."
+hook = "This is the concrete alignment code: offsets in, tokenizer-aligned windows and PyTorch batches out."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "This is the concrete alignment code: offsets in, tokenizer-aligned windows and PyTorch batches out. https://talperry.com/en/posts/lighttag/code-to-align-annotations-with-huggingface-tokenizers/"
+alt_text = "Archive cover for Code to Align Annotations with Hugging Face Tokenizers."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "This is the concrete alignment code: offsets in, tokenizer-aligned windows and PyTorch batches out.\n\nAn end-to-end implementation for aligning span annotations with Hugging Face tokenizers, windowing them, and batching them in PyTorch.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/code-to-align-annotations-with-huggingface-tokenizers/"
+alt_text = "Archive cover for Code to Align Annotations with Hugging Face Tokenizers."
+
+[reddit.en]
+title = "Code to Align Annotations with Hugging Face Tokenizers"
+post_text = "I wrote this while building LightTag. An end-to-end implementation for aligning span annotations with Hugging Face tokenizers, windowing them, and batching them in PyTorch. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/code-to-align-annotations-with-huggingface-tokenizers/"
+
+[hn.en]
+title = "Code to Align Annotations with Hugging Face Tokenizers"
+submission_text = "An end-to-end implementation for aligning span annotations with Hugging Face tokenizers, windowing them, and batching them in PyTorch."
+first_comment = "This is an article from the restored LightTag archive. An end-to-end implementation for aligning span annotations with Hugging Face tokenizers, windowing them, and batching them in PyTorch. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/code-to-align-annotations-with-huggingface-tokenizers/"

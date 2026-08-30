@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/how-to-label-data/"
+one_liner = "A complete guide to the seven stages of planning, executing, and scaling a successful NLP labeling project."
+hook = "Successful data labeling is a staged product process, not a pile of annotation clicks."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Successful data labeling is a staged product process, not a pile of annotation clicks. https://talperry.com/en/posts/lighttag/how-to-label-data/"
+alt_text = "Archive cover for How to Label Data."
+hashtags = ["NLP", "MachineLearning"]
+emoji = false
+
+[linkedin.en]
+post_text = "Successful data labeling is a staged product process, not a pile of annotation clicks.\n\nA complete guide to the seven stages of planning, executing, and scaling a successful NLP labeling project.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/how-to-label-data/"
+alt_text = "Archive cover for How to Label Data."
+
+[reddit.en]
+title = "How to Label Data"
+post_text = "I wrote this while building LightTag. A complete guide to the seven stages of planning, executing, and scaling a successful NLP labeling project. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/how-to-label-data/"
+
+[hn.en]
+title = "How to Label Data"
+submission_text = "A complete guide to the seven stages of planning, executing, and scaling a successful NLP labeling project."
+first_comment = "This is an article from the restored LightTag archive. A complete guide to the seven stages of planning, executing, and scaling a successful NLP labeling project. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/how-to-label-data/"

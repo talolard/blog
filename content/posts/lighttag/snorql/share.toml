@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/snorql/"
+one_liner = "A SQL-first approach to authoring, running, and analyzing weak-supervision labeling functions at scale."
+hook = "SQL is a practical language for weak supervision because domain rules are data queries."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "SQL is a practical language for weak supervision because domain rules are data queries. https://talperry.com/en/posts/lighttag/snorql/"
+alt_text = "Archive cover for SnorQL: Scaling Weak Supervision With SQL."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "SQL is a practical language for weak supervision because domain rules are data queries.\n\nA SQL-first approach to authoring, running, and analyzing weak-supervision labeling functions at scale.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/snorql/"
+alt_text = "Archive cover for SnorQL: Scaling Weak Supervision With SQL."
+
+[reddit.en]
+title = "SnorQL: Scaling Weak Supervision With SQL"
+post_text = "I wrote this while building LightTag. A SQL-first approach to authoring, running, and analyzing weak-supervision labeling functions at scale. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/snorql/"
+
+[hn.en]
+title = "SnorQL: Scaling Weak Supervision With SQL"
+submission_text = "A SQL-first approach to authoring, running, and analyzing weak-supervision labeling functions at scale."
+first_comment = "This is an article from the restored LightTag archive. A SQL-first approach to authoring, running, and analyzing weak-supervision labeling functions at scale. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/snorql/"

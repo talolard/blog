@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/sequence-labeling-with-transformers/"
+one_liner = "How to align offset annotations with fast-tokenizer output and window long texts for transformer sequence-labeling tasks."
+hook = "Span annotations and transformer tokens live in different coordinate systems; alignment is the bridge."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Span annotations and transformer tokens live in different coordinate systems; alignment is the bridge. https://talperry.com/en/posts/lighttag/sequence-labeling-with-transformers/"
+alt_text = "Archive cover for Sequence Labeling With Transformers."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "Span annotations and transformer tokens live in different coordinate systems; alignment is the bridge.\n\nHow to align offset annotations with fast-tokenizer output and window long texts for transformer sequence-labeling tasks.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/sequence-labeling-with-transformers/"
+alt_text = "Archive cover for Sequence Labeling With Transformers."
+
+[reddit.en]
+title = "Sequence Labeling With Transformers"
+post_text = "I wrote this while building LightTag. How to align offset annotations with fast-tokenizer output and window long texts for transformer sequence-labeling tasks. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/sequence-labeling-with-transformers/"
+
+[hn.en]
+title = "Sequence Labeling With Transformers"
+submission_text = "How to align offset annotations with fast-tokenizer output and window long texts for transformer sequence-labeling tasks."
+first_comment = "This is an article from the restored LightTag archive. How to align offset annotations with fast-tokenizer output and window long texts for transformer sequence-labeling tasks. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/sequence-labeling-with-transformers/"

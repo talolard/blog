@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/tensorflow-estimator-api/"
+one_liner = "The motivation behind TensorFlow's Estimator API, the abstractions it provides, and how its pieces fit together."
+hook = "TensorFlow Estimators make more sense once you see the runtime concerns they are designed to separate."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "TensorFlow Estimators make more sense once you see the runtime concerns they are designed to separate. https://talperry.com/en/posts/lighttag/tensorflow-estimator-api/"
+alt_text = "Archive cover for Understanding the TensorFlow Estimator API."
+hashtags = ["SoftwareEngineering", "Data"]
+emoji = false
+
+[linkedin.en]
+post_text = "TensorFlow Estimators make more sense once you see the runtime concerns they are designed to separate.\n\nThe motivation behind TensorFlow's Estimator API, the abstractions it provides, and how its pieces fit together.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/tensorflow-estimator-api/"
+alt_text = "Archive cover for Understanding the TensorFlow Estimator API."
+
+[reddit.en]
+title = "Understanding the TensorFlow Estimator API"
+post_text = "I wrote this while building LightTag. The motivation behind TensorFlow's Estimator API, the abstractions it provides, and how its pieces fit together. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/tensorflow-estimator-api/"
+
+[hn.en]
+title = "Understanding the TensorFlow Estimator API"
+submission_text = "The motivation behind TensorFlow's Estimator API, the abstractions it provides, and how its pieces fit together."
+first_comment = "This is an article from the restored LightTag archive. The motivation behind TensorFlow's Estimator API, the abstractions it provides, and how its pieces fit together. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/tensorflow-estimator-api/"

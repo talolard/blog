@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/efficiently-label-data-for-nlp/"
+one_liner = "Three practical ways to collect more useful labeled NLP data with less manual work."
+hook = "Better labeling throughput often comes from removing work, not making annotators click faster."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Better labeling throughput often comes from removing work, not making annotators click faster. https://talperry.com/en/posts/lighttag/efficiently-label-data-for-nlp/"
+alt_text = "Archive cover for Efficiently Labeling Data for NLP."
+hashtags = ["NLP", "MachineLearning"]
+emoji = false
+
+[linkedin.en]
+post_text = "Better labeling throughput often comes from removing work, not making annotators click faster.\n\nThree practical ways to collect more useful labeled NLP data with less manual work.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/efficiently-label-data-for-nlp/"
+alt_text = "Archive cover for Efficiently Labeling Data for NLP."
+
+[reddit.en]
+title = "Efficiently Labeling Data for NLP"
+post_text = "I wrote this while building LightTag. Three practical ways to collect more useful labeled NLP data with less manual work. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/efficiently-label-data-for-nlp/"
+
+[hn.en]
+title = "Efficiently Labeling Data for NLP"
+submission_text = "Three practical ways to collect more useful labeled NLP data with less manual work."
+first_comment = "This is an article from the restored LightTag archive. Three practical ways to collect more useful labeled NLP data with less manual work. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/efficiently-label-data-for-nlp/"

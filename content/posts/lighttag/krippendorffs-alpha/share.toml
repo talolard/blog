@@ -1,0 +1,26 @@
+version = 1
+
+[languages.en]
+canonical_path = "/en/posts/lighttag/krippendorffs-alpha/"
+one_liner = "Calculate Krippendorff's alpha on a pandas DataFrame in one line and understand what the agreement score measures."
+hook = "Inter-annotator agreement should be easy to calculate on the data structure practitioners already use."
+cta = "I would be interested to hear how you approach this problem today."
+
+[twitter.en]
+post_text = "Inter-annotator agreement should be easy to calculate on the data structure practitioners already use. https://talperry.com/en/posts/lighttag/krippendorffs-alpha/"
+alt_text = "Archive cover for Simpledorff: Krippendorff's Alpha on DataFrames."
+hashtags = ["NLP", "MachineLearning"]
+emoji = false
+
+[linkedin.en]
+post_text = "Inter-annotator agreement should be easy to calculate on the data structure practitioners already use.\n\nCalculate Krippendorff's alpha on a pandas DataFrame in one line and understand what the agreement score measures.\n\nThis article is restored from the LightTag archive. https://talperry.com/en/posts/lighttag/krippendorffs-alpha/"
+alt_text = "Archive cover for Simpledorff: Krippendorff's Alpha on DataFrames."
+
+[reddit.en]
+title = "Simpledorff: Krippendorff's Alpha on DataFrames"
+post_text = "I wrote this while building LightTag. Calculate Krippendorff's alpha on a pandas DataFrame in one line and understand what the agreement score measures. I have restored the original article and its graphics here: https://talperry.com/en/posts/lighttag/krippendorffs-alpha/"
+
+[hn.en]
+title = "Simpledorff: Krippendorff's Alpha on DataFrames"
+submission_text = "Calculate Krippendorff's alpha on a pandas DataFrame in one line and understand what the agreement score measures."
+first_comment = "This is an article from the restored LightTag archive. Calculate Krippendorff's alpha on a pandas DataFrame in one line and understand what the agreement score measures. The historical text and examples are preserved, with broken product links removed: https://talperry.com/en/posts/lighttag/krippendorffs-alpha/"
