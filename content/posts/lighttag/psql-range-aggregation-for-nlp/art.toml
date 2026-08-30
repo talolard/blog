@@ -1,0 +1,62 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "ML Systems"
+visual_concept = "Overlapping physical strips nest and merge into maximal containing spans on a clean worktable, conveying range aggregation through material form rather than notation."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "3327f43ab3133df0beb713d344e760246a2fde24c79abe6d86c0b7c0f709b617"
+scene_hash = "17162c1075f0d8e0779d616e7b485aa74b850bed9b6ecebde96bd90ca88e6ec6"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_02b832e1ffd90f89016a941a00c12887d1b7ba1252b728a93e"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:05:13.567775Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "716eeb2bc22bb821c7412d9a9c21074539cb6496c9165e9c4d1ebddd42adf5be"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"hero.webp" = "72e5d796776312a0c2fc539d153a52fca820b7f5de85432cce709aa7fb1c9802"
+"social.webp" = "799665a7afd43c9255cba9773fb63391ea6796a8f5d994fa6d0b84998509c331"
+"conflict.webp" = "93411900395dc288d874e99bf1f3a1735ebe48ff40a089865aae4f469fdc0c25"
+
+[alt]
+"en" = "Editorial illustration for „Postgres Range Aggregation for NLP and Everything Else“: Overlapping physical strips nest and merge into maximal containing spans on a clean worktable, conveying range aggregation through material form rather than notation."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "732b0f1a92422011092faa4cdfd71b14484d214e6119d3722a07970d4e628830"
+width = 960
+height = 720
+compression = 85
+request_id = "req_406cb5b119d2479792e934a4e3113960"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "843cfdcd65d157e9200af1f93d7a09eb7fae5c27c0f3e85ddcd9e8199bfc3d8c"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_a2d601ade0cd4255bb4cd4034b343699"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "a8a2d8e937517eaf7b59bd21b89e69c3f42df814e28f02f73d0c2a2d9fa83622"
+width = 960
+height = 720
+compression = 85
+request_id = "req_a8b4db4d42cf41f99da30cf8eee62e7e"
+placement = "approximately 362x272"

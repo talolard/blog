@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "d95ba10247dad0cbbd4ea46b6aeab1dd2080894718142ed4422e5196fe6f6704",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:54:45.442064Z",
+  "response_id": "resp_02b832e1ffd90f89016a941a00c12887d1b7ba1252b728a93e",
+  "scene": {
+    "metaphor": "Overlapping translucent range strips become a single larger enclosing band, like physical intervals nesting into one merged sleeve.",
+    "setting": "A polished cool-gray studio worktable with a miniature handmade set built from acetate, felt, foam, and thin cardstock; deep negative space behind it, banner-friendly and low on vertical clutter.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal has just nudged three staggered strips into a larger clear sleeve; one end is still sliding outward while the merged span already holds the stack together.",
+    "physical_materials": [
+      "cool-gray matte tabletop",
+      "cobalt acetate strips",
+      "mint acetate strips",
+      "one restrained warm coral clip",
+      "clear plastic sleeve or film channel",
+      "thin black binder clips",
+      "soft white studio card",
+      "tiny sanded foam risers"
+    ],
+    "semantic_anchors": [
+      "overlapping spans",
+      "nested containment",
+      "union/merge",
+      "source groups kept separate",
+      "maximal containing span"
+    ],
+    "avoid": [
+      "text or numbers",
+      "UI/chart/table layouts",
+      "cream paper",
+      "ornate borders",
+      "children’s palette",
+      "generic robots",
+      "injury or humiliation",
+      "gross-out imagery",
+      "busy multi-subject scenes"
+    ],
+    "image_instruction": "Create a polished editorial studio photograph on a cool-gray tabletop, with Tal Perry as a recognizable adult operator seated or leaning at the left edge, smiling with calm concentration and one hand guiding the set. Build the abstract idea as a tactile miniature world: three to five translucent cobalt and mint strips, each physically offset, are sliding into one larger clear acetate sleeve that visibly contains them all. Freeze the instant where one strip is still half-out while the merged band already spans the full cluster, making the “maximal containing span” feel literal. Keep the composition lateral for a 3:1 banner, with the merged strip system occupying the center-right and generous negative space above and behind. Use only one small warm coral accent, such as a clip or edge marker. Lighting should be soft studio key with crisp tonal separation, clean reflections, and a serious documentary finish. The main silhouette must read at thumbnail size, with no more than three large supporting props and one canonical cast throughout."
+  }
+}
