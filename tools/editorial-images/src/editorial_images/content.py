@@ -22,6 +22,7 @@ _INLINE_LINK = re.compile(r"\[(?P<label>[^\]]+)\]\([^)]*\)")
 _REFERENCE_LINK = re.compile(r"\[(?P<label>[^\]]+)\]\[[^\]]*\]")
 _REFERENCE_DEFINITION = re.compile(r"(?m)^\s*\[[^\]]+\]:\s*\S+.*$")
 _HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
+_IDENTITY_FILES = ("me1.jpeg", "me2.jpeg")
 
 
 def repository_root(start: Path | None = None) -> Path:
@@ -123,6 +124,12 @@ def load_post(root: Path, entry: CatalogEntry) -> PostSource:
         listed = ", ".join(str(path.relative_to(root)) for path in missing)
         raise FileNotFoundError(f"Missing declared reference(s): {listed}")
 
+    identity_paths = tuple(root / filename for filename in _IDENTITY_FILES)
+    missing_identity = tuple(path for path in identity_paths if not path.is_file())
+    if missing_identity:
+        listed = ", ".join(path.name for path in missing_identity)
+        raise FileNotFoundError(f"Missing Tal identity reference(s): {listed}")
+
     return PostSource(
         root=root,
         bundle=bundle,
@@ -131,6 +138,8 @@ def load_post(root: Path, entry: CatalogEntry) -> PostSource:
         title=front_matter_title(english),
         normalized_article=normalize_article(english),
         localized=tuple(localized),
+        identity_paths=identity_paths,
+        identity_hashes=tuple((path.name, file_sha256(path)) for path in identity_paths),
         reference_paths=reference_paths,
         reference_hashes=tuple((path.name, file_sha256(path)) for path in reference_paths),
     )

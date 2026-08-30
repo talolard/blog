@@ -16,7 +16,9 @@ from .hashing import bytes_sha256
 from .limits import RequestLimiter, request_with_retry
 from .manifest import is_stale, publish_staged, render_manifest
 from .models import GenerationEvent, OutputRecord, PostSource, Role, ROLE_SPECS
+from .planner import ScenePlanner
 from .prompting import assemble_prompt
+from .scene import current_record, new_record, render_record, SCENE_FILENAME, ScenePlan, ScenePlanRecord
 from .service import ImageClient
 
 LOGGER = logging.getLogger(__name__)
@@ -60,6 +62,7 @@ def _validate_bytes(content: bytes, role: Role) -> None:
 
 async def _one_image(
     post: PostSource,
+    scene: ScenePlan,
     role: Role,
     references: tuple[Path, ...],
     client: ImageClient,
@@ -73,7 +76,7 @@ async def _one_image(
     generated, retries = await request_with_retry(
         client,
         limiter,
-        prompt=assemble_prompt(post, role),
+        prompt=assemble_prompt(post, scene, role),
         size=spec.size,
         references=references,
         label=label,
@@ -87,16 +90,19 @@ async def _one_image(
 
 async def generate_post(
     post: PostSource,
+    planner: ScenePlanner,
     client: ImageClient,
     limiter: RequestLimiter,
     *,
     model: str,
+    planner_model: str,
     force: bool,
+    replan: bool,
 ) -> PostRun:
     """Stage desktop then concurrent recompositions, publishing only on success."""
 
     started = time.monotonic()
-    if not force and not is_stale(post):
+    if not force and not replan and not is_stale(post):
         LOGGER.info("%s: current; skipping", post.catalog.key)
         return PostRun(post.catalog.key, "current", 0, 0.0, ())
     events: list[GenerationEvent] = []
@@ -105,10 +111,25 @@ async def generate_post(
     try:
         with tempfile.TemporaryDirectory(prefix=".editorial-", dir=post.bundle) as temporary:
             staging = Path(temporary)
+            scene_record: ScenePlanRecord | None = None if replan else current_record(post)
+            if scene_record is None:
+                LOGGER.info("%s: scene planning started", post.catalog.key)
+                planned = await planner.create(post)
+                scene_record = new_record(
+                    post,
+                    planned.scene,
+                    model=planner_model,
+                    response_id=planned.response_id,
+                )
+                LOGGER.info("%s: scene planned (response %s)", post.catalog.key, planned.response_id)
+            else:
+                LOGGER.info("%s: reusing scene plan %s", post.catalog.key, scene_record.response_id)
+            (staging / SCENE_FILENAME).write_text(render_record(scene_record), encoding="utf-8")
             desktop_record, desktop_bytes, desktop_retries = await _one_image(
                 post,
+                scene_record.scene,
                 Role.HERO_DESKTOP,
-                post.reference_paths,
+                (*post.identity_paths, *post.reference_paths),
                 client,
                 limiter,
                 events,
@@ -118,10 +139,26 @@ async def generate_post(
             desktop_path.write_bytes(desktop_bytes)
 
             thumbnail_task = asyncio.create_task(
-                _one_image(post, Role.THUMBNAIL, (desktop_path,), client, limiter, events)
+                _one_image(
+                    post,
+                    scene_record.scene,
+                    Role.THUMBNAIL,
+                    (desktop_path, *post.identity_paths),
+                    client,
+                    limiter,
+                    events,
+                )
             )
             mobile_task = asyncio.create_task(
-                _one_image(post, Role.HERO_MOBILE, (desktop_path,), client, limiter, events)
+                _one_image(
+                    post,
+                    scene_record.scene,
+                    Role.HERO_MOBILE,
+                    (desktop_path, *post.identity_paths),
+                    client,
+                    limiter,
+                    events,
+                )
             )
             thumbnail_result, mobile_result = await asyncio.gather(thumbnail_task, mobile_task)
             thumbnail_record, thumbnail_bytes, thumbnail_retries = thumbnail_result
@@ -130,7 +167,13 @@ async def generate_post(
             (staging / ROLE_SPECS[Role.THUMBNAIL].filename).write_bytes(thumbnail_bytes)
             (staging / ROLE_SPECS[Role.HERO_MOBILE].filename).write_bytes(mobile_bytes)
             records = (thumbnail_record, desktop_record, mobile_record)
-            manifest = render_manifest(post, records, model=model, source_revision=source_revision(post.root))
+            manifest = render_manifest(
+                post,
+                scene_record,
+                records,
+                model=model,
+                source_revision=source_revision(post.root),
+            )
             (staging / "art.toml").write_text(manifest, encoding="utf-8")
             publish_staged(staging, post.bundle)
         elapsed = time.monotonic() - started
@@ -144,12 +187,15 @@ async def generate_post(
 
 async def generate_posts(
     posts: tuple[PostSource, ...],
+    planner: ScenePlanner,
     client: ImageClient,
     *,
     model: str,
+    planner_model: str,
     jobs: int,
     requests_per_minute: int,
     force: bool = False,
+    replan: bool = False,
 ) -> tuple[PostRun, ...]:
     """Overlap independent posts while one failure leaves the rest running."""
 
@@ -160,6 +206,15 @@ async def generate_posts(
 
     async def run(post: PostSource) -> PostRun:
         async with post_slots:
-            return await generate_post(post, client, limiter, model=model, force=force)
+            return await generate_post(
+                post,
+                planner,
+                client,
+                limiter,
+                model=model,
+                planner_model=planner_model,
+                force=force,
+                replan=replan,
+            )
 
     return tuple(await asyncio.gather(*(run(post) for post in posts)))

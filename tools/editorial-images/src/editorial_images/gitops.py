@@ -9,6 +9,7 @@ from collections.abc import Generator
 from pathlib import Path
 
 from .models import PostSource, ROLE_SPECS
+from .scene import SCENE_FILENAME
 
 
 def _git(root: Path, arguments: list[str], *, capture: bool = False) -> subprocess.CompletedProcess[str]:
@@ -54,7 +55,11 @@ def commit_post(post: PostSource) -> str:
     """Stage only generated contract files and return the resulting commit hash."""
 
     relative = post.bundle.relative_to(post.root)
-    explicit = [relative / "art.toml", *(relative / spec.filename for spec in ROLE_SPECS.values())]
+    explicit = [
+        relative / "art.toml",
+        relative / SCENE_FILENAME,
+        *(relative / spec.filename for spec in ROLE_SPECS.values()),
+    ]
     with git_lock(post.root):
         _git(post.root, ["add", "--", *(str(path) for path in explicit)])
         _git(post.root, ["commit", "-m", f"Add editorial art for {post.title}", "--", *(str(path) for path in explicit)])

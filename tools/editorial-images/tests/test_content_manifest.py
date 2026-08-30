@@ -13,6 +13,21 @@ from editorial_images.hashing import bytes_sha256
 from editorial_images.manifest import is_stale, parse_manifest, publish_staged, render_manifest
 from editorial_images.models import OutputRecord, Role, ROLE_SPECS
 from editorial_images.prompting import assemble_prompt
+from editorial_images.scene import new_record, planning_prompt, render_record, SCENE_FILENAME, ScenePlan
+
+
+def _scene() -> ScenePlan:
+    return ScenePlan(
+        metaphor="A tangled dependency machine on a clean remote pedestal",
+        setting="A cool-gray miniature engineering workshop",
+        humor_register="deadpan",
+        tal_role="Tal calmly unplugs the last absurd cable",
+        frozen_incident="The cable nest springs into a harmless victory pose",
+        physical_materials=("brushed metal", "cobalt cable", "mint resin"),
+        semantic_anchors=("remote GPU", "dependency isolation"),
+        avoid=("text", "generic robot"),
+        image_instruction="Photograph Tal calmly resolving a ridiculous physical dependency machine in a cool miniature workshop.",
+    )
 
 
 def _webp(size: tuple[int, int], color: str) -> bytes:
@@ -34,9 +49,17 @@ def test_catalog_has_exactly_thirty_published_posts_and_prompt_is_complete() -> 
     posts = load_all_posts(repository_root(Path(__file__)))
     assert len(posts) == 30
     post = next(item for item in posts if item.catalog.key == "genai/vibe-coding-stablenormal-modal")
-    prompt = assemble_prompt(post, Role.HERO_DESKTOP)
+    planner_prompt = planning_prompt(post)
+    assert "miniature practical set" in planner_prompt
+    assert "Tal Perry must appear as a recognizable character" in planner_prompt
+    assert "120 by 90" in planner_prompt
+    assert "native 3:1 banner" in planner_prompt
+    assert len(post.identity_paths) == 2
+    assert {path.name for path in post.identity_paths} == {"me1.jpeg", "me2.jpeg"}
+    prompt = assemble_prompt(post, _scene(), Role.HERO_DESKTOP)
     assert post.normalized_article in prompt
     assert post.catalog.concept in prompt
+    assert "Tal calmly unplugs" in prompt
     assert "1920x640" in prompt
 
 
@@ -51,11 +74,21 @@ def test_manifest_parsing_hash_staleness_and_atomic_publish(tmp_path: Path) -> N
         content = _webp((spec.width, spec.height), "#1647ff")
         (staged / spec.filename).write_bytes(content)
         records.append(OutputRecord(role, spec.filename, bytes_sha256(content), spec.width, spec.height, 85, f"req-{role.value}"))
-    manifest = render_manifest(source, tuple(records), model="test-model", source_revision="abc", generated_at=datetime(2026, 1, 1, tzinfo=UTC))
+    scene_record = new_record(source, _scene(), model="planner-test", response_id="resp-test")
+    (staged / SCENE_FILENAME).write_text(render_record(scene_record), encoding="utf-8")
+    manifest = render_manifest(
+        source,
+        scene_record,
+        tuple(records),
+        model="test-model",
+        source_revision="abc",
+        generated_at=datetime(2026, 1, 1, tzinfo=UTC),
+    )
     (staged / "art.toml").write_text(manifest, encoding="utf-8")
     publish_staged(staged, bundle)
     parsed = parse_manifest(bundle / "art.toml")
     assert parsed["status"] == "complete"
+    assert parsed["planner_model"] == "planner-test"
     assert not staged.exists() or not any(staged.iterdir())
 
     redirected = source.__class__(
@@ -66,6 +99,8 @@ def test_manifest_parsing_hash_staleness_and_atomic_publish(tmp_path: Path) -> N
         title=source.title,
         normalized_article=source.normalized_article,
         localized=source.localized,
+        identity_paths=source.identity_paths,
+        identity_hashes=source.identity_hashes,
         reference_paths=source.reference_paths,
         reference_hashes=source.reference_hashes,
     )

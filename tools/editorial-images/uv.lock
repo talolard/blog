@@ -52,6 +52,7 @@ source = { editable = "." }
 dependencies = [
     { name = "openai" },
     { name = "pillow" },
+    { name = "pydantic" },
     { name = "python-dotenv" },
 ]
 
@@ -66,6 +67,7 @@ dev = [
 requires-dist = [
     { name = "openai", specifier = ">=1.109.0" },
     { name = "pillow", specifier = ">=11.3.0" },
+    { name = "pydantic", specifier = ">=2.11.7" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
 ]
 

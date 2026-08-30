@@ -13,6 +13,7 @@ from PIL import Image
 from .hashing import file_sha256
 from .models import OutputRecord, PostSource, ROLE_SPECS
 from .prompting import PROMPT_VERSION, prompt_hash
+from .scene import current_record, SCENE_FILENAME, scene_hash, ScenePlanRecord
 
 Scalar = str | int | bool
 ManifestTable = dict[str, Scalar | dict[str, Scalar]]
@@ -42,6 +43,7 @@ def localized_alt(post: PostSource) -> dict[str, str]:
 
 def render_manifest(
     post: PostSource,
+    scene_record: ScenePlanRecord,
     outputs: tuple[OutputRecord, ...],
     *,
     model: str,
@@ -60,7 +62,11 @@ def render_manifest(
         f"thread = {_quote(post.catalog.thread)}",
         f"visual_concept = {_quote(post.catalog.concept)}",
         f"prompt_version = {_quote(PROMPT_VERSION)}",
-        f"prompt_hash = {_quote(prompt_hash(post))}",
+        f"prompt_hash = {_quote(prompt_hash(post, scene_record.scene))}",
+        f"scene_hash = {_quote(scene_hash(scene_record))}",
+        f"planner_version = {_quote(scene_record.planner_version)}",
+        f"planner_model = {_quote(scene_record.planner_model)}",
+        f"planner_response_id = {_quote(scene_record.response_id)}",
         f"model = {_quote(model)}",
         f"source_git_revision = {_quote(source_revision)}",
         f"generated_at = {_quote(timestamp)}",
@@ -72,6 +78,8 @@ def render_manifest(
         "[inputs.articles]",
     ]
     lines.extend(f"{_quote(article.language)} = {_quote(article.sha256)}" for article in post.localized)
+    lines.extend(["", "[inputs.identity]"])
+    lines.extend(f"{_quote(name)} = {_quote(digest)}" for name, digest in post.identity_hashes)
     lines.extend(["", "[inputs.references]"])
     lines.extend(f"{_quote(name)} = {_quote(digest)}" for name, digest in post.reference_hashes)
     lines.extend(["", "[alt]"])
@@ -105,15 +113,25 @@ def is_stale(post: PostSource) -> bool:
     path = post.bundle / "art.toml"
     if not path.is_file():
         return True
+    scene_record = current_record(post)
+    if scene_record is None:
+        return True
     manifest = parse_manifest(path)
-    if manifest.get("status") != "complete" or manifest.get("prompt_hash") != prompt_hash(post):
+    if (
+        manifest.get("status") != "complete"
+        or manifest.get("prompt_hash") != prompt_hash(post, scene_record.scene)
+        or manifest.get("scene_hash") != scene_hash(scene_record)
+    ):
         return True
     inputs = cast(dict[str, dict[str, str]], manifest.get("inputs", {}))
     articles = inputs.get("articles", {})
+    identity = inputs.get("identity", {})
     references = inputs.get("references", {})
     if articles != {article.language: article.sha256 for article in post.localized}:
         return True
     if references != dict(post.reference_hashes):
+        return True
+    if identity != dict(post.identity_hashes):
         return True
     outputs = cast(dict[str, dict[str, Scalar]], manifest.get("outputs", {}))
     for role, spec in ROLE_SPECS.items():
@@ -132,6 +150,8 @@ def validate_bundle(post: PostSource) -> tuple[str, ...]:
     """Return all contract violations for one bundle instead of failing fast."""
 
     errors: list[str] = []
+    if current_record(post) is None:
+        errors.append(f"{post.catalog.key}: missing, invalid, or stale {SCENE_FILENAME}")
     manifest_path = post.bundle / "art.toml"
     if not manifest_path.is_file():
         return (f"{post.catalog.key}: missing art.toml",)
@@ -172,7 +192,7 @@ def validate_bundle(post: PostSource) -> tuple[str, ...]:
 def publish_staged(staging: Path, bundle: Path) -> None:
     """Expose a complete staged set only after all files and manifest exist."""
 
-    required = [spec.filename for spec in ROLE_SPECS.values()] + ["art.toml"]
+    required = [spec.filename for spec in ROLE_SPECS.values()] + [SCENE_FILENAME, "art.toml"]
     missing = [name for name in required if not (staging / name).is_file()]
     if missing:
         raise FileNotFoundError(f"Incomplete staging set: {', '.join(missing)}")

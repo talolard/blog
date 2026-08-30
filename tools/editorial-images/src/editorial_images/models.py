@@ -70,6 +70,8 @@ class PostSource:
     title: str
     normalized_article: str
     localized: tuple[LocalizedArticle, ...]
+    identity_paths: tuple[Path, ...]
+    identity_hashes: tuple[tuple[str, str], ...]
     reference_paths: tuple[Path, ...]
     reference_hashes: tuple[tuple[str, str], ...]
 

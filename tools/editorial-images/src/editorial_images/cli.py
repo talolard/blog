@@ -15,10 +15,12 @@ from .content import load_all_posts, repository_root
 from .gitops import commit_post, require_clean_bundle
 from .manifest import is_stale, validate_bundle
 from .models import PostSource
+from .planner import DEFAULT_PLANNER_MODEL, OpenAIScenePlanner
 from .prompting import PROMPT_VERSION, prompt_hash
 from .review import build_review
 from .runner import PostRun, generate_posts
 from .service import OpenAIImageClient
+from .scene import current_record, planner_input_hash
 
 DEFAULT_MODEL = "gpt-image-2-2026-04-21"
 LOGGER = logging.getLogger(__name__)
@@ -41,11 +43,13 @@ class Arguments(argparse.Namespace):
     force: bool
     dry_run: bool
     model: str
+    planner_model: str
     jobs: int
     requests_per_minute: int
     commit: bool
     validate: bool
     review: bool
+    replan: bool
 
 
 def parser() -> argparse.ArgumentParser:
@@ -60,6 +64,8 @@ def parser() -> argparse.ArgumentParser:
     _ = result.add_argument("--force", action="store_true")
     _ = result.add_argument("--dry-run", action="store_true")
     _ = result.add_argument("--model", default=DEFAULT_MODEL)
+    _ = result.add_argument("--planner-model", default=DEFAULT_PLANNER_MODEL)
+    _ = result.add_argument("--replan", action="store_true")
     _ = result.add_argument("--jobs", type=int, default=2)
     _ = result.add_argument("--requests-per-minute", type=int, default=5)
     _ = result.add_argument("--commit", action="store_true")
@@ -103,7 +109,11 @@ def select_posts(arguments: Arguments, root: Path, all_posts: tuple[PostSource, 
 def _print_dry_run(posts: tuple[PostSource, ...], model: str) -> None:
     print(f"dry-run: {len(posts)} posts, model={model}, prompt={PROMPT_VERSION}")
     for post in posts:
-        print(f"{post.catalog.key}\t{post.catalog.audit_mode}\t{prompt_hash(post)}")
+        scene_record = current_record(post)
+        if scene_record is None:
+            print(f"{post.catalog.key}\t{post.catalog.audit_mode}\tplan-needed\t{planner_input_hash(post)}")
+        else:
+            print(f"{post.catalog.key}\t{post.catalog.audit_mode}\tplan-current\t{prompt_hash(post, scene_record.scene)}")
 
 
 def _validate(posts: tuple[PostSource, ...]) -> int:
@@ -117,6 +127,8 @@ def _validate(posts: tuple[PostSource, ...]) -> int:
 
 
 async def _generate(arguments: Arguments, root: Path, posts: tuple[PostSource, ...]) -> tuple[PostRun, ...]:
+    if arguments.replan and not arguments.force:
+        raise ValueError("--replan requires --force because a new scene must regenerate all three images")
     for post in posts:
         require_clean_bundle(post)
     load_dotenv(root / ".env", override=False)
@@ -124,21 +136,27 @@ async def _generate(arguments: Arguments, root: Path, posts: tuple[PostSource, .
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY is not set in the environment or repository .env")
     LOGGER.info(
-        "Selected %d post(s); model=%s, jobs=%d, requests/minute=%d, force=%s",
+        "Selected %d post(s); image-model=%s, planner-model=%s, jobs=%d, requests/minute=%d, force=%s, replan=%s",
         len(posts),
         arguments.model,
+        arguments.planner_model,
         arguments.jobs,
         arguments.requests_per_minute,
         arguments.force,
+        arguments.replan,
     )
+    planner = OpenAIScenePlanner(api_key, arguments.planner_model)
     client = OpenAIImageClient(api_key, arguments.model)
     return await generate_posts(
         posts,
+        planner,
         client,
         model=arguments.model,
+        planner_model=arguments.planner_model,
         jobs=arguments.jobs,
         requests_per_minute=arguments.requests_per_minute,
         force=arguments.force,
+        replan=arguments.replan,
     )
 
 
