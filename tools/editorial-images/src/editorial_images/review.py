@@ -47,6 +47,8 @@ def build_review(root: Path, posts: tuple[PostSource, ...], runs: tuple[PostRun,
     """Create grouped indexes, contact sheets, placement previews, and run data."""
 
     destination = root / "artifacts" / "editorial-image-review"
+    if destination.exists():
+        shutil.rmtree(destination)
     sheets = destination / "sheets"
     previews = destination / "previews"
     destination.mkdir(parents=True, exist_ok=True)
