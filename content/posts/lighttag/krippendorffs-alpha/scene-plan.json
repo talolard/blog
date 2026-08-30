@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "084f3936aa835a6b24d7131d425379a8df5b59a1b05512fedfdbda333cd9ca78",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:51:47.815972Z",
+  "response_id": "resp_0fcdf8323b6e3f96016a94194e74c087d1861966b42c7a4eb6",
+  "scene": {
+    "metaphor": "A tiny editorial lab where annotators are represented as stamp-holding judges working over a translucent shared grid, while a calm analog measuring instrument quietly evaluates how well their marks line up.",
+    "setting": "Polished studio tabletop diorama on a cool-gray surface with a wide horizontal negative-space backdrop, like a miniature data-quality workbench under soft museum lighting.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal has just paused mid-adjustment as three miniature judges leave mismatched ink marks on the same translucent grid; a small calibrated dial beside them settles on a sober reading, capturing the moment before the final verdict.",
+    "physical_materials": [
+      "matte cool-gray foamboard base",
+      "translucent acrylic grid sheet",
+      "hand-cut paper cards and tabs",
+      "tiny rubber stamp pads",
+      "clear acrylic ruler or caliper",
+      "miniature analog dial gauge",
+      "cobalt ink",
+      "mint ink",
+      "one restrained warm accent in Tal’s clothing or a stamp handle",
+      "soft directional studio light",
+      "subtle shadow-casting props"
+    ],
+    "semantic_anchors": [
+      "inter-annotator agreement",
+      "shared grid",
+      "multiple annotators",
+      "reliability metric",
+      "observed vs expected disagreement",
+      "calibration",
+      "missing/incomplete labels"
+    ],
+    "avoid": [
+      "flashcard framing",
+      "children’s palette",
+      "cream paper",
+      "ornate borders",
+      "text in scene",
+      "screenshots or UI layout",
+      "generic robots",
+      "humiliation",
+      "injury",
+      "gross-out",
+      "logos",
+      "watermarks"
+    ],
+    "image_instruction": "Create a polished studio photograph of a miniature data-lab diorama on a cool-gray tabletop, shot as a wide lateral banner with abundant negative space and one dominant subject. Tal Perry appears recognizable as the calm operator: dark curly hair, short beard, expressive face, leaning in from the left edge in a serious, focused pose, one hand adjusting a clear acrylic ruler over the set. In the center, three tiny human judges made from hand-cut matte paper and molded clay stand on a translucent acrylic grid sheet, each pressing a small stamp or marker, with their marks slightly different. To the right, a calm analog measuring instrument—a small dial gauge with a needle—quietly indicates the level of agreement, not dramatic, just exact. Use a cool-gray foundation with cobalt and mint accents, and only one restrained warm accent in Tal’s clothing or a tool handle. Keep the silhouette thick and simple for thumbnail legibility, with high tonal separation, no text, no icons, no infographic layout, and no extra props beyond the grid, marks, and gauge. Freeze the instant of harmless absurdity under soft, polished studio light."
+  }
+}

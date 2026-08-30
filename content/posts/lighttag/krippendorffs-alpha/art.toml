@@ -1,0 +1,61 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "recompose-source"
+thread = "ML Systems"
+visual_concept = "Several judges place marks onto a shared translucent grid while one calm measuring instrument evaluates agreement without pretending disagreement disappears."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "ffeb61f16deb939d19fa6eadca8643bb22ac5729f6150947aa9b1cfb7c97c3c3"
+scene_hash = "4b3fe23e2fe604b3cc3b39a119fd30082a545bdbb9a38e8980d8a544cae074d9"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0fcdf8323b6e3f96016a94194e74c087d1861966b42c7a4eb6"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:01:52.435010Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "27bac9efb785668fc2cc86a9826f0e8e4fe2ce47796956c0f8227e1fe9965bda"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"social.webp" = "2fac2e36f57044d63beb2b3932c868e07d271fae78408c43ba2a27b62e4c9a0f"
+"agg-matrix.webp" = "e9b5bb431745ece376a8da811e420d161d88c10db766c9f28d76b04736000c33"
+
+[alt]
+"en" = "Editorial illustration for „Simpledorff: Krippendorff's Alpha on DataFrames“: Several judges place marks onto a shared translucent grid while one calm measuring instrument evaluates agreement without pretending disagreement disappears."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "1d44135a6ebf43e9ed565bddeb336186f0d5ed1c1c65e5f5b5f49ef1bc13232c"
+width = 960
+height = 720
+compression = 85
+request_id = "req_f74b527798a140f09224859d96353c50"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "638583f3b5ead38b1bebb7266c62ac57203431faeebc3f992484d9a8e0f1f8f5"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_f85de72ac5324277bee4942efff3e4e5"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "e4a1b8e0aa5e6d267a12d185ec64a5aaba5120bd211d773d3f74ab0dc03d20c2"
+width = 960
+height = 720
+compression = 85
+request_id = "req_2a9f4988f0aa45eea40bf21a4d173057"
+placement = "approximately 362x272"
