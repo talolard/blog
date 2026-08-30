@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "recompose-source"
 thread = "ML Systems"
 visual_concept = "A radiologist-like observer extracting one reliable signal from layered translucent, noisy chest-film textures; expressive editorial art, not a medical infographic."
-prompt_version = "editorial-v1"
-prompt_hash = "52c63bf53a10a37ccc5d8d2975d39989eb0f568799c9d995c266403f07cb5770"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "0819d8de1f0b1db3301430d18de2a2c888ccf727542886af0586960e5cd7c135"
+scene_hash = "2d29b6df2f796001cad7ce4faca9117e837e926ac360ef63b4af2b4f81f6efb7"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_01a2413e0e2841a9016a941867e5a887d1b014104e339f1202"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:47:23.333234Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:59:13.548815Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -17,6 +21,10 @@ selection = "picture source at 760px and below"
 
 [inputs.articles]
 "en" = "9b4e13c38a07ccb527f8f58b95ebcc3c361e73bddaa818ba67fd408254fc6f14"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "social.webp" = "8d7d8281d08fba0208285021bc268f70bdc08862ab79aebfb0e8015759c04e7d"
@@ -29,27 +37,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "f06f120709102984bb196183414dd78b1c4d656872ba7747c8e56a78db02ead5"
+sha256 = "8f46c62bfff6252bf4b667c144566c488e8eefeeaa0424168c61b6ace2cb2043"
 width = 960
 height = 720
 compression = 85
-request_id = "req_3ac12de46b6a4e1e94e74e4d4d88153d"
+request_id = "req_8a2993391cb242a9b30e5ba9f86ea8ff"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "5f216b02561af2060794f42fd6be4b71739513fe8d3a470960294229f73935f7"
+sha256 = "68ce08d0667b0d4d5517af7602408ba9e2b187bbc758ef8b97ce2a0e45f5cc8e"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_3b376fadd2fb4188817476ee6c494c1d"
+request_id = "req_035b9d4f9b7e43fcbab980643439258e"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "9314e874d13509ade9dfacba1b44ea5231b023517a8a9d87f3988d125cf4d9a2"
+sha256 = "1c9bc32a8e1a1ebabb6b4e8153698560cf2710df299bc48e9f5a9411f9f41ec9"
 width = 960
 height = 720
 compression = 85
-request_id = "req_4ff502c33c3a461bbc558862f311849f"
+request_id = "req_bc00fe004d6244f98cec5862f584c84f"
 placement = "approximately 362x272"

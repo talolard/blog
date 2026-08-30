@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "235834e11b2254d93c28bda6bb802fd93e35b3fa62e53d8dc103839d16518d15",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:47:56.412240Z",
+  "response_id": "resp_01a2413e0e2841a9016a941867e5a887d1b014104e339f1202",
+  "scene": {
+    "metaphor": "A radiologist’s signal hunt rendered as a miniature light-table world: one clean chest-film shape discovered inside a stack of translucent noisy sheets.",
+    "setting": "Polished studio tabletop set on a cool-gray surface, with a low lateral miniature lightbox stretching across the frame and lots of open negative space above and around it.",
+    "humor_register": "deadpan",
+    "tal_role": "observer",
+    "frozen_incident": "Tal leans in with a focused, slightly amused expression as a tiny fan has just nudged several translucent film layers askew, exposing one crisp mint-tinted silhouette beneath the noise.",
+    "physical_materials": [
+      "matte cool-gray tabletop",
+      "stacked translucent acetate film sheets with cloudy gray speckle",
+      "frosted acrylic lightbox",
+      "miniature cobalt clip and mint marker tab",
+      "subtle coral accent in Tal’s tank top",
+      "soft diffusion gel",
+      "brushed metal lamp"
+    ],
+    "semantic_anchors": [
+      "chest-x-ray translucency",
+      "layered noise",
+      "one reliable signal",
+      "annotation / extraction",
+      "clinical observation",
+      "partial coverage vs full coverage"
+    ],
+    "avoid": [
+      "medical infographic layout",
+      "literal text or labels",
+      "generic robots",
+      "cute cartoon style",
+      "cream paper",
+      "ornate borders",
+      "children’s palette",
+      "injury or gross-out",
+      "humiliation",
+      "busy prop clutter",
+      "tall central tower"
+    ],
+    "image_instruction": "Create a polished editorial studio photograph in a cool-gray palette with cobalt and mint accents and only one restrained warm note. Tal Perry must be clearly recognizable: curly dark hair, salt-and-pepper beard, expressive eyes, and a grounded, observant presence. Place him as an operator-observer at a low, horizontal miniature light-table set so the composition reads across a 3:1 banner and still holds as a single dominant silhouette at thumbnail size. In front of him, stack three to five translucent acetate chest-film sheets over a frosted acrylic lightbox; each sheet carries soft cloudy noise, speckle, and faint layered shadows. At the frozen instant, a tiny fan has just slid the top sheets sideways, revealing one crisp mint-lit chest silhouette beneath the clutter. Tal pinches one corner with tweezers or a gloved fingertip, leaning in with a calm, satisfied half-smile as if he has found the one reliable signal. Keep props to a maximum of three large supporting forms, with generous negative space, high tonal separation, and serious studio lighting that makes the absurd miniature world feel tactile and precise."
+  }
+}
