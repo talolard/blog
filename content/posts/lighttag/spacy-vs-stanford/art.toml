@@ -1,0 +1,63 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "ML Systems"
+visual_concept = "Three distinct field instruments inspect the same messy language specimen and disagree in revealing ways, emphasizing practical comparison over a winner podium."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "0f4f471d0bf9b41b1907d9c16101d586b87d93b220c9388c592e62994bebab07"
+scene_hash = "00636acba0588a21b07bc8493a138775fd24682ee996c6fd5638bfd267ee5941"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0615713098738f44016a941b11c91887d1ae86e001f865abaa"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:09:41.811428Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "45bdcf08b038f143611c9f5079d59ec7b417903488b931009de04588bffe9ba1"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"social.webp" = "0657ac642d964a733262c9d8193a60199bdc5dddadd0d1b579840f463ca52967"
+"intermodelagreement.webp" = "f997251b34064362e9d73f2fe63477c591a46e1568c4ad4c49b95f2bd581041a"
+"spacy-fp.webp" = "4eae19dfdb83bf8c391e70376d340094ad781be71e7d7b56163785a1e6f7e60d"
+"gpe-prec-rec.webp" = "45ebba91716a6bafa3854fe0db211ae7fec2676bf597588925e2d346b4ba01e4"
+
+[alt]
+"en" = "Editorial illustration for „Which Open-Source NER Model Is Best? Comparing CoreNLP, spaCy, and Flair“: Three distinct field instruments inspect the same messy language specimen and disagree in revealing ways, emphasizing practical comparison over a winner podium."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "e2ff9aaeee8174eb1e199af3ee5e6ffe4751f068ea80e893f84dfefbee84f955"
+width = 960
+height = 720
+compression = 85
+request_id = "req_384fa88aef004b6ba2260f588ab1cb70"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "8adfd96a8e081e56263719824d9cd3afccfd6207a3fc006f72d62a601eb79fc3"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_6079bf7f2fd54a93a89d6e4597240d89"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "d65bfa8ae1bb36e9520877bd8e65c2502e5d06fe5368baccdffa2a81d2191cea"
+width = 960
+height = 720
+compression = 85
+request_id = "req_38033c84685f4ff6ac436f6854ec2498"
+placement = "approximately 362x272"

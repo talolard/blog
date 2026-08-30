@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "4004475c20be75544f15221a020f06b8de514f9aadbe9afeabbb9b7e2deab836",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:59:19.256864Z",
+  "response_id": "resp_0615713098738f44016a941b11c91887d1ae86e001f865abaa",
+  "scene": {
+    "metaphor": "Three rival field instruments inspect the same unruly language specimen on a miniature lab bench, each one registering the same evidence differently.",
+    "setting": "A polished cool-gray studio tabletop built as a tiny annotation lab, with a lateral layout and deep negative space like a clean editorial banner.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is gently turning a calibration dial as one of the three inspection rigs slips a mint tag off the specimen strip, causing a harmless mismatch exactly at the moment of comparison.",
+    "physical_materials": [
+      "cool-gray felt base",
+      "frosted acetate specimen strip",
+      "thin brass rails",
+      "cobalt and mint paper clips",
+      "matte black mini lenses",
+      "one restrained coral accent in Tal's tank top",
+      "soft resin display blocks",
+      "fine dusting of chalky paper fibers"
+    ],
+    "semantic_anchors": [
+      "three distinct inspection tools",
+      "same messy language specimen",
+      "comparison rather than winner podium",
+      "annotation review and disagreement",
+      "practical, hands-on evaluation"
+    ],
+    "avoid": [
+      "flashcard look",
+      "cream paper",
+      "ornate borders",
+      "children's palette",
+      "generic robots",
+      "text labels",
+      "UI screens",
+      "podium composition",
+      "injury",
+      "humiliation",
+      "gross-out",
+      "logos",
+      "watermarks"
+    ],
+    "image_instruction": "Create a polished studio photograph of Tal Perry as a recognizable operator in a miniature annotation lab on a cool-gray tabletop. Use his curly dark hair, salt-and-pepper beard, warm smile, and coral tank top as the single restrained warm accent; keep the rest in cool grays, cobalt, and mint. Tal stands to the left in a relaxed half-profile, one hand on a tiny calibration dial, eyes focused on the specimen with a calm, amused expression. In front of him, three distinct practical inspection rigs—each a different small handheld field instrument with brass, black, and translucent parts—lean over the same crumpled translucent language strip, each leaving slightly different mint and cobalt marker tabs. Freeze a harmless absurd incident as one rig slips a tag sideways while the others remain steady, suggesting disagreement without chaos. Use generous negative space, strong tonal separation, thick simple silhouettes, and no more than three large supporting props. Light it like premium editorial product photography with soft directional highlights and crisp shadow edges, and stage the action laterally so the image reads clearly as a 3:1 banner or a tight 120 by 90 crop."
+  }
+}
