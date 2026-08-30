@@ -1,79 +1,87 @@
 {{ define "main" }}
-  {{ $featured := .Site.GetPage "/posts/genai/engineering-agents-building-trust" }}
-  {{ $recentPaths := slice
-    "/posts/genai/vibe-coding-stablenormal-modal"
-    "/posts/genai/learning-to-read-with-ai"
-    "/posts/genai/triton-inference-server"
-  }}
-  <section class="home-hero" aria-labelledby="home-thesis">
-    <div>
-      <p class="eyebrow">Tal Perry / Berlin / Applied ML</p>
-      <h1 id="home-thesis">Building ML systems people can <em>actually use.</em></h1>
-    </div>
-    <aside class="status-rail" aria-label="Current status">
-      <dl>
-        <dt>Current</dt><dd>Agents that measure rooms</dd>
-        <dt>Based</dt><dd>Berlin, Germany</dd>
-        <dt>Previously</dt><dd>LightTag → Primer</dd>
-        <dt>Also</dt><dd>Dad, climber, explainer</dd>
-      </dl>
-    </aside>
-  </section>
-
-  <div class="home-grid">
-    <section aria-labelledby="recent-writing">
-      <div class="section-heading">
-        <h2 id="recent-writing">Recent writing</h2>
-        <a class="section-link" href="{{ "/posts/" | relLangURL }}">View all {{ len (where .Site.RegularPages "Section" "posts") }} →</a>
-      </div>
-      {{ with $featured }}
-        {{ $cover := partial "cover.html" . }}
-        <article class="featured-piece{{ if not $cover }} featured-piece--no-art{{ end }}">
-          {{ with $cover }}
-            {{ $image := index . "resource" }}
-            <a class="featured-piece__image" href="{{ $featured.RelPermalink }}" tabindex="-1" aria-hidden="true">
-              <img src="{{ $image.RelPermalink }}" width="280" height="210" alt="" loading="eager" decoding="async">
-            </a>
-          {{ end }}
-          <div class="featured-piece__copy">
-            <span class="meta">{{ partial "editorial-thread.html" . }} · {{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
-            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            <p>{{ .Description }}</p>
-            <a class="section-link" href="{{ .RelPermalink }}">Read →</a>
-          </div>
-        </article>
-      {{ end }}
-      {{ range $index, $path := $recentPaths }}
-        {{ with $.Site.GetPage $path }}
-          <a class="post-row" href="{{ .RelPermalink }}">
-            <span class="row-index">0{{ add $index 2 }}</span>
-            <h3>{{ .Title }}</h3>
-            <span class="meta">{{ partial "editorial-thread.html" . }} · {{ .ReadingTime }} min</span>
-          </a>
-        {{ end }}
-      {{ end }}
-    </section>
-
-    <aside id="threads" aria-labelledby="thread-heading">
-      <div class="section-heading"><h2 id="thread-heading">Editorial threads</h2><span class="meta">Browse by question</span></div>
-      <div class="thread-list">
-        {{ range $index, $item := slice
-          (dict "thread" "Agents & AI" "title" "How should agents behave?" "dek" "Trust, memory, tools, interfaces")
-          (dict "thread" "ML Systems" "title" "How does ML survive reality?" "dek" "Serving, data, evaluation")
-          (dict "thread" "Building" "title" "What makes a company work?" "dek" "LightTag, product, founding")
-          (dict "thread" "Life & Learning" "title" "What is worth learning?" "dek" "Language, parenting, experiments")
-        }}
-          <a class="thread-link" href="{{ printf "/posts/?thread=%s" (urlquery .thread) | relLangURL }}">
-            <span class="thread-number">0{{ add $index 1 }}</span>
-            <span><strong>{{ .title }}</strong><small>{{ .dek }}</small></span>
-          </a>
-        {{ end }}
-      </div>
-    </aside>
+{{ $featured := .Site.GetPage "/posts/genai/engineering-agents-building-trust" }}
+{{ $recentPaths := slice
+"/posts/genai/vibe-coding-stablenormal-modal"
+"/posts/genai/learning-to-read-with-ai"
+"/posts/genai/triton-inference-server"
+}}
+<section class="home-hero" aria-labelledby="home-thesis">
+  <div>
+    <p class="eyebrow">Tal Perry / Inference / Applied ML</p>
+    <h1 id="home-thesis">Megawatts to <em>Megabucks.</em></h1>
   </div>
+  <aside class="status-rail" aria-label="Current status">
+    <dl>
+      <dt>Current</dt>
+      <dd>Inference @ Nebius</dd>
+      <dt>Founded → Sold</dt>
+      <dd>LightTag → Primer</dd>
+      <dt>Based</dt>
+      <dd>Berlin, Germany</dd>
+      <dt>Also</dt>
+      <dd>Kids, Ashtanga, bouldering</dd>
+    </dl>
+  </aside>
+</section>
 
-  <section class="note-strip">
-    <p><strong>One-line biography:</strong> I build products and teams around applied machine learning—and write down what surprised me.</p>
-    <a class="section-link" href="{{ "/about/" | relLangURL }}">More about me →</a>
+<div class="home-grid">
+  <section aria-labelledby="recent-writing">
+    <div class="section-heading">
+      <h2 id="recent-writing">Recent writing</h2>
+      <a class="section-link" href="{{ "/posts/" | relLangURL }}">View all {{ len (where .Site.RegularPages "Section"
+        "posts") }} →</a>
+    </div>
+    {{ with $featured }}
+    {{ $cover := partial "cover.html" . }}
+    <article class="featured-piece{{ if not $cover }} featured-piece--no-art{{ end }}">
+      {{ with $cover }}
+      {{ $image := index . "resource" }}
+      <a class="featured-piece__image" href="{{ $featured.RelPermalink }}" tabindex="-1" aria-hidden="true">
+        <img src="{{ $image.RelPermalink }}" width="280" height="210" alt="" loading="eager" decoding="async">
+      </a>
+      {{ end }}
+      <div class="featured-piece__copy">
+        <span class="meta">{{ partial "editorial-thread.html" . }} · {{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }}
+          min</span>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Description }}</p>
+        <a class="section-link" href="{{ .RelPermalink }}">Read →</a>
+      </div>
+    </article>
+    {{ end }}
+    {{ range $index, $path := $recentPaths }}
+    {{ with $.Site.GetPage $path }}
+    <a class="post-row" href="{{ .RelPermalink }}">
+      <span class="row-index">0{{ add $index 2 }}</span>
+      <h3>{{ .Title }}</h3>
+      <span class="meta">{{ partial "editorial-thread.html" . }} · {{ .ReadingTime }} min</span>
+    </a>
+    {{ end }}
+    {{ end }}
   </section>
+
+  <aside id="threads" aria-labelledby="thread-heading">
+    <div class="section-heading">
+      <h2 id="thread-heading">Editorial threads</h2><span class="meta">Browse by question</span>
+    </div>
+    <div class="thread-list">
+      {{ range $index, $item := slice
+      (dict "thread" "Agents & AI" "title" "How should agents behave?" "dek" "Trust, memory, tools, interfaces")
+      (dict "thread" "ML Systems" "title" "How does ML survive reality?" "dek" "Serving, data, evaluation")
+      (dict "thread" "Building" "title" "What makes a company work?" "dek" "LightTag, product, founding")
+      (dict "thread" "Life & Learning" "title" "What is worth learning?" "dek" "Language, parenting, experiments")
+      }}
+      <a class="thread-link" href="{{ printf "/posts/?thread=%s" (urlquery .thread) | relLangURL }}">
+        <span class="thread-number">0{{ add $index 1 }}</span>
+        <span><strong>{{ .title }}</strong><small>{{ .dek }}</small></span>
+      </a>
+      {{ end }}
+    </div>
+  </aside>
+</div>
+
+<section class="note-strip">
+  <p><strong>One-line biography:</strong> I've been writing about AI since we called it ML.</p>
+  <a class="section-link" href="{{ "/about/" | relLangURL }}">More about me →</a>
+</section>
 {{ end }}

@@ -8,7 +8,7 @@ from playwright.sync_api import Browser, Page
 def test_homepage_curation_and_compact_desktop_viewport(page: Page, base_url: str) -> None:
     page.set_viewport_size({"width": 1440, "height": 1000})
     page.goto(f"{base_url}/en/")
-    assert "Building ML systems people can actually use." in page.locator(".home-hero h1").inner_text()
+    assert page.locator(".home-hero h1").inner_text() == "Megawatts to Megabucks."
     assert page.locator(".featured-piece h3").filter(has_text="Engineering Agents").count() == 1
     assert page.locator(".post-row").count() == 3
     assert page.locator(".thread-link").count() == 4

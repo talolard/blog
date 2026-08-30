@@ -1,14 +1,21 @@
 +++
 title = 'About'
-description = 'Product building, applied machine learning, and notes from Berlin.'
+description = 'ML/AI, inference, and orderly chaos.'
 date = 2024-06-01T00:00:00+01:00
 slug = 'about'
 draft = false
 +++
 
-Hi, I’m Tal. I build products and teams at the intersection of applied machine learning and customer outcomes. I’ve founded and sold companies, shipped ML-heavy systems, and coach teams on bringing rigor to experiments without losing momentum.
+The things I’m proudest of are my kids and a massive plastic tree I built with a friend in the Israeli desert.
 
-These days you’ll find me splitting time between Berlin and the internet, writing about product leadership, execution, and the craft of building thoughtful tools. When I’m not working, I’m learning how to be a better dad, partner, and climber.
+One time, I crossed the Himalayas on a motorcycle.
+
+I went to Burning Man instead of taking my high school final exams.
+
+### Professionally
+I’m a principal product manager at Nebius’s Token Factory.
+
+Before that, I was at Primer, which had acquired my annotation company, LightTag, before ChatGPT came out. Together, we adapted to a new reality, and I learned how to run LLM inference on premises.
 
 <!-- vale off -->
 If you’d like to collaborate or chat, reach me at [tal@talperry.com](mailto:tal@talperry.com).
