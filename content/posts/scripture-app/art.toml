@@ -28,9 +28,9 @@ selection = "picture source at 760px and below"
 "kase.jpeg" = "3f235a52c19712033a8df26accb29557d9d7f9ca1f8f4de73da4a32ff3064f33"
 
 [alt]
-"de" = "Editorial illustration for Ich bin nicht der Gründer, den diese App verdient: A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
-"he" = "Editorial illustration for אני לא המייסד שהאפליקציה הזו ראויה לו: A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
-"en" = "Editorial illustration for I’m Not the Founder This App Deserves: A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
+"de" = "Redaktionelle Illustration zum Beitrag „Ich bin nicht der Gründer, den diese App verdient“: Ein Gründer steht vor einer schön beleuchteten Produkttür, die sichtbar zu einer anderen Gemeinschaft gehört, und entscheidet sich für Identität statt eines attraktiven Marktes."
+"he" = "איור מערכתי למאמר „אני לא המייסד שהאפליקציה הזו ראויה לו“: מייסד עומד מחוץ לדלת מוצר מוארת ששייכת בבירור לקהילה אחרת, ובוחר בהתאמה ובזהות על פני שוק מושך."
+"en" = "Editorial illustration for „I’m Not the Founder This App Deserves“: A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
 
 [outputs.thumbnail]
 path = "thumbnail.webp"

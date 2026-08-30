@@ -25,8 +25,17 @@ def _quote(value: str) -> str:
 def localized_alt(post: PostSource) -> dict[str, str]:
     """Build deterministic localized alt text from each translated title and concept."""
 
+    concepts = dict(post.catalog.localized_concepts)
+    prefixes = {
+        "de": "Redaktionelle Illustration zum Beitrag",
+        "he": "איור מערכתי למאמר",
+        "en": "Editorial illustration for",
+    }
     return {
-        article.language: f"Editorial illustration for {article.title}: {post.catalog.concept}"
+        article.language: (
+            f"{prefixes.get(article.language, prefixes['en'])} „{article.title}“: "
+            f"{concepts.get(article.language, post.catalog.concept)}"
+        )
         for article in post.localized
     }
 

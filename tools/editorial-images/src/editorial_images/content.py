@@ -87,6 +87,11 @@ def load_catalog(root: Path) -> dict[str, CatalogEntry]:
             audit_mode=cast(str, values["audit_mode"]),
             concept=cast(str, values["concept"]),
             references=tuple(cast(list[str], values["references"])),
+            localized_concepts=tuple(
+                (language, cast(str, values[field]))
+                for language, field in (("de", "alt_de"), ("he", "alt_he"))
+                if field in values
+            ),
         )
     return result
 

@@ -27,9 +27,9 @@ selection = "picture source at 760px and below"
 "model-sharding-vs-packing.png" = "6cca097f0fd58aba1b4b5c4f15576bb8c300ea08fc24c015dbeb999d427b0b7d"
 
 [alt]
-"de" = "Editorial illustration for Fünf praktische Lektionen für das Serving von Modellen mit Triton Inference Server: A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
-"he" = "Editorial illustration for חמש תובנות מעשיות להגשת מודלים עם Triton Inference Server: A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
-"en" = "Editorial illustration for Five Practical Lessons for Serving Models with Triton Inference Server: A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
+"de" = "Redaktionelle Illustration zum Beitrag „Fünf praktische Lektionen für das Serving von Modellen mit Triton Inference Server“: Eine kompakte industrielle Leitstelle führt mehrere Modellmodule durch eine sorgfältig kontrollierte Serving-Spur und betont dabei die operative Passung statt des Spektakels."
+"he" = "איור מערכתי למאמר „חמש תובנות מעשיות להגשת מודלים עם Triton Inference Server“: תחנת שילוח תעשייתית קומפקטית מנתבת כמה יחידות מודל דרך מסלול הגשה מבוקר, עם דגש על התאמה תפעולית ולא על ראווה."
+"en" = "Editorial illustration for „Five Practical Lessons for Serving Models with Triton Inference Server“: A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
 
 [outputs.thumbnail]
 path = "thumbnail.webp"

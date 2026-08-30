@@ -16,6 +16,8 @@ references = ["hero.webp", "social.png", "session.webp", "learning_progress.webp
 thread = "ML Systems"
 audit_mode = "preserve-thumbnail"
 concept = "A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
+alt_de = "Eine kompakte industrielle Leitstelle führt mehrere Modellmodule durch eine sorgfältig kontrollierte Serving-Spur und betont dabei die operative Passung statt des Spektakels."
+alt_he = "תחנת שילוח תעשייתית קומפקטית מנתבת כמה יחידות מודל דרך מסלול הגשה מבוקר, עם דגש על התאמה תפעולית ולא על ראווה."
 references = ["hero.png", "social.png", "dynamic-vs-continuous-batching.png", "model-sharding-vs-packing.png"]
 
 [posts."genai/vibe-coding-stablenormal-modal"]
@@ -28,18 +30,24 @@ references = ["social.png"]
 thread = "Building"
 audit_mode = "regenerate"
 concept = "A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
+alt_de = "Ein Gründer steht vor einer schön beleuchteten Produkttür, die sichtbar zu einer anderen Gemeinschaft gehört, und entscheidet sich für Identität statt eines attraktiven Marktes."
+alt_he = "מייסד עומד מחוץ לדלת מוצר מוארת ששייכת בבירור לקהילה אחרת, ובוחר בהתאמה ובזהות על פני שוק מושך."
 references = ["hero.webp", "social.png", "before-he-cheats.webp", "giraffe.jpeg", "kase.jpeg"]
 
 [posts."classics/cmft"]
 thread = "ML Systems"
 audit_mode = "regenerate"
 concept = "A sentence transformed through stacked receptive windows, with local fragments progressively joining into a single coherent signal; editorial, tactile, and non-diagrammatic."
+alt_de = "Ein Satz durchläuft gestapelte Wahrnehmungsfenster, während sich lokale Fragmente schrittweise zu einem zusammenhängenden Signal verbinden."
+alt_he = "משפט עובר דרך חלונות קליטה מוערמים, בעוד מקטעים מקומיים מתחברים בהדרגה לאות אחד קוהרנטי."
 references = ["social.png", "cnn-receptive-hierarchy.webp", "hierarchical-receptive-field-tree.webp"]
 
 [posts."classics/dlsm"]
 thread = "ML Systems"
 audit_mode = "regenerate"
 concept = "A dense market surface compressed into a small memory vessel that carries patterns forward through time, balancing curiosity with the uncertainty of prediction."
+alt_de = "Eine dichte Marktoberfläche wird in einen kleinen Gedächtnisspeicher komprimiert, der Muster durch die Zeit trägt und Neugier mit Prognoseunsicherheit verbindet."
+alt_he = "משטח שוק צפוף נדחס לכלי זיכרון קטן שנושא דפוסים קדימה בזמן ומאזן בין סקרנות לאי־הוודאות שבחיזוי."
 references = ["social.png", "market-embedding-diagram.webp", "stacked-lstm-architecture.webp"]
 
 [posts."lighttag/active-learning-manager"]

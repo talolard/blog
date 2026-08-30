@@ -46,6 +46,7 @@ class CatalogEntry:
     audit_mode: str
     concept: str
     references: tuple[str, ...]
+    localized_concepts: tuple[tuple[str, str], ...]
 
 
 @dataclass(frozen=True)
