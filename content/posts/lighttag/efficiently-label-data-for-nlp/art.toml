@@ -1,0 +1,53 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "ML Systems"
+visual_concept = "A labeling workbench that removes repeated, low-value material before a small set of useful specimens reaches the annotator, emphasizing leverage over volume."
+prompt_version = "editorial-v1"
+prompt_hash = "df26debf290a89d8316e064381da44225db4e46258b6c4a9e2edb63b5b390aaf"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:44:27.898312Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "4d9e37cffd6c17ebb9da34671e90ee72d8828f2a0a79ccb197d4b7c47f185d06"
+
+[inputs.references]
+"top-repeated-reddit-comments.webp" = "dd469261062392f68d2fcc0b0f7a53b55a33db379c00a8a2819edf3e849a0e9a"
+"social.webp" = "df3b0891c48c24028855b1ad180fd83a1d3c5230e6ceb32d4f85f52d0f3203c7"
+
+[alt]
+"en" = "Editorial illustration for „Efficiently Labeling Data for NLP“: A labeling workbench that removes repeated, low-value material before a small set of useful specimens reaches the annotator, emphasizing leverage over volume."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "43a5d441618378a526000169cccacb4c78ad37168ab5f877b06cc41b37aacddf"
+width = 960
+height = 720
+compression = 85
+request_id = "req_96559b40bdb74af295619f72ace32860"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "d8951a21b529f6f28aaa91aad80ab633e0908373d6513a013728556277d9afe7"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_150ad7a46b4e4a15bdf6d80a99ae8367"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "8a5fba15ab0b6305c03db37884ac14ddeffdfc2b08f1078083978ab96b3d5c42"
+width = 960
+height = 720
+compression = 85
+request_id = "req_7ea53da573d94880b34b8304300ad9d7"
+placement = "approximately 362x272"

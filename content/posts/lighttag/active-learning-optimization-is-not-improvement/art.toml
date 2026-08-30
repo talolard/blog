@@ -1,0 +1,55 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "ML Systems"
+visual_concept = "A papaya taster repeatedly sampling the most ambiguous fruit while the neglected market remains unevenly understood, separating optimization from real improvement."
+prompt_version = "editorial-v1"
+prompt_hash = "46923fc98047c8c7d582828bb0850d5f0b25583a86056fd756d344dc84459148"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:35:28.456029Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "a0aea520e4fb99920874bb85f7719b966a4dda6591b000492c7520bdd9a41cb1"
+
+[inputs.references]
+"papaya-seller-market.webp" = "75ad93d701f733cfba128419e6622be7c4290a8ac87fb9d0ced19be0c2bd4fe4"
+"social.webp" = "352eebf19508e672c21e5cfbdad3046d76859e146798a0741079331bbea46fce"
+"al70.webp" = "8b58faacd3fb768ae4318ba7f0503d4733fe120c0ef311c4de386e7d89daaa49"
+"discbound.webp" = "83a7b998bccb462e32d0a8b0d210e4c05069ae86b13d85f0d84a4917f34d260a"
+
+[alt]
+"en" = "Editorial illustration for „Active Learning: Optimization Is Not Improvement“: A papaya taster repeatedly sampling the most ambiguous fruit while the neglected market remains unevenly understood, separating optimization from real improvement."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "75eb9c65915ea98a4a883e7162de7582c7cd7f6d08728bebc4cd0e26fd37ee6a"
+width = 960
+height = 720
+compression = 85
+request_id = "req_1d24f4b4124b44e68fbffc4d7328d2de"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "933609fb9c59e0bafde8511f87955881d9294d4e7143acb675ff43b9b0c9eb6c"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_dd52d73c1eb54f56854f02c04e0cc509"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "c5819782918585931d958eea709f28abbeb172f8d743b22f39b3070ee571a10a"
+width = 960
+height = 720
+compression = 85
+request_id = "req_a4b59199995d42d7bdcdd20aaf9b7f97"
+placement = "approximately 362x272"

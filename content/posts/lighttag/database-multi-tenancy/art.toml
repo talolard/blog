@@ -1,0 +1,55 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "preserve-thumbnail"
+thread = "Building"
+visual_concept = "A shared apartment block whose tenants each have a clearly isolated interior behind one maintained facade, expressing schema isolation with domestic precision."
+prompt_version = "editorial-v1"
+prompt_hash = "3d86f32acd259192b2e52500588e805292410639b1a7e1813f43ec3fe6c9d778"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:43:58.566001Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "23e9379981eb5c558f1c44c1d10330d6f4464bec4415e752e6af0f996d397c0f"
+
+[inputs.references]
+"hero.webp" = "10dd952b3c0129387c4723ee4b1615e65861b13a58224d338d1056694dcbd72a"
+"social.webp" = "3a1bd61ca383c33804ace4bb4cd28170b9ec5d11a439d842ba2eb8cee2601d99"
+"db-diagram.webp" = "b4001476f8b4bf4d623018a2716114b56ed28af27fe97905f60a42f3004c41eb"
+"schema-diagram.webp" = "fd1d8047bf6b025933a87fbf8e0fd6a4553c3399be410f7d1bc26f6aebd3febe"
+
+[alt]
+"en" = "Editorial illustration for „Database Multi-Tenancy for SaaS“: A shared apartment block whose tenants each have a clearly isolated interior behind one maintained facade, expressing schema isolation with domestic precision."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "a9d3febc0ea9c5a62e52b0cff21669fcf9209706505ebfd9910d06867ac872b3"
+width = 960
+height = 720
+compression = 85
+request_id = "req_b78243e868584ad8a421af7e9c9d9b84"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "fdffb7ac99ffa5aaf4f97e08773745f2fd251db34138c3c29d1cda25af210286"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_d5cb27e3966b465f8a5d080b26f9502d"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "4f768a050145fdbf719fa9d87cfa7706e99f822e6fec2614d745d5d2f11c6fd1"
+width = 960
+height = 720
+compression = 85
+request_id = "req_6788fb05923d4104b346c635aff1a0d8"
+placement = "approximately 362x272"

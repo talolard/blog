@@ -1,0 +1,52 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "Agents & AI"
+visual_concept = "One ambiguous object changes meaning as concentric scenes reveal progressively wider context, with a single strong center and no factual labels."
+prompt_version = "editorial-v1"
+prompt_hash = "c038c6a177d818ff16f602b9d94ed883154286ce4ba98ecdb4c9d09b2a2357a8"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:41:32.941986Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "682242600092a1dd7e0b6b90517b62f914ad0ba142cbd25bf027687b278da54e"
+
+[inputs.references]
+"social.webp" = "84299a9657f96bfa83b784f8785bccc9f5fd0fd5736356bb9e76075620b147c2"
+
+[alt]
+"en" = "Editorial illustration for „Context Is King! Why Deep Learning Matters for NLP“: One ambiguous object changes meaning as concentric scenes reveal progressively wider context, with a single strong center and no factual labels."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "633b51ac4d43e774b4bbfbd43ab6eae8915b8ac6b770b38a0c999c0a7810b545"
+width = 960
+height = 720
+compression = 85
+request_id = "req_6564fa5976864cd2a47e1344a98c5441"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "667581c9c023450a2cb4e3e0e0841119d87782562bc0f340670c81b54952af6f"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_68fb063107b04866b1e05eeb4814f40c"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "074386de61720523caf07637e4c384190f0ecea333c5972b87c82dd15d8d3730"
+width = 960
+height = 720
+compression = 85
+request_id = "req_67df4df10d7b44aa9afb6460756c0e48"
+placement = "approximately 362x272"

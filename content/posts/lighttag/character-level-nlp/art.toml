@@ -1,0 +1,54 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "ML Systems"
+visual_concept = "Individual letterforms moving through a long mechanical loom and emerging as semantic fabric, showing the power and cost of character-level processing without embedded text."
+prompt_version = "editorial-v1"
+prompt_hash = "512ee59a969789040666f06549981dc90e8785871b421bbf82164141e113944c"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:38:11.275926Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "2c1f1599615b88c2cf9c3199943ae630732c3523ec50fe085c894a8d2397113b"
+
+[inputs.references]
+"character-model-problems.webp" = "59131c5f0b6dd6c89122b1c773ec2c37f71d9459c5410241efcaaa204e271f20"
+"social.webp" = "594d67ceb6731196288f3a4b584d031c0be0cfdc8574b30cf85720adf93dc5db"
+"cnnlstm.webp" = "886b91fb8e357c1aecf60b062cbb67405d148fa8e223a2b807838c6293526452"
+
+[alt]
+"en" = "Editorial illustration for „Character-Level NLP“: Individual letterforms moving through a long mechanical loom and emerging as semantic fabric, showing the power and cost of character-level processing without embedded text."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "9f20e8e98a2dcf91f0d2f5f126c650031b23b4a7dd086cb662c767669534d90d"
+width = 960
+height = 720
+compression = 85
+request_id = "req_436ad83ba5ea4eb7a4a6f639fc28b6b2"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "30046878c7b7bc6703af5f352a0ae3af3ecdc8b0924f6938a6d216c653d7a250"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_06b90fc7e4ee4f008591c3a4bebfba6e"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "de376cb4963bced25ecf0f48634a92186bcb0df13b642c6b6cd6b2669476125c"
+width = 960
+height = 720
+compression = 85
+request_id = "req_05ba9928faa04475afccaf160f6e8a44"
+placement = "approximately 362x272"

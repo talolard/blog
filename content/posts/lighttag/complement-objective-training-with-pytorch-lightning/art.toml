@@ -1,0 +1,54 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "recompose-source"
+thread = "ML Systems"
+visual_concept = "A learner improves by studying the negative space around the correct choice: one illuminated form surrounded by carefully weighted alternatives."
+prompt_version = "editorial-v1"
+prompt_hash = "bbff15a4626635cd66c07e81561c2ee94dda6922f1f0702e6ce91c50c9793ed3"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:40:58.272183Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "8190dfbe1b81e03fbd56780f59da04f6463976483e59505a280b1ea20b49643a"
+
+[inputs.references]
+"hero.webp" = "7bc0450c09509bd77ba1ad65c3e6ccd4e4003eace39985787c3a6734e653ab8a"
+"social.webp" = "9b6e7055e392eeb8b1230dd23ff9af1d07efd1ad1c846718d0ad0b9c47cd97fb"
+"chart.webp" = "956ec43a300b01183f919f26721eff25ad34181f31f57ae36d56c791f259bbf3"
+
+[alt]
+"en" = "Editorial illustration for „Complement Objective Training With PyTorch Lightning“: A learner improves by studying the negative space around the correct choice: one illuminated form surrounded by carefully weighted alternatives."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "93e350ddf14883751ddafc51f887eade815721b5f17dd1dc05b4e8990d562733"
+width = 960
+height = 720
+compression = 85
+request_id = "req_65bca473114f4be4af456f776a6d1fe9"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "9974a9dc2208d21297fb520db33263ff57026945f31863862afea7876ce2cdc6"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_d539da55e199472093cf26f66e65a51e"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "fb74960e9753938abc0185b76f60b1c04061c33488c436655713a678c4d5a4ae"
+width = 960
+height = 720
+compression = 85
+request_id = "req_f7e22f741a504da28d4c142248da7a48"
+placement = "approximately 362x272"

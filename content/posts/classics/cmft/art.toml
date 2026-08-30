@@ -1,0 +1,58 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "ML Systems"
+visual_concept = "A sentence transformed through stacked receptive windows, with local fragments progressively joining into a single coherent signal; editorial, tactile, and non-diagrammatic."
+prompt_version = "editorial-v1"
+prompt_hash = "8242585f56601146de7eccff3297738be1d2c9e1d0f4139ec62e3551a6653658"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:31:49.544907Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"de" = "ee48ab7779c84d4500590214c094cab94ef2fb8fe55c03317c71cf78525d6790"
+"he" = "f13f1b66f648d796474d6043f181f43468f882921d2d4b50911c6cde391117fc"
+"en" = "97aace4f430783ecaff60dc581b2f68fb63b3cf3a9cde3d1bc7129481844f3c4"
+
+[inputs.references]
+"social.png" = "db69200b1375b992ee7a0b0264337912b984acd169bbd774292909bac56c0121"
+"cnn-receptive-hierarchy.webp" = "4f07f46c55c2d73ba542146415ff000097b9a25fcf4efb6cda7aafc126ea366c"
+"hierarchical-receptive-field-tree.webp" = "40c13fc4b5308a9c82690cf423a430ee3f8da600a36cfd1950919d5a3f479db0"
+
+[alt]
+"de" = "Redaktionelle Illustration zum Beitrag „Convolutional Methods for Text“: Ein Satz durchläuft gestapelte Wahrnehmungsfenster, während sich lokale Fragmente schrittweise zu einem zusammenhängenden Signal verbinden."
+"he" = "איור מערכתי למאמר „שיטות קונבולוציוניות לטקסט“: משפט עובר דרך חלונות קליטה מוערמים, בעוד מקטעים מקומיים מתחברים בהדרגה לאות אחד קוהרנטי."
+"en" = "Editorial illustration for „Convolutional Methods for Text“: A sentence transformed through stacked receptive windows, with local fragments progressively joining into a single coherent signal; editorial, tactile, and non-diagrammatic."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "38ebd7a4ef19296133faff571b5217d1f1168302ca6e5f82c605a091abeed3c9"
+width = 960
+height = 720
+compression = 85
+request_id = "req_56ca601b96f54de9a6a9106ddea071bd"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "b4ac7518ee0996c892f0fda8fb57d770f00b878cf32843765cb4e81cad0dee87"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_20a1e225016b42f9a8e01e62b5e17dea"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "08abd39064cfa73182a09367e055a9d9d2821e15f5e2b6c01628d040de2e7068"
+width = 960
+height = 720
+compression = 85
+request_id = "req_e930374db0be405f8b7f14d6505f4d1c"
+placement = "approximately 362x272"

@@ -1,0 +1,54 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "ML Systems"
+visual_concept = "A compact nocturnal learning engine drawing useful domain signal from a modest local corpus while a giant distant machine remains unnecessary."
+prompt_version = "editorial-v1"
+prompt_hash = "e9137058c834eb041bc8b3dde6830e4f16a6b817cc466fe6ed394fb3ac11b7e2"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:47:35.230231Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "23fc22b5c062ef4379bfe759c31803d4311bd9cc507621c4e495cbb8a01501da"
+
+[inputs.references]
+"social.webp" = "847003e08ae8f7a6b127a7ee1cb294f2a84a65d8f007f35e9fb3d3a4b43145c3"
+"vampirearchitecture.webp" = "f1f6735b93d50bd0aa76a30b5226a479a3b519f178d3a96e0449a5c89405e9f4"
+"topicmodeltopics.webp" = "1e737f958f88cf492b306f328317411d1c57e9d3441c133bd4c77103e1ac0b7c"
+
+[alt]
+"en" = "Editorial illustration for „Fast NLP Model Pretraining With VAMPIRE“: A compact nocturnal learning engine drawing useful domain signal from a modest local corpus while a giant distant machine remains unnecessary."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "e25cf1e5d96bd1ec91a5eeac6981a690b4518731474a6b3d97f9c091b4f62719"
+width = 960
+height = 720
+compression = 85
+request_id = "req_00c8120a2c684345a97dbf8a1fa14d8b"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "ae3544248096dff688d8d54737512fdbf8259c3f272b851aa5284e7173ea73eb"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_8bba468410a5478a9544d2fdab7a9edb"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "6a7e31e28553d526fcdc94491f73f7aa3fd0a8e529212df09520ed5bf6b35737"
+width = 960
+height = 720
+compression = 85
+request_id = "req_f686fc8a402a40a784209b3bb063452a"
+placement = "approximately 362x272"

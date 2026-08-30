@@ -1,0 +1,53 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "preserve-concept"
+thread = "ML Systems"
+visual_concept = "A composed active-learning steward sorting a moving boundary between labeled and unlabeled material, preserving the original manager metaphor with greater editorial clarity."
+prompt_version = "editorial-v1"
+prompt_hash = "b16909e22d3c115daae41a0398ea845888a67d592fccb263c9df49258d3e7ff6"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:34:53.735285Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "f76a7c86dcfc7a7ccb5054973cdd7d71d9e939466bb7cc68bca87fd31b9911ec"
+
+[inputs.references]
+"hero.webp" = "9c954811902b2bb3131faea277b81baf4121476a031a2f8e30bf70484b0a5826"
+"social.webp" = "57fcad501a43d5cbc64400ef726950ec2315d60bcfb9daf5bbec85d2f3d1f521"
+
+[alt]
+"en" = "Editorial illustration for „ALMa: Active Learning (Data) Manager“: A composed active-learning steward sorting a moving boundary between labeled and unlabeled material, preserving the original manager metaphor with greater editorial clarity."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "31b052e6e57bb104e5872b19c792f19c3239f7c8ff14f5dcf6b123a4f83ae886"
+width = 960
+height = 720
+compression = 85
+request_id = "req_94ba1ab755244c3cb085829b4279659f"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "ff97f100bb7ecbfccc50ffc872f87ebd74b160e05361d645e461c28c49b309c5"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_f4b06c512ea046278f8eaad6b133c767"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "793262473d4a4ac191170ef48fc4d8216f11440a2c3308910f3d80a3a4cb77a5"
+width = 960
+height = 720
+compression = 85
+request_id = "req_94b32625ed094769b3e4eeec02edc02a"
+placement = "approximately 362x272"

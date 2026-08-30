@@ -1,0 +1,58 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "ML Systems"
+visual_concept = "A dense market surface compressed into a small memory vessel that carries patterns forward through time, balancing curiosity with the uncertainty of prediction."
+prompt_version = "editorial-v1"
+prompt_hash = "a47230469691e72eefaeb8acfd216c0ff2ffb6e885cd7e41f58bb1963a44a79b"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:32:27.486642Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"de" = "4e04801476546ab958fbb0105b92e93686966d0783c50b30c92adb3a38553075"
+"he" = "2df80136de6cdccbaf041bfa4d549a21cf2c8830578bea1ff866dc5522092d08"
+"en" = "eb7f3a069aae8660409711c403b46c7d271743f4ae8a152f7fced90e61ac37eb"
+
+[inputs.references]
+"social.png" = "e613ac8acb9be39f3d1b947994154052a37cad31047e8f47816fd8a22514cbaa"
+"market-embedding-diagram.webp" = "91c81e1a874e8c8f1eaa63125f1aebef92b3bebcec4d2c7443cf65ffb8956d8f"
+"stacked-lstm-architecture.webp" = "6160dc16bd136e159e2a15a26852cdf3946bd5a265dab24c0bb3b6b95f39c2fa"
+
+[alt]
+"de" = "Redaktionelle Illustration zum Beitrag „Deep Learning The Stock Market“: Eine dichte Marktoberfläche wird in einen kleinen Gedächtnisspeicher komprimiert, der Muster durch die Zeit trägt und Neugier mit Prognoseunsicherheit verbindet."
+"he" = "איור מערכתי למאמר „Deep Learning ושוק ההון“: משטח שוק צפוף נדחס לכלי זיכרון קטן שנושא דפוסים קדימה בזמן ומאזן בין סקרנות לאי־הוודאות שבחיזוי."
+"en" = "Editorial illustration for „Deep Learning The Stock Market“: A dense market surface compressed into a small memory vessel that carries patterns forward through time, balancing curiosity with the uncertainty of prediction."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "737f23ad87703232fbfc172f17b7bd84d544bd4e37a872c4990c687342c4be75"
+width = 960
+height = 720
+compression = 85
+request_id = "req_e13d223f63124393a84eaa7155e0a63f"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "e1bfec1c281e224e970eede7fc3183add4dd55ad711734d03300fca04aef69fc"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_e7aa8c5e19b9460fb0e839262a29886c"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "48d9f358cc28c6649070f5ae5b55acaceaab0e5f5da663711a0fee189f1f543e"
+width = 960
+height = 720
+compression = 85
+request_id = "req_f40604f4338440f282a0a34d252395c5"
+placement = "approximately 362x272"

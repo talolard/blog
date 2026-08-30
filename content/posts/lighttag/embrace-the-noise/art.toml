@@ -1,0 +1,55 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "recompose-source"
+thread = "ML Systems"
+visual_concept = "A radiologist-like observer extracting one reliable signal from layered translucent, noisy chest-film textures; expressive editorial art, not a medical infographic."
+prompt_version = "editorial-v1"
+prompt_hash = "52c63bf53a10a37ccc5d8d2975d39989eb0f568799c9d995c266403f07cb5770"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
+generated_at = "2026-08-30T08:47:23.333234Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "9b4e13c38a07ccb527f8f58b95ebcc3c361e73bddaa818ba67fd408254fc6f14"
+
+[inputs.references]
+"social.webp" = "8d7d8281d08fba0208285021bc268f70bdc08862ab79aebfb0e8015759c04e7d"
+"architecture.webp" = "abab443a5a1ba62b85677f2a99cd72a68354613b5aa12c4e7b3a2ef1832e77fe"
+"covering.webp" = "486f22419eefc2ce0f73c906940d035e61df111348e2653380ac212d9fc961f8"
+"xrays.webp" = "f79d13c5b35661717c1d068f9b086578db002539a57a25b4ba55fa4fa435e817"
+
+[alt]
+"en" = "Editorial illustration for „Embrace the Noise: A Case Study of Text Annotation for Medical Imaging“: A radiologist-like observer extracting one reliable signal from layered translucent, noisy chest-film textures; expressive editorial art, not a medical infographic."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "f06f120709102984bb196183414dd78b1c4d656872ba7747c8e56a78db02ead5"
+width = 960
+height = 720
+compression = 85
+request_id = "req_3ac12de46b6a4e1e94e74e4d4d88153d"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "5f216b02561af2060794f42fd6be4b71739513fe8d3a470960294229f73935f7"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_3b376fadd2fb4188817476ee6c494c1d"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "9314e874d13509ade9dfacba1b44ea5231b023517a8a9d87f3988d125cf4d9a2"
+width = 960
+height = 720
+compression = 85
+request_id = "req_4ff502c33c3a461bbc558862f311849f"
+placement = "approximately 362x272"
