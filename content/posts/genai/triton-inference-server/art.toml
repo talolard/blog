@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "preserve-thumbnail"
 thread = "ML Systems"
 visual_concept = "A compact industrial dispatch station routing several model-shaped modules through one carefully controlled serving lane, emphasizing operational fit over spectacle."
-prompt_version = "editorial-v1"
-prompt_hash = "f1292ae7ade059c242bc59839f6d7a5349042dc72154982d634a5a4c3bc84fbe"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "1c7dfbe55fcddae6f717481180ff1e5c4aade5fe700fa284c20eb5102069521d"
+scene_hash = "42897fb2e3a2ae334947a6db08f270aa7a8b41f51a2e30566596a04553ca8c7b"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0bfc1694b40ec895016a9410d9476487d1b66c8440e1eff6af"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
-generated_at = "2026-08-30T08:24:30.327524Z"
+source_git_revision = "95506948bd5b4f406115c1df95e4f34917c64355"
+generated_at = "2026-08-30T11:21:38.560496Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -19,6 +23,10 @@ selection = "picture source at 760px and below"
 "de" = "9032ef259fd55d9c7b0a8e53bcf120ef7de0138b7f8edf564b7e4e56b709c681"
 "he" = "b034ff0af372ae111fe4652ac073de168b6b6bc12ac780ab761443b27cdaa7a4"
 "en" = "5809d69b0d1e39b5c89e4f2687345c75c636d3e3a53ac9b18d860592269c8c79"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "hero.png" = "53d95abfaaedf565c259dbfcdeac61d0c705cdb040ca7b81614abcb11478d1b5"
@@ -33,27 +41,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "8342b6dd5617436d2a4cc88451cc3b248ac0c575746660710393974b93f1d293"
+sha256 = "e83a02167ecce0bac65287d00a820955fb675a6953c396bed647af4daa6bed51"
 width = 960
 height = 720
 compression = 85
-request_id = "req_21966a08b54c4f90935feebbfcde740c"
+request_id = "req_0fdaa5e341844a0888e016636375017f"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "15866f1ac4c9e56e50f53542385f1fbfdbff46e3a7a08719008ed67e45968970"
+sha256 = "6b2f0600c739bd0f2ec6cb3e51d7829f8c2029ae6d639ca6a53cb4e50cb0894b"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_801768bfc84640f4ab27fdf921407143"
+request_id = "req_52fc765b8ae649a99fb6c70a16250029"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "042ac70063d3ca99d39e938a30cd82e3bea2abbb7924faccb9e43309c20f315f"
+sha256 = "7d87ff45636d0324357fe4ff98cb281b888a5b57b5f68c763746eea3edcfe6eb"
 width = 960
 height = 720
 compression = 85
-request_id = "req_a9ce48bca9fe4b42955bd015ba442bc7"
+request_id = "req_701265b35b6241fe992764aff3c6e766"
 placement = "approximately 362x272"

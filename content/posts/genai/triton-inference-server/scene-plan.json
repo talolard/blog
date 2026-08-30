@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "78377e289ac71ae37d93d4117c86d7f27294972182433f0cefb8e76b93500b7f",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:15:43.876979Z",
+  "response_id": "resp_0bfc1694b40ec895016a9410d9476487d1b66c8440e1eff6af",
+  "scene": {
+    "metaphor": "A miniature dispatch station with one narrow serving lane, where small model parcels move cleanly through batching gates while one oversized generative crate is redirected to a separate side track.",
+    "setting": "A polished tabletop industrial set built from matte cool-gray panels, brushed metal rails, translucent acrylic queue windows, and tiny cable spools, photographed like a studio product scene against a deep cool-gray background with generous negative space.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is mid-turn on a cobalt switch lever, calmly diverting an oversized mint-and-slate crate away from a clogged main lane just as a few smaller parcels slide through in a tight batch, making the system’s fit-vs-misfit idea instantly readable.",
+    "physical_materials": [
+      "cool-gray foamboard",
+      "brushed aluminum track",
+      "translucent acrylic queue gates",
+      "cobalt switch lever",
+      "mint crate",
+      "one restrained warm accent as a coral indicator light",
+      "matte paper parcels",
+      "fine black cable",
+      "tiny rubber wheels"
+    ],
+    "semantic_anchors": [
+      "operational fit over spectacle",
+      "dynamic batching as a buffered lane",
+      "continuous flow as a separate track",
+      "queue timeout as a stale parcel waiting too long",
+      "minimal client wrapper as a small control console",
+      "cache as a side tray of duplicate parcels"
+    ],
+    "avoid": [
+      "flashcard framing",
+      "ornate borders",
+      "cream paper",
+      "children's palette",
+      "generic robots",
+      "text or UI",
+      "infographic labels",
+      "injury",
+      "humiliation",
+      "gross-out",
+      "brand logos"
+    ],
+    "image_instruction": "Create a polished studio photograph of Tal as a recognizable operator in a tiny industrial dispatch set. Use his dark curly hair, salt-and-pepper beard, and easy smile, but make the expression calm and matter-of-fact, not cartoonish. He stands behind a miniature cool-gray serving station, one hand on a cobalt lever, the other near a simple control console. In the main lane, three small matte-gray model parcels move together in a neat batch under translucent acrylic gates; nearby, a larger mint-and-slate crate is being diverted to a separate side track, suggesting the wrong serving layer for a generative workload. Freeze the instant where the oversized crate just clears the switch and the small parcels continue forward, with one restrained coral indicator light as the only warm accent. Build the set from foamboard, brushed metal, acrylic, and paper with high tonal separation, thick silhouettes, and generous negative space. Keep the action lateral and low, so the composition works as a wide banner and also reads clearly as a thumbnail with one dominant subject and no more than three large supporting props."
+  }
+}
