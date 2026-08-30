@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "ee463bda7cd841c0b3e1cf6a15b6c538c03a584eb8404a3a00a10cb6f8e2018f",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:55:23.492030Z",
+  "response_id": "resp_07f823da2918ec58016a941a272e5487d1b6318394638f61fd",
+  "scene": {
+    "metaphor": "A modular data machine where separate chart panels clip into one shared filtering axle, like precision instruments responding to a single physical dial.",
+    "setting": "A polished studio tabletop set in cool gray, built as a miniature React “frame” with three low chart modules spread laterally across a wide banner composition; the background falls to clean negative space with only a soft gradient and faint shadow falloff.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal has just turned a small mint filter wheel, and the three chart modules are visibly snapping into new positions at the same instant, one bar stack sliding, one heat-grid tile shifting, and one small crossfilter carriage locking into place without chaos.",
+    "physical_materials": [
+      "matte cool-gray foamcore base",
+      "clear acrylic rails",
+      "cobalt-painted chart panels",
+      "mint lacquered filter axle and dial",
+      "thin black metal clips",
+      "one restrained warm accent in rust-red rubber grip",
+      "paper-thin translucent graph membranes",
+      "3D-printed miniature chart mechanisms"
+    ],
+    "semantic_anchors": [
+      "shared filtering axle",
+      "independent chart mechanisms",
+      "React frame",
+      "Crossfilter state",
+      "imperative and declarative separation",
+      "rerendering motion captured as a single synchronized response"
+    ],
+    "avoid": [
+      "flashcard borders",
+      "cream paper",
+      "children’s palette",
+      "literal dashboard UI",
+      "text labels or code",
+      "robots",
+      "busy infographic composition",
+      "injury or slapstick",
+      "more than three supporting props"
+    ],
+    "image_instruction": "Create a polished editorial studio photograph of Tal Perry as a calm, recognizable operator in a miniature data-machine set. He is positioned left-of-center in a wide 3:1 banner, leaning in with an intent half-smile, one hand turning a small mint filter wheel mounted on a shared axle. Three chunky chart modules span horizontally across the frame on clear acrylic rails: a bar-chart block, a heatmap block, and a compact row-chart block, each made from matte cobalt pieces with crisp black edges and subtle translucent membranes. Freeze the exact instant when all three modules respond at once—one panel slides, one grid compresses, one carriage locks—conveying independent mechanisms snapping into one React frame. Use cool-gray foundation, cobalt and mint accents, and only one restrained warm accent in Tal’s grip or clothing detail. Keep the silhouette thick and readable, with generous negative space, strong tonal separation, and no text or UI. Lighting should be soft studio key with controlled shadows, tactile materials, and a serious, deadpan tone."
+  }
+}

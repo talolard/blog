@@ -1,0 +1,62 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "recompose-source"
+thread = "ML Systems"
+visual_concept = "Independent chart mechanisms snap into one React frame around a shared filtering axle, expressive editorial machinery rather than a literal dashboard."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "faa49be18860b50bdba85a29d48bd960029b1abdfe8f90c55cd7d27ad021d9d8"
+scene_hash = "dfcb9b15cdc917b8f8da5a2cd2d412235f5ce450a2580593920e67b5a52fbf40"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_07f823da2918ec58016a941a272e5487d1b6318394638f61fd"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:05:44.947253Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "745469a7392a9508431460af6f3fc5410a7f50bcfaa7479315745993800046e5"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"hero.webp" = "35a91612bcd00432d249f4eaa12d9a7ee34c2319fd0d80e0aff564b1983fb9aa"
+"social.webp" = "ee92bf540363d0a96fd979dccf8c98e0da5264d70e4a8cdbdb4ba559c6fec26d"
+"example.webp" = "c98ac544764aa62ee6f1d6eb099d8b38253c15ab0ae66465937e3dd52b8f9617"
+
+[alt]
+"en" = "Editorial illustration for „Using dc.js and Crossfilter With React“: Independent chart mechanisms snap into one React frame around a shared filtering axle, expressive editorial machinery rather than a literal dashboard."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "52c382a80019e6b4a90d31affb3e89557985b9a735866ffe0e18e75ead51c68d"
+width = 960
+height = 720
+compression = 85
+request_id = "req_cb712f7a1ee6498b9845cbf423712ba6"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "e81e1fa86f1702adf0a6fca08f6ec46662bdb5f139b5d535fd016091d066fff6"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_072db8926305460487a37bdf5eed8cc9"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "063d7b76fde2bcb59fbb7b72c3bd93ecb6354fda262775db831861226e96a93b"
+width = 960
+height = 720
+compression = 85
+request_id = "req_656f381bde5b4d3498a845112ce2223b"
+placement = "approximately 362x272"
