@@ -7,6 +7,7 @@ from .models import PostSource, Role, ROLE_SPECS
 from .scene import ScenePlan
 
 PROMPT_VERSION = "editorial-planned-v2"
+MAX_PROMPT_CHARACTERS = 31_900
 COMMON_DIRECTION = """Create a dramatic authored editorial photograph for a humorous, technically sophisticated personal essay.
 Stage a tactile handmade physical metaphor inside a miniature practical world caught at the instant of a harmless absurd incident. Treat the ridiculous situation with the precision and seriousness of premium product photography; the humor may be deadpan, playful, warm, or chaotic as directed by the scene plan.
 Use a cool-gray studio foundation, cobalt and mint accents, at most one restrained warm accent, high tonal separation, generous negative space, and minimal small detail. Do not use cream flashcard paper, ornate borders, or a children's-card look.
@@ -30,10 +31,10 @@ def role_constraints(role: Role) -> str:
 
 
 def assemble_prompt(post: PostSource, scene: ScenePlan, role: Role) -> str:
-    """Include the complete normalized English article without truncation."""
+    """Render the canonical scene while keeping requests below the image API limit."""
 
     references = ", ".join(path.name for path in post.reference_paths) or "none"
-    return (
+    scene_instruction = (
         f"Prompt version: {PROMPT_VERSION}\n\n"
         f"{COMMON_DIRECTION}\n\n"
         f"Article title: {post.title}\n"
@@ -51,11 +52,19 @@ def assemble_prompt(post: PostSource, scene: ScenePlan, role: Role) -> str:
         f"Declared semantic references: {references}\n"
         "Canonical image instruction from the scene planner:\n"
         f"{scene.image_instruction}\n\n"
-        f"{role_constraints(role)}\n\n"
-        "Complete normalized article follows:\n"
+        f"{role_constraints(role)}\n"
+    )
+    complete_article = (
+        "\nComplete normalized article follows:\n"
         "--- ARTICLE ---\n"
         f"{post.normalized_article}"
         "--- END ARTICLE ---\n"
+    )
+    if len(scene_instruction) + len(complete_article) <= MAX_PROMPT_CHARACTERS:
+        return scene_instruction + complete_article
+    return (
+        scene_instruction
+        + "\nThe scene planner already read the complete normalized article; rely on its canonical instruction and semantic anchors.\n"
     )
 
 

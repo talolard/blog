@@ -12,7 +12,7 @@ from editorial_images.content import load_all_posts, normalize_article, reposito
 from editorial_images.hashing import bytes_sha256
 from editorial_images.manifest import is_stale, parse_manifest, publish_staged, render_manifest
 from editorial_images.models import OutputRecord, Role, ROLE_SPECS
-from editorial_images.prompting import assemble_prompt
+from editorial_images.prompting import assemble_prompt, MAX_PROMPT_CHARACTERS
 from editorial_images.scene import new_record, planning_prompt, render_record, SCENE_FILENAME, ScenePlan
 
 
@@ -45,7 +45,7 @@ def test_normalization_removes_urls_but_preserves_prose_code_and_caption() -> No
     assert "print('kept')" in normalized
 
 
-def test_catalog_has_exactly_thirty_published_posts_and_prompt_is_complete() -> None:
+def test_catalog_has_exactly_thirty_published_posts_and_planner_prompt_is_complete() -> None:
     posts = load_all_posts(repository_root(Path(__file__)))
     assert len(posts) == 30
     post = next(item for item in posts if item.catalog.key == "genai/vibe-coding-stablenormal-modal")
@@ -61,6 +61,11 @@ def test_catalog_has_exactly_thirty_published_posts_and_prompt_is_complete() -> 
     assert post.catalog.concept in prompt
     assert "Tal calmly unplugs" in prompt
     assert "1920x640" in prompt
+    assert all(len(assemble_prompt(candidate, _scene(), role)) <= MAX_PROMPT_CHARACTERS for candidate in posts for role in Role)
+    long_post = next(item for item in posts if item.catalog.key == "lighttag/how-to-label-data")
+    long_prompt = assemble_prompt(long_post, _scene(), Role.HERO_DESKTOP)
+    assert long_post.normalized_article not in long_prompt
+    assert "scene planner already read the complete normalized article" in long_prompt
 
 
 def test_manifest_parsing_hash_staleness_and_atomic_publish(tmp_path: Path) -> None:
