@@ -1,0 +1,55 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "Life & Learning"
+visual_concept = "A parent and child building a short daily reading ritual from playful image cards, with steady progression shown through physical rhythm rather than charts or interfaces."
+prompt_version = "editorial-v1"
+prompt_hash = "c40f1cef7641f260d6419b912ac7c1c60cf9838febb764048fc16887db1b3ca7"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
+generated_at = "2026-08-30T08:24:00.920781Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "12ab296e200bf6190665dbd110515add70c63f886efe7daa85f88032bf0fa062"
+
+[inputs.references]
+"hero.webp" = "e6815233bcd1e1b3fc0e7aeb31952713577a2ed6c75651133a6252f6b7111838"
+"social.png" = "35135ab672f12727c316cb6c474963cd5778d5c3ec2f862b0af6a33a1410005c"
+"session.webp" = "9777e4c006597305dfb3219e0eaee82330fc7ac4150895bfbdde3108e0960c99"
+"learning_progress.webp" = "52d5cf2f721d670dfd9036f56aab38b4fc455ffae4519ef2908e12d804df8fa2"
+
+[alt]
+"en" = "Editorial illustration for The AI-Powered 10-Minute Habit That Taught My Kid to Read (And Made Me a Better Dad): A parent and child building a short daily reading ritual from playful image cards, with steady progression shown through physical rhythm rather than charts or interfaces."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "8482f5e7fa1b05ef87333cd33bae109e155982c6a765b6cc8e27fecc7ca8849d"
+width = 960
+height = 720
+compression = 85
+request_id = "req_fcb1c9468bf8421da6dd43bdd12a74e8"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "58f9980bbd2cc976135fda763c36ec26ac0e03cb0d6c557546f0160883c497ec"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_377787ef46d3471e9b5fcf346f5a2be8"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "65906ac2194707d6a550c27229c779d06305c901af26e586eb8214fe661cc673"
+width = 960
+height = 720
+compression = 85
+request_id = "req_bcd9d5c0771c463da0ee6c81c2e39793"
+placement = "approximately 362x272"
