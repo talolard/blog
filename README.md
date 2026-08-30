@@ -30,3 +30,22 @@ sequenceDiagram
 - Clean generated assets: `make clean`
 - Large assets: install Git LFS (`git lfs install`) and ensure `git lfs pull` before building so letter images are available to Hugo pipelines
 - If you already cloned before Git LFS was added, run `git lfs install` and `git add --renormalize assets/letters/*.webp && git commit` to store those files as LFS pointers
+
+## Legacy LightTag redirects
+
+The 23 historical LightTag article URLs are maintained as explicit permanent
+redirects to the restored archive. Read the [redirect operations runbook](infra/lighttag-redirects/README.md)
+before touching DNS or AWS. The runbook documents the current Cloudflare DNS
+authority gate, the `us-east-1` / `local agent` AWS context, the complete map,
+change-set workflow, rollback, live checks, and the deferred Phase 2 search
+migration.
+
+Local map and CloudFormation checks are available as:
+
+```sh
+make lighttag-redirect-test
+make lighttag-redirect-cfn-check
+```
+
+Production change sets and live checks are owner-approved operations; search
+engine submissions are never run by tests or CI.

@@ -1,0 +1,265 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >-
+  Permanent redirects for the restored LightTag archive. Deploy this stack in
+  us-east-1 because CloudFront certificates must be issued there.
+
+Resources:
+  LightTagCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: lighttag.io
+      SubjectAlternativeNames:
+        - www.lighttag.io
+        - guide.lighttag.io
+      ValidationMethod: DNS
+      # CloudFormation creates ACM validation records in this Route 53 zone;
+      # ACM validation waits until matching records are visible in public DNS.
+      DomainValidationOptions:
+        - DomainName: lighttag.io
+          HostedZoneId: Z035583412C9JWLLOM7K5
+        - DomainName: www.lighttag.io
+          HostedZoneId: Z035583412C9JWLLOM7K5
+        - DomainName: guide.lighttag.io
+          HostedZoneId: Z035583412C9JWLLOM7K5
+      Tags:
+        - Key: Project
+          Value: lighttag-redirects
+        - Key: Owner
+          Value: tal-perry
+        - Key: ManagedBy
+          Value: cloudformation
+
+  LightTagRedirectFunction:
+    Type: AWS::CloudFront::Function
+    Properties:
+      Name: lighttag-redirects
+      AutoPublish: true
+      Tags:
+        - Key: Project
+          Value: lighttag-redirects
+        - Key: Owner
+          Value: tal-perry
+        - Key: ManagedBy
+          Value: cloudformation
+      FunctionConfig:
+        Comment: Allowlisted LightTag archive redirects and 410 responses
+        Runtime: cloudfront-js-2.0
+      FunctionCode: |
+        /*
+         * Keep the source allowlist explicit. These are the 23 values from
+         * original_publication.path; the destination is the restored Hugo
+         * page-bundle URL.
+         */
+        var routes = {
+          '/blog/active-learning-manager': '/en/posts/lighttag/active-learning-manager/',
+          '/blog/active-learning-optimization-is-not-imporvement': '/en/posts/lighttag/active-learning-optimization-is-not-improvement/',
+          '/blog/character-level-nlp': '/en/posts/lighttag/character-level-nlp/',
+          // Explicit companion example route (not the main article route).
+          '/blog/sequence-labeling-with-transformers/example': '/en/posts/lighttag/code-to-align-annotations-with-huggingface-tokenizers/',
+          '/blog/complement-objective-training-with-pytorch-lightning': '/en/posts/lighttag/complement-objective-training-with-pytorch-lightning/',
+          '/blog/context-is-king': '/en/posts/lighttag/context-is-king/',
+          '/blog/database-multi-tenancy': '/en/posts/lighttag/database-multi-tenancy/',
+          '/blog/efficiently-label-data-for-nlp': '/en/posts/lighttag/efficiently-label-data-for-nlp/',
+          '/blog/embrace-the-noise': '/en/posts/lighttag/embrace-the-noise/',
+          '/blog/fast-nlp-pretraining-with-vampire': '/en/posts/lighttag/fast-nlp-pretraining-with-vampire/',
+          '/how-to-label-data': '/en/posts/lighttag/how-to-label-data/',
+          '/blog/indexeddb-for-nlp': '/en/posts/lighttag/indexeddb-for-nlp/',
+          '/blog/krippendorffs-alpha': '/en/posts/lighttag/krippendorffs-alpha/',
+          '/blog/lighttag-acquired-by-primer': '/en/posts/lighttag/lighttag-acquired-by-primer/',
+          '/blog/postmortem-docker-swarm-wrong-tag': '/en/posts/lighttag/postmortem-docker-swarm-wrong-tag/',
+          '/blog/psql-range-aggregation-for-nlp': '/en/posts/lighttag/psql-range-aggregation-for-nlp/',
+          '/blog/react-dc-js': '/en/posts/lighttag/react-dc-js/',
+          '/blog/sequence-labeling-with-transformers': '/en/posts/lighttag/sequence-labeling-with-transformers/',
+          '/blog/snorql': '/en/posts/lighttag/snorql/',
+          '/blog/spacy-vs-stanford': '/en/posts/lighttag/spacy-vs-stanford/',
+          '/blog/tensorflow-estimator-api': '/en/posts/lighttag/tensorflow-estimator-api/',
+          '/blog/unicode-surrogate-pairs': '/en/posts/lighttag/unicode-surrogate-pairs/',
+          '/blog/when-to-use-machine-in-the-loop': '/en/posts/lighttag/when-to-use-machine-in-the-loop/'
+        };
+
+        function gone() {
+          return {
+            statusCode: 410,
+            statusDescription: 'Gone',
+            headers: {
+              'cache-control': { value: 'public, max-age=300, s-maxage=300' }
+            }
+          };
+        }
+
+        function redirect(location) {
+          return {
+            statusCode: 301,
+            statusDescription: 'Moved Permanently',
+            headers: {
+              'cache-control': { value: 'public, max-age=86400, s-maxage=86400' },
+              location: { value: location }
+            }
+          };
+        }
+
+        function handler(event) {
+          var request = event.request;
+          var hostHeader = request.headers.host;
+          var host = hostHeader && hostHeader.value ? hostHeader.value.toLowerCase().split(':')[0] : '';
+          var uri = request.uri || '/';
+
+          // request.uri excludes the query string, but split defensively so a
+          // future caller can never carry query parameters into a redirect.
+          uri = uri.split('?')[0].toLowerCase();
+          uri = uri.replace(/\/{2,}/g, '/');
+          uri = uri.replace(/\/index\.html\/?$/, '');
+          uri = uri.replace(/\/+$/, '');
+          if (uri === '') {
+            uri = '/';
+          }
+
+          // Separately reviewed compatibility alias: the corrected spelling is
+          // accepted, but it is outside the exactly 23 provenance pairs.
+          if (uri === '/blog/active-learning-optimization-is-not-improvement') {
+            uri = '/blog/active-learning-optimization-is-not-imporvement';
+          }
+
+          if (host === 'guide.lighttag.io') {
+            return gone();
+          }
+
+          if (host === 'lighttag.io' || host === 'www.lighttag.io') {
+            if (uri === '/') {
+              return redirect('https://talperry.com/');
+            }
+
+            if (routes[uri]) {
+              return redirect('https://talperry.com' + routes[uri]);
+            }
+          }
+
+          // Unknown hosts and paths are intentionally not proxied to the
+          // fallback origin, preventing an accidental open redirect/proxy.
+          return gone();
+        }
+
+  LightTagDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Comment: LightTag archive redirects
+        Enabled: true
+        HttpVersion: http2and3
+        IPV6Enabled: true
+        PriceClass: PriceClass_100
+        Aliases:
+          - lighttag.io
+          - www.lighttag.io
+          - guide.lighttag.io
+        Origins:
+          - Id: TalPerryFallbackOrigin
+            DomainName: talperry.com
+            # The viewer-request function always returns; this impossible path
+            # makes any unexpected origin request fail closed.
+            OriginPath: /__lighttag_redirect_origin_disabled__
+            CustomOriginConfig:
+              HTTPSPort: 443
+              OriginProtocolPolicy: https-only
+              OriginSSLProtocols:
+                - TLSv1.2
+        DefaultCacheBehavior:
+          TargetOriginId: TalPerryFallbackOrigin
+          # Let HTTP reach the function for a single final HTTPS hop.
+          ViewerProtocolPolicy: allow-all
+          AllowedMethods:
+            - GET
+            - HEAD
+          CachedMethods:
+            - GET
+            - HEAD
+          Compress: true
+          CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+          FunctionAssociations:
+            - EventType: viewer-request
+              FunctionARN: !GetAtt LightTagRedirectFunction.FunctionMetadata.FunctionARN
+        ViewerCertificate:
+          AcmCertificateArn: !Ref LightTagCertificate
+          MinimumProtocolVersion: TLSv1.2_2021
+          SslSupportMethod: sni-only
+      Tags:
+        - Key: Project
+          Value: lighttag-redirects
+        - Key: Owner
+          Value: tal-perry
+        - Key: ManagedBy
+          Value: cloudformation
+
+  LightTagApexRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: Z035583412C9JWLLOM7K5
+      Name: lighttag.io
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt LightTagDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+        EvaluateTargetHealth: false
+
+  LightTagApexIpv6Record:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: Z035583412C9JWLLOM7K5
+      Name: lighttag.io
+      Type: AAAA
+      AliasTarget:
+        DNSName: !GetAtt LightTagDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+        EvaluateTargetHealth: false
+
+  LightTagWwwRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: Z035583412C9JWLLOM7K5
+      Name: www.lighttag.io
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt LightTagDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+        EvaluateTargetHealth: false
+
+  LightTagWwwIpv6Record:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: Z035583412C9JWLLOM7K5
+      Name: www.lighttag.io
+      Type: AAAA
+      AliasTarget:
+        DNSName: !GetAtt LightTagDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+        EvaluateTargetHealth: false
+
+  LightTagGuideRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: Z035583412C9JWLLOM7K5
+      Name: guide.lighttag.io
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt LightTagDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+        EvaluateTargetHealth: false
+
+  LightTagGuideIpv6Record:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: Z035583412C9JWLLOM7K5
+      Name: guide.lighttag.io
+      Type: AAAA
+      AliasTarget:
+        DNSName: !GetAtt LightTagDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+        EvaluateTargetHealth: false
+
+Outputs:
+  CertificateArn:
+    Description: ACM certificate used by the CloudFront distribution
+    Value: !Ref LightTagCertificate
+  DistributionDomainName:
+    Description: CloudFront distribution hostname
+    Value: !GetAtt LightTagDistribution.DomainName

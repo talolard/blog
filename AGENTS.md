@@ -51,3 +51,22 @@
 * When using AI to fill fields, optimize for engagement while staying true to Tal's voice and the post's real content.
 * Do not leave placeholder text or partial platform entries; fill all required fields for each post language.
 * Run `make validate` before finishing metadata/share-pack changes.
+
+## LightTag redirect operations
+
+* The sole tracker for the two-phase redirect migration is
+  `docs/plans/4_restore_lighttag_redirects.md`; update its root checklist and
+  evidence log rather than creating a second tracker or checklist.
+* Keep worker ownership disjoint: one worker owns each declared file scope,
+  and workers must not concurrently edit the same file. The P1.C operability
+  scope is `infra/lighttag-redirects/README.md`, the root `Makefile`, this root
+  `README.md`, and this file; preserve unrelated changes.
+* Luna owns implementation coordination and Sol performs the independent
+  review. A redirect implementation is not production-complete until the Sol
+  review gate in the plan is accepted.
+* The redirect map is explicit. Unknown LightTag paths must return `410 Gone`;
+  never add a catch-all redirect to the home page or an unrelated article.
+* Search-engine and IndexNow submissions are external side effects. They are
+  Phase 2 owner-approved operations and must never be tests, validation, or CI.
+* Retain the redirect stack and mappings for at least one year, preferably
+  indefinitely, because historical backlinks and crawlers are long-lived.
