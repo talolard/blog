@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "Agents & AI"
 visual_concept = "An obscure vision machine lifted out of a tangled workshop and placed onto a clean remote GPU pedestal, turning a burdensome dependency into an invisible service."
-prompt_version = "editorial-v1"
-prompt_hash = "c397cc7e30f6bb54806fa366106f6e02a40a310bebd354ed8efb2d152e3b537a"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "b4cace14c61adee690d9c2ea7bfa6f2b973faf20f4daa0fa3ecf8b9ae16b4460"
+scene_hash = "65f0905dff1e59486f25f56486b79dfb29850e2ca3d7dd3190ac0d325ffa80b2"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_02051536858fef99016a9410d9581487d18deaf57b2cdbc051"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
-generated_at = "2026-08-30T08:20:52.296529Z"
+source_git_revision = "95506948bd5b4f406115c1df95e4f34917c64355"
+generated_at = "2026-08-30T11:19:51.236851Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -18,35 +22,39 @@ selection = "picture source at 760px and below"
 [inputs.articles]
 "en" = "e779347b9c86276567ae974a2ba0a92960fc400050c496b49175faf3dd2d67cd"
 
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
 [inputs.references]
 "social.png" = "4cb24852aa9d693a536c7ad953088ba1c4e3f841d0546b75c0ea607a735b118c"
 
 [alt]
-"en" = "Editorial illustration for I Needed One Obscure Vision Model. Modal Made It Everyone Else’s Problem.: An obscure vision machine lifted out of a tangled workshop and placed onto a clean remote GPU pedestal, turning a burdensome dependency into an invisible service."
+"en" = "Editorial illustration for „I Needed One Obscure Vision Model. Modal Made It Everyone Else’s Problem.“: An obscure vision machine lifted out of a tangled workshop and placed onto a clean remote GPU pedestal, turning a burdensome dependency into an invisible service."
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "4ad8775d2aa8502bb51e98f587af48c2b7f6bf151e823d340dae38e56d107b01"
+sha256 = "a4bbe25336e65124b35e713dd5acd0af1608f1c40e42783559b16c93da37855a"
 width = 960
 height = 720
 compression = 85
-request_id = "req_ab0ce61ca64147d6baf227403bc5088c"
+request_id = "req_593ceec2bfa44f489d5cbf65e3eb5bbd"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "a4dc2a813b195fba5a9d85d7dba5b7b60a3f438924f289be4256ec4230a237e7"
+sha256 = "c9495d6a3fc614deb259c8f4987f601a05be092184dc50fee4770f9095100409"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_a6a8e8871f2346debc46df5660e7c0bd"
+request_id = "req_f52582832dab495091a4891edf0c5d68"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "cc78e6fb93e547571df3555e7f084e7939c7d20a44c5ff3466732a3fc5a47671"
+sha256 = "ddd5dcd7a39ddec31a992e748bfff4fcae0660cf50adfeb50cbebfda883f1839"
 width = 960
 height = 720
 compression = 85
-request_id = "req_a8521a5c9cf2465daffd53cf65c810e1"
+request_id = "req_80d16ff650dc4709b5f4c4951d6e3413"
 placement = "approximately 362x272"

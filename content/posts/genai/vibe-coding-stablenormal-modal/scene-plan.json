@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "14f9233e8a58589beaf0d5db9a9b2f41b4431dec5cf44e64bcda7cac2918eae5",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:15:42.749869Z",
+  "response_id": "resp_02051536858fef99016a9410d9581487d18deaf57b2cdbc051",
+  "scene": {
+    "metaphor": "An obscure vision model is a hand-built, finicky little machine being lifted out of a cluttered workshop and set onto a clean GPU pedestal, like a temperamental appliance turned into a paid service.",
+    "setting": "A polished studio tabletop built as a miniature tech workshop: cool-gray surface, soft shadowed backdrop, one clean cobalt pedestal on the right, a messy but contained tool cluster on the left, lots of negative space above.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is mid-action, calmly pressing a small toggle as the tiny model unit is already gliding from the messy bench onto the pedestal, with one cable still half-tangled in the old setup like it reluctantly came along.",
+    "physical_materials": [
+      "matte gray foamboard",
+      "brushed aluminum miniature pedestal",
+      "3D-printed vision-model box with a lens-like front",
+      "thin black cable",
+      "one translucent mint tube",
+      "small cobalt clamps",
+      "a single restrained warm amber indicator light"
+    ],
+    "semantic_anchors": [
+      "remote GPU service",
+      "scale-to-zero",
+      "cold start",
+      "bytes in bytes out",
+      "latency as product scope",
+      "secure hosted inference"
+    ],
+    "avoid": [
+      "paper-flashcard aesthetics",
+      "ornate borders",
+      "children’s colors",
+      "generic robot mascots",
+      "screenshots",
+      "UI elements",
+      "text",
+      "logos",
+      "tall central towers",
+      "humiliation",
+      "gross-out"
+    ],
+    "image_instruction": "Create a polished studio photograph of Tal Perry as a recognizable, relaxed operator: dark curly hair, salt-and-pepper beard, warm smile, wearing a coral/orange sleeveless athletic tank. He stands in a miniature cool-gray workshop set, framed wide for a 3:1 banner with generous negative space and the action running laterally. On the left, a small cluttered bench holds one obscure vision machine made literal as a compact 3D-printed box with a lens front, tiny cables, and a few scattered tool scraps. On the right, a clean cobalt pedestal awaits it like a remote GPU host. Freeze the absurd instant where Tal, with one hand and a calm deadpan expression, is guiding the little machine off the messy bench toward the pedestal while a thin black cable remains half-tangled behind it. Use polished studio lighting, high tonal separation, cool-gray foundation, cobalt and mint accents, and only one restrained amber status light. Keep a thick simple silhouette and one dominant subject so the joke reads clearly at thumbnail size."
+  }
+}
