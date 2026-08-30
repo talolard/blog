@@ -7,6 +7,7 @@ from datetime import date
 from pathlib import Path
 
 import pytest
+from PIL import Image
 from playwright.sync_api import Page
 
 
@@ -74,10 +75,13 @@ def test_lighttag_article_renders_with_provenance(
     assert notice.inner_text() == "Originally published at LightTag.io."
     assert notice.locator("a").count() == 0
 
-    broken_images = page.locator("article img").evaluate_all(
-        "images => images.filter(image => !image.complete || image.naturalWidth === 0).map(image => image.src)"
+    image_sources: list[str] = page.locator("article img").evaluate_all(
+        "images => images.map(image => image.currentSrc || image.src)"
     )
-    assert broken_images == []
+    for image_source in image_sources:
+        image_response = page.request.get(image_source)
+        assert image_response.ok, image_source
+        assert image_response.headers["content-type"].startswith("image/"), image_source
 
 
 def test_non_lighttag_article_has_no_archive_notice(page: Page, base_url: str) -> None:
@@ -105,13 +109,8 @@ def test_archive_animations_and_webps_are_preserved() -> None:
     """Animations must keep frames and every WebP must remain under Git LFS."""
     archive = _repo_root() / "content/posts/lighttag"
     for relative_path in ANIMATIONS:
-        result = subprocess.run(
-            ["identify", str(archive / relative_path)],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        assert len(result.stdout.splitlines()) > 1, relative_path
+        with Image.open(archive / relative_path) as animation:
+            assert animation.n_frames > 1, relative_path
 
     webps = sorted(archive.glob("**/*.webp"))
     relative_webps = [str(path.relative_to(_repo_root())) for path in webps]
