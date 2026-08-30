@@ -5,11 +5,15 @@ eligibility_reason = "published English bundle declared in editorial catalog"
 generation_mode = "regenerate"
 thread = "Agents & AI"
 visual_concept = "One ambiguous object changes meaning as concentric scenes reveal progressively wider context, with a single strong center and no factual labels."
-prompt_version = "editorial-v1"
-prompt_hash = "c038c6a177d818ff16f602b9d94ed883154286ce4ba98ecdb4c9d09b2a2357a8"
+prompt_version = "editorial-planned-v2"
+prompt_hash = "d0b96bca908441c430cc153a5d10e8584758e2626f0cde08298c866fca0a4b17"
+scene_hash = "3e9e3b64540e44b08c049c2a83619b48cd3356a3012562100f0e58927d4990c4"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0eacf82fa8bec72b016a941772e41887d1a800dacc856df5f0"
 model = "gpt-image-2-2026-04-21"
-source_git_revision = "7128297a831ad2fb8bbac54653d21d8f32662c38"
-generated_at = "2026-08-30T08:41:32.941986Z"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T11:53:34.066000Z"
 
 [placement]
 mobile_breakpoint = "760px"
@@ -17,6 +21,10 @@ selection = "picture source at 760px and below"
 
 [inputs.articles]
 "en" = "682242600092a1dd7e0b6b90517b62f914ad0ba142cbd25bf027687b278da54e"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
 
 [inputs.references]
 "social.webp" = "84299a9657f96bfa83b784f8785bccc9f5fd0fd5736356bb9e76075620b147c2"
@@ -26,27 +34,27 @@ selection = "picture source at 760px and below"
 
 [outputs.thumbnail]
 path = "thumbnail.webp"
-sha256 = "633b51ac4d43e774b4bbfbd43ab6eae8915b8ac6b770b38a0c999c0a7810b545"
+sha256 = "8d54fa260eb85c7e8949dae17f0cf9527aef777a64829bca60ff2196b01e1895"
 width = 960
 height = 720
 compression = 85
-request_id = "req_6564fa5976864cd2a47e1344a98c5441"
+request_id = "req_efdd4e8a1d62495688e02a9d79777c08"
 placement = "280x210 featured; 120x90 archive"
 
 [outputs.hero_desktop]
 path = "hero-desktop.webp"
-sha256 = "667581c9c023450a2cb4e3e0e0841119d87782562bc0f340670c81b54952af6f"
+sha256 = "516a521c157188b0ff6ff712a2b7b229fed2dc878518660c51a23fe48760add9"
 width = 1920
 height = 640
 compression = 85
-request_id = "req_68fb063107b04866b1e05eeb4814f40c"
+request_id = "req_5631c39ea3544f81acac1145023da1b0"
 placement = "approximately 1180x393"
 
 [outputs.hero_mobile]
 path = "hero-mobile.webp"
-sha256 = "074386de61720523caf07637e4c384190f0ecea333c5972b87c82dd15d8d3730"
+sha256 = "21b3c168ac73abbebd0b7d0e4b81f13ec313a0cc82e82df0f2b2cc188ecead7f"
 width = 960
 height = 720
 compression = 85
-request_id = "req_67df4df10d7b44aa9afb6460756c0e48"
+request_id = "req_baa85d61d7c1498596b61d6e98c289ce"
 placement = "approximately 362x272"

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "2c75e37c59cdeacd3ac73a1e1a361ef4387a034e7dc9d9599b83653b65d5c398",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:43:51.690661Z",
+  "response_id": "resp_0eacf82fa8bec72b016a941772e41887d1a800dacc856df5f0",
+  "scene": {
+    "metaphor": "An ambiguous word is a tiny label-less object that only makes sense when surrounded by wider rings of scene context, like a practical miniature set of nested clues.",
+    "setting": "A polished studio tabletop made of cool-gray matte surface, with a miniature paper-and-acrylic language diorama centered low and wide for banner cropping, open negative space around it.",
+    "humor_register": "deadpan",
+    "tal_role": "observer",
+    "frozen_incident": "Tal is leaning in with one hand hovering over the smallest center object as if he has just noticed that the meaning changes when the surrounding rings slide outward into place; the outermost ring is mid-shift, revealing the joke of context coming into view.",
+    "physical_materials": [
+      "cool-gray felt base",
+      "cobalt acrylic ring",
+      "mint acrylic ring",
+      "one restrained warm accent: a small coral paper tab",
+      "cut paper word-shapes with no readable text",
+      "thin wire guides",
+      "frosted acetate panels",
+      "tiny sand-textured podium",
+      "studio softbox reflections"
+    ],
+    "semantic_anchors": [
+      "context expanding outward",
+      "one ambiguous center",
+      "nested surrounding clues",
+      "deep learning as wider receptive field",
+      "nonlinear meaning from surrounding elements",
+      "Tal as a recognizable smiling dark-curly-haired bearded observer"
+    ],
+    "avoid": [
+      "letters or readable text",
+      "infographic layout",
+      "children's palette",
+      "cream paper",
+      "ornate borders",
+      "generic robots",
+      "humiliation",
+      "injury",
+      "gross-out",
+      "busy background",
+      "tall tower composition"
+    ],
+    "image_instruction": "Create a serious polished studio photograph of Tal Perry as a recognizable observer: dark curly hair, salt-and-pepper beard, warm eyes, relaxed half-smile, leaning in from the left edge of frame over a miniature tabletop diorama. The central prop is a small ambiguous object on a sand-textured podium, but its meaning is unresolved until three concentric practical rings around it—cool-gray, cobalt, and mint acrylic—sit at different distances, each ring carrying tiny unlabeled physical clues made from paper scraps, wire, and frosted acetate. Freeze the instant when the outer ring is sliding outward, exposing the punchline that context changes interpretation. Use generous negative space, strong tonal separation, one dominant silhouette, and no more than three large supporting props. Keep the composition lateral and low for a 3:1 banner, while the center remains readable at thumbnail size. Lighting should be crisp studio softbox with clean reflections; the only warm note is a restrained coral accent near the core."
+  }
+}
