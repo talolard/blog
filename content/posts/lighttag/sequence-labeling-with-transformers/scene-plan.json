@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "276198ca0b61c2c44ea0f7794ef653e11031b9c11728d6d6a2c79bf4720f9d2f",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:56:02.173557Z",
+  "response_id": "resp_08f6d6f0bfdb2621016a941a4da1b487d1a43eeed04841300f",
+  "scene": {
+    "metaphor": "A long hand-stitched fabric ribbon is being threaded through overlapping transparent “window” frames, with colored stitched spans staying matched to the same places as the ribbon slides forward.",
+    "setting": "A polished studio tabletop in cool gray felt and matte acrylic, arranged as a shallow miniature production line that reads horizontally across a wide banner.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal is mid-adjustment, calmly pinching the ribbon as one stitched annotation span straddles two window frames while a small clip holds the overlap in place, making the alignment look absurdly precise.",
+    "physical_materials": [
+      "cool-gray felt base",
+      "matte acrylic window frames",
+      "charcoal fabric ribbon",
+      "cobalt and mint thread markers",
+      "one restrained coral accent on Tal’s clothing",
+      "tiny metal clips",
+      "soft studio shadowing"
+    ],
+    "semantic_anchors": [
+      "long text becomes segmented windows",
+      "offset spans stay aligned to original coordinates",
+      "overlapping transformer-sized frames",
+      "windowing over aligned tokens and labels",
+      "BIO-like continuity across boundaries",
+      "speed versus accuracy tradeoff"
+    ],
+    "avoid": [
+      "paper infographics",
+      "literal UI panels",
+      "letters or numbers",
+      "robots",
+      "cute mascot styling",
+      "ornate borders",
+      "children’s palette",
+      "injury or humiliation",
+      "gross-out imagery",
+      "thumbnail clutter",
+      "tall central tower composition"
+    ],
+    "image_instruction": "Create a polished editorial studio photograph of Tal Perry as a recognizable operator in a miniature NLP set. He stands left of center on a cool-gray felt tabletop, wearing a restrained coral tank top that echoes his reference photos, with curly dark hair, salt-and-pepper beard, and an easy deadpan half-smile. In front of him, a long charcoal fabric ribbon runs laterally through three overlapping matte acrylic window frames, each frame a transformer “segment.” Sewn cobalt and mint thread bars mark labeled spans on the ribbon, and one span is deliberately crossing the seam between two frames while Tal steadies it with small tweezers, as if preserving alignment across a boundary. Keep the action low and wide, with generous negative space, one dominant ribbon silhouette, and no more than three large supporting props: the frames, a clip, and a spool. Use crisp studio lighting, high tonal separation, and tactile handmade textures so the scene reads instantly at desktop, mobile, and thumbnail sizes."
+  }
+}

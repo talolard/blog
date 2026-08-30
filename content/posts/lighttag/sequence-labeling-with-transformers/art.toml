@@ -1,0 +1,62 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "recompose-source"
+thread = "ML Systems"
+visual_concept = "Long annotated fabric is divided into overlapping transformer-sized frames while every marked span stays aligned to its original coordinates."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "fabf207ca11347b78900226b419dace347c3ac582bdf258e7f24fee8d62504ab"
+scene_hash = "e7112dd93947c59f25619ac3e93140bbdd9395a3969823ada526a5242eb3a699"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_08f6d6f0bfdb2621016a941a4da1b487d1a43eeed04841300f"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:06:53.712780Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "f61b3bafe9a257dba49cfbae8ab3b28f05bbdbb59c3b41f807eb06028856ccf7"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"tokenizer-annotation-alignment.webp" = "be6f4da52a0506d43d9f703aff928e74e204f2d77c7321d84977c802a1f370d7"
+"social.webp" = "71169955f741f8c1c9c7faf7c656e38824b4ddb7642b3581bf1a948512883a56"
+"shrink.webp" = "5152571ae3b70c86128b0518055777fec771da2b98fa469f3e61608148339184"
+
+[alt]
+"en" = "Editorial illustration for „Sequence Labeling With Transformers“: Long annotated fabric is divided into overlapping transformer-sized frames while every marked span stays aligned to its original coordinates."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "ec83688f4b7fd76615600cd5f35b938ab53efa587e995fc5ab903ac1d5fa890c"
+width = 960
+height = 720
+compression = 85
+request_id = "req_ea62139710394977be84d4c1a2885f62"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "84d934d3eaa50ffe428eb5018b1f8df1fece9670da04a35d48c5ff8a32fa5992"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_d2069e516f924211bfb5561c1da0f6bb"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "c48dcf4d96131aeacdd9eea5efb9be46b50da98882c99b71a1aeedcf1dfc13b1"
+width = 960
+height = 720
+compression = 85
+request_id = "req_08165c7ded3745558c4829e71af661c8"
+placement = "approximately 362x272"
