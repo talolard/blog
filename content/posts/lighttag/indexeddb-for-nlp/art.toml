@@ -1,0 +1,62 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "Building"
+visual_concept = "A browser-sized cabinet instantly revealing the right document from a dense private archive, celebrating local search with a slightly mischievous physical metaphor."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "4f9feb4c707b2919a44c899a9ced681098d26b021f012742b5fc967808115d49"
+scene_hash = "79d64255c8b4188058203f4e137c241a0af0fc7dcde4071d363e3154c0227e5a"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_06fe0613cad56c3c016a94193d9c6c87d1bfb9ece479460026"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "b05ec96cadcb761e6c77803579f873a3216a0230"
+generated_at = "2026-08-30T12:02:18.805131Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "944a137b56cf335c4f7f649dacfd48cd5eaa236ad4e06ed155afc3a7826896c7"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"hero.webp" = "881a627210b2332844dfba4e8acc71fcd140884034e5c6d41f873f6f2f6a5eb5"
+"social.webp" = "e6d5f5854b619033fde686e9d5a6041ba60c92353487f6d46a93447ae2ecd35e"
+"postingslist.webp" = "f44cb91835b6a00c4c4fd0bc2a7b60b79b9c50db1c5a50fec0538712144a447c"
+
+[alt]
+"en" = "Editorial illustration for „The Joy of IndexedDB for NLP“: A browser-sized cabinet instantly revealing the right document from a dense private archive, celebrating local search with a slightly mischievous physical metaphor."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "101216d34d95de95b5c961abd278d5feeab59005bb5e2e6e1d7b4820868096ad"
+width = 960
+height = 720
+compression = 85
+request_id = "req_89e355f28aff4a53a16151a678cb256f"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "b3fb3c88c3b97353edaaad0c4c0765d76659ab9d78dde1228b461c6f10d5be88"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_736efee15cdb48abb0d6841a5c430846"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "ebdf0763ef1a035efcea97b395fd35a2cfb112781035539b8b6ebfbc1256166a"
+width = 960
+height = 720
+compression = 85
+request_id = "req_c181f2f2baea49b9b0f74f7e8720f962"
+placement = "approximately 362x272"

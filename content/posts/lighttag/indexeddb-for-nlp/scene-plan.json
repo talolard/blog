@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "planner_version": "tal-editorial-scene-v1",
+  "planner_input_hash": "577a3481507c52791a4f09d642e68e79d88d8853d6cb534e5e08bb33a406d79f",
+  "planner_model": "gpt-5.4-mini-2026-03-17",
+  "planned_at": "2026-08-30T11:51:30.301450Z",
+  "response_id": "resp_06fe0613cad56c3c016a94193d9c6c87d1bfb9ece479460026",
+  "scene": {
+    "metaphor": "A browser-sized archive cabinet where a hidden query mechanism snaps the correct document forward from a dense local stack, like a miniature indexed library that answers instantly without any server behind it.",
+    "setting": "Polished studio tabletop set in a cool-gray workspace, with a tiny handmade cabinet built from matte gray card, milled wood, and translucent acrylic, staged against a soft gradient backdrop with generous negative space.",
+    "humor_register": "deadpan",
+    "tal_role": "operator",
+    "frozen_incident": "Tal has just slid a mint-colored query lever; one narrow drawer in a row of identical drawers has popped open and a single document folder is springing forward while the others remain neatly shut, implying instant matching and no wasted motion.",
+    "physical_materials": [
+      "matte cool-gray chipboard",
+      "brushed aluminum edges",
+      "translucent acrylic drawer fronts",
+      "cobalt paper index tabs",
+      "mint-painted lever",
+      "one restrained warm accent on a folder edge",
+      "felt base",
+      "micro-printed paper slips",
+      "soft studio diffusion",
+      "shallow depth of field"
+    ],
+    "semantic_anchors": [
+      "dense private archive",
+      "instant retrieval",
+      "local search",
+      "inverted index",
+      "browser as cabinet",
+      "no-ops",
+      "single correct match",
+      "bottleneck removed"
+    ],
+    "avoid": [
+      "flashcard framing",
+      "cream paper",
+      "ornate borders",
+      "children's palette",
+      "generic robots",
+      "UI screenshots",
+      "embedded text",
+      "logos",
+      "infographic diagrams",
+      "injury",
+      "humiliation",
+      "gross-out"
+    ],
+    "image_instruction": "Create a polished studio tabletop photograph of Tal Perry as a recognizable operator: curly dark hair, salt-and-pepper beard, warm direct smile, seen from the waist up leaning into a miniature cabinet. He wears a modern sleeveless top in muted coral only as the single warm accent; everything else stays cool gray, cobalt, and mint. The set is a handmade browser-sized archive: a low horizontal row of many tiny identical drawers made from matte gray chipboard and brushed metal, with translucent acrylic fronts and cobalt paper tabs, sitting on a felt base. Tal’s hand has just pulled a mint lever, and in the frozen instant one drawer has snapped open and a single folder/document is sliding forward while the surrounding drawers remain closed, making the “instant match from a dense local archive” idea literal. Light it like serious editorial product photography with crisp tonal separation, soft shadow falloff, and generous negative space. Keep the composition lateral and banner-friendly, with one dominant cabinet silhouette that reads clearly at thumbnail size."
+  }
+}
