@@ -1,0 +1,63 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "Building"
+visual_concept = "A careful workshop assembly line turning raw language into dependable labeled material through seven visible stations, with objects and gestures but no text."
+prompt_version = "editorial-planned-v2"
+prompt_hash = "60ff60d7883c0952c6853039cf881da2dcb3cc9b92a4b3c2787dfcc8d599ae3f"
+scene_hash = "c7a06c041baa004e9ff7da7eb6a562d5a24fa4ada396018793e98e629b624cd7"
+planner_version = "tal-editorial-scene-v1"
+planner_model = "gpt-5.4-mini-2026-03-17"
+planner_response_id = "resp_0406413d4bf83cf8016a941eb1efbc87d1851b6ab0d4ee3226"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "44bc74b6a14286111d5e82e6c9cd9a04903f68dd"
+generated_at = "2026-08-30T12:17:44.118076Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"en" = "85e1d728ef0a6c41463d543ca84d90086ce80d6e18b496499e57e1421db289f7"
+
+[inputs.identity]
+"me1.jpeg" = "d2809df1e565047a88137a462dcb1c1b7cedced2498afa04638d9faf331f04bb"
+"me2.jpeg" = "c93d1e85ea6ea891862f3cc35113ce464523104fb2835b71c724af1f12af5190"
+
+[inputs.references]
+"hero.webp" = "4db732213ab419ab0d8ccdbc1f55fd3fd536b9a4396f9a844ef598c1cae27a58"
+"social.webp" = "2b5e38504f509c7cee9e10abee68e9f400df1413ec3d01b1e86cecde7fd7e5db"
+"create-annotation-task.webp" = "0bdeaeef0c49b979a1594d1821e5572ae1eef2a7cb15a6e80f0fe2f64609ac9d"
+"conflicting-annotations.webp" = "8a7b4d80f74e97134f33d4147e8a575054b0a13a5c41a795672d5708c7c4aea8"
+
+[alt]
+"en" = "Editorial illustration for „How to Label Data“: A careful workshop assembly line turning raw language into dependable labeled material through seven visible stations, with objects and gestures but no text."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "956c6b8400f5160a6d394c597da07f5821b7f32c09096ef3fb1cdfa8ae432068"
+width = 960
+height = 720
+compression = 85
+request_id = "req_90f2452e042a41988e73eb0c817e8a07"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "7eab8fa4d86ad860671da813bc82deefebb63d4139052ca750373919103f5d01"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_3f6efe8766e24c689a497c7476f82c99"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "f3683defc7ea445652f85fa2feacdb3482baabcae90e983c1f9fb843a05b33a1"
+width = 960
+height = 720
+compression = 85
+request_id = "req_ff1e9ef74e27489d9f30233d935280d3"
+placement = "approximately 362x272"
