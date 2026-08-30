@@ -1,0 +1,60 @@
+schema_version = 1
+status = "complete"
+eligible = true
+eligibility_reason = "published English bundle declared in editorial catalog"
+generation_mode = "regenerate"
+thread = "Building"
+visual_concept = "A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
+prompt_version = "editorial-v1"
+prompt_hash = "6ff4ab2da7d73b750837af072631a955b39f616bf690548b60ccac9ec6d30ed4"
+model = "gpt-image-2-2026-04-21"
+source_git_revision = "17060c6c7a166cc4a10fc399a22ad917bb7c0adf"
+generated_at = "2026-08-30T08:26:57.227578Z"
+
+[placement]
+mobile_breakpoint = "760px"
+selection = "picture source at 760px and below"
+
+[inputs.articles]
+"de" = "db635c39fa3822a577a8791bcbb49f4ac8bc31e8a936f9e3bea1478712572ad5"
+"he" = "9a555c08c0b82aaf41370e502d45dbf4201a35c7756234872597fd54fa75792c"
+"en" = "4ff8025a1eaca6b5e861470b72eef890593e65dbe91ea2dbe09319bcefeb97bc"
+
+[inputs.references]
+"hero.webp" = "e0413cd481cc1aa227b0ed34ad384a392abd6f4f909113ee04f1b06979688f60"
+"social.png" = "09bb8e5a2404a50268b52f393048a6e34805271531c477a74bcdb1bc1952c858"
+"before-he-cheats.webp" = "1f9cfcf9fa4f069b06b49c91435272271331e15490d9135875b53409012755f6"
+"giraffe.jpeg" = "0dd1c9fc8c55f2b05fae16b18cce00be427b68875ad58d03cf5d585705587112"
+"kase.jpeg" = "3f235a52c19712033a8df26accb29557d9d7f9ca1f8f4de73da4a32ff3064f33"
+
+[alt]
+"de" = "Editorial illustration for Ich bin nicht der Gründer, den diese App verdient: A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
+"he" = "Editorial illustration for אני לא המייסד שהאפליקציה הזו ראויה לו: A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
+"en" = "Editorial illustration for I’m Not the Founder This App Deserves: A founder standing outside a beautifully lit product doorway that clearly belongs to another community, choosing fit and identity over an attractive market."
+
+[outputs.thumbnail]
+path = "thumbnail.webp"
+sha256 = "94148cdddd5adffddc65a0f6f888bf571b62e9897a1a9baf676b48be2732feab"
+width = 960
+height = 720
+compression = 85
+request_id = "req_df447979b27243b3b74626d43daf18dd"
+placement = "280x210 featured; 120x90 archive"
+
+[outputs.hero_desktop]
+path = "hero-desktop.webp"
+sha256 = "c21ef4dd55c82266c9e61d7cb0d7b26294d898ae367228f0cd06fed75b64f39b"
+width = 1920
+height = 640
+compression = 85
+request_id = "req_01ce01769d3444eaa9ad80f34e3fde8d"
+placement = "approximately 1180x393"
+
+[outputs.hero_mobile]
+path = "hero-mobile.webp"
+sha256 = "2e7e40315b25e44f07c93fc2ace4a14b3b33b2517fe78e7f2e6f6a06fe63fd4f"
+width = 960
+height = 720
+compression = 85
+request_id = "req_826b52f758894387a853fa03a29fb388"
+placement = "approximately 362x272"
