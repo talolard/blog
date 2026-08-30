@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import logging
 import os
 import sys
 from pathlib import Path
@@ -20,6 +21,7 @@ from .runner import PostRun, generate_posts
 from .service import OpenAIImageClient
 
 DEFAULT_MODEL = "gpt-image-2-2026-04-21"
+LOGGER = logging.getLogger(__name__)
 POC_KEYS = (
     "genai/vibe-coding-stablenormal-modal",
     "genai/engineering-agents-building-trust",
@@ -121,6 +123,14 @@ async def _generate(arguments: Arguments, root: Path, posts: tuple[PostSource, .
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY is not set in the environment or repository .env")
+    LOGGER.info(
+        "Selected %d post(s); model=%s, jobs=%d, requests/minute=%d, force=%s",
+        len(posts),
+        arguments.model,
+        arguments.jobs,
+        arguments.requests_per_minute,
+        arguments.force,
+    )
     client = OpenAIImageClient(api_key, arguments.model)
     return await generate_posts(
         posts,
@@ -135,6 +145,11 @@ async def _generate(arguments: Arguments, root: Path, posts: tuple[PostSource, .
 def main() -> int:
     """Run read-only modes without credentials; generate only after explicit selection."""
 
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(message)s",
+        datefmt="%H:%M:%S",
+    )
     arguments = parser().parse_args(namespace=Arguments())
     try:
         root = repository_root()

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import logging
 import subprocess
 import tempfile
 import time
@@ -17,6 +18,8 @@ from .manifest import is_stale, publish_staged, render_manifest
 from .models import GenerationEvent, OutputRecord, PostSource, Role, ROLE_SPECS
 from .prompting import assemble_prompt
 from .service import ImageClient
+
+LOGGER = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -65,14 +68,18 @@ async def _one_image(
 ) -> tuple[OutputRecord, bytes, int]:
     events.append(GenerationEvent(post.catalog.key, role, "start", time.monotonic()))
     spec = ROLE_SPECS[role]
+    label = f"{post.catalog.key} {role.value}"
+    LOGGER.info("%s: queued (%s)", label, spec.size)
     generated, retries = await request_with_retry(
         client,
         limiter,
         prompt=assemble_prompt(post, role),
         size=spec.size,
         references=references,
+        label=label,
     )
     _validate_bytes(generated.content, role)
+    LOGGER.info("%s: complete (request %s)", label, generated.request_id)
     events.append(GenerationEvent(post.catalog.key, role, "complete", time.monotonic(), generated.request_id))
     record = OutputRecord(role, spec.filename, bytes_sha256(generated.content), spec.width, spec.height, 85, generated.request_id)
     return record, generated.content, retries
@@ -90,9 +97,11 @@ async def generate_post(
 
     started = time.monotonic()
     if not force and not is_stale(post):
+        LOGGER.info("%s: current; skipping", post.catalog.key)
         return PostRun(post.catalog.key, "current", 0, 0.0, ())
     events: list[GenerationEvent] = []
     retries = 0
+    LOGGER.info("%s: generation started", post.catalog.key)
     try:
         with tempfile.TemporaryDirectory(prefix=".editorial-", dir=post.bundle) as temporary:
             staging = Path(temporary)
@@ -124,9 +133,13 @@ async def generate_post(
             manifest = render_manifest(post, records, model=model, source_revision=source_revision(post.root))
             (staging / "art.toml").write_text(manifest, encoding="utf-8")
             publish_staged(staging, post.bundle)
-        return PostRun(post.catalog.key, "generated", retries, time.monotonic() - started, tuple(events))
+        elapsed = time.monotonic() - started
+        LOGGER.info("%s: published all three images in %.1fs", post.catalog.key, elapsed)
+        return PostRun(post.catalog.key, "generated", retries, elapsed, tuple(events))
     except Exception as error:
-        return PostRun(post.catalog.key, "failed", retries, time.monotonic() - started, tuple(events), str(error))
+        elapsed = time.monotonic() - started
+        LOGGER.error("%s: failed after %.1fs: %s", post.catalog.key, elapsed, error)
+        return PostRun(post.catalog.key, "failed", retries, elapsed, tuple(events), str(error))
 
 
 async def generate_posts(

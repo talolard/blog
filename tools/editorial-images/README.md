@@ -77,6 +77,10 @@ to replace otherwise-current art. Use `--model MODEL` to test another supported 
 model. The API key is loaded from the repository `.env` and is never needed on the
 command line.
 
+Generation writes timestamped progress to the console as it runs. It reports each
+post and role as they are queued, request-rate waits, API request starts and IDs,
+retries, skips, failures, and the atomic publication of each complete three-image set.
+
 One operational detail: `--commit` commits generated posts only after the entire
 selected run returns. If you stop a run, any fully published bundles remain safe but
 uncommitted; incomplete staging output is discarded. Commit those completed bundles
